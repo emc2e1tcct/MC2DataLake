@@ -7,17 +7,13 @@
 			"metadata": "Nombre de instancia de Data Factory",
 			"defaultValue": "MC2Factory"
 		},
-		"MC2Dataverse_servicePrincipalCredential": {
-			"type": "secureString",
-			"metadata": "Cadena protegida para \"servicePrincipalCredential\"de \"MC2Dataverse\""
-		},
 		"AzureDataLakeStorageGen2_accountKey": {
 			"type": "secureString",
 			"metadata": "Cadena protegida para \"accountKey\"de \"AzureDataLakeStorageGen2\""
 		},
-		"MC2Dataverse_properties_typeProperties_servicePrincipalId": {
-			"type": "string",
-			"defaultValue": "f16b031b-29a7-4264-8271-f2844c7b7084"
+		"MC2Dataverse_servicePrincipalCredential": {
+			"type": "secureString",
+			"metadata": "Cadena protegida para \"servicePrincipalCredential\"de \"MC2Dataverse\""
 		},
 		"AzureDataLakeStorageGen2_properties_typeProperties_url": {
 			"type": "string",
@@ -26,6 +22,10 @@
 		"MC2AzureKeyVault_properties_typeProperties_baseUrl": {
 			"type": "string",
 			"defaultValue": "https://kvMC2.vault.azure.net/"
+		},
+		"MC2Dataverse_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "f16b031b-29a7-4264-8271-f2844c7b7084"
 		},
 		"containerUri": {
 			"type": "string",
@@ -54,20 +54,20 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"MC2Dataverse_servicePrincipalCredential": {
-						"value": "[parameters('MC2Dataverse_servicePrincipalCredential')]"
-					},
 					"AzureDataLakeStorageGen2_accountKey": {
 						"value": "[parameters('AzureDataLakeStorageGen2_accountKey')]"
 					},
-					"MC2Dataverse_properties_typeProperties_servicePrincipalId": {
-						"value": "[parameters('MC2Dataverse_properties_typeProperties_servicePrincipalId')]"
+					"MC2Dataverse_servicePrincipalCredential": {
+						"value": "[parameters('MC2Dataverse_servicePrincipalCredential')]"
 					},
 					"AzureDataLakeStorageGen2_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorageGen2_properties_typeProperties_url')]"
 					},
 					"MC2AzureKeyVault_properties_typeProperties_baseUrl": {
 						"value": "[parameters('MC2AzureKeyVault_properties_typeProperties_baseUrl')]"
+					},
+					"MC2Dataverse_properties_typeProperties_servicePrincipalId": {
+						"value": "[parameters('MC2Dataverse_properties_typeProperties_servicePrincipalId')]"
 					}
 				}
 			},
