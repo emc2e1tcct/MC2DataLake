@@ -11,6 +11,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"fileName": "Listado_TablasMaestras.xlsx",
+				"folderPath": "Pruebas",
 				"fileSystem": "mc2-bs-dev-bronze"
 			},
 			"columnDelimiter": ",",
