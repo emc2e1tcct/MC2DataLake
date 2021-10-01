@@ -1,6 +1,7 @@
 {
-	"name": "DelimitedText1",
+	"name": "Listado_TablasMaestras",
 	"properties": {
+		"description": "Listado_TablasMaestras.xls",
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorageGen2",
 			"type": "LinkedServiceReference"
