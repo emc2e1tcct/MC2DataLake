@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "MC2Factory"
+		},
+		"MC2Dataverse_servicePrincipalCredential": {
+			"value": ""
+		},
+		"AzureDataLakeStorageGen2_accountKey": {
+			"value": ""
+		},
+		"MC2Dataverse_properties_typeProperties_servicePrincipalId": {
+			"value": "f16b031b-29a7-4264-8271-f2844c7b7084"
+		},
+		"AzureDataLakeStorageGen2_properties_typeProperties_url": {
+			"value": "https://mc2datalake.dfs.core.windows.net"
+		},
+		"MC2AzureKeyVault_properties_typeProperties_baseUrl": {
+			"value": "https://kvMC2.vault.azure.net/"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

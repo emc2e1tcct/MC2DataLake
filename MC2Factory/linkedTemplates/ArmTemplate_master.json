@@ -1,0 +1,77 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Nombre de instancia de Data Factory",
+			"defaultValue": "MC2Factory"
+		},
+		"MC2Dataverse_servicePrincipalCredential": {
+			"type": "secureString",
+			"metadata": "Cadena protegida para \"servicePrincipalCredential\"de \"MC2Dataverse\""
+		},
+		"AzureDataLakeStorageGen2_accountKey": {
+			"type": "secureString",
+			"metadata": "Cadena protegida para \"accountKey\"de \"AzureDataLakeStorageGen2\""
+		},
+		"MC2Dataverse_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "f16b031b-29a7-4264-8271-f2844c7b7084"
+		},
+		"AzureDataLakeStorageGen2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://mc2datalake.dfs.core.windows.net"
+		},
+		"MC2AzureKeyVault_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://kvMC2.vault.azure.net/"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI de la cuenta de almacenamiento que contiene las plantillas de ARM vinculadas."
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Token de SAS para la cuenta de almacenamiento que contiene las plantillas de ARM vinculadas"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "MC2Factory_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"MC2Dataverse_servicePrincipalCredential": {
+						"value": "[parameters('MC2Dataverse_servicePrincipalCredential')]"
+					},
+					"AzureDataLakeStorageGen2_accountKey": {
+						"value": "[parameters('AzureDataLakeStorageGen2_accountKey')]"
+					},
+					"MC2Dataverse_properties_typeProperties_servicePrincipalId": {
+						"value": "[parameters('MC2Dataverse_properties_typeProperties_servicePrincipalId')]"
+					},
+					"AzureDataLakeStorageGen2_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorageGen2_properties_typeProperties_url')]"
+					},
+					"MC2AzureKeyVault_properties_typeProperties_baseUrl": {
+						"value": "[parameters('MC2AzureKeyVault_properties_typeProperties_baseUrl')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
