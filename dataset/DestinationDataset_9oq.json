@@ -1,0 +1,23 @@
+{
+	"name": "DestinationDataset_9oq",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureTableStoragePrueba",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"cw_tableName": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "AzureTable",
+		"schema": [],
+		"typeProperties": {
+			"tableName": {
+				"value": "@dataset().cw_tableName",
+				"type": "Expression"
+			}
+		}
+	}
+}
