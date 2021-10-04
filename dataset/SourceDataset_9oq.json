@@ -7,7 +7,7 @@
 		},
 		"parameters": {
 			"cw_entityName": {
-				"type": "String"
+				"type": "string"
 			}
 		},
 		"annotations": [],
