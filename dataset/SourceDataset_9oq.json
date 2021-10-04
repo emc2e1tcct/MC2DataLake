@@ -1,0 +1,23 @@
+{
+	"name": "SourceDataset_9oq",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "MC2Dataverse",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"cw_entityName": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "CommonDataServiceForAppsEntity",
+		"schema": [],
+		"typeProperties": {
+			"entityName": {
+				"value": "@dataset().cw_entityName",
+				"type": "Expression"
+			}
+		}
+	}
+}
