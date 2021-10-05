@@ -1,0 +1,103 @@
+{
+	"name": "CopyPipeline_v4v",
+	"properties": {
+		"activities": [
+			{
+				"name": "ForEach_v4v",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@pipeline().parameters.cw_items",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "Copy_v4v",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [
+								{
+									"name": "Source",
+									"value": "@{item().source.entityName}"
+								},
+								{
+									"name": "Destination",
+									"value": "mc2-bs-dev-bronze/Pruebas/@{item().destination.fileName}"
+								}
+							],
+							"typeProperties": {
+								"source": {
+									"type": "CommonDataServiceForAppsSource"
+								},
+								"sink": {
+									"type": "DelimitedTextSink",
+									"storeSettings": {
+										"type": "AzureBlobFSWriteSettings"
+									},
+									"formatSettings": {
+										"type": "DelimitedTextWriteSettings",
+										"quoteAllText": true,
+										"fileExtension": ".txt"
+									}
+								},
+								"enableStaging": false,
+								"validateDataConsistency": false
+							},
+							"inputs": [
+								{
+									"referenceName": "SourceDataset_v4v",
+									"type": "DatasetReference",
+									"parameters": {
+										"cw_entityName": "@item().source.entityName"
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "DestinationDataset_v4v",
+									"type": "DatasetReference",
+									"parameters": {
+										"cw_fileName": "@item().destination.fileName"
+									}
+								}
+							]
+						}
+					]
+				}
+			}
+		],
+		"parameters": {
+			"cw_items": {
+				"type": "Array",
+				"defaultValue": [
+					{
+						"source": {
+							"entityName": "mc2_maestro_ceco"
+						},
+						"destination": {
+							"fileName": "mc2_maestro_ceco.csv"
+						}
+					},
+					{
+						"source": {
+							"entityName": "mc2_maestro_perfil"
+						},
+						"destination": {
+							"fileName": "mc2_maestro_perfil.csv"
+						}
+					}
+				]
+			}
+		},
+		"annotations": []
+	}
+}
