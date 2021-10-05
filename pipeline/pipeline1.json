@@ -1,0 +1,264 @@
+{
+	"name": "pipeline1",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "entity"
+					},
+					{
+						"name": "Destination",
+						"value": "mc2-bs-dev-bronze/Pruebas/"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "CommonDataServiceForAppsSource"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "addresstablename",
+									"type": "String"
+								},
+								"sink": {
+									"name": "addresstablename",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "basetablename",
+									"type": "String"
+								},
+								"sink": {
+									"name": "basetablename",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "collectionname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "collectionname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "componentstate",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "componentstate",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "entityid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "entityid",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "entitysetname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "entitysetname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "extensiontablename",
+									"type": "String"
+								},
+								"sink": {
+									"name": "extensiontablename",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "externalcollectionname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "externalcollectionname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "externalname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "externalname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "logicalcollectionname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "logicalcollectionname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "logicalname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "logicalname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "name",
+									"type": "String"
+								},
+								"sink": {
+									"name": "name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "originallocalizedcollectionname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "originallocalizedcollectionname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "originallocalizedname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "originallocalizedname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "overwritetime",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "overwritetime",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "parentcontrollingattributename",
+									"type": "String"
+								},
+								"sink": {
+									"name": "parentcontrollingattributename",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "physicalname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "physicalname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "reportviewname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "reportviewname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "solutionid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "solutionid",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "versionnumber",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "versionnumber",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DataverseEntity1",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DelimitedText1",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}

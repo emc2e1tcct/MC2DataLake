@@ -1,0 +1,15 @@
+{
+	"name": "DataverseEntity1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "MC2Dataverse",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "CommonDataServiceForAppsEntity",
+		"schema": [],
+		"typeProperties": {
+			"entityName": "mc2_maestro_producto"
+		}
+	}
+}
