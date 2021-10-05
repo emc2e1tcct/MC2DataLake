@@ -14,10 +14,7 @@
 		"type": "CommonDataServiceForAppsEntity",
 		"schema": [],
 		"typeProperties": {
-			"entityName": {
-				"value": "@dataset().cw_entityName",
-				"type": "Expression"
-			}
+			"entityName": "entity"
 		}
 	}
 }
