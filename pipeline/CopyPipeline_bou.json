@@ -4,6 +4,7 @@
 		"activities": [
 			{
 				"name": "ForEach_bou",
+				"description": "Bucle que copia tablas de un origen",
 				"type": "ForEach",
 				"dependsOn": [],
 				"userProperties": [],
@@ -15,6 +16,7 @@
 					"activities": [
 						{
 							"name": "Copy_bou",
+							"description": "Actividad de la copia  de tablas",
 							"type": "Copy",
 							"dependsOn": [],
 							"policy": {
