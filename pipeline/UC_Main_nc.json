@@ -1,38 +1,38 @@
 {
-    "name": "UC_Main_nc",
-    "properties": {
-        "activities": [
-            {
-                "name": "Carga",
-                "type": "ExecutePipeline",
-                "dependsOn": [],
-                "userProperties": [],
-                "typeProperties": {
-                    "pipeline": {
-                        "referenceName": "UC_Carga_nc",
-                        "type": "PipelineReference"
-                    },
-                    "waitOnCompletion": true,
-                    "parameters": {
-                        "main_pipeline_run_id": {
-                            "value": "@pipeline().RunId",
-                            "type": "Expression"
-                        }
-                    }
-                }
-            }
-        ],
-        "parameters": {
-            "debug": {
-                "type": "bool",
-                "defaultValue": true
-            }
-        },
-        "folder": {
-            "name": "new_case"
-        },
-        "annotations": [],
-        "lastPublishTime": "2021-09-14T06:42:57Z"
-    },
-    "type": "Microsoft.Synapse/workspaces/pipelines"
+	"name": "UC_Main_nc",
+	"properties": {
+		"activities": [
+			{
+				"name": "Carga",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "UC_Carga_nc",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"main_pipeline_run_id": {
+							"value": "@pipeline().RunId",
+							"type": "Expression"
+						}
+					}
+				}
+			}
+		],
+		"parameters": {
+			"debug": {
+				"type": "bool",
+				"defaultValue": true
+			}
+		},
+		"folder": {
+			"name": "new_case"
+		},
+		"annotations": [],
+		"lastPublishTime": "2021-09-14T06:42:57Z"
+	},
+	"type": "Microsoft.Synapse/workspaces/pipelines"
 }
