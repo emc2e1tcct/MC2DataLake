@@ -1,0 +1,45 @@
+{
+    "name": "raw_error",
+    "properties": {
+        "linkedServiceName": {
+            "referenceName": "informacional-WorkspaceDefaultStorage",
+            "type": "LinkedServiceReference"
+        },
+        "parameters": {
+            "partition_path": {
+                "type": "string"
+            },
+            "file_name": {
+                "type": "string"
+            },
+            "dl_root_path": {
+                "type": "string"
+            },
+            "entity": {
+                "type": "string"
+            }
+        },
+        "annotations": [],
+        "type": "DelimitedText",
+        "typeProperties": {
+            "location": {
+                "type": "AzureBlobFSLocation",
+                "fileName": {
+                    "value": "@dataset().file_name",
+                    "type": "Expression"
+                },
+                "folderPath": {
+                    "value": "@concat('error/',dataset().dl_root_path,'/',dataset().entity,'/',dataset().partition_path)",
+                    "type": "Expression"
+                },
+                "fileSystem": "ucraw"
+            },
+            "columnDelimiter": ",",
+            "escapeChar": "\\",
+            "firstRowAsHeader": true,
+            "quoteChar": ""
+        },
+        "schema": []
+    },
+    "type": "Microsoft.Synapse/workspaces/datasets"
+}

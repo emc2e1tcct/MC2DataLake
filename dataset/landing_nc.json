@@ -1,0 +1,45 @@
+{
+    "name": "landing_nc",
+    "properties": {
+        "linkedServiceName": {
+            "referenceName": "informacional-WorkspaceDefaultStorage",
+            "type": "LinkedServiceReference"
+        },
+        "parameters": {
+            "entity": {
+                "type": "string"
+            },
+            "dl_root_path": {
+                "type": "string"
+            },
+            "filename": {
+                "type": "string"
+            }
+        },
+        "folder": {
+            "name": "NC"
+        },
+        "annotations": [],
+        "type": "DelimitedText",
+        "typeProperties": {
+            "location": {
+                "type": "AzureBlobFSLocation",
+                "fileName": {
+                    "value": "@dataset().filename",
+                    "type": "Expression"
+                },
+                "folderPath": {
+                    "value": "@concat(dataset().dl_root_path,'/',dataset().entity)",
+                    "type": "Expression"
+                },
+                "fileSystem": "uclanding"
+            },
+            "columnDelimiter": ";",
+            "escapeChar": "\\",
+            "firstRowAsHeader": true,
+            "quoteChar": ""
+        },
+        "schema": []
+    },
+    "type": "Microsoft.Synapse/workspaces/datasets"
+}
