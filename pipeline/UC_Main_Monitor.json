@@ -1,0 +1,227 @@
+{
+    "name": "UC_Main_Monitor",
+    "properties": {
+        "activities": [
+            {
+                "name": "Check if debug",
+                "type": "IfCondition",
+                "dependsOn": [],
+                "userProperties": [],
+                "typeProperties": {
+                    "expression": {
+                        "value": "@pipeline().parameters.debug",
+                        "type": "Expression"
+                    },
+                    "ifTrueActivities": [
+                        {
+                            "name": "Call Monitor",
+                            "type": "ExecutePipeline",
+                            "dependsOn": [],
+                            "userProperties": [],
+                            "typeProperties": {
+                                "pipeline": {
+                                    "referenceName": "UC_Monitor",
+                                    "type": "PipelineReference"
+                                },
+                                "waitOnCompletion": true,
+                                "parameters": {
+                                    "activity": {
+                                        "value": "@pipeline().parameters.activity",
+                                        "type": "Expression"
+                                    },
+                                    "activity_name": {
+                                        "value": "@pipeline().parameters.activity_name",
+                                        "type": "Expression"
+                                    },
+                                    "mon_schema": {
+                                        "value": "@pipeline().parameters.mon_schema",
+                                        "type": "Expression"
+                                    },
+                                    "mon_table_name": {
+                                        "value": "@pipeline().parameters.mon_table_name",
+                                        "type": "Expression"
+                                    },
+                                    "main_pipeline_run_id": {
+                                        "value": "@pipeline().parameters.main_pipeline_run_id",
+                                        "type": "Expression"
+                                    },
+                                    "schema": {
+                                        "value": "@pipeline().parameters.schema",
+                                        "type": "Expression"
+                                    },
+                                    "entity": {
+                                        "value": "@pipeline().parameters.entity",
+                                        "type": "Expression"
+                                    },
+                                    "load_type": {
+                                        "value": "@pipeline().parameters.load_type",
+                                        "type": "Expression"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        ],
+        "parameters": {
+            "activity": {
+                "type": "object",
+                "defaultValue": {
+                    "PipelineName": "test_mon_logging",
+                    "PipelineRunId": "5b68fea6-4024-4748-b01c-0740e0fb2903",
+                    "JobId": "5b68fea6-4024-4748-b01c-0740e0fb2903",
+                    "ActivityRunId": "ea113c6c-1083-411a-bc48-938f31b060e6",
+                    "ExecutionStartTime": "2021-09-20T09:18:21.8237879Z",
+                    "ExecutionEndTime": "2021-09-20T09:19:09.4075665Z",
+                    "Status": "Failed",
+                    "Error": {
+                        "errorCode": "2200",
+                        "message": "ErrorCode=UserErrorFileNotFound,'Type=Microsoft.DataTransfer.Common.Shared.HybridDeliveryException,Message=ADLS Gen2 operation failed for: Operation returned an invalid status code 'NotFound'. Account: 'dlinformacional'. FileSystem: 'landing'. Path: 'monitoring/test/test.csv'. ErrorCode: 'PathNotFound'. Message: 'The specified path does not exist.'. RequestId: 'bae8919d-a01f-005a-4e00-aec9ce000000'. TimeStamp: 'Mon, 20 Sep 2021 09:19:08 GMT'.,Source=Microsoft.DataTransfer.ClientLibrary,''Type=Microsoft.Azure.Storage.Data.Models.ErrorSchemaException,Message=Operation returned an invalid status code 'NotFound',Source=Microsoft.DataTransfer.ClientLibrary,'",
+                        "failureType": "UserError",
+                        "target": "Copy data1",
+                        "details": []
+                    },
+                    "Output": {
+                        "dataRead": 0,
+                        "dataWritten": 0,
+                        "filesRead": 0,
+                        "filesWritten": 0,
+                        "sourcePeakConnections": 1,
+                        "sinkPeakConnections": 1,
+                        "copyDuration": 46,
+                        "throughput": 0,
+                        "logFilePath": "logs/monitor/copyactivity-logs/Copy data1/ea113c6c-1083-411a-bc48-938f31b060e6/",
+                        "errors": [
+                            {
+                                "Code": 9012,
+                                "Message": "ErrorCode=UserErrorFileNotFound,'Type=Microsoft.DataTransfer.Common.Shared.HybridDeliveryException,Message=ADLS Gen2 operation failed for: Operation returned an invalid status code 'NotFound'. Account: 'dlinformacional'. FileSystem: 'landing'. Path: 'monitoring/test/test.csv'. ErrorCode: 'PathNotFound'. Message: 'The specified path does not exist.'. RequestId: 'bae8919d-a01f-005a-4e00-aec9ce000000'. TimeStamp: 'Mon, 20 Sep 2021 09:19:08 GMT'.,Source=Microsoft.DataTransfer.ClientLibrary,''Type=Microsoft.Azure.Storage.Data.Models.ErrorSchemaException,Message=Operation returned an invalid status code 'NotFound',Source=Microsoft.DataTransfer.ClientLibrary,'",
+                                "EventType": 0,
+                                "Category": 5,
+                                "MsgId": null,
+                                "ExceptionType": null,
+                                "Source": null,
+                                "StackTrace": null,
+                                "InnerEventInfos": []
+                            }
+                        ],
+                        "effectiveIntegrationRuntime": "AutoResolveIntegrationRuntime (West Europe)",
+                        "usedDataIntegrationUnits": 4,
+                        "billingReference": {
+                            "activityType": "DataMovement",
+                            "billableDuration": [
+                                {
+                                    "meterType": "ManagedVNetIR",
+                                    "duration": 0.06666666666666667,
+                                    "unit": "DIUHours"
+                                }
+                            ]
+                        },
+                        "usedParallelCopies": 1,
+                        "executionDetails": [
+                            {
+                                "source": {
+                                    "type": "AzureBlobFS",
+                                    "region": "West Europe"
+                                },
+                                "sink": {
+                                    "type": "AzureBlobFS",
+                                    "region": "West Europe"
+                                },
+                                "status": "Failed",
+                                "start": "2021-09-20T09:18:22.0369752Z",
+                                "duration": 46,
+                                "usedDataIntegrationUnits": 4,
+                                "usedParallelCopies": 1,
+                                "profile": {
+                                    "queue": {
+                                        "status": "Completed",
+                                        "duration": 43
+                                    },
+                                    "transfer": {
+                                        "status": "Completed",
+                                        "duration": 2,
+                                        "details": {
+                                            "listingSource": {
+                                                "type": "AzureBlobFS",
+                                                "workingDuration": 0
+                                            },
+                                            "readingFromSource": {
+                                                "type": "AzureBlobFS",
+                                                "workingDuration": 0
+                                            },
+                                            "writingToSink": {
+                                                "type": "AzureBlobFS",
+                                                "workingDuration": 0
+                                            }
+                                        }
+                                    }
+                                },
+                                "detailedDurations": {
+                                    "queuingDuration": 43,
+                                    "transferDuration": 2
+                                }
+                            }
+                        ],
+                        "dataConsistencyVerification": {
+                            "VerificationResult": "NotVerified"
+                        },
+                        "durationInQueue": {
+                            "integrationRuntimeQueue": 0
+                        }
+                    },
+                    "ExecutionDetails": {
+                        "integrationRuntime": [
+                            {
+                                "name": "AutoResolveIntegrationRuntime",
+                                "type": "Managed",
+                                "location": "AutoResolve",
+                                "nodes": null
+                            }
+                        ]
+                    },
+                    "StatusCode": 400,
+                    "ExecutionStatus": "Fail",
+                    "Duration": "00:00:47.5837786",
+                    "RecoveryStatus": "None"
+                }
+            },
+            "activity_name": {
+                "type": "string",
+                "defaultValue": "Test11111111111"
+            },
+            "mon_schema": {
+                "type": "string",
+                "defaultValue": "mng"
+            },
+            "mon_table_name": {
+                "type": "string",
+                "defaultValue": "monitor_execs"
+            },
+            "main_pipeline_run_id": {
+                "type": "string",
+                "defaultValue": "111111111111111111111111111"
+            },
+            "schema": {
+                "type": "string",
+                "defaultValue": "dw"
+            },
+            "entity": {
+                "type": "string",
+                "defaultValue": "entity_test"
+            },
+            "load_type": {
+                "type": "string",
+                "defaultValue": "TOTAL"
+            },
+            "debug": {
+                "type": "bool",
+                "defaultValue": true
+            }
+        },
+        "folder": {
+            "name": "new_case/Monitor"
+        },
+        "annotations": []
+    }
+}

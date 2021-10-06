@@ -1,0 +1,769 @@
+{
+    "name": "UC_RAWToCommon_nc",
+    "properties": {
+        "activities": [
+            {
+                "name": "Check Load Type",
+                "description": "Si la carga es incremental => true\nSi no => False",
+                "type": "IfCondition",
+                "dependsOn": [
+                    {
+                        "activity": "Check if Exists",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "userProperties": [],
+                "typeProperties": {
+                    "expression": {
+                        "value": "@equals(pipeline().parameters.load_type,'INC') ",
+                        "type": "Expression"
+                    },
+                    "ifFalseActivities": [
+                        {
+                            "name": "CARGA TOTAL",
+                            "type": "Copy",
+                            "dependsOn": [],
+                            "policy": {
+                                "timeout": "7.00:00:00",
+                                "retry": 0,
+                                "retryIntervalInSeconds": 30,
+                                "secureOutput": false,
+                                "secureInput": false
+                            },
+                            "userProperties": [],
+                            "typeProperties": {
+                                "source": {
+                                    "type": "DelimitedTextSource",
+                                    "storeSettings": {
+                                        "type": "AzureBlobFSReadSettings",
+                                        "recursive": false,
+                                        "enablePartitionDiscovery": false
+                                    },
+                                    "formatSettings": {
+                                        "type": "DelimitedTextReadSettings"
+                                    }
+                                },
+                                "sink": {
+                                    "type": "SqlPoolSink",
+                                    "preCopyScript": {
+                                        "value": "@{concat('TRUNCATE TABLE ',pipeline().parameters.sink_schema,'.',pipeline().parameters.entity,';')}",
+                                        "type": "Expression"
+                                    },
+                                    "allowCopyCommand": true
+                                },
+                                "enableStaging": true,
+                                "stagingSettings": {
+                                    "linkedServiceName": {
+                                        "referenceName": "informacional-WorkspaceDefaultStorage",
+                                        "type": "LinkedServiceReference"
+                                    },
+                                    "path": {
+                                        "value": "@concat('ucstg/raw/CargaTotal',pipeline().parameters.partition_path)",
+                                        "type": "Expression"
+                                    }
+                                },
+                                "logSettings": {
+                                    "enableCopyActivityLog": true,
+                                    "copyActivityLogSettings": {
+                                        "logLevel": "Warning",
+                                        "enableReliableLogging": false
+                                    },
+                                    "logLocationSettings": {
+                                        "linkedServiceName": {
+                                            "referenceName": "informacional-WorkspaceDefaultStorage",
+                                            "type": "LinkedServiceReference"
+                                        },
+                                        "path": {
+                                            "value": "@concat('uclogs/raw/CargaTotal/',pipeline().parameters.partition_path)",
+                                            "type": "Expression"
+                                        }
+                                    }
+                                }
+                            },
+                            "inputs": [
+                                {
+                                    "referenceName": "raw_nc",
+                                    "type": "DatasetReference",
+                                    "parameters": {
+                                        "filename": {
+                                            "value": "@pipeline().parameters.file_name",
+                                            "type": "Expression"
+                                        },
+                                        "partition_path": {
+                                            "value": "@pipeline().parameters.partition_path",
+                                            "type": "Expression"
+                                        },
+                                        "entity": {
+                                            "value": "@pipeline().parameters.entity",
+                                            "type": "Expression"
+                                        },
+                                        "dl_root_path": {
+                                            "value": "@pipeline().parameters.dl_root_path",
+                                            "type": "Expression"
+                                        }
+                                    }
+                                }
+                            ],
+                            "outputs": [
+                                {
+                                    "referenceName": "SynapseDedicatedPool",
+                                    "type": "DatasetReference",
+                                    "parameters": {
+                                        "schema_name": {
+                                            "value": "@pipeline().parameters.sink_schema",
+                                            "type": "Expression"
+                                        },
+                                        "table_name": {
+                                            "value": "@pipeline().parameters.entity",
+                                            "type": "Expression"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Register Carga Total",
+                            "type": "ExecutePipeline",
+                            "dependsOn": [
+                                {
+                                    "activity": "CARGA TOTAL",
+                                    "dependencyConditions": [
+                                        "Succeeded",
+                                        "Failed"
+                                    ]
+                                }
+                            ],
+                            "userProperties": [],
+                            "typeProperties": {
+                                "pipeline": {
+                                    "referenceName": "UC_Main_Monitor",
+                                    "type": "PipelineReference"
+                                },
+                                "waitOnCompletion": true,
+                                "parameters": {
+                                    "activity": {
+                                        "value": "@activity('CARGA TOTAL')",
+                                        "type": "Expression"
+                                    },
+                                    "activity_name": {
+                                        "value": "CARGA TOTAL",
+                                        "type": "Expression"
+                                    },
+                                    "mon_schema": {
+                                        "value": "@pipeline().parameters.mon_schema",
+                                        "type": "Expression"
+                                    },
+                                    "mon_table_name": {
+                                        "value": "@pipeline().parameters.mon_table_name",
+                                        "type": "Expression"
+                                    },
+                                    "main_pipeline_run_id": {
+                                        "value": "@pipeline().parameters.main_pipeline_run_id",
+                                        "type": "Expression"
+                                    },
+                                    "schema": {
+                                        "value": "@pipeline().parameters.schema",
+                                        "type": "Expression"
+                                    },
+                                    "entity": {
+                                        "value": "@pipeline().parameters.entity",
+                                        "type": "Expression"
+                                    },
+                                    "load_type": {
+                                        "value": "@pipeline().parameters.load_type",
+                                        "type": "Expression"
+                                    },
+                                    "debug": {
+                                        "value": "@pipeline().parameters.debug",
+                                        "type": "Expression"
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "ifTrueActivities": [
+                        {
+                            "name": "RAWToCommon",
+                            "type": "Copy",
+                            "dependsOn": [],
+                            "policy": {
+                                "timeout": "7.00:00:00",
+                                "retry": 0,
+                                "retryIntervalInSeconds": 30,
+                                "secureOutput": false,
+                                "secureInput": false
+                            },
+                            "userProperties": [],
+                            "typeProperties": {
+                                "source": {
+                                    "type": "DelimitedTextSource",
+                                    "storeSettings": {
+                                        "type": "AzureBlobFSReadSettings",
+                                        "recursive": false,
+                                        "enablePartitionDiscovery": false
+                                    },
+                                    "formatSettings": {
+                                        "type": "DelimitedTextReadSettings"
+                                    }
+                                },
+                                "sink": {
+                                    "type": "SqlPoolSink",
+                                    "preCopyScript": {
+                                        "value": "@{concat('TRUNCATE TABLE ',pipeline().parameters.sink_schema,'.stg_',pipeline().parameters.entity)}",
+                                        "type": "Expression"
+                                    },
+                                    "allowCopyCommand": true
+                                },
+                                "enableStaging": true,
+                                "stagingSettings": {
+                                    "linkedServiceName": {
+                                        "referenceName": "informacional-WorkspaceDefaultStorage",
+                                        "type": "LinkedServiceReference"
+                                    },
+                                    "path": {
+                                        "value": "@concat('ucstg/raw/RawToCommon',pipeline().parameters.partition_path)",
+                                        "type": "Expression"
+                                    }
+                                },
+                                "logSettings": {
+                                    "enableCopyActivityLog": true,
+                                    "copyActivityLogSettings": {
+                                        "logLevel": "Warning",
+                                        "enableReliableLogging": false
+                                    },
+                                    "logLocationSettings": {
+                                        "linkedServiceName": {
+                                            "referenceName": "informacional-WorkspaceDefaultStorage",
+                                            "type": "LinkedServiceReference"
+                                        },
+                                        "path": {
+                                            "value": "@concat('uclogs/raw/RawToCommon',pipeline().parameters.partition_path)",
+                                            "type": "Expression"
+                                        }
+                                    }
+                                }
+                            },
+                            "inputs": [
+                                {
+                                    "referenceName": "raw_nc",
+                                    "type": "DatasetReference",
+                                    "parameters": {
+                                        "filename": {
+                                            "value": "@pipeline().parameters.file_name",
+                                            "type": "Expression"
+                                        },
+                                        "partition_path": {
+                                            "value": "@pipeline().parameters.partition_path",
+                                            "type": "Expression"
+                                        },
+                                        "entity": {
+                                            "value": "@pipeline().parameters.entity",
+                                            "type": "Expression"
+                                        },
+                                        "dl_root_path": {
+                                            "value": "@pipeline().parameters.dl_root_path",
+                                            "type": "Expression"
+                                        }
+                                    }
+                                }
+                            ],
+                            "outputs": [
+                                {
+                                    "referenceName": "SynapseDedicatedPool",
+                                    "type": "DatasetReference",
+                                    "parameters": {
+                                        "schema_name": {
+                                            "value": "@pipeline().parameters.sink_schema",
+                                            "type": "Expression"
+                                        },
+                                        "table_name": {
+                                            "value": "@concat('stg_',pipeline().parameters.entity)",
+                                            "type": "Expression"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Move to error",
+                            "type": "Copy",
+                            "dependsOn": [
+                                {
+                                    "activity": "RAWToCommon",
+                                    "dependencyConditions": [
+                                        "Failed"
+                                    ]
+                                }
+                            ],
+                            "policy": {
+                                "timeout": "7.00:00:00",
+                                "retry": 0,
+                                "retryIntervalInSeconds": 30,
+                                "secureOutput": false,
+                                "secureInput": false
+                            },
+                            "userProperties": [],
+                            "typeProperties": {
+                                "source": {
+                                    "type": "DelimitedTextSource",
+                                    "storeSettings": {
+                                        "type": "AzureBlobFSReadSettings",
+                                        "recursive": true,
+                                        "enablePartitionDiscovery": false
+                                    },
+                                    "formatSettings": {
+                                        "type": "DelimitedTextReadSettings"
+                                    }
+                                },
+                                "sink": {
+                                    "type": "DelimitedTextSink",
+                                    "storeSettings": {
+                                        "type": "AzureBlobFSWriteSettings"
+                                    },
+                                    "formatSettings": {
+                                        "type": "DelimitedTextWriteSettings",
+                                        "quoteAllText": true,
+                                        "fileExtension": ".txt"
+                                    }
+                                },
+                                "enableStaging": true,
+                                "stagingSettings": {
+                                    "linkedServiceName": {
+                                        "referenceName": "informacional-WorkspaceDefaultStorage",
+                                        "type": "LinkedServiceReference"
+                                    },
+                                    "path": {
+                                        "value": "@concat('ucstg/raw/MoveToError',pipeline().parameters.partition_path)",
+                                        "type": "Expression"
+                                    }
+                                },
+                                "logSettings": {
+                                    "enableCopyActivityLog": true,
+                                    "copyActivityLogSettings": {
+                                        "logLevel": "Warning",
+                                        "enableReliableLogging": false
+                                    },
+                                    "logLocationSettings": {
+                                        "linkedServiceName": {
+                                            "referenceName": "informacional-WorkspaceDefaultStorage",
+                                            "type": "LinkedServiceReference"
+                                        },
+                                        "path": {
+                                            "value": "@concat('uclogs/raw/MoveToError',pipeline().parameters.partition_path)",
+                                            "type": "Expression"
+                                        }
+                                    }
+                                },
+                                "translator": {
+                                    "type": "TabularTranslator",
+                                    "typeConversion": true,
+                                    "typeConversionSettings": {
+                                        "allowDataTruncation": true,
+                                        "treatBooleanAsNumber": false
+                                    }
+                                }
+                            },
+                            "inputs": [
+                                {
+                                    "referenceName": "raw_nc",
+                                    "type": "DatasetReference",
+                                    "parameters": {
+                                        "filename": {
+                                            "value": "@pipeline().parameters.file_name",
+                                            "type": "Expression"
+                                        },
+                                        "partition_path": {
+                                            "value": "@pipeline().parameters.partition_path",
+                                            "type": "Expression"
+                                        },
+                                        "entity": {
+                                            "value": "@pipeline().parameters.entity",
+                                            "type": "Expression"
+                                        },
+                                        "dl_root_path": {
+                                            "value": "@pipeline().parameters.dl_root_path",
+                                            "type": "Expression"
+                                        }
+                                    }
+                                }
+                            ],
+                            "outputs": [
+                                {
+                                    "referenceName": "raw_error",
+                                    "type": "DatasetReference",
+                                    "parameters": {
+                                        "partition_path": {
+                                            "value": "@pipeline().parameters.partition_path",
+                                            "type": "Expression"
+                                        },
+                                        "file_name": {
+                                            "value": "@pipeline().parameters.file_name",
+                                            "type": "Expression"
+                                        },
+                                        "dl_root_path": {
+                                            "value": "@pipeline().parameters.dl_root_path",
+                                            "type": "Expression"
+                                        },
+                                        "entity": {
+                                            "value": "@pipeline().parameters.entity",
+                                            "type": "Expression"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Register RAWToCommon",
+                            "type": "ExecutePipeline",
+                            "dependsOn": [
+                                {
+                                    "activity": "RAWToCommon",
+                                    "dependencyConditions": [
+                                        "Succeeded",
+                                        "Failed"
+                                    ]
+                                }
+                            ],
+                            "userProperties": [],
+                            "typeProperties": {
+                                "pipeline": {
+                                    "referenceName": "UC_Main_Monitor",
+                                    "type": "PipelineReference"
+                                },
+                                "waitOnCompletion": true,
+                                "parameters": {
+                                    "activity": {
+                                        "value": "@activity('RAWToCommon')",
+                                        "type": "Expression"
+                                    },
+                                    "activity_name": {
+                                        "value": "RAWToCommon",
+                                        "type": "Expression"
+                                    },
+                                    "mon_schema": {
+                                        "value": "@pipeline().parameters.mon_schema",
+                                        "type": "Expression"
+                                    },
+                                    "mon_table_name": {
+                                        "value": "@pipeline().parameters.mon_table_name",
+                                        "type": "Expression"
+                                    },
+                                    "main_pipeline_run_id": {
+                                        "value": "@pipeline().parameters.main_pipeline_run_id",
+                                        "type": "Expression"
+                                    },
+                                    "schema": {
+                                        "value": "@pipeline().parameters.schema",
+                                        "type": "Expression"
+                                    },
+                                    "entity": {
+                                        "value": "@pipeline().parameters.entity",
+                                        "type": "Expression"
+                                    },
+                                    "load_type": {
+                                        "value": "@pipeline().parameters.load_type",
+                                        "type": "Expression"
+                                    },
+                                    "debug": {
+                                        "value": "@pipeline().parameters.debug",
+                                        "type": "Expression"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "name": "Register RAW MoveToError",
+                            "type": "ExecutePipeline",
+                            "dependsOn": [
+                                {
+                                    "activity": "Move to error",
+                                    "dependencyConditions": [
+                                        "Succeeded",
+                                        "Failed"
+                                    ]
+                                }
+                            ],
+                            "userProperties": [],
+                            "typeProperties": {
+                                "pipeline": {
+                                    "referenceName": "UC_Main_Monitor",
+                                    "type": "PipelineReference"
+                                },
+                                "waitOnCompletion": true,
+                                "parameters": {
+                                    "activity": {
+                                        "value": "@activity('Move to error')",
+                                        "type": "Expression"
+                                    },
+                                    "activity_name": {
+                                        "value": "RAW MoveToError",
+                                        "type": "Expression"
+                                    },
+                                    "mon_schema": {
+                                        "value": "@pipeline().parameters.mon_schema",
+                                        "type": "Expression"
+                                    },
+                                    "mon_table_name": {
+                                        "value": "@pipeline().parameters.mon_table_name",
+                                        "type": "Expression"
+                                    },
+                                    "main_pipeline_run_id": {
+                                        "value": "@pipeline().parameters.main_pipeline_run_id",
+                                        "type": "Expression"
+                                    },
+                                    "schema": {
+                                        "value": "@pipeline().parameters.schema",
+                                        "type": "Expression"
+                                    },
+                                    "entity": {
+                                        "value": "@pipeline().parameters.entity",
+                                        "type": "Expression"
+                                    },
+                                    "load_type": {
+                                        "value": "@pipeline().parameters.load_type",
+                                        "type": "Expression"
+                                    },
+                                    "debug": {
+                                        "value": "@pipeline().parameters.debug",
+                                        "type": "Expression"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "RAW Get File exists",
+                "type": "GetMetadata",
+                "dependsOn": [],
+                "policy": {
+                    "timeout": "7.00:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "userProperties": [],
+                "typeProperties": {
+                    "dataset": {
+                        "referenceName": "raw_nc",
+                        "type": "DatasetReference",
+                        "parameters": {
+                            "filename": {
+                                "value": "@pipeline().parameters.file_name",
+                                "type": "Expression"
+                            },
+                            "partition_path": {
+                                "value": "@pipeline().parameters.partition_path",
+                                "type": "Expression"
+                            },
+                            "entity": {
+                                "value": "@pipeline().parameters.entity",
+                                "type": "Expression"
+                            },
+                            "dl_root_path": {
+                                "value": "@pipeline().parameters.dl_root_path",
+                                "type": "Expression"
+                            }
+                        }
+                    },
+                    "fieldList": [
+                        "exists"
+                    ],
+                    "storeSettings": {
+                        "type": "AzureBlobFSReadSettings",
+                        "recursive": true,
+                        "enablePartitionDiscovery": false
+                    },
+                    "formatSettings": {
+                        "type": "DelimitedTextReadSettings"
+                    }
+                }
+            },
+            {
+                "name": "Check if Exists",
+                "type": "IfCondition",
+                "dependsOn": [
+                    {
+                        "activity": "RAW Get File exists",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "userProperties": [],
+                "typeProperties": {
+                    "expression": {
+                        "value": "@activity('RAW Get File exists').output.exists",
+                        "type": "Expression"
+                    },
+                    "ifFalseActivities": [
+                        {
+                            "name": "RAW Register File Not Exists",
+                            "type": "ExecutePipeline",
+                            "dependsOn": [],
+                            "userProperties": [],
+                            "typeProperties": {
+                                "pipeline": {
+                                    "referenceName": "UC_Main_Monitor",
+                                    "type": "PipelineReference"
+                                },
+                                "waitOnCompletion": true,
+                                "parameters": {
+                                    "activity": {
+                                        "value": "@json(concat('{\"PipelineName\": \"Mon_LandingToCommon\",\"PipelineRunId\": \"',pipeline().RunId,'\",\"ActivityRunId\": \"',activity('RAW Get File exists').ActivityRunId,'\",\"ExecutionStartTime\": \"',formatDateTime(activity('RAW Get File exists').ExecutionStartTime,'yyyy-MM-ddThh:mm:ss'),'\",\"ExecutionEndTime\": \"',formatDateTime(activity('RAW Get File exists').ExecutionEndTime,'yyyy-MM-ddThh:mm:ss'),'\",\"Status\": \"Failed\",\"Duration\": ''00:00:00.000'',\"Error\": {\"errorCode\": \"2200\",\"message\": \"RAW File not exists\",\"failureType\": \"UserError\",\"target\": \"RAW Get File Exists\"}}'))\n",
+                                        "type": "Expression"
+                                    },
+                                    "activity_name": {
+                                        "value": "RAW File Not Exists",
+                                        "type": "Expression"
+                                    },
+                                    "mon_schema": {
+                                        "value": "@pipeline().parameters.mon_schema",
+                                        "type": "Expression"
+                                    },
+                                    "mon_table_name": {
+                                        "value": "@pipeline().parameters.mon_table_name",
+                                        "type": "Expression"
+                                    },
+                                    "main_pipeline_run_id": {
+                                        "value": "@pipeline().parameters.main_pipeline_run_id",
+                                        "type": "Expression"
+                                    },
+                                    "schema": {
+                                        "value": "@pipeline().parameters.schema",
+                                        "type": "Expression"
+                                    },
+                                    "entity": {
+                                        "value": "@pipeline().parameters.entity",
+                                        "type": "Expression"
+                                    },
+                                    "load_type": {
+                                        "value": "@pipeline().parameters.load_type",
+                                        "type": "Expression"
+                                    },
+                                    "debug": {
+                                        "value": "@pipeline().parameters.debug",
+                                        "type": "Expression"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Register RAW Get File exists",
+                "type": "ExecutePipeline",
+                "dependsOn": [
+                    {
+                        "activity": "RAW Get File exists",
+                        "dependencyConditions": [
+                            "Succeeded",
+                            "Failed"
+                        ]
+                    }
+                ],
+                "userProperties": [],
+                "typeProperties": {
+                    "pipeline": {
+                        "referenceName": "UC_Main_Monitor",
+                        "type": "PipelineReference"
+                    },
+                    "waitOnCompletion": true,
+                    "parameters": {
+                        "activity": {
+                            "value": "@activity('RAW Get File exists')",
+                            "type": "Expression"
+                        },
+                        "activity_name": {
+                            "value": "RAW Get File exists",
+                            "type": "Expression"
+                        },
+                        "mon_schema": {
+                            "value": "@pipeline().parameters.mon_schema",
+                            "type": "Expression"
+                        },
+                        "mon_table_name": {
+                            "value": "@pipeline().parameters.mon_table_name",
+                            "type": "Expression"
+                        },
+                        "main_pipeline_run_id": {
+                            "value": "@pipeline().parameters.main_pipeline_run_id",
+                            "type": "Expression"
+                        },
+                        "schema": {
+                            "value": "@pipeline().parameters.schema",
+                            "type": "Expression"
+                        },
+                        "entity": {
+                            "value": "@pipeline().parameters.entity",
+                            "type": "Expression"
+                        },
+                        "load_type": {
+                            "value": "@pipeline().parameters.load_type",
+                            "type": "Expression"
+                        },
+                        "debug": {
+                            "value": "@pipeline().parameters.debug",
+                            "type": "Expression"
+                        }
+                    }
+                }
+            }
+        ],
+        "parameters": {
+            "entity": {
+                "type": "string"
+            },
+            "dl_root_path": {
+                "type": "string"
+            },
+            "file_name": {
+                "type": "string"
+            },
+            "sink_schema": {
+                "type": "string"
+            },
+            "sink_table_name": {
+                "type": "string"
+            },
+            "load_type": {
+                "type": "string"
+            },
+            "partition_path": {
+                "type": "string"
+            },
+            "main_pipeline_run_id": {
+                "type": "string"
+            },
+            "schema": {
+                "type": "string"
+            },
+            "debug": {
+                "type": "bool",
+                "defaultValue": true
+            },
+            "mon_schema": {
+                "type": "string"
+            },
+            "mon_table_name": {
+                "type": "string"
+            }
+        },
+        "variables": {
+            "temp": {
+                "type": "String"
+            }
+        },
+        "folder": {
+            "name": "new_case/Steps"
+        },
+        "annotations": [],
+        "lastPublishTime": "2021-09-14T07:10:15Z"
+    },
+    "type": "Microsoft.Synapse/workspaces/pipelines"
+}

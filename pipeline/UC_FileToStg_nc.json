@@ -1,0 +1,312 @@
+{
+    "name": "UC_FileToStg_nc",
+    "properties": {
+        "activities": [
+            {
+                "name": "LandingToRAW",
+                "type": "ExecutePipeline",
+                "dependsOn": [
+                    {
+                        "activity": "Get Entity Metadata",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    },
+                    {
+                        "activity": "Set partition path with current date",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "userProperties": [],
+                "typeProperties": {
+                    "pipeline": {
+                        "referenceName": "UC_LandingToRAW_nc",
+                        "type": "PipelineReference"
+                    },
+                    "waitOnCompletion": true,
+                    "parameters": {
+                        "entity": {
+                            "value": "@pipeline().parameters.entity",
+                            "type": "Expression"
+                        },
+                        "dl_root_path": {
+                            "value": "@pipeline().parameters.dl_root_path",
+                            "type": "Expression"
+                        },
+                        "file_name": {
+                            "value": "@pipeline().parameters.file_name",
+                            "type": "Expression"
+                        },
+                        "schema": {
+                            "value": "@pipeline().parameters.schema",
+                            "type": "Expression"
+                        },
+                        "control_schema": {
+                            "value": "@pipeline().parameters.control_schema",
+                            "type": "Expression"
+                        },
+                        "control_table": {
+                            "value": "@pipeline().parameters.control_table",
+                            "type": "Expression"
+                        },
+                        "partition_path": {
+                            "value": "@variables('partition_path')",
+                            "type": "Expression"
+                        },
+                        "main_pipeline_run_id": {
+                            "value": "@pipeline().parameters.main_pipeline_run_id",
+                            "type": "Expression"
+                        },
+                        "load_type": {
+                            "value": "@activity('Get Entity Metadata').output.firstRow.table_type",
+                            "type": "Expression"
+                        },
+                        "debug": {
+                            "value": "@pipeline().parameters.debug",
+                            "type": "Expression"
+                        },
+                        "mon_schema": {
+                            "value": "@pipeline().parameters.mon_schema",
+                            "type": "Expression"
+                        },
+                        "mon_table_name": {
+                            "value": "@pipeline().parameters.mon_table_name",
+                            "type": "Expression"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "RAWToCommon",
+                "type": "ExecutePipeline",
+                "dependsOn": [
+                    {
+                        "activity": "LandingToRAW",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "userProperties": [],
+                "typeProperties": {
+                    "pipeline": {
+                        "referenceName": "UC_RAWToCommon_nc",
+                        "type": "PipelineReference"
+                    },
+                    "waitOnCompletion": true,
+                    "parameters": {
+                        "entity": {
+                            "value": "@pipeline().parameters.entity",
+                            "type": "Expression"
+                        },
+                        "dl_root_path": {
+                            "value": "@pipeline().parameters.dl_root_path",
+                            "type": "Expression"
+                        },
+                        "file_name": {
+                            "value": "@pipeline().parameters.file_name",
+                            "type": "Expression"
+                        },
+                        "sink_schema": {
+                            "value": "@pipeline().parameters.sink_schema",
+                            "type": "Expression"
+                        },
+                        "sink_table_name": {
+                            "value": "@pipeline().parameters.sink_table_name",
+                            "type": "Expression"
+                        },
+                        "load_type": {
+                            "value": "@activity('Get Entity Metadata').output.firstRow.table_type",
+                            "type": "Expression"
+                        },
+                        "partition_path": {
+                            "value": "@variables('partition_path')",
+                            "type": "Expression"
+                        },
+                        "main_pipeline_run_id": {
+                            "value": "@pipeline().parameters.main_pipeline_run_id",
+                            "type": "Expression"
+                        },
+                        "schema": {
+                            "value": "@pipeline().parameters.schema",
+                            "type": "Expression"
+                        },
+                        "debug": {
+                            "value": "@pipeline().parameters.debug",
+                            "type": "Expression"
+                        },
+                        "mon_schema": {
+                            "value": "@pipeline().parameters.mon_schema",
+                            "type": "Expression"
+                        },
+                        "mon_table_name": {
+                            "value": "@pipeline().parameters.mon_table_name",
+                            "type": "Expression"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "Get Entity Metadata",
+                "type": "Lookup",
+                "dependsOn": [],
+                "policy": {
+                    "timeout": "7.00:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "userProperties": [],
+                "typeProperties": {
+                    "source": {
+                        "type": "SqlPoolSource",
+                        "sqlReaderQuery": {
+                            "value": "@concat('SELECT * FROM ',pipeline().parameters.control_schema,'.',pipeline().parameters.control_table,' WHERE \"schema\"=''',pipeline().parameters.schema,''' AND table_name=''',pipeline().parameters.entity,''';')",
+                            "type": "Expression"
+                        },
+                        "queryTimeout": "02:00:00"
+                    },
+                    "dataset": {
+                        "referenceName": "SynapseDedicatedPool",
+                        "type": "DatasetReference",
+                        "parameters": {
+                            "schema_name": {
+                                "value": "@pipeline().parameters.control_schema",
+                                "type": "Expression"
+                            },
+                            "table_name": {
+                                "value": "@pipeline().parameters.control_table",
+                                "type": "Expression"
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "name": "Set partition path with current date",
+                "type": "SetVariable",
+                "dependsOn": [],
+                "userProperties": [],
+                "typeProperties": {
+                    "variableName": "partition_path",
+                    "value": {
+                        "value": "@concat(split(formatDateTime(convertTimeZone(utcnow(),'UTC','Romance Standard Time'),'yyyy-MM-dd'),'-')[0],'/',split(formatDateTime(convertTimeZone(utcnow(),'UTC','Romance Standard Time'),'yyyy-MM-dd'),'-')[1],'/',split(formatDateTime(convertTimeZone(utcnow(),'UTC','Romance Standard Time'),'yyyy-MM-dd'),'-')[2])",
+                        "type": "Expression"
+                    }
+                }
+            },
+            {
+                "name": "Register Get Entity Metadata",
+                "type": "ExecutePipeline",
+                "dependsOn": [
+                    {
+                        "activity": "Get Entity Metadata",
+                        "dependencyConditions": [
+                            "Succeeded",
+                            "Failed"
+                        ]
+                    }
+                ],
+                "userProperties": [],
+                "typeProperties": {
+                    "pipeline": {
+                        "referenceName": "UC_Main_Monitor",
+                        "type": "PipelineReference"
+                    },
+                    "waitOnCompletion": true,
+                    "parameters": {
+                        "activity": {
+                            "value": "@activity('Get Entity Metadata')",
+                            "type": "Expression"
+                        },
+                        "activity_name": {
+                            "value": "Get Entity Metadata",
+                            "type": "Expression"
+                        },
+                        "mon_schema": {
+                            "value": "@pipeline().parameters.mon_schema",
+                            "type": "Expression"
+                        },
+                        "mon_table_name": {
+                            "value": "@pipeline().parameters.mon_table_name",
+                            "type": "Expression"
+                        },
+                        "main_pipeline_run_id": {
+                            "value": "@pipeline().parameters.main_pipeline_run_id",
+                            "type": "Expression"
+                        },
+                        "schema": {
+                            "value": "@pipeline().parameters.schema",
+                            "type": "Expression"
+                        },
+                        "entity": {
+                            "value": "@pipeline().parameters.entity",
+                            "type": "Expression"
+                        },
+                        "load_type": {
+                            "value": "@activity('Get Entity Metadata').output?.firstRow?.table_type",
+                            "type": "Expression"
+                        },
+                        "debug": {
+                            "value": "@pipeline().parameters.debug",
+                            "type": "Expression"
+                        }
+                    }
+                }
+            }
+        ],
+        "parameters": {
+            "entity": {
+                "type": "string"
+            },
+            "dl_root_path": {
+                "type": "string"
+            },
+            "file_name": {
+                "type": "string"
+            },
+            "sink_schema": {
+                "type": "string"
+            },
+            "sink_table_name": {
+                "type": "string"
+            },
+            "control_schema": {
+                "type": "string"
+            },
+            "control_table": {
+                "type": "string"
+            },
+            "schema": {
+                "type": "string"
+            },
+            "main_pipeline_run_id": {
+                "type": "string"
+            },
+            "debug": {
+                "type": "bool",
+                "defaultValue": true
+            },
+            "mon_schema": {
+                "type": "string"
+            },
+            "mon_table_name": {
+                "type": "string"
+            }
+        },
+        "variables": {
+            "partition_path": {
+                "type": "String"
+            }
+        },
+        "folder": {
+            "name": "new_case/MainToSTG"
+        },
+        "annotations": [],
+        "lastPublishTime": "2021-09-14T06:54:38Z"
+    },
+    "type": "Microsoft.Synapse/workspaces/pipelines"
+}

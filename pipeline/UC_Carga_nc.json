@@ -1,0 +1,748 @@
+{
+    "name": "UC_Carga_nc",
+    "properties": {
+        "activities": [
+            {
+                "name": "FileToStg EXP_T_ENTIDADES",
+                "type": "ExecutePipeline",
+                "dependsOn": [],
+                "userProperties": [],
+                "typeProperties": {
+                    "pipeline": {
+                        "referenceName": "UC_FileToStg_nc",
+                        "type": "PipelineReference"
+                    },
+                    "waitOnCompletion": true,
+                    "parameters": {
+                        "entity": {
+                            "value": "EXP_T_ENTIDADES",
+                            "type": "Expression"
+                        },
+                        "dl_root_path": {
+                            "value": "source_nc",
+                            "type": "Expression"
+                        },
+                        "file_name": {
+                            "value": "entidades.csv",
+                            "type": "Expression"
+                        },
+                        "sink_schema": {
+                            "value": "uc",
+                            "type": "Expression"
+                        },
+                        "sink_table_name": {
+                            "value": "EXP_T_ENTIDADES",
+                            "type": "Expression"
+                        },
+                        "control_schema": {
+                            "value": "uc_mng",
+                            "type": "Expression"
+                        },
+                        "control_table": {
+                            "value": "loads_control",
+                            "type": "Expression"
+                        },
+                        "schema": {
+                            "value": "uc",
+                            "type": "Expression"
+                        },
+                        "main_pipeline_run_id": {
+                            "value": "@pipeline().parameters.main_pipeline_run_id",
+                            "type": "Expression"
+                        },
+                        "debug": {
+                            "value": "@pipeline().parameters.debug",
+                            "type": "Expression"
+                        },
+                        "mon_schema": {
+                            "value": "uc_mng",
+                            "type": "Expression"
+                        },
+                        "mon_table_name": {
+                            "value": "monitor_execs",
+                            "type": "Expression"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "FileToStg EXP_V_LV_ANO_CONSTR",
+                "type": "ExecutePipeline",
+                "dependsOn": [],
+                "userProperties": [],
+                "typeProperties": {
+                    "pipeline": {
+                        "referenceName": "UC_FileToStg_nc",
+                        "type": "PipelineReference"
+                    },
+                    "waitOnCompletion": true,
+                    "parameters": {
+                        "entity": "EXP_V_LV_ANO_CONSTR",
+                        "dl_root_path": "source_nc",
+                        "file_name": "lv_ano_constr.csv",
+                        "sink_schema": "uc",
+                        "sink_table_name": "EXP_V_LV_ANO_CONSTR",
+                        "control_schema": "uc_mng",
+                        "control_table": "loads_control",
+                        "schema": "uc",
+                        "main_pipeline_run_id": {
+                            "value": "@pipeline().parameters.main_pipeline_run_id",
+                            "type": "Expression"
+                        },
+                        "debug": {
+                            "value": "@pipeline().parameters.debug",
+                            "type": "Expression"
+                        },
+                        "mon_schema": {
+                            "value": "uc_mng",
+                            "type": "Expression"
+                        },
+                        "mon_table_name": {
+                            "value": "monitor_execs",
+                            "type": "Expression"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "FileToStg A_Unidades",
+                "type": "ExecutePipeline",
+                "dependsOn": [],
+                "userProperties": [],
+                "typeProperties": {
+                    "pipeline": {
+                        "referenceName": "UC_FileToStg_nc",
+                        "type": "PipelineReference"
+                    },
+                    "waitOnCompletion": true,
+                    "parameters": {
+                        "entity": "A_Unidades",
+                        "dl_root_path": "source_nc",
+                        "file_name": "A_Unidades.csv",
+                        "sink_schema": "uc",
+                        "sink_table_name": "A_Unidades",
+                        "control_schema": "uc_mng",
+                        "control_table": "loads_control",
+                        "schema": "uc",
+                        "main_pipeline_run_id": {
+                            "value": "@pipeline().parameters.main_pipeline_run_id",
+                            "type": "Expression"
+                        },
+                        "debug": {
+                            "value": "@pipeline().parameters.debug",
+                            "type": "Expression"
+                        },
+                        "mon_schema": {
+                            "value": "uc_mng",
+                            "type": "Expression"
+                        },
+                        "mon_table_name": {
+                            "value": "monitor_execs",
+                            "type": "Expression"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "FileToStg A_Bruto_Neto",
+                "type": "ExecutePipeline",
+                "dependsOn": [],
+                "userProperties": [],
+                "typeProperties": {
+                    "pipeline": {
+                        "referenceName": "UC_FileToStg_nc",
+                        "type": "PipelineReference"
+                    },
+                    "waitOnCompletion": true,
+                    "parameters": {
+                        "entity": "A_Bruto_Neto",
+                        "dl_root_path": "source_nc",
+                        "file_name": "A_Bruto_Neto.csv",
+                        "sink_schema": "uc",
+                        "sink_table_name": "A_Bruto_Neto",
+                        "control_schema": "uc_mng",
+                        "control_table": "loads_control",
+                        "schema": "uc",
+                        "main_pipeline_run_id": {
+                            "value": "@pipeline().parameters.main_pipeline_run_id",
+                            "type": "Expression"
+                        },
+                        "debug": {
+                            "value": "@pipeline().parameters.debug",
+                            "type": "Expression"
+                        },
+                        "mon_schema": {
+                            "value": "uc_mng",
+                            "type": "Expression"
+                        },
+                        "mon_table_name": {
+                            "value": "monitor_execs",
+                            "type": "Expression"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "FileToStg EXP_V_LV_COD_ACT_ATC",
+                "type": "ExecutePipeline",
+                "dependsOn": [],
+                "userProperties": [],
+                "typeProperties": {
+                    "pipeline": {
+                        "referenceName": "UC_FileToStg_nc",
+                        "type": "PipelineReference"
+                    },
+                    "waitOnCompletion": true,
+                    "parameters": {
+                        "entity": "EXP_V_LV_COD_ACT_ATC",
+                        "dl_root_path": "source_nc",
+                        "file_name": "lv_cod_act_atc.csv",
+                        "sink_schema": "uc",
+                        "sink_table_name": "EXP_V_LV_COD_ACT_ATC",
+                        "control_schema": "uc_mng",
+                        "control_table": "loads_control",
+                        "schema": "uc",
+                        "main_pipeline_run_id": {
+                            "value": "@pipeline().parameters.main_pipeline_run_id",
+                            "type": "Expression"
+                        },
+                        "debug": {
+                            "value": "@pipeline().parameters.debug",
+                            "type": "Expression"
+                        },
+                        "mon_schema": {
+                            "value": "uc_mng",
+                            "type": "Expression"
+                        },
+                        "mon_table_name": {
+                            "value": "monitor_execs",
+                            "type": "Expression"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "FileToStg EXP_V_LV_COD_CONSTR_ATC",
+                "type": "ExecutePipeline",
+                "dependsOn": [],
+                "userProperties": [],
+                "typeProperties": {
+                    "pipeline": {
+                        "referenceName": "UC_FileToStg_nc",
+                        "type": "PipelineReference"
+                    },
+                    "waitOnCompletion": true,
+                    "parameters": {
+                        "entity": "EXP_V_LV_COD_CONSTR_ATC",
+                        "dl_root_path": "source_nc",
+                        "file_name": "lv_cod_constr_atc.csv",
+                        "sink_schema": "uc",
+                        "sink_table_name": "EXP_V_LV_COD_CONSTR_ATC",
+                        "control_schema": "uc_mng",
+                        "control_table": "loads_control",
+                        "schema": "uc",
+                        "main_pipeline_run_id": {
+                            "value": "@pipeline().parameters.main_pipeline_run_id",
+                            "type": "Expression"
+                        },
+                        "debug": {
+                            "value": "@pipeline().parameters.debug",
+                            "type": "Expression"
+                        },
+                        "mon_schema": {
+                            "value": "uc_mng",
+                            "type": "Expression"
+                        },
+                        "mon_table_name": {
+                            "value": "monitor_execs",
+                            "type": "Expression"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "FileToStg EXP_V_LV_CRESTA",
+                "type": "ExecutePipeline",
+                "dependsOn": [],
+                "userProperties": [],
+                "typeProperties": {
+                    "pipeline": {
+                        "referenceName": "UC_FileToStg_nc",
+                        "type": "PipelineReference"
+                    },
+                    "waitOnCompletion": true,
+                    "parameters": {
+                        "entity": "EXP_V_LV_CRESTA",
+                        "dl_root_path": "source_nc",
+                        "file_name": "lv_cresta.csv",
+                        "sink_schema": "uc",
+                        "sink_table_name": "EXP_V_LV_CRESTA",
+                        "control_schema": "uc_mng",
+                        "control_table": "loads_control",
+                        "schema": "uc",
+                        "main_pipeline_run_id": {
+                            "value": "@pipeline().parameters.main_pipeline_run_id",
+                            "type": "Expression"
+                        },
+                        "debug": {
+                            "value": "@pipeline().parameters.debug",
+                            "type": "Expression"
+                        },
+                        "mon_schema": {
+                            "value": "uc_mng",
+                            "type": "Expression"
+                        },
+                        "mon_table_name": {
+                            "value": "monitor_execs",
+                            "type": "Expression"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "FileToStg EXP_V_LV_ENTIDAD",
+                "type": "ExecutePipeline",
+                "dependsOn": [],
+                "userProperties": [],
+                "typeProperties": {
+                    "pipeline": {
+                        "referenceName": "UC_FileToStg_nc",
+                        "type": "PipelineReference"
+                    },
+                    "waitOnCompletion": true,
+                    "parameters": {
+                        "entity": "EXP_V_LV_ENTIDAD",
+                        "dl_root_path": "source_nc",
+                        "file_name": "lv_entidad.csv",
+                        "sink_schema": "uc",
+                        "sink_table_name": "EXP_V_LV_ENTIDAD",
+                        "control_schema": "uc_mng",
+                        "control_table": "loads_control",
+                        "schema": "uc",
+                        "main_pipeline_run_id": {
+                            "value": "@pipeline().parameters.main_pipeline_run_id",
+                            "type": "Expression"
+                        },
+                        "debug": {
+                            "value": "@pipeline().parameters.debug",
+                            "type": "Expression"
+                        },
+                        "mon_schema": {
+                            "value": "uc_mng",
+                            "type": "Expression"
+                        },
+                        "mon_table_name": {
+                            "value": "monitor_execs",
+                            "type": "Expression"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "FileToStg EXP_V_LV_ID_ENTIDAD",
+                "type": "ExecutePipeline",
+                "dependsOn": [],
+                "userProperties": [],
+                "typeProperties": {
+                    "pipeline": {
+                        "referenceName": "UC_FileToStg_nc",
+                        "type": "PipelineReference"
+                    },
+                    "waitOnCompletion": true,
+                    "parameters": {
+                        "entity": "EXP_V_LV_ID_ENTIDAD",
+                        "dl_root_path": "source_nc",
+                        "file_name": "lv_id_entidad.csv",
+                        "sink_schema": "uc",
+                        "sink_table_name": "EXP_V_LV_ID_ENTIDAD",
+                        "control_schema": "uc_mng",
+                        "control_table": "loads_control",
+                        "schema": "uc",
+                        "main_pipeline_run_id": {
+                            "value": "@pipeline().parameters.main_pipeline_run_id",
+                            "type": "Expression"
+                        },
+                        "debug": {
+                            "value": "@pipeline().parameters.debug",
+                            "type": "Expression"
+                        },
+                        "mon_schema": {
+                            "value": "uc_mng",
+                            "type": "Expression"
+                        },
+                        "mon_table_name": {
+                            "value": "monitor_execs",
+                            "type": "Expression"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "FileToStg EXP_V_LV_MONEDAS",
+                "type": "ExecutePipeline",
+                "dependsOn": [],
+                "userProperties": [],
+                "typeProperties": {
+                    "pipeline": {
+                        "referenceName": "UC_FileToStg_nc",
+                        "type": "PipelineReference"
+                    },
+                    "waitOnCompletion": true,
+                    "parameters": {
+                        "entity": "EXP_V_LV_MONEDAS",
+                        "dl_root_path": "source_nc",
+                        "file_name": "lv_monedas.csv",
+                        "sink_schema": "uc",
+                        "sink_table_name": "EXP_V_LV_MONEDAS",
+                        "control_schema": "uc_mng",
+                        "control_table": "loads_control",
+                        "schema": "uc",
+                        "main_pipeline_run_id": {
+                            "value": "@pipeline().parameters.main_pipeline_run_id",
+                            "type": "Expression"
+                        },
+                        "debug": {
+                            "value": "@pipeline().parameters.debug",
+                            "type": "Expression"
+                        },
+                        "mon_schema": {
+                            "value": "uc_mng",
+                            "type": "Expression"
+                        },
+                        "mon_table_name": {
+                            "value": "monitor_execs",
+                            "type": "Expression"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "FileToStg EXP_V_LV_N_GEOLOCALIZACION",
+                "type": "ExecutePipeline",
+                "dependsOn": [],
+                "userProperties": [],
+                "typeProperties": {
+                    "pipeline": {
+                        "referenceName": "UC_FileToStg_nc",
+                        "type": "PipelineReference"
+                    },
+                    "waitOnCompletion": true,
+                    "parameters": {
+                        "entity": "EXP_V_LV_N_GEOLOCALIZACION",
+                        "dl_root_path": "source_nc",
+                        "file_name": "lv_n_geolocalizacion.csv",
+                        "sink_schema": "uc",
+                        "sink_table_name": "EXP_V_LV_N_GEOLOCALIZACION",
+                        "control_schema": "uc_mng",
+                        "control_table": "loads_control",
+                        "schema": "uc",
+                        "main_pipeline_run_id": {
+                            "value": "@pipeline().parameters.main_pipeline_run_id",
+                            "type": "Expression"
+                        },
+                        "debug": {
+                            "value": "@pipeline().parameters.debug",
+                            "type": "Expression"
+                        },
+                        "mon_schema": {
+                            "value": "uc_mng",
+                            "type": "Expression"
+                        },
+                        "mon_table_name": {
+                            "value": "monitor_execs",
+                            "type": "Expression"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "FileToStg EXP_V_LV_NOM_CLASE_RIESGO_AGR",
+                "type": "ExecutePipeline",
+                "dependsOn": [],
+                "userProperties": [],
+                "typeProperties": {
+                    "pipeline": {
+                        "referenceName": "UC_FileToStg_nc",
+                        "type": "PipelineReference"
+                    },
+                    "waitOnCompletion": true,
+                    "parameters": {
+                        "entity": "EXP_V_LV_NOM_CLASE_RIESGO_AGR",
+                        "dl_root_path": "source_nc",
+                        "file_name": "lv_nom_clase_riesgo_agr.csv",
+                        "sink_schema": "uc",
+                        "sink_table_name": "EXP_V_LV_NOM_CLASE_RIESGO_AGR",
+                        "control_schema": "uc_mng",
+                        "control_table": "loads_control",
+                        "schema": "uc",
+                        "main_pipeline_run_id": {
+                            "value": "@pipeline().parameters.main_pipeline_run_id",
+                            "type": "Expression"
+                        },
+                        "debug": {
+                            "value": "@pipeline().parameters.debug",
+                            "type": "Expression"
+                        },
+                        "mon_schema": {
+                            "value": "uc_mng",
+                            "type": "Expression"
+                        },
+                        "mon_table_name": {
+                            "value": "monitor_execs",
+                            "type": "Expression"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "FileToStg EXP_V_LV_PAISES",
+                "type": "ExecutePipeline",
+                "dependsOn": [],
+                "userProperties": [],
+                "typeProperties": {
+                    "pipeline": {
+                        "referenceName": "UC_FileToStg_nc",
+                        "type": "PipelineReference"
+                    },
+                    "waitOnCompletion": true,
+                    "parameters": {
+                        "entity": "EXP_V_LV_PAISES",
+                        "dl_root_path": "source_nc",
+                        "file_name": "lv_paises.csv",
+                        "sink_schema": "uc",
+                        "sink_table_name": "EXP_V_LV_PAISES",
+                        "control_schema": "uc_mng",
+                        "control_table": "loads_control",
+                        "schema": "uc",
+                        "main_pipeline_run_id": {
+                            "value": "@pipeline().parameters.main_pipeline_run_id",
+                            "type": "Expression"
+                        },
+                        "debug": {
+                            "value": "@pipeline().parameters.debug",
+                            "type": "Expression"
+                        },
+                        "mon_schema": {
+                            "value": "uc_mng",
+                            "type": "Expression"
+                        },
+                        "mon_table_name": {
+                            "value": "monitor_execs",
+                            "type": "Expression"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "FileToStg EXP_V_LV_PELIGROS",
+                "type": "ExecutePipeline",
+                "dependsOn": [],
+                "userProperties": [],
+                "typeProperties": {
+                    "pipeline": {
+                        "referenceName": "UC_FileToStg_nc",
+                        "type": "PipelineReference"
+                    },
+                    "waitOnCompletion": true,
+                    "parameters": {
+                        "entity": "EXP_V_LV_PELIGROS",
+                        "dl_root_path": "source_nc",
+                        "file_name": "lv_peligros.csv",
+                        "sink_schema": "uc",
+                        "sink_table_name": "EXP_V_LV_PELIGROS",
+                        "control_schema": "uc_mng",
+                        "control_table": "loads_control",
+                        "schema": "uc",
+                        "main_pipeline_run_id": {
+                            "value": "@pipeline().parameters.main_pipeline_run_id",
+                            "type": "Expression"
+                        },
+                        "debug": {
+                            "value": "@pipeline().parameters.debug",
+                            "type": "Expression"
+                        },
+                        "mon_schema": {
+                            "value": "uc_mng",
+                            "type": "Expression"
+                        },
+                        "mon_table_name": {
+                            "value": "monitor_execs",
+                            "type": "Expression"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "FileToStg EXP_V_LV_PISOS",
+                "type": "ExecutePipeline",
+                "dependsOn": [],
+                "userProperties": [],
+                "typeProperties": {
+                    "pipeline": {
+                        "referenceName": "UC_FileToStg_nc",
+                        "type": "PipelineReference"
+                    },
+                    "waitOnCompletion": true,
+                    "parameters": {
+                        "entity": "EXP_V_LV_PISOS",
+                        "dl_root_path": "source_nc",
+                        "file_name": "lv_pisos.csv",
+                        "sink_schema": "uc",
+                        "sink_table_name": "EXP_V_LV_PISOS",
+                        "control_schema": "uc_mng",
+                        "control_table": "loads_control",
+                        "schema": "uc",
+                        "main_pipeline_run_id": {
+                            "value": "@pipeline().parameters.main_pipeline_run_id",
+                            "type": "Expression"
+                        },
+                        "debug": {
+                            "value": "@pipeline().parameters.debug",
+                            "type": "Expression"
+                        },
+                        "mon_schema": {
+                            "value": "uc_mng",
+                            "type": "Expression"
+                        },
+                        "mon_table_name": {
+                            "value": "monitor_execs",
+                            "type": "Expression"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "FileToStg EXP_V_LV_TIPO_CESION",
+                "type": "ExecutePipeline",
+                "dependsOn": [],
+                "userProperties": [],
+                "typeProperties": {
+                    "pipeline": {
+                        "referenceName": "UC_FileToStg_nc",
+                        "type": "PipelineReference"
+                    },
+                    "waitOnCompletion": true,
+                    "parameters": {
+                        "entity": "EXP_V_LV_TIPO_CESION",
+                        "dl_root_path": "source_nc",
+                        "file_name": "lv_tipo_cesion.csv",
+                        "sink_schema": "uc",
+                        "sink_table_name": "EXP_V_LV_TIPO_CESION",
+                        "control_schema": "uc_mng",
+                        "control_table": "loads_control",
+                        "schema": "uc",
+                        "main_pipeline_run_id": {
+                            "value": "@pipeline().parameters.main_pipeline_run_id",
+                            "type": "Expression"
+                        },
+                        "debug": {
+                            "value": "@pipeline().parameters.debug",
+                            "type": "Expression"
+                        },
+                        "mon_schema": {
+                            "value": "uc_mng",
+                            "type": "Expression"
+                        },
+                        "mon_table_name": {
+                            "value": "monitor_execs",
+                            "type": "Expression"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "FileToStg EXP_T_M_CAMBIOS_MONEDA",
+                "type": "ExecutePipeline",
+                "dependsOn": [],
+                "userProperties": [],
+                "typeProperties": {
+                    "pipeline": {
+                        "referenceName": "UC_FileToStg_nc",
+                        "type": "PipelineReference"
+                    },
+                    "waitOnCompletion": true,
+                    "parameters": {
+                        "entity": "EXP_T_M_CAMBIOS_MONEDA",
+                        "dl_root_path": "source_nc",
+                        "file_name": "m_cambios_moneda.csv",
+                        "sink_schema": "uc",
+                        "sink_table_name": "EXP_T_M_CAMBIOS_MONEDA",
+                        "control_schema": "uc_mng",
+                        "control_table": "loads_control",
+                        "schema": "uc",
+                        "main_pipeline_run_id": {
+                            "value": "@pipeline().parameters.main_pipeline_run_id",
+                            "type": "Expression"
+                        },
+                        "debug": {
+                            "value": "@pipeline().parameters.debug",
+                            "type": "Expression"
+                        },
+                        "mon_schema": {
+                            "value": "uc_mng",
+                            "type": "Expression"
+                        },
+                        "mon_table_name": {
+                            "value": "monitor_execs",
+                            "type": "Expression"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "FileToStg EXP_T_EXPOSICIONES",
+                "type": "ExecutePipeline",
+                "dependsOn": [],
+                "userProperties": [],
+                "typeProperties": {
+                    "pipeline": {
+                        "referenceName": "UC_FileToStg_nc",
+                        "type": "PipelineReference"
+                    },
+                    "waitOnCompletion": true,
+                    "parameters": {
+                        "entity": "EXP_T_EXPOSICIONES",
+                        "dl_root_path": "source_nc",
+                        "file_name": "exposiciones.csv",
+                        "sink_schema": "uc",
+                        "sink_table_name": "EXP_T_EXPOSICIONES",
+                        "control_schema": "uc_mng",
+                        "control_table": "loads_control",
+                        "schema": "uc",
+                        "main_pipeline_run_id": {
+                            "value": "@pipeline().parameters.main_pipeline_run_id",
+                            "type": "Expression"
+                        },
+                        "debug": {
+                            "value": "@pipeline().parameters.debug",
+                            "type": "Expression"
+                        },
+                        "mon_schema": {
+                            "value": "uc_mng",
+                            "type": "Expression"
+                        },
+                        "mon_table_name": {
+                            "value": "monitor_execs",
+                            "type": "Expression"
+                        }
+                    }
+                }
+            }
+        ],
+        "parameters": {
+            "main_pipeline_run_id": {
+                "type": "string"
+            },
+            "debug": {
+                "type": "bool",
+                "defaultValue": true
+            }
+        },
+        "folder": {
+            "name": "new_case/Main Steps"
+        },
+        "annotations": [],
+        "lastPublishTime": "2021-09-14T06:48:45Z"
+    },
+    "type": "Microsoft.Synapse/workspaces/pipelines"
+}

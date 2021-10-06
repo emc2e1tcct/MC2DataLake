@@ -1,0 +1,690 @@
+{
+    "name": "UC_LandingToRAW_nc",
+    "properties": {
+        "activities": [
+            {
+                "name": "LandingToRAW",
+                "type": "Copy",
+                "dependsOn": [
+                    {
+                        "activity": "Check if Exists",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "policy": {
+                    "timeout": "7.00:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "userProperties": [],
+                "typeProperties": {
+                    "source": {
+                        "type": "DelimitedTextSource",
+                        "storeSettings": {
+                            "type": "AzureBlobFSReadSettings",
+                            "recursive": false,
+                            "enablePartitionDiscovery": false
+                        },
+                        "formatSettings": {
+                            "type": "DelimitedTextReadSettings"
+                        }
+                    },
+                    "sink": {
+                        "type": "DelimitedTextSink",
+                        "storeSettings": {
+                            "type": "AzureBlobFSWriteSettings"
+                        },
+                        "formatSettings": {
+                            "type": "DelimitedTextWriteSettings",
+                            "quoteAllText": true,
+                            "fileExtension": ".txt"
+                        }
+                    },
+                    "enableStaging": true,
+                    "stagingSettings": {
+                        "linkedServiceName": {
+                            "referenceName": "informacional-WorkspaceDefaultStorage",
+                            "type": "LinkedServiceReference"
+                        },
+                        "path": "ucstg/landing/landig_raw"
+                    },
+                    "logSettings": {
+                        "enableCopyActivityLog": true,
+                        "copyActivityLogSettings": {
+                            "logLevel": "Warning",
+                            "enableReliableLogging": false
+                        },
+                        "logLocationSettings": {
+                            "linkedServiceName": {
+                                "referenceName": "informacional-WorkspaceDefaultStorage",
+                                "type": "LinkedServiceReference"
+                            },
+                            "path": "uclogs/landing/LandingToRaw"
+                        }
+                    }
+                },
+                "inputs": [
+                    {
+                        "referenceName": "landing_nc",
+                        "type": "DatasetReference",
+                        "parameters": {
+                            "entity": {
+                                "value": "@pipeline().parameters.entity",
+                                "type": "Expression"
+                            },
+                            "dl_root_path": {
+                                "value": "@pipeline().parameters.dl_root_path",
+                                "type": "Expression"
+                            },
+                            "filename": {
+                                "value": "@pipeline().parameters.file_name",
+                                "type": "Expression"
+                            }
+                        }
+                    }
+                ],
+                "outputs": [
+                    {
+                        "referenceName": "raw_nc",
+                        "type": "DatasetReference",
+                        "parameters": {
+                            "filename": {
+                                "value": "@pipeline().parameters.file_name",
+                                "type": "Expression"
+                            },
+                            "partition_path": {
+                                "value": "@pipeline().parameters.partition_path",
+                                "type": "Expression"
+                            },
+                            "entity": {
+                                "value": "@pipeline().parameters.entity",
+                                "type": "Expression"
+                            },
+                            "dl_root_path": {
+                                "value": "@pipeline().parameters.dl_root_path",
+                                "type": "Expression"
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "Move to error",
+                "type": "Copy",
+                "dependsOn": [
+                    {
+                        "activity": "LandingToRAW",
+                        "dependencyConditions": [
+                            "Failed"
+                        ]
+                    }
+                ],
+                "policy": {
+                    "timeout": "7.00:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "userProperties": [],
+                "typeProperties": {
+                    "source": {
+                        "type": "DelimitedTextSource",
+                        "storeSettings": {
+                            "type": "AzureBlobFSReadSettings",
+                            "recursive": true,
+                            "enablePartitionDiscovery": false
+                        },
+                        "formatSettings": {
+                            "type": "DelimitedTextReadSettings"
+                        }
+                    },
+                    "sink": {
+                        "type": "DelimitedTextSink",
+                        "storeSettings": {
+                            "type": "AzureBlobFSWriteSettings"
+                        },
+                        "formatSettings": {
+                            "type": "DelimitedTextWriteSettings",
+                            "quoteAllText": true,
+                            "fileExtension": ".txt"
+                        }
+                    },
+                    "enableStaging": true,
+                    "stagingSettings": {
+                        "linkedServiceName": {
+                            "referenceName": "informacional-WorkspaceDefaultStorage",
+                            "type": "LinkedServiceReference"
+                        },
+                        "path": "ucstg/landing/move_to_error"
+                    },
+                    "logSettings": {
+                        "enableCopyActivityLog": true,
+                        "copyActivityLogSettings": {
+                            "logLevel": "Warning",
+                            "enableReliableLogging": false
+                        },
+                        "logLocationSettings": {
+                            "linkedServiceName": {
+                                "referenceName": "informacional-WorkspaceDefaultStorage",
+                                "type": "LinkedServiceReference"
+                            },
+                            "path": "uclogs/landing/moveToError"
+                        }
+                    },
+                    "translator": {
+                        "type": "TabularTranslator",
+                        "typeConversion": true,
+                        "typeConversionSettings": {
+                            "allowDataTruncation": true,
+                            "treatBooleanAsNumber": false
+                        }
+                    }
+                },
+                "inputs": [
+                    {
+                        "referenceName": "landing_nc",
+                        "type": "DatasetReference",
+                        "parameters": {
+                            "entity": {
+                                "value": "@pipeline().parameters.entity",
+                                "type": "Expression"
+                            },
+                            "dl_root_path": {
+                                "value": "@pipeline().parameters.dl_root_path",
+                                "type": "Expression"
+                            },
+                            "filename": {
+                                "value": "@pipeline().parameters.file_name",
+                                "type": "Expression"
+                            }
+                        }
+                    }
+                ],
+                "outputs": [
+                    {
+                        "referenceName": "Landing_Error",
+                        "type": "DatasetReference",
+                        "parameters": {
+                            "dl_root_path": {
+                                "value": "@pipeline().parameters.dl_root_path",
+                                "type": "Expression"
+                            },
+                            "entity": {
+                                "value": "@pipeline().parameters.entity",
+                                "type": "Expression"
+                            },
+                            "file_name": {
+                                "value": "@pipeline().parameters.file_name",
+                                "type": "Expression"
+                            },
+                            "partition_path": {
+                                "value": "@pipeline().parameters.partition_path",
+                                "type": "Expression"
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "Delete Source File",
+                "type": "Delete",
+                "dependsOn": [
+                    {
+                        "activity": "LandingToRAW",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "policy": {
+                    "timeout": "7.00:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "userProperties": [],
+                "typeProperties": {
+                    "dataset": {
+                        "referenceName": "landing_nc",
+                        "type": "DatasetReference",
+                        "parameters": {
+                            "entity": {
+                                "value": "@pipeline().parameters.entity",
+                                "type": "Expression"
+                            },
+                            "dl_root_path": {
+                                "value": "@pipeline().parameters.dl_root_path",
+                                "type": "Expression"
+                            },
+                            "filename": {
+                                "value": "@pipeline().parameters.file_name",
+                                "type": "Expression"
+                            }
+                        }
+                    },
+                    "logStorageSettings": {
+                        "linkedServiceName": {
+                            "referenceName": "informacional-WorkspaceDefaultStorage",
+                            "type": "LinkedServiceReference"
+                        },
+                        "path": {
+                            "value": "uclogs/landing/DeleteSourceFile",
+                            "type": "Expression"
+                        }
+                    },
+                    "enableLogging": true,
+                    "storeSettings": {
+                        "type": "AzureBlobFSReadSettings",
+                        "recursive": true,
+                        "enablePartitionDiscovery": false
+                    }
+                }
+            },
+            {
+                "name": "Delete Source File on error",
+                "type": "Delete",
+                "dependsOn": [
+                    {
+                        "activity": "Move to error",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "policy": {
+                    "timeout": "7.00:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "userProperties": [],
+                "typeProperties": {
+                    "dataset": {
+                        "referenceName": "landing_nc",
+                        "type": "DatasetReference",
+                        "parameters": {
+                            "entity": {
+                                "value": "@pipeline().parameters.entity",
+                                "type": "Expression"
+                            },
+                            "dl_root_path": {
+                                "value": "@pipeline().parameters.dl_root_path",
+                                "type": "Expression"
+                            },
+                            "filename": {
+                                "value": "@pipeline().parameters.file_name",
+                                "type": "Expression"
+                            }
+                        }
+                    },
+                    "logStorageSettings": {
+                        "linkedServiceName": {
+                            "referenceName": "informacional-WorkspaceDefaultStorage",
+                            "type": "LinkedServiceReference"
+                        },
+                        "path": {
+                            "value": "uclogs/landing/DeleteSourceFileOnError",
+                            "type": "Expression"
+                        }
+                    },
+                    "enableLogging": true,
+                    "storeSettings": {
+                        "type": "AzureBlobFSReadSettings",
+                        "recursive": true,
+                        "enablePartitionDiscovery": false
+                    }
+                }
+            },
+            {
+                "name": "Landing Get File exists",
+                "type": "GetMetadata",
+                "dependsOn": [],
+                "policy": {
+                    "timeout": "7.00:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "userProperties": [],
+                "typeProperties": {
+                    "dataset": {
+                        "referenceName": "landing_nc",
+                        "type": "DatasetReference",
+                        "parameters": {
+                            "entity": {
+                                "value": "@pipeline().parameters.entity",
+                                "type": "Expression"
+                            },
+                            "dl_root_path": {
+                                "value": "@pipeline().parameters.dl_root_path",
+                                "type": "Expression"
+                            },
+                            "filename": {
+                                "value": "@pipeline().parameters.file_name",
+                                "type": "Expression"
+                            }
+                        }
+                    },
+                    "fieldList": [
+                        "exists"
+                    ],
+                    "storeSettings": {
+                        "type": "AzureBlobFSReadSettings",
+                        "recursive": true,
+                        "enablePartitionDiscovery": false
+                    },
+                    "formatSettings": {
+                        "type": "DelimitedTextReadSettings"
+                    }
+                }
+            },
+            {
+                "name": "Check if Exists",
+                "type": "IfCondition",
+                "dependsOn": [
+                    {
+                        "activity": "Landing Get File exists",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "userProperties": [],
+                "typeProperties": {
+                    "expression": {
+                        "value": "@activity('Landing Get File exists').output.exists",
+                        "type": "Expression"
+                    },
+                    "ifFalseActivities": [
+                        {
+                            "name": "Landing Register File Not Exists",
+                            "type": "ExecutePipeline",
+                            "dependsOn": [],
+                            "userProperties": [],
+                            "typeProperties": {
+                                "pipeline": {
+                                    "referenceName": "UC_Main_Monitor",
+                                    "type": "PipelineReference"
+                                },
+                                "waitOnCompletion": true,
+                                "parameters": {
+                                    "activity": {
+                                        "value": "@json(concat('{\"PipelineName\": \"Mon_LandingToCommon\",\"PipelineRunId\": \"',pipeline().RunId,'\",\"ActivityRunId\": \"',activity('Landing Get File exists').ActivityRunId,'\",\"ExecutionStartTime\": \"',formatDateTime(activity('Landing Get File exists').ExecutionStartTime,'yyyy-MM-ddThh:mm:ss'),'\",\"ExecutionEndTime\": \"',formatDateTime(activity('Landing Get File exists').ExecutionEndTime,'yyyy-MM-ddThh:mm:ss'),'\",\"Status\": \"Failed\",\"Duration\": ''00:00:00.000'',\"Error\": {\"errorCode\": \"2200\",\"message\": \"Landing File not exists\",\"failureType\": \"UserError\",\"target\": \"Landing Get File Exists\"}}'))\n",
+                                        "type": "Expression"
+                                    },
+                                    "activity_name": {
+                                        "value": "Landing File Not Exists",
+                                        "type": "Expression"
+                                    },
+                                    "mon_schema": {
+                                        "value": "@pipeline().parameters.mon_schema",
+                                        "type": "Expression"
+                                    },
+                                    "mon_table_name": {
+                                        "value": "@pipeline().parameters.mon_table_name",
+                                        "type": "Expression"
+                                    },
+                                    "main_pipeline_run_id": {
+                                        "value": "@pipeline().parameters.main_pipeline_run_id",
+                                        "type": "Expression"
+                                    },
+                                    "schema": {
+                                        "value": "@pipeline().parameters.schema",
+                                        "type": "Expression"
+                                    },
+                                    "entity": {
+                                        "value": "@pipeline().parameters.entity",
+                                        "type": "Expression"
+                                    },
+                                    "load_type": {
+                                        "value": "@pipeline().parameters.load_type",
+                                        "type": "Expression"
+                                    },
+                                    "debug": {
+                                        "value": "@pipeline().parameters.debug",
+                                        "type": "Expression"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Register Landing Get File Exists",
+                "type": "ExecutePipeline",
+                "dependsOn": [
+                    {
+                        "activity": "Landing Get File exists",
+                        "dependencyConditions": [
+                            "Succeeded",
+                            "Failed"
+                        ]
+                    }
+                ],
+                "userProperties": [],
+                "typeProperties": {
+                    "pipeline": {
+                        "referenceName": "UC_Main_Monitor",
+                        "type": "PipelineReference"
+                    },
+                    "waitOnCompletion": true,
+                    "parameters": {
+                        "activity": {
+                            "value": "@activity('Landing Get File exists')",
+                            "type": "Expression"
+                        },
+                        "activity_name": {
+                            "value": "Landing Get File exists",
+                            "type": "Expression"
+                        },
+                        "mon_schema": {
+                            "value": "@pipeline().parameters.mon_schema",
+                            "type": "Expression"
+                        },
+                        "mon_table_name": {
+                            "value": "@pipeline().parameters.mon_table_name",
+                            "type": "Expression"
+                        },
+                        "main_pipeline_run_id": {
+                            "value": "@pipeline().parameters.main_pipeline_run_id",
+                            "type": "Expression"
+                        },
+                        "schema": {
+                            "value": "@pipeline().parameters.schema",
+                            "type": "Expression"
+                        },
+                        "entity": {
+                            "value": "@pipeline().parameters.entity",
+                            "type": "Expression"
+                        },
+                        "load_type": {
+                            "value": "@pipeline().parameters.load_type",
+                            "type": "Expression"
+                        },
+                        "debug": {
+                            "value": "@pipeline().parameters.debug",
+                            "type": "Expression"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "Register LandingToRAW",
+                "type": "ExecutePipeline",
+                "dependsOn": [
+                    {
+                        "activity": "LandingToRAW",
+                        "dependencyConditions": [
+                            "Succeeded",
+                            "Failed"
+                        ]
+                    }
+                ],
+                "userProperties": [],
+                "typeProperties": {
+                    "pipeline": {
+                        "referenceName": "UC_Main_Monitor",
+                        "type": "PipelineReference"
+                    },
+                    "waitOnCompletion": true,
+                    "parameters": {
+                        "activity": {
+                            "value": "@activity('LandingToRAW')",
+                            "type": "Expression"
+                        },
+                        "activity_name": {
+                            "value": "LandingToRAW",
+                            "type": "Expression"
+                        },
+                        "mon_schema": {
+                            "value": "@pipeline().parameters.mon_schema",
+                            "type": "Expression"
+                        },
+                        "mon_table_name": {
+                            "value": "@pipeline().parameters.mon_table_name",
+                            "type": "Expression"
+                        },
+                        "main_pipeline_run_id": {
+                            "value": "@pipeline().parameters.main_pipeline_run_id",
+                            "type": "Expression"
+                        },
+                        "schema": {
+                            "value": "@pipeline().parameters.schema",
+                            "type": "Expression"
+                        },
+                        "entity": {
+                            "value": "@pipeline().parameters.entity",
+                            "type": "Expression"
+                        },
+                        "load_type": {
+                            "value": "@pipeline().parameters.load_type",
+                            "type": "Expression"
+                        },
+                        "debug": {
+                            "value": "@pipeline().parameters.debug",
+                            "type": "Expression"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "Register Landing Move To Error",
+                "type": "ExecutePipeline",
+                "dependsOn": [
+                    {
+                        "activity": "Move to error",
+                        "dependencyConditions": [
+                            "Succeeded",
+                            "Failed"
+                        ]
+                    }
+                ],
+                "userProperties": [],
+                "typeProperties": {
+                    "pipeline": {
+                        "referenceName": "UC_Main_Monitor",
+                        "type": "PipelineReference"
+                    },
+                    "waitOnCompletion": true,
+                    "parameters": {
+                        "activity": {
+                            "value": "@activity('Move to error')",
+                            "type": "Expression"
+                        },
+                        "activity_name": {
+                            "value": "Landing Move To Error",
+                            "type": "Expression"
+                        },
+                        "mon_schema": {
+                            "value": "@pipeline().parameters.mon_schema",
+                            "type": "Expression"
+                        },
+                        "mon_table_name": {
+                            "value": "@pipeline().parameters.mon_table_name",
+                            "type": "Expression"
+                        },
+                        "main_pipeline_run_id": {
+                            "value": "@pipeline().parameters.main_pipeline_run_id",
+                            "type": "Expression"
+                        },
+                        "schema": {
+                            "value": "@pipeline().parameters.schema",
+                            "type": "Expression"
+                        },
+                        "entity": {
+                            "value": "@pipeline().parameters.entity",
+                            "type": "Expression"
+                        },
+                        "load_type": {
+                            "value": "@pipeline().parameters.load_type",
+                            "type": "Expression"
+                        },
+                        "debug": {
+                            "value": "@pipeline().parameters.debug",
+                            "type": "Expression"
+                        }
+                    }
+                }
+            }
+        ],
+        "parameters": {
+            "entity": {
+                "type": "string"
+            },
+            "dl_root_path": {
+                "type": "string"
+            },
+            "file_name": {
+                "type": "string"
+            },
+            "schema": {
+                "type": "string"
+            },
+            "control_schema": {
+                "type": "string"
+            },
+            "control_table": {
+                "type": "string"
+            },
+            "partition_path": {
+                "type": "string"
+            },
+            "main_pipeline_run_id": {
+                "type": "string"
+            },
+            "load_type": {
+                "type": "string"
+            },
+            "debug": {
+                "type": "bool",
+                "defaultValue": true
+            },
+            "mon_schema": {
+                "type": "string"
+            },
+            "mon_table_name": {
+                "type": "string"
+            }
+        },
+        "variables": {
+            "test_act": {
+                "type": "String"
+            }
+        },
+        "folder": {
+            "name": "new_case/Steps"
+        },
+        "annotations": [],
+        "lastPublishTime": "2021-09-14T06:49:06Z"
+    },
+    "type": "Microsoft.Synapse/workspaces/pipelines"
+}
