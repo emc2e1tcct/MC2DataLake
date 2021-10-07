@@ -7,7 +7,217 @@
 		},
 		"parameters": {
 			"cw_fileName": {
-				"type": "String"
+				"type": "String",
+				"defaultValue": [
+					{
+						"source": {
+							"entityName": "mc2_maestro_ceco"
+						},
+						"destination": {
+							"fileName": "mc2_maestro_ceco.csv"
+						}
+					},
+					{
+						"source": {
+							"entityName": "mc2_maestro_perfil"
+						},
+						"destination": {
+							"fileName": "mc2_maestro_perfil.csv"
+						}
+					},
+					{
+						"source": {
+							"entityName": "mc2_maestro_sociedad"
+						},
+						"destination": {
+							"fileName": "mc2_maestro_sociedad.csv"
+						}
+					},
+					{
+						"source": {
+							"entityName": "mc2_maestro_tramitador"
+						},
+						"destination": {
+							"fileName": "mc2_maestro_tramitador.csv"
+						}
+					},
+					{
+						"source": {
+							"entityName": "mc2_maestro_ambito"
+						},
+						"destination": {
+							"fileName": "mc2_maestro_ambito.csv"
+						}
+					},
+					{
+						"source": {
+							"entityName": "mc2_maestro_cebe"
+						},
+						"destination": {
+							"fileName": "mc2_maestro_cebe.csv"
+						}
+					},
+					{
+						"source": {
+							"entityName": "mc2_maestro_cliente_facturacion"
+						},
+						"destination": {
+							"fileName": "mc2_maestro_cliente_facturacion.csv"
+						}
+					},
+					{
+						"source": {
+							"entityName": "mc2_maestro_cliente_gestion"
+						},
+						"destination": {
+							"fileName": "mc2_maestro_cliente_gestion.csv"
+						}
+					},
+					{
+						"source": {
+							"entityName": "mc2_maestro_coste"
+						},
+						"destination": {
+							"fileName": "mc2_maestro_coste.csv"
+						}
+					},
+					{
+						"source": {
+							"entityName": "mc2_maestro_costes_formula"
+						},
+						"destination": {
+							"fileName": "mc2_maestro_costes_formula.csv"
+						}
+					},
+					{
+						"source": {
+							"entityName": "mc2_maestro_estado_compras"
+						},
+						"destination": {
+							"fileName": "mc2_maestro_estado_compras.csv"
+						}
+					},
+					{
+						"source": {
+							"entityName": "mc2_maestro_estado_pedido"
+						},
+						"destination": {
+							"fileName": "mc2_maestro_estado_pedido.csv"
+						}
+					},
+					{
+						"source": {
+							"entityName": "mc2_maestro_familia"
+						},
+						"destination": {
+							"fileName": "mc2_maestro_familia.csv"
+						}
+					},
+					{
+						"source": {
+							"entityName": "mc2_maestro_fase"
+						},
+						"destination": {
+							"fileName": "mc2_maestro_fase.csv"
+						}
+					},
+					{
+						"source": {
+							"entityName": "mc2_maestro_jefe_de_proyecto"
+						},
+						"destination": {
+							"fileName": "mc2_maestro_jefe_de_proyecto.csv"
+						}
+					},
+					{
+						"source": {
+							"entityName": "mc2_maestro_lineapep"
+						},
+						"destination": {
+							"fileName": "mc2_maestro_lineapep.csv"
+						}
+					},
+					{
+						"source": {
+							"entityName": "mc2_maestro_monedas"
+						},
+						"destination": {
+							"fileName": "mc2_maestro_monedas.csv"
+						}
+					},
+					{
+						"source": {
+							"entityName": "mc2_maestro_naturaleza_utm"
+						},
+						"destination": {
+							"fileName": "mc2_maestro_naturaleza_utm.csv"
+						}
+					},
+					{
+						"source": {
+							"entityName": "mc2_maestro_perfil_presupuesto"
+						},
+						"destination": {
+							"fileName": "mc2_maestro_perfil_presupuesto.csv"
+						}
+					},
+					{
+						"source": {
+							"entityName": "mc2_maestro_planificacion"
+						},
+						"destination": {
+							"fileName": "mc2_maestro_planificacion.csv"
+						}
+					},
+					{
+						"source": {
+							"entityName": "mc2_maestro_plazo_utm"
+						},
+						"destination": {
+							"fileName": "mc2_maestro_plazo_utm.csv"
+						}
+					},
+					{
+						"source": {
+							"entityName": "mc2_maestro_prioridad"
+						},
+						"destination": {
+							"fileName": "mc2_maestro_prioridad.csv"
+						}
+					},
+					{
+						"source": {
+							"entityName": "mc2_maestro_producto"
+						},
+						"destination": {
+							"fileName": "mc2_maestro_producto.csv"
+						}
+					},
+					{
+						"source": {
+							"entityName": "mc2_maestro_sku"
+						},
+						"destination": {
+							"fileName": "mc2_maestro_sku.csv"
+						}
+					},
+					{
+						"source": {
+							"entityName": "mc2_maestro_tipificacion"
+						},
+						"destination": {
+							"fileName": "mc2_maestro_tipificacion.csv"
+						}
+					},
+					{
+						"source": {
+							"entityName": "mc2_maestro_tipo_servicio"
+						},
+						"destination": {
+							"fileName": "mc2_maestro_tipo_servicio.csv"
+						}
+					}
+				]
 			}
 		},
 		"annotations": [],
