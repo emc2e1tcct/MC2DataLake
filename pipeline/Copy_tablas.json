@@ -275,6 +275,9 @@
 				]
 			}
 		},
+		"folder": {
+			"name": "Main/Sources"
+		},
 		"annotations": []
 	}
 }

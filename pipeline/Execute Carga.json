@@ -1,5 +1,5 @@
 {
-	"name": "pipeline1",
+	"name": "Execute Carga",
 	"properties": {
 		"activities": [
 			{
@@ -8,6 +8,30 @@
 				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Copy_tablas",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Copy_tablas",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Execute Carga",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Copy_tablas",
+						"type": "PipelineReference"
+					},
 					"waitOnCompletion": true
 				}
 			}
