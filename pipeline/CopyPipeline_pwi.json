@@ -70,32 +70,6 @@
 									}
 								}
 							]
-						},
-						{
-							"name": "Set variable1",
-							"type": "SetVariable",
-							"dependsOn": [
-								{
-									"activity": "Copy_pwi",
-									"dependencyConditions": [
-										"Succeeded"
-									]
-								}
-							],
-							"userProperties": []
-						},
-						{
-							"name": "Set variable2",
-							"type": "SetVariable",
-							"dependsOn": [
-								{
-									"activity": "Copy_pwi",
-									"dependencyConditions": [
-										"Failed"
-									]
-								}
-							],
-							"userProperties": []
 						}
 					]
 				}
