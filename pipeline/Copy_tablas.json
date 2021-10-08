@@ -10,7 +10,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@pipeline().parameters.cw_items",
+						"value": "@array(pipeline().parameters.cw_items)",
 						"type": "Expression"
 					},
 					"isSequential": true,
