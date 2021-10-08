@@ -10,9 +10,10 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@array(pipeline().parameters.cw_items)",
+						"value": "@activity('Copy_fp6').output ",
 						"type": "Expression"
 					},
+					"isSequential": true,
 					"activities": [
 						{
 							"name": "Copy_fp6",
