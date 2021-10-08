@@ -1,5 +1,5 @@
 {
-	"name": "CopyPipeline_pwi",
+	"name": "CopyDataverseToDataLake_bronce",
 	"properties": {
 		"activities": [
 			{
@@ -54,7 +54,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "SourceDataset_pwi",
+									"referenceName": "SourceDataset_Dataverse",
 									"type": "DatasetReference",
 									"parameters": {
 										"cw_entityName": "@item().source.entityName"
@@ -63,7 +63,7 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "DestinationDataset_pwi",
+									"referenceName": "DestinationDataset_bronce",
 									"type": "DatasetReference",
 									"parameters": {
 										"cw_fileName": "@item().destination.fileName"
@@ -88,7 +88,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"pipeline": {
-						"referenceName": "CopySilver",
+						"referenceName": "CopyToSilver",
 						"type": "PipelineReference"
 					},
 					"waitOnCompletion": true

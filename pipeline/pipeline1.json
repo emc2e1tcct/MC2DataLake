@@ -9,7 +9,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"pipeline": {
-						"referenceName": "CopyPipeline_pwi",
+						"referenceName": "CopyDataverseToDataLake_bronce",
 						"type": "PipelineReference"
 					},
 					"waitOnCompletion": true

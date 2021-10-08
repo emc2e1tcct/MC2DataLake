@@ -1,5 +1,5 @@
 {
-	"name": "DestinationDataset_pwi",
+	"name": "DestinationDataset_bronce",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorageGen2",

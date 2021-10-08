@@ -1,9 +1,9 @@
 {
-	"name": "CopySilver",
+	"name": "CopyToSilver",
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_96d",
+				"name": "CopyBronceToSilver",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
