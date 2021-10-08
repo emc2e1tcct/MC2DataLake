@@ -10,7 +10,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "Pruebas",
 				"fileSystem": "mc2-bs-dev-bronze"
 			},
 			"columnDelimiter": ",",
