@@ -1,5 +1,5 @@
 {
-	"name": "SourceDataset_96d",
+	"name": "SourceDataset_bronce",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorageGen2",

@@ -53,13 +53,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceDataset_96d",
+						"referenceName": "SourceDataset_bronce",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_96d",
+						"referenceName": "DestinationDataset_silver",
 						"type": "DatasetReference"
 					}
 				]
