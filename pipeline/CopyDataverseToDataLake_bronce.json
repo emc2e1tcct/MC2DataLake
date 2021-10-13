@@ -73,19 +73,6 @@
 						}
 					]
 				}
-			},
-			{
-				"name": "CopySilver",
-				"type": "ExecutePipeline",
-				"dependsOn": [],
-				"userProperties": [],
-				"typeProperties": {
-					"pipeline": {
-						"referenceName": "CopyToSilver",
-						"type": "PipelineReference"
-					},
-					"waitOnCompletion": false
-				}
 			}
 		],
 		"parameters": {
