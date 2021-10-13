@@ -1,0 +1,136 @@
+{
+	"name": "CopyPrincipalesDataverseToBronce",
+	"properties": {
+		"description": "Copia las 6 tablas principales del dataverse a la capa bronce",
+		"activities": [
+			{
+				"name": "ForEach_tv8",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@pipeline().parameters.cw_items",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "Copy_tv8",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [
+								{
+									"name": "Source",
+									"value": "@{item().source.entityName}"
+								},
+								{
+									"name": "Destination",
+									"value": "mc2-bs-dev-bronze//@{item().destination.fileName}"
+								}
+							],
+							"typeProperties": {
+								"source": {
+									"type": "CommonDataServiceForAppsSource"
+								},
+								"sink": {
+									"type": "DelimitedTextSink",
+									"storeSettings": {
+										"type": "AzureBlobFSWriteSettings"
+									},
+									"formatSettings": {
+										"type": "DelimitedTextWriteSettings",
+										"quoteAllText": true,
+										"fileExtension": ".txt"
+									}
+								},
+								"enableStaging": false,
+								"validateDataConsistency": false
+							},
+							"inputs": [
+								{
+									"referenceName": "SourceDataset_tv8",
+									"type": "DatasetReference",
+									"parameters": {
+										"cw_entityName": "@item().source.entityName"
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "DestinationDataset_tv8",
+									"type": "DatasetReference",
+									"parameters": {
+										"cw_fileName": "@item().destination.fileName"
+									}
+								}
+							]
+						}
+					]
+				}
+			}
+		],
+		"parameters": {
+			"cw_items": {
+				"type": "Array",
+				"defaultValue": [
+					{
+						"source": {
+							"entityName": "mc2_comentarios_pedidos"
+						},
+						"destination": {
+							"fileName": "mc2_comentarios_pedidos.txt"
+						}
+					},
+					{
+						"source": {
+							"entityName": "mc2_elemento_pep"
+						},
+						"destination": {
+							"fileName": "mc2_elemento_pep.txt"
+						}
+					},
+					{
+						"source": {
+							"entityName": "mc2_lineas_adquira"
+						},
+						"destination": {
+							"fileName": "mc2_lineas_adquira.txt"
+						}
+					},
+					{
+						"source": {
+							"entityName": "mc2_pedido"
+						},
+						"destination": {
+							"fileName": "mc2_pedido.txt"
+						}
+					},
+					{
+						"source": {
+							"entityName": "mc2_planificacion"
+						},
+						"destination": {
+							"fileName": "mc2_planificacion.txt"
+						}
+					},
+					{
+						"source": {
+							"entityName": "mc2_proyecto"
+						},
+						"destination": {
+							"fileName": "mc2_proyecto.txt"
+						}
+					}
+				]
+			}
+		},
+		"annotations": []
+	}
+}
