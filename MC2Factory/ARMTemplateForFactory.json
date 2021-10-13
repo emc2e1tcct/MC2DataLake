@@ -674,6 +674,9 @@
 						"type": "String"
 					}
 				},
+				"folder": {
+					"name": "DatasetDestinoBronce"
+				},
 				"annotations": [],
 				"type": "DelimitedText",
 				"typeProperties": {
@@ -709,6 +712,9 @@
 					"cw_fileName": {
 						"type": "String"
 					}
+				},
+				"folder": {
+					"name": "DatasetDestinoBronce"
 				},
 				"annotations": [],
 				"type": "DelimitedText",
@@ -746,6 +752,9 @@
 						"type": "String"
 					}
 				},
+				"folder": {
+					"name": "DatasetSourceDataverse"
+				},
 				"annotations": [],
 				"type": "CommonDataServiceForAppsEntity",
 				"schema": [],
@@ -774,6 +783,9 @@
 					"cw_entityName": {
 						"type": "String"
 					}
+				},
+				"folder": {
+					"name": "DatasetSourceDataverse"
 				},
 				"annotations": [],
 				"type": "CommonDataServiceForAppsEntity",
