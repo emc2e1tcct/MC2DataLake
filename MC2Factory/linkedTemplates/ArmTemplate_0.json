@@ -573,25 +573,6 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/MC2Snowflake')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "Snowflake",
-				"typeProperties": {
-					"connectionString": "[parameters('MC2Snowflake_connectionString')]"
-				},
-				"connectVia": {
-					"referenceName": "integrationRuntime",
-					"type": "IntegrationRuntimeReference"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/integrationRuntimes/integrationRuntime')]"
-			]
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/CopyPrincipalesMC2ToBronce')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
@@ -669,25 +650,6 @@
 								}
 							]
 						}
-					},
-					{
-						"name": "Execute Pipeline1",
-						"type": "ExecutePipeline",
-						"dependsOn": [],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "CopyMaestrasMC2ToBronce",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {
-								"cw_items": {
-									"value": "@pipeline().parameters.cw_items",
-									"type": "Expression"
-								}
-							}
-						}
 					}
 				],
 				"policy": {
@@ -752,9 +714,76 @@
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/CopyMaestrasMC2ToBronce')]",
 				"[concat(variables('factoryId'), '/datasets/SourceDataset_PrincipalesDataverse')]",
 				"[concat(variables('factoryId'), '/datasets/DestinationDataset_PrincipalesBronce')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/MC2Snowflake')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "Snowflake",
+				"typeProperties": {
+					"connectionString": "[parameters('MC2Snowflake_connectionString')]"
+				},
+				"connectVia": {
+					"referenceName": "integrationRuntime",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/integrationRuntimes/integrationRuntime')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Main')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "CopyMaestrasMC2ToBronce",
+						"type": "ExecutePipeline",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "CopyMaestrasMC2ToBronce",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {}
+						}
+					},
+					{
+						"name": "CopyPrincipalesMC2ToBronce",
+						"type": "ExecutePipeline",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "CopyPrincipalesMC2ToBronce",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {}
+						}
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
+				"folder": {
+					"name": "Main"
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/CopyMaestrasMC2ToBronce')]",
+				"[concat(variables('factoryId'), '/pipelines/CopyPrincipalesMC2ToBronce')]"
 			]
 		}
 	]
