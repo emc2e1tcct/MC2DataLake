@@ -1,5 +1,5 @@
 {
-	"name": "SourceDataset_iq9",
+	"name": "SourceDataset_Dataverse",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "MC2Dataverse",

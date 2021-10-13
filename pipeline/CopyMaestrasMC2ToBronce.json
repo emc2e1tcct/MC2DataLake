@@ -55,7 +55,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "SourceDataset_iq9",
+									"referenceName": "SourceDataset_Dataverse",
 									"type": "DatasetReference",
 									"parameters": {
 										"cw_entityName": "@item().source.entityName"
@@ -64,7 +64,7 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "DestinationDataset_iq9",
+									"referenceName": "DestinationDataset_Bronce",
 									"type": "DatasetReference",
 									"parameters": {
 										"cw_fileName": "@item().destination.fileName"
