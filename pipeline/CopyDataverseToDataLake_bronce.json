@@ -77,21 +77,14 @@
 			{
 				"name": "CopySilver",
 				"type": "ExecutePipeline",
-				"dependsOn": [
-					{
-						"activity": "ForEach_pwi",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
 					"pipeline": {
 						"referenceName": "CopyToSilver",
 						"type": "PipelineReference"
 					},
-					"waitOnCompletion": true
+					"waitOnCompletion": false
 				}
 			}
 		],
