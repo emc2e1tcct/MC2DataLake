@@ -1005,7 +1005,7 @@
 								"type": "DelimitedTextSource",
 								"storeSettings": {
 									"type": "AzureBlobFSReadSettings",
-									"fileListPath": "mc2-bs-dev-bronze/mc2_proyecto.txt",
+									"fileListPath": "mc2-bs-dev-bronze",
 									"enablePartitionDiscovery": false
 								},
 								"formatSettings": {
