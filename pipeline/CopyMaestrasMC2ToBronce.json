@@ -74,19 +74,6 @@
 						}
 					]
 				}
-			},
-			{
-				"name": "CopyPrincipalesMC2ToBronce",
-				"type": "ExecutePipeline",
-				"dependsOn": [],
-				"userProperties": [],
-				"typeProperties": {
-					"pipeline": {
-						"referenceName": "CopyPrincipalesMC2ToBronce",
-						"type": "PipelineReference"
-					},
-					"waitOnCompletion": true
-				}
 			}
 		],
 		"parameters": {
