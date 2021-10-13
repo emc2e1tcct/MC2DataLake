@@ -139,7 +139,7 @@
 							},
 							"waitOnCompletion": true,
 							"parameters": {
-								"cw_items": {
+								"cw_itemsPrincipales": {
 									"value": "@pipeline().parameters.cw_items",
 									"type": "Expression"
 								}
@@ -373,7 +373,7 @@
 						"userProperties": [],
 						"typeProperties": {
 							"items": {
-								"value": "@pipeline().parameters.cw_items",
+								"value": "@pipeline().parameters.cw_itemsPrincipales",
 								"type": "Expression"
 							},
 							"activities": [
@@ -444,7 +444,7 @@
 					"cancelAfter": {}
 				},
 				"parameters": {
-					"cw_items": {
+					"cw_itemsPrincipales": {
 						"type": "array",
 						"defaultValue": [
 							{
