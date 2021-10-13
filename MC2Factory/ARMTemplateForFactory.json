@@ -431,7 +431,7 @@
 				},
 				"parameters": {
 					"cw_items": {
-						"type": "Array",
+						"type": "array",
 						"defaultValue": [
 							{
 								"source": {
