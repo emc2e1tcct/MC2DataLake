@@ -11,6 +11,10 @@
 			"type": "secureString",
 			"metadata": "Cadena protegida para \"accountKey\"de \"AzureDataLakeStorageGen2\""
 		},
+		"AzureTableStoragePrueba_connectionString": {
+			"type": "secureString",
+			"metadata": "Cadena protegida para \"connectionString\"de \"AzureTableStoragePrueba\""
+		},
 		"MC2Dataverse_servicePrincipalCredential": {
 			"type": "secureString",
 			"metadata": "Cadena protegida para \"servicePrincipalCredential\"de \"MC2Dataverse\""
@@ -26,6 +30,10 @@
 		"MC2Dataverse_properties_typeProperties_servicePrincipalId": {
 			"type": "string",
 			"defaultValue": "f16b031b-29a7-4264-8271-f2844c7b7084"
+		},
+		"MC2Snowflake_connectionString": {
+			"type": "secureString",
+			"metadata": "Cadena protegida para \"connectionString\"de \"MC2Snowflake\""
 		},
 		"containerUri": {
 			"type": "string",
@@ -57,6 +65,9 @@
 					"AzureDataLakeStorageGen2_accountKey": {
 						"value": "[parameters('AzureDataLakeStorageGen2_accountKey')]"
 					},
+					"AzureTableStoragePrueba_connectionString": {
+						"value": "[parameters('AzureTableStoragePrueba_connectionString')]"
+					},
 					"MC2Dataverse_servicePrincipalCredential": {
 						"value": "[parameters('MC2Dataverse_servicePrincipalCredential')]"
 					},
@@ -68,6 +79,9 @@
 					},
 					"MC2Dataverse_properties_typeProperties_servicePrincipalId": {
 						"value": "[parameters('MC2Dataverse_properties_typeProperties_servicePrincipalId')]"
+					},
+					"MC2Snowflake_connectionString": {
+						"value": "[parameters('MC2Snowflake_connectionString')]"
 					}
 				}
 			},
