@@ -4,7 +4,7 @@
 		"description": "Copia las tablas maestras del dataverse a la capa Bronce",
 		"activities": [
 			{
-				"name": "ForEach_iq9",
+				"name": "ForEach_Maestras",
 				"type": "ForEach",
 				"dependsOn": [],
 				"userProperties": [],
@@ -15,7 +15,7 @@
 					},
 					"activities": [
 						{
-							"name": "Copy_iq9",
+							"name": "Copy_Maestras",
 							"type": "Copy",
 							"dependsOn": [],
 							"policy": {
@@ -55,7 +55,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "SourceDataset_Dataverse",
+									"referenceName": "SourceDataset_MaestrasDataverse",
 									"type": "DatasetReference",
 									"parameters": {
 										"cw_entityName": "@item().source.entityName"
@@ -64,7 +64,7 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "DestinationDataset_Bronce",
+									"referenceName": "DestinationDataset_MaestrasBronce",
 									"type": "DatasetReference",
 									"parameters": {
 										"cw_fileName": "@item().destination.fileName"
@@ -73,6 +73,19 @@
 							]
 						}
 					]
+				}
+			},
+			{
+				"name": "CopyPrincipalesMC2ToBronce",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "CopyPrincipalesMC2ToBronce",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
 				}
 			}
 		],

@@ -4,7 +4,7 @@
 		"description": "Copia las 6 tablas principales del dataverse a la capa bronce",
 		"activities": [
 			{
-				"name": "ForEach_tv8",
+				"name": "ForEach_Principales",
 				"type": "ForEach",
 				"dependsOn": [],
 				"userProperties": [],
@@ -15,7 +15,7 @@
 					},
 					"activities": [
 						{
-							"name": "Copy_tv8",
+							"name": "Copy_principales",
 							"type": "Copy",
 							"dependsOn": [],
 							"policy": {
