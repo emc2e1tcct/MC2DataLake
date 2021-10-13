@@ -537,12 +537,7 @@
 								"type": "PipelineReference"
 							},
 							"waitOnCompletion": true,
-							"parameters": {
-								"cw_itemsPrincipales": {
-									"value": "@pipeline().parameters.cw_items",
-									"type": "Expression"
-								}
-							}
+							"parameters": {}
 						}
 					}
 				],
