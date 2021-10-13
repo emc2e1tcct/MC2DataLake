@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_cys",
+				"name": "CopyTablasToSilver",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -28,8 +28,7 @@
 						"type": "DelimitedTextSource",
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
-							"recursive": true,
-							"wildcardFileName": "*",
+							"fileListPath": "mc2-bs-dev-bronze/mc2_proyecto.txt",
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
@@ -53,13 +52,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceDataset_cys",
+						"referenceName": "SourceDatasetBronce",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_cys",
+						"referenceName": "DestinationDataset_Silver",
 						"type": "DatasetReference"
 					}
 				]

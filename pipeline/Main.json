@@ -39,6 +39,32 @@
 						}
 					}
 				}
+			},
+			{
+				"name": "CopyTablasFromBronceToSilver",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "CopyPrincipalesMC2ToBronce",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "CopyMaestrasMC2ToBronce",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "CopyTablasFromBronceToSilver",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
 			}
 		],
 		"parameters": {

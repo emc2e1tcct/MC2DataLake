@@ -1,9 +1,12 @@
 {
-	"name": "SourceDataset_cys",
+	"name": "SourceDatasetBronce",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorageGen2",
 			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "DatasetSourceDataverse"
 		},
 		"annotations": [],
 		"type": "DelimitedText",
