@@ -35,6 +35,14 @@
 			"type": "secureString",
 			"metadata": "Cadena protegida para \"connectionString\"de \"MC2Snowflake\""
 		},
+		"dataFactory_location": {
+			"type": "string",
+			"defaultValue": "northeurope"
+		},
+		"dataFactory_identity_type": {
+			"type": "string",
+			"defaultValue": "SystemAssigned"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI de la cuenta de almacenamiento que contiene las plantillas de ARM vinculadas."
@@ -70,6 +78,12 @@
 					},
 					"MC2Dataverse_servicePrincipalCredential": {
 						"value": "[parameters('MC2Dataverse_servicePrincipalCredential')]"
+					},
+					"dataFactory_location": {
+						"value": "[parameters('dataFactory_location')]"
+					},
+					"dataFactory_identity_type": {
+						"value": "[parameters('dataFactory_identity_type')]"
 					},
 					"AzureDataLakeStorageGen2_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorageGen2_properties_typeProperties_url')]"

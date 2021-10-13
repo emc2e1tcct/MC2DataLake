@@ -25,6 +25,12 @@
 		},
 		"MC2Snowflake_connectionString": {
 			"value": ""
+		},
+		"dataFactory_location": {
+			"value": "northeurope"
+		},
+		"dataFactory_identity_type": {
+			"value": "SystemAssigned"
 		}
 	}
 }
