@@ -74,6 +74,25 @@
 						}
 					]
 				}
+			},
+			{
+				"name": "CopyPrincipalesMC2ToBronce",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "CopyPrincipalesMC2ToBronce",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"cw_items": {
+							"value": "@pipeline().parameters.cw_items",
+							"type": "Expression"
+						}
+					}
+				}
 			}
 		],
 		"parameters": {
