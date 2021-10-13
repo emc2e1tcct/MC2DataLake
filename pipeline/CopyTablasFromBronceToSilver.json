@@ -64,6 +64,9 @@
 				]
 			}
 		],
+		"folder": {
+			"name": "Sources/CopyFromBronceToSilver"
+		},
 		"annotations": []
 	}
 }
