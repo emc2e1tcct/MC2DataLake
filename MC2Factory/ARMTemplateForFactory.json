@@ -118,20 +118,6 @@
 								}
 							]
 						}
-					},
-					{
-						"name": "CopyPrincipalesMC2ToBronce",
-						"type": "ExecutePipeline",
-						"dependsOn": [],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "CopyPrincipalesMC2ToBronce",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {}
-						}
 					}
 				],
 				"policy": {
@@ -340,7 +326,6 @@
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/CopyPrincipalesMC2ToBronce')]",
 				"[concat(variables('factoryId'), '/datasets/SourceDataset_MaestrasDataverse')]",
 				"[concat(variables('factoryId'), '/datasets/DestinationDataset_MaestrasBronce')]"
 			]
@@ -423,6 +408,20 @@
 								}
 							]
 						}
+					},
+					{
+						"name": "Execute Pipeline1",
+						"type": "ExecutePipeline",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "CopyMaestrasMC2ToBronce",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {}
+						}
 					}
 				],
 				"policy": {
@@ -487,6 +486,7 @@
 				"annotations": []
 			},
 			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/CopyMaestrasMC2ToBronce')]",
 				"[concat(variables('factoryId'), '/datasets/SourceDataset_PrincipalesDataverse')]",
 				"[concat(variables('factoryId'), '/datasets/DestinationDataset_PrincipalesBronce')]"
 			]
