@@ -343,13 +343,13 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/CopyPipeline_zdm')]",
+			"name": "[concat(parameters('factoryName'), '/CopyFromBronceToSilver')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"activities": [
 					{
-						"name": "Copy_zdm",
+						"name": "CopyFromBronceToSilver",
 						"type": "Copy",
 						"dependsOn": [],
 						"policy": {
@@ -623,7 +623,7 @@
 						}
 					},
 					{
-						"name": "CopyPipeline_zdm",
+						"name": "CopyFromBronceToSilver",
 						"type": "ExecutePipeline",
 						"dependsOn": [
 							{
@@ -642,7 +642,7 @@
 						"userProperties": [],
 						"typeProperties": {
 							"pipeline": {
-								"referenceName": "CopyPipeline_zdm",
+								"referenceName": "CopyFromBronceToSilver",
 								"type": "PipelineReference"
 							},
 							"waitOnCompletion": true,
@@ -915,7 +915,7 @@
 				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/pipelines/CopyPrincipalesMC2ToBronce')]",
 				"[concat(variables('factoryId'), '/pipelines/CopyMaestrasMC2ToBronce')]",
-				"[concat(variables('factoryId'), '/pipelines/CopyPipeline_zdm')]"
+				"[concat(variables('factoryId'), '/pipelines/CopyFromBronceToSilver')]"
 			]
 		},
 		{
