@@ -566,6 +566,9 @@
 					"elapsedTimeMetric": {},
 					"cancelAfter": {}
 				},
+				"folder": {
+					"name": "Sources/CopyFromBronceToSilver"
+				},
 				"annotations": []
 			},
 			"dependsOn": [
