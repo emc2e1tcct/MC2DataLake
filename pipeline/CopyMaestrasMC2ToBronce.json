@@ -87,7 +87,10 @@
 					},
 					"waitOnCompletion": true,
 					"parameters": {
-						"cw_itemsPrincipales": "[{\"source\":{\"entityName\":\"mc2_comentarios_pedidos\"},\"destination\":{\"fileName\":\"mc2_comentarios_pedidos.txt\"}},{\"source\":{\"entityName\":\"mc2_elemento_pep\"},\"destination\":{\"fileName\":\"mc2_elemento_pep.txt\"}},{\"source\":{\"entityName\":\"mc2_lineas_adquira\"},\"destination\":{\"fileName\":\"mc2_lineas_adquira.txt\"}},{\"source\":{\"entityName\":\"mc2_pedido\"},\"destination\":{\"fileName\":\"mc2_pedido.txt\"}},{\"source\":{\"entityName\":\"mc2_planificacion\"},\"destination\":{\"fileName\":\"mc2_planificacion.txt\"}},{\"source\":{\"entityName\":\"mc2_proyecto\"},\"destination\":{\"fileName\":\"mc2_proyecto.txt\"}}]\n"
+						"cw_itemsPrincipales": {
+							"value": "@array([{\"source\":{\"entityName\":\"mc2_comentarios_pedidos\"},\"destination\":{\"fileName\":\"mc2_comentarios_pedidos.txt\"}},{\"source\":{\"entityName\":\"mc2_elemento_pep\"},\"destination\":{\"fileName\":\"mc2_elemento_pep.txt\"}},{\"source\":{\"entityName\":\"mc2_lineas_adquira\"},\"destination\":{\"fileName\":\"mc2_lineas_adquira.txt\"}},{\"source\":{\"entityName\":\"mc2_pedido\"},\"destination\":{\"fileName\":\"mc2_pedido.txt\"}},{\"source\":{\"entityName\":\"mc2_planificacion\"},\"destination\":{\"fileName\":\"mc2_planificacion.txt\"}},{\"source\":{\"entityName\":\"mc2_proyecto\"},\"destination\":{\"fileName\":\"mc2_proyecto.txt\"}}])\n",
+							"type": "Expression"
+						}
 					}
 				}
 			}
