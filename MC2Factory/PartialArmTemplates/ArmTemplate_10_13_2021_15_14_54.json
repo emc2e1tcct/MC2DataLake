@@ -1,0 +1,176 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Nombre de instancia de Data Factory",
+			"defaultValue": "MC2Factory"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/CopyPrincipalesMC2ToBronce')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "Copia las 6 tablas principales del dataverse a la capa bronce",
+				"activities": [
+					{
+						"name": "ForEach_Principales",
+						"type": "ForEach",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"items": {
+								"value": "@pipeline().parameters.cw_items",
+								"type": "Expression"
+							},
+							"activities": [
+								{
+									"name": "Copy_principales",
+									"type": "Copy",
+									"dependsOn": [],
+									"policy": {
+										"timeout": "7.00:00:00",
+										"retry": 0,
+										"retryIntervalInSeconds": 30,
+										"secureOutput": false,
+										"secureInput": false
+									},
+									"userProperties": [
+										{
+											"name": "Source",
+											"value": "@{item().source.entityName}"
+										},
+										{
+											"name": "Destination",
+											"value": "mc2-bs-dev-bronze//@{item().destination.fileName}"
+										}
+									],
+									"typeProperties": {
+										"source": {
+											"type": "CommonDataServiceForAppsSource"
+										},
+										"sink": {
+											"type": "DelimitedTextSink",
+											"storeSettings": {
+												"type": "AzureBlobFSWriteSettings"
+											},
+											"formatSettings": {
+												"type": "DelimitedTextWriteSettings",
+												"quoteAllText": true,
+												"fileExtension": ".txt"
+											}
+										},
+										"enableStaging": false,
+										"validateDataConsistency": false
+									},
+									"inputs": [
+										{
+											"referenceName": "SourceDataset_PrincipalesDataverse",
+											"type": "DatasetReference",
+											"parameters": {
+												"cw_entityName": "@item().source.entityName"
+											}
+										}
+									],
+									"outputs": [
+										{
+											"referenceName": "DestinationDataset_PrincipalesBronce",
+											"type": "DatasetReference",
+											"parameters": {
+												"cw_fileName": "@item().destination.fileName"
+											}
+										}
+									]
+								}
+							]
+						}
+					},
+					{
+						"name": "Execute Pipeline1",
+						"type": "ExecutePipeline",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "CopyMaestrasMC2ToBronce",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {
+								"cw_items": {
+									"value": "@pipeline().parameters.cw_items",
+									"type": "Expression"
+								}
+							}
+						}
+					}
+				],
+				"parameters": {
+					"cw_items": {
+						"type": "array",
+						"defaultValue": [
+							{
+								"source": {
+									"entityName": "mc2_comentarios_pedidos"
+								},
+								"destination": {
+									"fileName": "mc2_comentarios_pedidos.txt"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_elemento_pep"
+								},
+								"destination": {
+									"fileName": "mc2_elemento_pep.txt"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_lineas_adquira"
+								},
+								"destination": {
+									"fileName": "mc2_lineas_adquira.txt"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_pedido"
+								},
+								"destination": {
+									"fileName": "mc2_pedido.txt"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_planificacion"
+								},
+								"destination": {
+									"fileName": "mc2_planificacion.txt"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_proyecto"
+								},
+								"destination": {
+									"fileName": "mc2_proyecto.txt"
+								}
+							}
+						]
+					}
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[variables('factoryId')]"
+			]
+		}
+	]
+}
