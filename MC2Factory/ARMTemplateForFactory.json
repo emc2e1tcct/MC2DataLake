@@ -332,7 +332,7 @@
 					}
 				},
 				"folder": {
-					"name": "CopyFromMC2ToDataLakeBronce"
+					"name": "Sources/CopyFromMC2ToDataLakeBronce"
 				},
 				"annotations": []
 			},
@@ -482,7 +482,7 @@
 					}
 				},
 				"folder": {
-					"name": "CopyFromMC2ToDataLakeBronce"
+					"name": "Sources/CopyFromMC2ToDataLakeBronce"
 				},
 				"annotations": []
 			},
