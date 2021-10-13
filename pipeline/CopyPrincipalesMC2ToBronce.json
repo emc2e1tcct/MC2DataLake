@@ -85,7 +85,13 @@
 						"referenceName": "CopyMaestrasMC2ToBronce",
 						"type": "PipelineReference"
 					},
-					"waitOnCompletion": true
+					"waitOnCompletion": true,
+					"parameters": {
+						"cw_items": {
+							"value": "@pipeline().parameters.cw_items",
+							"type": "Expression"
+						}
+					}
 				}
 			}
 		],
