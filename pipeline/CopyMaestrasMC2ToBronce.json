@@ -85,7 +85,13 @@
 						"referenceName": "CopyPrincipalesMC2ToBronce",
 						"type": "PipelineReference"
 					},
-					"waitOnCompletion": true
+					"waitOnCompletion": true,
+					"parameters": {
+						"cw_itemsPrincipales": {
+							"value": "@pipeline().parameters.cw_itemsPrincipales",
+							"type": "Expression"
+						}
+					}
 				}
 			}
 		],
