@@ -74,25 +74,6 @@
 						}
 					]
 				}
-			},
-			{
-				"name": "CopyPrincipalesMC2ToBronce",
-				"type": "ExecutePipeline",
-				"dependsOn": [],
-				"userProperties": [],
-				"typeProperties": {
-					"pipeline": {
-						"referenceName": "CopyPrincipalesMC2ToBronce",
-						"type": "PipelineReference"
-					},
-					"waitOnCompletion": true,
-					"parameters": {
-						"cw_itemsPrincipales": {
-							"value": "@pipeline().parameters.cw_itemsPrincipales",
-							"type": "Expression"
-						}
-					}
-				}
 			}
 		],
 		"parameters": {
@@ -292,60 +273,10 @@
 						}
 					}
 				]
-			},
-			"cw_itemsPrincipales": {
-				"type": "array",
-				"defaultValue": [
-					{
-						"source": {
-							"entityName": "mc2_comentarios_pedidos"
-						},
-						"destination": {
-							"fileName": "mc2_comentarios_pedidos.txt"
-						}
-					},
-					{
-						"source": {
-							"entityName": "mc2_elemento_pep"
-						},
-						"destination": {
-							"fileName": "mc2_elemento_pep.txt"
-						}
-					},
-					{
-						"source": {
-							"entityName": "mc2_lineas_adquira"
-						},
-						"destination": {
-							"fileName": "mc2_lineas_adquira.txt"
-						}
-					},
-					{
-						"source": {
-							"entityName": "mc2_pedido"
-						},
-						"destination": {
-							"fileName": "mc2_pedido.txt"
-						}
-					},
-					{
-						"source": {
-							"entityName": "mc2_planificacion"
-						},
-						"destination": {
-							"fileName": "mc2_planificacion.txt"
-						}
-					},
-					{
-						"source": {
-							"entityName": "mc2_proyecto"
-						},
-						"destination": {
-							"fileName": "mc2_proyecto.txt"
-						}
-					}
-				]
 			}
+		},
+		"folder": {
+			"name": "CopyFromMC2ToDataLakeBronce"
 		},
 		"annotations": []
 	}
