@@ -41,7 +41,7 @@
 				}
 			},
 			{
-				"name": "CopyPipeline_zdm",
+				"name": "CopyFromBronceToSilver",
 				"type": "ExecutePipeline",
 				"dependsOn": [
 					{
@@ -60,7 +60,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"pipeline": {
-						"referenceName": "CopyPipeline_zdm",
+						"referenceName": "CopyFromBronceToSilver",
 						"type": "PipelineReference"
 					},
 					"waitOnCompletion": true
