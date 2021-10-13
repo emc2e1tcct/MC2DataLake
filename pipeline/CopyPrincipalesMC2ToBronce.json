@@ -1,5 +1,5 @@
 {
-	"name": "CopyPrincipalesDataverseToBronce",
+	"name": "CopyPrincipalesMC2ToBronce",
 	"properties": {
 		"description": "Copia las 6 tablas principales del dataverse a la capa bronce",
 		"activities": [
@@ -55,7 +55,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "SourceDataset_tv8",
+									"referenceName": "SourceDataset_PrincipalesDataverse",
 									"type": "DatasetReference",
 									"parameters": {
 										"cw_entityName": "@item().source.entityName"
@@ -64,7 +64,7 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "DestinationDataset_tv8",
+									"referenceName": "DestinationDataset_PrincipalesBronce",
 									"type": "DatasetReference",
 									"parameters": {
 										"cw_fileName": "@item().destination.fileName"

@@ -1,5 +1,5 @@
 {
-	"name": "DestinationDataset_tv8",
+	"name": "DestinationDataset_PrincipalesBronce",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorageGen2",

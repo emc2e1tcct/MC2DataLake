@@ -1,5 +1,5 @@
 {
-	"name": "SourceDataset_tv8",
+	"name": "SourceDataset_PrincipalesDataverse",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "MC2Dataverse",
