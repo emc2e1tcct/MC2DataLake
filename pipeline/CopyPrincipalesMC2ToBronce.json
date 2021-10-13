@@ -77,7 +77,7 @@
 			}
 		],
 		"parameters": {
-			"cw_items": {
+			"cw_itemsPrincipales": {
 				"type": "array",
 				"defaultValue": [
 					{
