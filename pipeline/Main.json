@@ -85,6 +85,26 @@
 					},
 					"waitOnCompletion": true
 				}
+			},
+			{
+				"name": "CopyFromSilverToSnowflake",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "CopyFromSilverToGolden",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "CopyFromSilverToSnowflake",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
 			}
 		],
 		"parameters": {
