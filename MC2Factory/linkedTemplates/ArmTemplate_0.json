@@ -124,6 +124,32 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/integrationRuntime')]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "Managed",
+				"typeProperties": {
+					"computeProperties": {
+						"location": "North Europe",
+						"dataFlowProperties": {
+							"computeType": "General",
+							"coreCount": 8,
+							"timeToLive": 10,
+							"cleanup": false
+						}
+					}
+				},
+				"managedVirtualNetwork": {
+					"type": "ManagedVirtualNetworkReference",
+					"referenceName": "default"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/managedVirtualNetworks/default')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/default')]",
 			"type": "Microsoft.DataFactory/factories/managedVirtualNetworks",
 			"apiVersion": "2018-06-01",
@@ -532,7 +558,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/SourceDataset_zdm')]",
+			"name": "[concat(parameters('factoryName'), '/SourceDataset_bronce')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -737,29 +763,22 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/integrationRuntime')]",
-			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"name": "[concat(parameters('factoryName'), '/MC2Snowflake')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"type": "Managed",
+				"annotations": [],
+				"type": "Snowflake",
 				"typeProperties": {
-					"computeProperties": {
-						"location": "North Europe",
-						"dataFlowProperties": {
-							"computeType": "General",
-							"coreCount": 8,
-							"timeToLive": 10,
-							"cleanup": false
-						}
-					}
+					"connectionString": "[parameters('MC2Snowflake_connectionString')]"
 				},
-				"managedVirtualNetwork": {
-					"type": "ManagedVirtualNetworkReference",
-					"referenceName": "default"
+				"connectVia": {
+					"referenceName": "integrationRuntime",
+					"type": "IntegrationRuntimeReference"
 				}
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/managedVirtualNetworks/default')]"
+				"[concat(variables('factoryId'), '/integrationRuntimes/integrationRuntime')]"
 			]
 		},
 		{
@@ -1112,14 +1131,14 @@
 						},
 						"inputs": [
 							{
-								"referenceName": "SourceDataset_zdm",
+								"referenceName": "SourceDataset_bronce",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
 						],
 						"outputs": [
 							{
-								"referenceName": "DestinationDataset_zdm",
+								"referenceName": "DestinationDataset_Silver",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -1136,8 +1155,8 @@
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/SourceDataset_zdm')]",
-				"[concat(variables('factoryId'), '/datasets/DestinationDataset_zdm')]"
+				"[concat(variables('factoryId'), '/datasets/SourceDataset_bronce')]",
+				"[concat(variables('factoryId'), '/datasets/DestinationDataset_Silver')]"
 			]
 		},
 		{
@@ -1287,25 +1306,6 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/SourceDataset_PrincipalesDataverse')]",
 				"[concat(variables('factoryId'), '/datasets/DestinationDataset_PrincipalesBronce')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/MC2Snowflake')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "Snowflake",
-				"typeProperties": {
-					"connectionString": "[parameters('MC2Snowflake_connectionString')]"
-				},
-				"connectVia": {
-					"referenceName": "integrationRuntime",
-					"type": "IntegrationRuntimeReference"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/integrationRuntimes/integrationRuntime')]"
 			]
 		},
 		{

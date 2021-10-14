@@ -399,14 +399,14 @@
 						},
 						"inputs": [
 							{
-								"referenceName": "SourceDataset_zdm",
+								"referenceName": "SourceDataset_bronce",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
 						],
 						"outputs": [
 							{
-								"referenceName": "DestinationDataset_zdm",
+								"referenceName": "DestinationDataset_Silver",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -424,8 +424,8 @@
 			},
 			"dependsOn": [
 				"[variables('factoryId')]",
-				"[concat(variables('factoryId'), '/datasets/SourceDataset_zdm')]",
-				"[concat(variables('factoryId'), '/datasets/DestinationDataset_zdm')]"
+				"[concat(variables('factoryId'), '/datasets/SourceDataset_bronce')]",
+				"[concat(variables('factoryId'), '/datasets/DestinationDataset_Silver')]"
 			]
 		},
 		{
@@ -1327,7 +1327,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/SourceDataset_zdm')]",
+			"name": "[concat(parameters('factoryName'), '/SourceDataset_bronce')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
