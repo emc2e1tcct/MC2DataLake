@@ -53,13 +53,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceDataset_zdm",
+						"referenceName": "SourceDataset_bronce",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_zdm",
+						"referenceName": "DestinationDataset_Silver",
 						"type": "DatasetReference"
 					}
 				]
