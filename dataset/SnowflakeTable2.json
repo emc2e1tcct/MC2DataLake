@@ -1,5 +1,5 @@
 {
-	"name": "SnowflakeTable1",
+	"name": "SnowflakeTable2",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "MC2Snowflake",
@@ -9,7 +9,7 @@
 		"type": "SnowflakeTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "RG_GOLDEN_DEV_MC2"
+			"schema": "MC2_DEV"
 		}
 	}
 }
