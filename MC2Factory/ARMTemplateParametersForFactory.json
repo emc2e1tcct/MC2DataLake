@@ -23,7 +23,7 @@
 		"MC2Dataverse_properties_typeProperties_servicePrincipalId": {
 			"value": "f16b031b-29a7-4264-8271-f2844c7b7084"
 		},
-		"MC2Snowflake_connectionString": {
+		"Snowflake1_connectionString": {
 			"value": ""
 		},
 		"dataFactory_location": {

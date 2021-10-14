@@ -31,9 +31,9 @@
 			"type": "string",
 			"defaultValue": "f16b031b-29a7-4264-8271-f2844c7b7084"
 		},
-		"MC2Snowflake_connectionString": {
+		"Snowflake1_connectionString": {
 			"type": "secureString",
-			"metadata": "Cadena protegida para \"connectionString\"de \"MC2Snowflake\""
+			"metadata": "Cadena protegida para \"connectionString\"de \"Snowflake1\""
 		},
 		"dataFactory_location": {
 			"type": "string",
@@ -94,12 +94,32 @@
 					"MC2Dataverse_properties_typeProperties_servicePrincipalId": {
 						"value": "[parameters('MC2Dataverse_properties_typeProperties_servicePrincipalId')]"
 					},
-					"MC2Snowflake_connectionString": {
-						"value": "[parameters('MC2Snowflake_connectionString')]"
+					"Snowflake1_connectionString": {
+						"value": "[parameters('Snowflake1_connectionString')]"
 					}
 				}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "MC2Factory_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'MC2Factory_ArmTemplate_0')]"
+			]
 		}
 	]
 }
