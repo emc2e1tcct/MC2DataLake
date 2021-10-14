@@ -11,7 +11,7 @@
 			}
 		},
 		"folder": {
-			"name": "DatasetDestinoBronce"
+			"name": "DatasetDestinos"
 		},
 		"annotations": [],
 		"type": "DelimitedText",

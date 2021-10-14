@@ -65,6 +65,26 @@
 					},
 					"waitOnCompletion": true
 				}
+			},
+			{
+				"name": "CopyFromSilverToGolden",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "CopyFromBronceToSilver",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "CopyFromSilverToGolden",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
 			}
 		],
 		"parameters": {

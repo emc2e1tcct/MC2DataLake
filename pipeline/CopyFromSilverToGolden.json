@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_l90",
+				"name": "CopyFromSilverToGolden",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -53,18 +53,21 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceDataset_l90",
+						"referenceName": "SourceDatasetSilver",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_l90",
+						"referenceName": "DestinationDatasetGolden",
 						"type": "DatasetReference"
 					}
 				]
 			}
 		],
+		"folder": {
+			"name": "Sources/CopyFromSilverToGolden"
+		},
 		"annotations": []
 	}
 }

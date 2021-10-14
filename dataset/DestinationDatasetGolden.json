@@ -1,9 +1,12 @@
 {
-	"name": "DestinationDataset_l90",
+	"name": "DestinationDatasetGolden",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorageGen2",
 			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "DatasetDestinos"
 		},
 		"annotations": [],
 		"type": "DelimitedText",
