@@ -46,10 +46,10 @@
 					"enableStaging": true,
 					"stagingSettings": {
 						"linkedServiceName": {
-							"referenceName": "AzureDataLakeStorageGen2",
+							"referenceName": "linkedService1",
 							"type": "LinkedServiceReference"
 						},
-						"path": "mc2-bs-dev-golden"
+						"path": "mc2-bs-dev-golden/"
 					},
 					"translator": {
 						"type": "TabularTranslator",
