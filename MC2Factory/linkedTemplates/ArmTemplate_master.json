@@ -35,6 +35,10 @@
 			"type": "secureString",
 			"metadata": "Cadena protegida para \"connectionString\"de \"Snowflake1\""
 		},
+		"linkedService1_sasUri": {
+			"type": "secureString",
+			"metadata": "Cadena protegida para \"sasUri\"de \"linkedService1\""
+		},
 		"dataFactory_location": {
 			"type": "string",
 			"defaultValue": "northeurope"
@@ -93,9 +97,6 @@
 					},
 					"MC2Dataverse_properties_typeProperties_servicePrincipalId": {
 						"value": "[parameters('MC2Dataverse_properties_typeProperties_servicePrincipalId')]"
-					},
-					"Snowflake1_connectionString": {
-						"value": "[parameters('Snowflake1_connectionString')]"
 					}
 				}
 			},
@@ -114,6 +115,12 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"Snowflake1_connectionString": {
+						"value": "[parameters('Snowflake1_connectionString')]"
+					},
+					"linkedService1_sasUri": {
+						"value": "[parameters('linkedService1_sasUri')]"
 					}
 				}
 			},

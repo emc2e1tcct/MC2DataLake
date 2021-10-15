@@ -26,6 +26,9 @@
 		"Snowflake1_connectionString": {
 			"value": ""
 		},
+		"linkedService1_sasUri": {
+			"value": ""
+		},
 		"dataFactory_location": {
 			"value": "northeurope"
 		},
