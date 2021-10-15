@@ -12,8 +12,7 @@
 				"type": "AzureBlobStorageLocation",
 				"container": "mc2-bs-dev-golden"
 			},
-			"columnDelimiter": ",",
-			"rowDelimiter": "",
+			"columnDelimiter": "",
 			"escapeChar": "\\",
 			"quoteChar": "\""
 		},
