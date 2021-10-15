@@ -14,10 +14,6 @@
 				"precision": 0,
 				"scale": 0
 			}
-		],
-		"typeProperties": {
-			"schema": "PUBLIC",
-			"table": ""
-		}
+		]
 	}
 }
