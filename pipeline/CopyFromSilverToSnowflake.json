@@ -27,8 +27,8 @@
 					"source": {
 						"type": "DelimitedTextSource",
 						"storeSettings": {
-							"type": "AzureBlobFSReadSettings",
-							"fileListPath": "mc2-bs-dev-golden/",
+							"type": "AzureBlobStorageReadSettings",
+							"fileListPath": "mc2-bs-dev-golden/*.*",
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
