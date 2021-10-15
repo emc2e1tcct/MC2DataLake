@@ -17,7 +17,7 @@
 		],
 		"typeProperties": {
 			"schema": "PUBLIC",
-			"table": "RG_GOLDEN_DEV_MC2"
+			"table": ""
 		}
 	}
 }

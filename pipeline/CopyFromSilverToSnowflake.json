@@ -27,13 +27,13 @@
 					"source": {
 						"type": "DelimitedTextSource",
 						"storeSettings": {
-							"type": "AzureBlobStorageReadSettings",
-							"recursive": true,
-							"wildcardFileName": "*",
+							"type": "AzureBlobFSReadSettings",
+							"fileListPath": "mc2-bs-dev-golden/",
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
-							"type": "DelimitedTextReadSettings"
+							"type": "DelimitedTextReadSettings",
+							"skipLineCount": 0
 						}
 					},
 					"sink": {
@@ -42,7 +42,14 @@
 							"type": "SnowflakeImportCopyCommand"
 						}
 					},
-					"enableStaging": false,
+					"enableStaging": true,
+					"stagingSettings": {
+						"linkedServiceName": {
+							"referenceName": "linkedService1",
+							"type": "LinkedServiceReference"
+						},
+						"path": "mc2-bs-dev-golden/"
+					},
 					"translator": {
 						"type": "TabularTranslator",
 						"mappings": [
