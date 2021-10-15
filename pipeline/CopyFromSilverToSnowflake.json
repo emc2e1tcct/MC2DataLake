@@ -27,8 +27,9 @@
 					"source": {
 						"type": "DelimitedTextSource",
 						"storeSettings": {
-							"type": "AzureBlobFSReadSettings",
+							"type": "AzureBlobStorageReadSettings",
 							"recursive": true,
+							"wildcardFolderPath": "*.*",
 							"wildcardFileName": "*",
 							"enablePartitionDiscovery": false
 						},
@@ -43,14 +44,7 @@
 							"type": "SnowflakeImportCopyCommand"
 						}
 					},
-					"enableStaging": true,
-					"stagingSettings": {
-						"linkedServiceName": {
-							"referenceName": "linkedService1",
-							"type": "LinkedServiceReference"
-						},
-						"path": "mc2-bs-dev-golden/"
-					},
+					"enableStaging": false,
 					"translator": {
 						"type": "TabularTranslator",
 						"mappings": [
@@ -69,7 +63,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceDataset_voo",
+						"referenceName": "DelimitedText1",
 						"type": "DatasetReference"
 					}
 				],
