@@ -7,17 +7,6 @@
 		},
 		"annotations": [],
 		"type": "SnowflakeTable",
-		"schema": [
-			{
-				"name": "C1",
-				"type": "VARCHAR",
-				"precision": 0,
-				"scale": 0
-			}
-		],
-		"typeProperties": {
-			"schema": "INFORMATION_SCHEMA",
-			"table": "EXTERNAL_TABLES"
-		}
+		"schema": []
 	}
 }
