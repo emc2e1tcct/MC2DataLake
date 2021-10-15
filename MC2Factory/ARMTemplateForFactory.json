@@ -288,7 +288,97 @@
 											"ordinal": 1
 										},
 										"sink": {
-											"name": "C1",
+											"name": "TABLE_CATALOG",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 2
+										},
+										"sink": {
+											"name": "TABLE_SCHEMA",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 3
+										},
+										"sink": {
+											"name": "TABLE_NAME",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 4
+										},
+										"sink": {
+											"name": "TABLE_OWNER",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 5
+										},
+										"sink": {
+											"name": "CREATED",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 6
+										},
+										"sink": {
+											"name": "LAST_ALTERED",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 7
+										},
+										"sink": {
+											"name": "COMMENT",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 8
+										},
+										"sink": {
+											"name": "LOCATION",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 9
+										},
+										"sink": {
+											"name": "FILE_FORMAT_NAME",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 10
+										},
+										"sink": {
+											"name": "FILE_FORMAT_TYPE",
 											"type": "String"
 										}
 									}
@@ -1282,17 +1372,10 @@
 				},
 				"annotations": [],
 				"type": "SnowflakeTable",
-				"schema": [
-					{
-						"name": "C1",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					}
-				],
+				"schema": [],
 				"typeProperties": {
-					"schema": "INFORMATION_SCHEMA",
-					"table": "EXTERNAL_TABLES"
+					"schema": "PUBLIC",
+					"table": "RG_GOLDEN_DEV_MC2"
 				}
 			},
 			"dependsOn": [
