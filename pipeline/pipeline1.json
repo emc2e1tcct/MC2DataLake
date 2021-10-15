@@ -33,14 +33,7 @@
 							"type": "SnowflakeImportCopyCommand"
 						}
 					},
-					"enableStaging": true,
-					"stagingSettings": {
-						"linkedServiceName": {
-							"referenceName": "linkedService1",
-							"type": "LinkedServiceReference"
-						},
-						"path": "contenedordatalake"
-					}
+					"enableStaging": false
 				},
 				"inputs": [
 					{
