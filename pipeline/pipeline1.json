@@ -19,7 +19,7 @@
 						"type": "DelimitedTextSource",
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
-							"recursive": true,
+							"fileListPath": "mc2-bs-dev-silver",
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
