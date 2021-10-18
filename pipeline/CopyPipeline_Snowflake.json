@@ -40,7 +40,14 @@
 					"sink": {
 						"type": "SnowflakeSink",
 						"importSettings": {
-							"type": "SnowflakeImportCopyCommand"
+							"type": "SnowflakeImportCopyCommand",
+							"additionalCopyOptions": {
+								"FORCE": "TRUE",
+								"ON_ERROR": "SKIP_FILE"
+							},
+							"additionalFormatOptions": {
+								"DATE_FORMAT": "'YYYY-MM-DD'"
+							}
 						}
 					},
 					"enableStaging": true,
@@ -49,7 +56,8 @@
 							"referenceName": "linkedService1",
 							"type": "LinkedServiceReference"
 						}
-					}
+					},
+					"enableSkipIncompatibleRow": true
 				},
 				"inputs": [
 					{
