@@ -38,6 +38,10 @@
 					},
 					"sink": {
 						"type": "SnowflakeSink",
+						"preCopyScript": {
+							"value": "IncomingStream sink(allowSchemaDrift: true,\n    validateSchema: false,\n    format: 'table',\n    tableName: 'table',\n    schemaName: 'schema',\n    deletable: true,\n    insertable: true,\n    updateable: true,\n    upsertable: false,\n    store: 'snowflake',\n    skipDuplicateMapInputs: true,\n    skipDuplicateMapOutputs: true) ~> SnowflakeSink",
+							"type": "Expression"
+						},
 						"importSettings": {
 							"type": "SnowflakeImportCopyCommand"
 						}
