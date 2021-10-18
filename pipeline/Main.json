@@ -96,7 +96,7 @@
 							"entityName": "mc2_maestro_ceco"
 						},
 						"destination": {
-							"fileName": "mc2_maestro_ceco.txt"
+							"fileName": "mc2_maestro_ceco.csv"
 						}
 					},
 					{
@@ -104,7 +104,7 @@
 							"entityName": "mc2_maestro_perfil"
 						},
 						"destination": {
-							"fileName": "mc2_maestro_perfil.txt"
+							"fileName": "mc2_maestro_perfil.csv"
 						}
 					},
 					{
@@ -112,7 +112,7 @@
 							"entityName": "mc2_maestro_sociedad"
 						},
 						"destination": {
-							"fileName": "mc2_maestro_sociedad.txt"
+							"fileName": "mc2_maestro_sociedad.csv"
 						}
 					},
 					{
@@ -120,7 +120,7 @@
 							"entityName": "mc2_maestro_tramitador"
 						},
 						"destination": {
-							"fileName": "mc2_maestro_tramitador.txt"
+							"fileName": "mc2_maestro_tramitador.csv"
 						}
 					},
 					{
@@ -128,7 +128,7 @@
 							"entityName": "mc2_maestro_ambito"
 						},
 						"destination": {
-							"fileName": "mc2_maestro_ambito.txt"
+							"fileName": "mc2_maestro_ambito.csv"
 						}
 					},
 					{
@@ -136,7 +136,7 @@
 							"entityName": "mc2_maestro_cebe"
 						},
 						"destination": {
-							"fileName": "mc2_maestro_cebe.txt"
+							"fileName": "mc2_maestro_cebe.csv"
 						}
 					},
 					{
@@ -144,7 +144,7 @@
 							"entityName": "mc2_maestro_cliente_facturacion"
 						},
 						"destination": {
-							"fileName": "mc2_maestro_cliente_facturacion.txt"
+							"fileName": "mc2_maestro_cliente_facturacion.csv"
 						}
 					},
 					{
@@ -152,7 +152,7 @@
 							"entityName": "mc2_maestro_cliente_gestion"
 						},
 						"destination": {
-							"fileName": "mc2_maestro_cliente_gestion.txt"
+							"fileName": "mc2_maestro_cliente_gestion.csv"
 						}
 					},
 					{
@@ -160,7 +160,7 @@
 							"entityName": "mc2_maestro_coste"
 						},
 						"destination": {
-							"fileName": "mc2_maestro_coste.txt"
+							"fileName": "mc2_maestro_coste.csv"
 						}
 					},
 					{
@@ -168,7 +168,7 @@
 							"entityName": "mc2_maestro_costes_formula"
 						},
 						"destination": {
-							"fileName": "mc2_maestro_costes_formula.txt"
+							"fileName": "mc2_maestro_costes_formula.csv"
 						}
 					},
 					{
@@ -176,7 +176,7 @@
 							"entityName": "mc2_maestro_estado_compras"
 						},
 						"destination": {
-							"fileName": "mc2_maestro_estado_compras.txt"
+							"fileName": "mc2_maestro_estado_compras.csv"
 						}
 					},
 					{
@@ -184,7 +184,7 @@
 							"entityName": "mc2_maestro_estado_pedido"
 						},
 						"destination": {
-							"fileName": "mc2_maestro_estado_pedido.txt"
+							"fileName": "mc2_maestro_estado_pedido.csv"
 						}
 					},
 					{
@@ -192,7 +192,7 @@
 							"entityName": "mc2_maestro_familia"
 						},
 						"destination": {
-							"fileName": "mc2_maestro_familia.txt"
+							"fileName": "mc2_maestro_familia.csv"
 						}
 					},
 					{
@@ -200,7 +200,7 @@
 							"entityName": "mc2_maestro_fase"
 						},
 						"destination": {
-							"fileName": "mc2_maestro_fase.txt"
+							"fileName": "mc2_maestro_fase.csv"
 						}
 					},
 					{
@@ -208,7 +208,7 @@
 							"entityName": "mc2_maestro_jefe_de_proyecto"
 						},
 						"destination": {
-							"fileName": "mc2_maestro_jefe_de_proyecto.txt"
+							"fileName": "mc2_maestro_jefe_de_proyecto.csv"
 						}
 					},
 					{
@@ -216,7 +216,7 @@
 							"entityName": "mc2_maestro_lineapep"
 						},
 						"destination": {
-							"fileName": "mc2_maestro_lineapep.txt"
+							"fileName": "mc2_maestro_lineapep.csv"
 						}
 					},
 					{
@@ -224,7 +224,7 @@
 							"entityName": "mc2_maestro_monedas"
 						},
 						"destination": {
-							"fileName": "mc2_maestro_monedas.txt"
+							"fileName": "mc2_maestro_monedas.csv"
 						}
 					},
 					{
@@ -232,7 +232,7 @@
 							"entityName": "mc2_maestro_naturaleza_utm"
 						},
 						"destination": {
-							"fileName": "mc2_maestro_naturaleza_utm.txt"
+							"fileName": "mc2_maestro_naturaleza_utm.csv"
 						}
 					},
 					{
@@ -240,7 +240,7 @@
 							"entityName": "mc2_maestro_perfil_presupuesto"
 						},
 						"destination": {
-							"fileName": "mc2_maestro_perfil_presupuesto.txt"
+							"fileName": "mc2_maestro_perfil_presupuesto.csv"
 						}
 					},
 					{
@@ -248,7 +248,7 @@
 							"entityName": "mc2_maestro_planificacion"
 						},
 						"destination": {
-							"fileName": "mc2_maestro_planificacion.txt"
+							"fileName": "mc2_maestro_planificacion.csv"
 						}
 					},
 					{
@@ -256,7 +256,7 @@
 							"entityName": "mc2_maestro_plazo_utm"
 						},
 						"destination": {
-							"fileName": "mc2_maestro_plazo_utm.txt"
+							"fileName": "mc2_maestro_plazo_utm.csv"
 						}
 					},
 					{
@@ -264,7 +264,7 @@
 							"entityName": "mc2_maestro_prioridad"
 						},
 						"destination": {
-							"fileName": "mc2_maestro_prioridad.txt"
+							"fileName": "mc2_maestro_prioridad.csv"
 						}
 					},
 					{
@@ -272,7 +272,7 @@
 							"entityName": "mc2_maestro_producto"
 						},
 						"destination": {
-							"fileName": "mc2_maestro_producto.txt"
+							"fileName": "mc2_maestro_producto.csv"
 						}
 					},
 					{
@@ -280,7 +280,7 @@
 							"entityName": "mc2_maestro_tipificacion"
 						},
 						"destination": {
-							"fileName": "mc2_maestro_tipificacion.txt"
+							"fileName": "mc2_maestro_tipificacion.csv"
 						}
 					}
 				]
@@ -293,7 +293,7 @@
 							"entityName": "mc2_comentarios_pedidos"
 						},
 						"destination": {
-							"fileName": "mc2_comentarios_pedidos.txt"
+							"fileName": "mc2_comentarios_pedidos.csv"
 						}
 					},
 					{
@@ -301,7 +301,7 @@
 							"entityName": "mc2_elemento_pep"
 						},
 						"destination": {
-							"fileName": "mc2_elemento_pep.txt"
+							"fileName": "mc2_elemento_pep.csv"
 						}
 					},
 					{
@@ -309,7 +309,7 @@
 							"entityName": "mc2_lineas_adquira"
 						},
 						"destination": {
-							"fileName": "mc2_lineas_adquira.txt"
+							"fileName": "mc2_lineas_adquira.csv"
 						}
 					},
 					{
@@ -317,7 +317,7 @@
 							"entityName": "mc2_pedido"
 						},
 						"destination": {
-							"fileName": "mc2_pedido.txt"
+							"fileName": "mc2_pedido.csv"
 						}
 					},
 					{
@@ -325,7 +325,7 @@
 							"entityName": "mc2_planificacion"
 						},
 						"destination": {
-							"fileName": "mc2_planificacion.txt"
+							"fileName": "mc2_planificacion.csv"
 						}
 					},
 					{
@@ -333,7 +333,7 @@
 							"entityName": "mc2_proyecto"
 						},
 						"destination": {
-							"fileName": "mc2_proyecto.txt"
+							"fileName": "mc2_proyecto.csv"
 						}
 					}
 				]
