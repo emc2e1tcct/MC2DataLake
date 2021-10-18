@@ -4,20 +4,20 @@
 	"parameters": {
 		"factoryName": {
 			"type": "string",
-			"metadata": "Nombre de instancia de Data Factory",
+			"metadata": "Data Factory name",
 			"defaultValue": "MC2Factory"
 		},
 		"AzureDataLakeStorageGen2_accountKey": {
 			"type": "secureString",
-			"metadata": "Cadena protegida para \"accountKey\"de \"AzureDataLakeStorageGen2\""
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorageGen2'"
 		},
 		"AzureTableStoragePrueba_connectionString": {
 			"type": "secureString",
-			"metadata": "Cadena protegida para \"connectionString\"de \"AzureTableStoragePrueba\""
+			"metadata": "Secure string for 'connectionString' of 'AzureTableStoragePrueba'"
 		},
 		"MC2Dataverse_servicePrincipalCredential": {
 			"type": "secureString",
-			"metadata": "Cadena protegida para \"servicePrincipalCredential\"de \"MC2Dataverse\""
+			"metadata": "Secure string for 'servicePrincipalCredential' of 'MC2Dataverse'"
 		},
 		"AzureDataLakeStorageGen2_properties_typeProperties_url": {
 			"type": "string",
@@ -33,11 +33,11 @@
 		},
 		"Snowflake1_connectionString": {
 			"type": "secureString",
-			"metadata": "Cadena protegida para \"connectionString\"de \"Snowflake1\""
+			"metadata": "Secure string for 'connectionString' of 'Snowflake1'"
 		},
 		"linkedService1_sasUri": {
 			"type": "secureString",
-			"metadata": "Cadena protegida para \"sasUri\"de \"linkedService1\""
+			"metadata": "Secure string for 'sasUri' of 'linkedService1'"
 		},
 		"dataFactory_location": {
 			"type": "string",
@@ -101,7 +101,7 @@
 								"formatSettings": {
 									"type": "DelimitedTextWriteSettings",
 									"quoteAllText": true,
-									"fileExtension": ".txt"
+									"fileExtension": ".csv"
 								}
 							},
 							"enableStaging": false,
@@ -187,7 +187,7 @@
 								"formatSettings": {
 									"type": "DelimitedTextWriteSettings",
 									"quoteAllText": true,
-									"fileExtension": ".txt"
+									"fileExtension": ".csv"
 								}
 							},
 							"enableStaging": false,
@@ -222,199 +222,6 @@
 				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceDatasetSilver')]",
 				"[concat(variables('factoryId'), '/datasets/DestinationDatasetGolden')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/CopyFromSilverToSnowflake')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "Copy_voo",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [
-							{
-								"name": "Source",
-								"value": "mc2-bs-dev-golden//"
-							},
-							{
-								"name": "Destination",
-								"value": "PUBLIC.RG_GOLDEN_DEV_MC2"
-							}
-						],
-						"typeProperties": {
-							"source": {
-								"type": "DelimitedTextSource",
-								"storeSettings": {
-									"type": "AzureBlobStorageReadSettings",
-									"recursive": true,
-									"wildcardFileName": "*",
-									"enablePartitionDiscovery": false
-								},
-								"formatSettings": {
-									"type": "DelimitedTextReadSettings",
-									"skipLineCount": 0
-								}
-							},
-							"sink": {
-								"type": "SnowflakeSink",
-								"importSettings": {
-									"type": "SnowflakeImportCopyCommand"
-								}
-							},
-							"enableStaging": true,
-							"stagingSettings": {
-								"linkedServiceName": {
-									"referenceName": "linkedService1",
-									"type": "LinkedServiceReference"
-								},
-								"path": "mc2-bs-dev-golden/"
-							},
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"type": "String",
-											"ordinal": 1
-										},
-										"sink": {
-											"name": "TABLE_CATALOG",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"type": "String",
-											"ordinal": 2
-										},
-										"sink": {
-											"name": "TABLE_SCHEMA",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"type": "String",
-											"ordinal": 3
-										},
-										"sink": {
-											"name": "TABLE_NAME",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"type": "String",
-											"ordinal": 4
-										},
-										"sink": {
-											"name": "TABLE_OWNER",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"type": "String",
-											"ordinal": 5
-										},
-										"sink": {
-											"name": "CREATED",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"type": "String",
-											"ordinal": 6
-										},
-										"sink": {
-											"name": "LAST_ALTERED",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"type": "String",
-											"ordinal": 7
-										},
-										"sink": {
-											"name": "COMMENT",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"type": "String",
-											"ordinal": 8
-										},
-										"sink": {
-											"name": "LOCATION",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"type": "String",
-											"ordinal": 9
-										},
-										"sink": {
-											"name": "FILE_FORMAT_NAME",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"type": "String",
-											"ordinal": 10
-										},
-										"sink": {
-											"name": "FILE_FORMAT_TYPE",
-											"type": "String"
-										}
-									}
-								]
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "SourceDataset_voo",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "DestinationDataset_voo",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
-				},
-				"folder": {
-					"name": "Sources/CopyFromGoldenToSnowflake"
-				},
-				"annotations": []
-			},
-			"dependsOn": [
-				"[variables('factoryId')]",
-				"[concat(variables('factoryId'), '/datasets/SourceDataset_voo')]",
-				"[concat(variables('factoryId'), '/datasets/DestinationDataset_voo')]",
-				"[concat(variables('factoryId'), '/linkedServices/linkedService1')]"
 			]
 		},
 		{
@@ -709,6 +516,314 @@
 				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceDataset_MaestrasDataverse')]",
 				"[concat(variables('factoryId'), '/datasets/DestinationDataset_MaestrasBronce')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/CopyPipeline_pou')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Copy_pou",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [
+							{
+								"name": "Source",
+								"value": "mc2-bs-dev-golden//20211015-mc2_elemento_pep.txt"
+							},
+							{
+								"name": "Destination",
+								"value": "INFORMATION_SCHEMA.TABLES"
+							}
+						],
+						"typeProperties": {
+							"source": {
+								"type": "DelimitedTextSource",
+								"storeSettings": {
+									"type": "AzureBlobFSReadSettings",
+									"recursive": true,
+									"enablePartitionDiscovery": false
+								},
+								"formatSettings": {
+									"type": "DelimitedTextReadSettings",
+									"skipLineCount": 0
+								}
+							},
+							"sink": {
+								"type": "SnowflakeSink",
+								"importSettings": {
+									"type": "SnowflakeImportCopyCommand"
+								}
+							},
+							"enableStaging": true,
+							"stagingSettings": {
+								"linkedServiceName": {
+									"referenceName": "linkedService1",
+									"type": "LinkedServiceReference"
+								}
+							},
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 1
+										},
+										"sink": {
+											"name": "TABLE_CATALOG",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 2
+										},
+										"sink": {
+											"name": "TABLE_SCHEMA",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 3
+										},
+										"sink": {
+											"name": "TABLE_NAME",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 4
+										},
+										"sink": {
+											"name": "TABLE_OWNER",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 5
+										},
+										"sink": {
+											"name": "TABLE_TYPE",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 6
+										},
+										"sink": {
+											"name": "IS_TRANSIENT",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 7
+										},
+										"sink": {
+											"name": "CLUSTERING_KEY",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 8
+										},
+										"sink": {
+											"name": "ROW_COUNT",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 9
+										},
+										"sink": {
+											"name": "BYTES",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 10
+										},
+										"sink": {
+											"name": "RETENTION_TIME",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 11
+										},
+										"sink": {
+											"name": "SELF_REFERENCING_COLUMN_NAME",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 12
+										},
+										"sink": {
+											"name": "REFERENCE_GENERATION",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 13
+										},
+										"sink": {
+											"name": "USER_DEFINED_TYPE_CATALOG",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 14
+										},
+										"sink": {
+											"name": "USER_DEFINED_TYPE_SCHEMA",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 15
+										},
+										"sink": {
+											"name": "USER_DEFINED_TYPE_NAME",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 16
+										},
+										"sink": {
+											"name": "IS_INSERTABLE_INTO",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 17
+										},
+										"sink": {
+											"name": "IS_TYPED",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 18
+										},
+										"sink": {
+											"name": "COMMIT_ACTION",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 19
+										},
+										"sink": {
+											"name": "CREATED",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 20
+										},
+										"sink": {
+											"name": "LAST_ALTERED",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 21
+										},
+										"sink": {
+											"name": "AUTO_CLUSTERING_ON",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 22
+										},
+										"sink": {
+											"name": "COMMENT",
+											"type": "String"
+										}
+									}
+								]
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "SourceDataset_pou",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "DestinationDataset_pou",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[variables('factoryId')]",
+				"[concat(variables('factoryId'), '/datasets/SourceDataset_pou')]",
+				"[concat(variables('factoryId'), '/datasets/DestinationDataset_pou')]",
+				"[concat(variables('factoryId'), '/linkedServices/linkedService1')]"
 			]
 		},
 		{
@@ -1244,6 +1359,7 @@
 					},
 					"columnDelimiter": ",",
 					"escapeChar": "\\",
+					"firstRowAsHeader": true,
 					"quoteChar": "\""
 				},
 				"schema": []
@@ -1274,6 +1390,7 @@
 					},
 					"columnDelimiter": ",",
 					"escapeChar": "\\",
+					"firstRowAsHeader": true,
 					"quoteChar": "\""
 				},
 				"schema": []
@@ -1313,6 +1430,7 @@
 					},
 					"columnDelimiter": ",",
 					"escapeChar": "\\",
+					"firstRowAsHeader": true,
 					"quoteChar": "\""
 				},
 				"schema": []
@@ -1352,6 +1470,7 @@
 					},
 					"columnDelimiter": ",",
 					"escapeChar": "\\",
+					"firstRowAsHeader": true,
 					"quoteChar": "\""
 				},
 				"schema": []
@@ -1362,7 +1481,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/DestinationDataset_voo')]",
+			"name": "[concat(parameters('factoryName'), '/DestinationDataset_pou')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -1372,32 +1491,143 @@
 				},
 				"annotations": [],
 				"type": "SnowflakeTable",
-				"schema": [],
+				"schema": [
+					{
+						"name": "TABLE_CATALOG",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "TABLE_SCHEMA",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "TABLE_NAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "TABLE_OWNER",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "TABLE_TYPE",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "IS_TRANSIENT",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "CLUSTERING_KEY",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "ROW_COUNT",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "BYTES",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "RETENTION_TIME",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "SELF_REFERENCING_COLUMN_NAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "REFERENCE_GENERATION",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "USER_DEFINED_TYPE_CATALOG",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "USER_DEFINED_TYPE_SCHEMA",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "USER_DEFINED_TYPE_NAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "IS_INSERTABLE_INTO",
+						"type": "VARCHAR",
+						"precision": 3,
+						"scale": 0
+					},
+					{
+						"name": "IS_TYPED",
+						"type": "VARCHAR",
+						"precision": 3,
+						"scale": 0
+					},
+					{
+						"name": "COMMIT_ACTION",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "CREATED",
+						"type": "TIMESTAMP_LTZ",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "LAST_ALTERED",
+						"type": "TIMESTAMP_LTZ",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "AUTO_CLUSTERING_ON",
+						"type": "VARCHAR",
+						"precision": 3,
+						"scale": 0
+					},
+					{
+						"name": "COMMENT",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					}
+				],
 				"typeProperties": {
-					"schema": "PUBLIC",
-					"table": "RG_GOLDEN_DEV_MC2"
-				}
-			},
-			"dependsOn": [
-				"[variables('factoryId')]",
-				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/SnowflakeTable1')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "Snowflake1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "SnowflakeTable",
-				"schema": [],
-				"typeProperties": {
-					"schema": "PUBLIC",
-					"table": "RG_GOLDEN_DEV_MC2"
+					"schema": "INFORMATION_SCHEMA",
+					"table": "TABLES"
 				}
 			},
 			"dependsOn": [
@@ -1426,7 +1656,7 @@
 					},
 					"columnDelimiter": ",",
 					"escapeChar": "\\",
-					"firstRowAsHeader": false,
+					"firstRowAsHeader": true,
 					"quoteChar": "\""
 				},
 				"schema": [
@@ -1635,7 +1865,7 @@
 					},
 					"columnDelimiter": ",",
 					"escapeChar": "\\",
-					"firstRowAsHeader": false,
+					"firstRowAsHeader": true,
 					"quoteChar": "\""
 				},
 				"schema": [
@@ -1888,20 +2118,21 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/SourceDataset_voo')]",
+			"name": "[concat(parameters('factoryName'), '/SourceDataset_pou')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "linkedService1",
+					"referenceName": "AzureDataLakeStorageGen2",
 					"type": "LinkedServiceReference"
 				},
 				"annotations": [],
 				"type": "DelimitedText",
 				"typeProperties": {
 					"location": {
-						"type": "AzureBlobStorageLocation",
-						"container": "mc2-bs-dev-golden"
+						"type": "AzureBlobFSLocation",
+						"fileName": "20211015-mc2_elemento_pep.txt",
+						"fileSystem": "mc2-bs-dev-golden"
 					},
 					"columnDelimiter": ",",
 					"escapeChar": "\\",
@@ -2090,7 +2321,7 @@
 			},
 			"dependsOn": [
 				"[variables('factoryId')]",
-				"[concat(variables('factoryId'), '/linkedServices/linkedService1')]"
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
 		{

@@ -4,20 +4,20 @@
 	"parameters": {
 		"factoryName": {
 			"type": "string",
-			"metadata": "Nombre de instancia de Data Factory",
+			"metadata": "Data Factory name",
 			"defaultValue": "MC2Factory"
 		},
 		"AzureDataLakeStorageGen2_accountKey": {
 			"type": "secureString",
-			"metadata": "Cadena protegida para \"accountKey\"de \"AzureDataLakeStorageGen2\""
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorageGen2'"
 		},
 		"AzureTableStoragePrueba_connectionString": {
 			"type": "secureString",
-			"metadata": "Cadena protegida para \"connectionString\"de \"AzureTableStoragePrueba\""
+			"metadata": "Secure string for 'connectionString' of 'AzureTableStoragePrueba'"
 		},
 		"MC2Dataverse_servicePrincipalCredential": {
 			"type": "secureString",
-			"metadata": "Cadena protegida para \"servicePrincipalCredential\"de \"MC2Dataverse\""
+			"metadata": "Secure string for 'servicePrincipalCredential' of 'MC2Dataverse'"
 		},
 		"dataFactory_location": {
 			"type": "string",
@@ -167,6 +167,7 @@
 					},
 					"columnDelimiter": ",",
 					"escapeChar": "\\",
+					"firstRowAsHeader": true,
 					"quoteChar": "\""
 				},
 				"schema": []
@@ -196,6 +197,7 @@
 					},
 					"columnDelimiter": ",",
 					"escapeChar": "\\",
+					"firstRowAsHeader": true,
 					"quoteChar": "\""
 				},
 				"schema": []
@@ -234,6 +236,7 @@
 					},
 					"columnDelimiter": ",",
 					"escapeChar": "\\",
+					"firstRowAsHeader": true,
 					"quoteChar": "\""
 				},
 				"schema": []
@@ -272,6 +275,7 @@
 					},
 					"columnDelimiter": ",",
 					"escapeChar": "\\",
+					"firstRowAsHeader": true,
 					"quoteChar": "\""
 				},
 				"schema": []
@@ -301,7 +305,7 @@
 					},
 					"columnDelimiter": ",",
 					"escapeChar": "\\",
-					"firstRowAsHeader": false,
+					"firstRowAsHeader": true,
 					"quoteChar": "\""
 				},
 				"schema": [
@@ -509,7 +513,7 @@
 					},
 					"columnDelimiter": ",",
 					"escapeChar": "\\",
-					"firstRowAsHeader": false,
+					"firstRowAsHeader": true,
 					"quoteChar": "\""
 				},
 				"schema": [
@@ -759,6 +763,212 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/SourceDataset_pou')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureDataLakeStorageGen2",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": "20211015-mc2_elemento_pep.txt",
+						"fileSystem": "mc2-bs-dev-golden"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": false,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/integrationRuntime')]",
 			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
 			"apiVersion": "2018-06-01",
@@ -833,7 +1043,7 @@
 								"formatSettings": {
 									"type": "DelimitedTextWriteSettings",
 									"quoteAllText": true,
-									"fileExtension": ".txt"
+									"fileExtension": ".csv"
 								}
 							},
 							"enableStaging": false,
@@ -918,7 +1128,7 @@
 								"formatSettings": {
 									"type": "DelimitedTextWriteSettings",
 									"quoteAllText": true,
-									"fileExtension": ".txt"
+									"fileExtension": ".csv"
 								}
 							},
 							"enableStaging": false,
@@ -1245,155 +1455,6 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/SourceDataset_MaestrasDataverse')]",
 				"[concat(variables('factoryId'), '/datasets/DestinationDataset_MaestrasBronce')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/CopyPrincipalesMC2ToBronce')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"description": "Copia las 6 tablas principales del dataverse a la capa bronce",
-				"activities": [
-					{
-						"name": "ForEach_Principales",
-						"type": "ForEach",
-						"dependsOn": [],
-						"userProperties": [],
-						"typeProperties": {
-							"items": {
-								"value": "@pipeline().parameters.cw_itemsPrincipales",
-								"type": "Expression"
-							},
-							"activities": [
-								{
-									"name": "Copy_principales",
-									"type": "Copy",
-									"dependsOn": [],
-									"policy": {
-										"timeout": "7.00:00:00",
-										"retry": 0,
-										"retryIntervalInSeconds": 30,
-										"secureOutput": false,
-										"secureInput": false
-									},
-									"userProperties": [
-										{
-											"name": "Source",
-											"value": "@{item().source.entityName}"
-										},
-										{
-											"name": "Destination",
-											"value": "mc2-bs-dev-bronze//@{item().destination.fileName}"
-										}
-									],
-									"typeProperties": {
-										"source": {
-											"type": "CommonDataServiceForAppsSource"
-										},
-										"sink": {
-											"type": "DelimitedTextSink",
-											"storeSettings": {
-												"type": "AzureBlobFSWriteSettings"
-											},
-											"formatSettings": {
-												"type": "DelimitedTextWriteSettings",
-												"quoteAllText": true,
-												"fileExtension": ".txt"
-											}
-										},
-										"enableStaging": false,
-										"validateDataConsistency": false
-									},
-									"inputs": [
-										{
-											"referenceName": "SourceDataset_PrincipalesDataverse",
-											"type": "DatasetReference",
-											"parameters": {
-												"cw_entityName": "@item().source.entityName"
-											}
-										}
-									],
-									"outputs": [
-										{
-											"referenceName": "DestinationDataset_PrincipalesBronce",
-											"type": "DatasetReference",
-											"parameters": {
-												"cw_fileName": "@item().destination.fileName"
-											}
-										}
-									]
-								}
-							]
-						}
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
-				},
-				"parameters": {
-					"cw_itemsPrincipales": {
-						"type": "array",
-						"defaultValue": [
-							{
-								"source": {
-									"entityName": "mc2_comentarios_pedidos"
-								},
-								"destination": {
-									"fileName": "mc2_comentarios_pedidos.txt"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_elemento_pep"
-								},
-								"destination": {
-									"fileName": "mc2_elemento_pep.txt"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_lineas_adquira"
-								},
-								"destination": {
-									"fileName": "mc2_lineas_adquira.txt"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_pedido"
-								},
-								"destination": {
-									"fileName": "mc2_pedido.txt"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_planificacion"
-								},
-								"destination": {
-									"fileName": "mc2_planificacion.txt"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_proyecto"
-								},
-								"destination": {
-									"fileName": "mc2_proyecto.txt"
-								}
-							}
-						]
-					}
-				},
-				"folder": {
-					"name": "Sources/CopyFromMC2ToDataLakeBronce"
-				},
-				"annotations": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/SourceDataset_PrincipalesDataverse')]",
-				"[concat(variables('factoryId'), '/datasets/DestinationDataset_PrincipalesBronce')]"
 			]
 		}
 	]

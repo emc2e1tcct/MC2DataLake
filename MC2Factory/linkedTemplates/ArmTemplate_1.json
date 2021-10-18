@@ -4,22 +4,168 @@
 	"parameters": {
 		"factoryName": {
 			"type": "string",
-			"metadata": "Nombre de instancia de Data Factory",
+			"metadata": "Data Factory name",
 			"defaultValue": "MC2Factory"
 		},
 		"Snowflake1_connectionString": {
 			"type": "secureString",
-			"metadata": "Cadena protegida para \"connectionString\"de \"Snowflake1\""
+			"metadata": "Secure string for 'connectionString' of 'Snowflake1'"
 		},
 		"linkedService1_sasUri": {
 			"type": "secureString",
-			"metadata": "Cadena protegida para \"sasUri\"de \"linkedService1\""
+			"metadata": "Secure string for 'sasUri' of 'linkedService1'"
 		}
 	},
 	"variables": {
 		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
 	},
 	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/CopyPrincipalesMC2ToBronce')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "Copia las 6 tablas principales del dataverse a la capa bronce",
+				"activities": [
+					{
+						"name": "ForEach_Principales",
+						"type": "ForEach",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"items": {
+								"value": "@pipeline().parameters.cw_itemsPrincipales",
+								"type": "Expression"
+							},
+							"activities": [
+								{
+									"name": "Copy_principales",
+									"type": "Copy",
+									"dependsOn": [],
+									"policy": {
+										"timeout": "7.00:00:00",
+										"retry": 0,
+										"retryIntervalInSeconds": 30,
+										"secureOutput": false,
+										"secureInput": false
+									},
+									"userProperties": [
+										{
+											"name": "Source",
+											"value": "@{item().source.entityName}"
+										},
+										{
+											"name": "Destination",
+											"value": "mc2-bs-dev-bronze//@{item().destination.fileName}"
+										}
+									],
+									"typeProperties": {
+										"source": {
+											"type": "CommonDataServiceForAppsSource"
+										},
+										"sink": {
+											"type": "DelimitedTextSink",
+											"storeSettings": {
+												"type": "AzureBlobFSWriteSettings"
+											},
+											"formatSettings": {
+												"type": "DelimitedTextWriteSettings",
+												"quoteAllText": true,
+												"fileExtension": ".txt"
+											}
+										},
+										"enableStaging": false,
+										"validateDataConsistency": false
+									},
+									"inputs": [
+										{
+											"referenceName": "SourceDataset_PrincipalesDataverse",
+											"type": "DatasetReference",
+											"parameters": {
+												"cw_entityName": "@item().source.entityName"
+											}
+										}
+									],
+									"outputs": [
+										{
+											"referenceName": "DestinationDataset_PrincipalesBronce",
+											"type": "DatasetReference",
+											"parameters": {
+												"cw_fileName": "@item().destination.fileName"
+											}
+										}
+									]
+								}
+							]
+						}
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
+				"parameters": {
+					"cw_itemsPrincipales": {
+						"type": "array",
+						"defaultValue": [
+							{
+								"source": {
+									"entityName": "mc2_comentarios_pedidos"
+								},
+								"destination": {
+									"fileName": "mc2_comentarios_pedidos.txt"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_elemento_pep"
+								},
+								"destination": {
+									"fileName": "mc2_elemento_pep.txt"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_lineas_adquira"
+								},
+								"destination": {
+									"fileName": "mc2_lineas_adquira.txt"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_pedido"
+								},
+								"destination": {
+									"fileName": "mc2_pedido.txt"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_planificacion"
+								},
+								"destination": {
+									"fileName": "mc2_planificacion.txt"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_proyecto"
+								},
+								"destination": {
+									"fileName": "mc2_proyecto.txt"
+								}
+							}
+						]
+					}
+				},
+				"folder": {
+					"name": "Sources/CopyFromMC2ToDataLakeBronce"
+				},
+				"annotations": []
+			},
+			"dependsOn": []
+		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Snowflake1')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
@@ -408,10 +554,12 @@
 				},
 				"annotations": []
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/CopyPrincipalesMC2ToBronce')]"
+			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/DestinationDataset_voo')]",
+			"name": "[concat(parameters('factoryName'), '/DestinationDataset_pou')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -421,250 +569,157 @@
 				},
 				"annotations": [],
 				"type": "SnowflakeTable",
-				"schema": [],
-				"typeProperties": {
-					"schema": "PUBLIC",
-					"table": "RG_GOLDEN_DEV_MC2"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/SnowflakeTable1')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "Snowflake1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "SnowflakeTable",
-				"schema": [],
-				"typeProperties": {
-					"schema": "PUBLIC",
-					"table": "RG_GOLDEN_DEV_MC2"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/SourceDataset_voo')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "linkedService1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "DelimitedText",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobStorageLocation",
-						"container": "mc2-bs-dev-golden"
-					},
-					"columnDelimiter": ",",
-					"escapeChar": "\\",
-					"firstRowAsHeader": false,
-					"quoteChar": "\""
-				},
 				"schema": [
 					{
-						"type": "String"
+						"name": "TABLE_CATALOG",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
 					},
 					{
-						"type": "String"
+						"name": "TABLE_SCHEMA",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
 					},
 					{
-						"type": "String"
+						"name": "TABLE_NAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
 					},
 					{
-						"type": "String"
+						"name": "TABLE_OWNER",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
 					},
 					{
-						"type": "String"
+						"name": "TABLE_TYPE",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
 					},
 					{
-						"type": "String"
+						"name": "IS_TRANSIENT",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
 					},
 					{
-						"type": "String"
+						"name": "CLUSTERING_KEY",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
 					},
 					{
-						"type": "String"
+						"name": "ROW_COUNT",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
 					},
 					{
-						"type": "String"
+						"name": "BYTES",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
 					},
 					{
-						"type": "String"
+						"name": "RETENTION_TIME",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
 					},
 					{
-						"type": "String"
+						"name": "SELF_REFERENCING_COLUMN_NAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
 					},
 					{
-						"type": "String"
+						"name": "REFERENCE_GENERATION",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
 					},
 					{
-						"type": "String"
+						"name": "USER_DEFINED_TYPE_CATALOG",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
 					},
 					{
-						"type": "String"
+						"name": "USER_DEFINED_TYPE_SCHEMA",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
 					},
 					{
-						"type": "String"
+						"name": "USER_DEFINED_TYPE_NAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
 					},
 					{
-						"type": "String"
+						"name": "IS_INSERTABLE_INTO",
+						"type": "VARCHAR",
+						"precision": 3,
+						"scale": 0
 					},
 					{
-						"type": "String"
+						"name": "IS_TYPED",
+						"type": "VARCHAR",
+						"precision": 3,
+						"scale": 0
 					},
 					{
-						"type": "String"
+						"name": "COMMIT_ACTION",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
 					},
 					{
-						"type": "String"
+						"name": "CREATED",
+						"type": "TIMESTAMP_LTZ",
+						"precision": 23,
+						"scale": 3
 					},
 					{
-						"type": "String"
+						"name": "LAST_ALTERED",
+						"type": "TIMESTAMP_LTZ",
+						"precision": 23,
+						"scale": 3
 					},
 					{
-						"type": "String"
+						"name": "AUTO_CLUSTERING_ON",
+						"type": "VARCHAR",
+						"precision": 3,
+						"scale": 0
 					},
 					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
+						"name": "COMMENT",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
 					}
-				]
+				],
+				"typeProperties": {
+					"schema": "INFORMATION_SCHEMA",
+					"table": "TABLES"
+				}
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/linkedService1')]"
+				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/CopyFromSilverToSnowflake')]",
+			"name": "[concat(parameters('factoryName'), '/CopyPipeline_pou')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"activities": [
 					{
-						"name": "Copy_voo",
+						"name": "Copy_pou",
 						"type": "Copy",
 						"dependsOn": [],
 						"policy": {
@@ -677,20 +732,19 @@
 						"userProperties": [
 							{
 								"name": "Source",
-								"value": "mc2-bs-dev-golden//"
+								"value": "mc2-bs-dev-golden//20211015-mc2_elemento_pep.txt"
 							},
 							{
 								"name": "Destination",
-								"value": "PUBLIC.RG_GOLDEN_DEV_MC2"
+								"value": "INFORMATION_SCHEMA.TABLES"
 							}
 						],
 						"typeProperties": {
 							"source": {
 								"type": "DelimitedTextSource",
 								"storeSettings": {
-									"type": "AzureBlobStorageReadSettings",
+									"type": "AzureBlobFSReadSettings",
 									"recursive": true,
-									"wildcardFileName": "*",
 									"enablePartitionDiscovery": false
 								},
 								"formatSettings": {
@@ -709,8 +763,7 @@
 								"linkedServiceName": {
 									"referenceName": "linkedService1",
 									"type": "LinkedServiceReference"
-								},
-								"path": "mc2-bs-dev-golden/"
+								}
 							},
 							"translator": {
 								"type": "TabularTranslator",
@@ -761,8 +814,8 @@
 											"ordinal": 5
 										},
 										"sink": {
-											"name": "CREATED",
-											"type": "DateTime"
+											"name": "TABLE_TYPE",
+											"type": "String"
 										}
 									},
 									{
@@ -771,8 +824,8 @@
 											"ordinal": 6
 										},
 										"sink": {
-											"name": "LAST_ALTERED",
-											"type": "DateTime"
+											"name": "IS_TRANSIENT",
+											"type": "String"
 										}
 									},
 									{
@@ -781,7 +834,7 @@
 											"ordinal": 7
 										},
 										"sink": {
-											"name": "COMMENT",
+											"name": "CLUSTERING_KEY",
 											"type": "String"
 										}
 									},
@@ -791,7 +844,7 @@
 											"ordinal": 8
 										},
 										"sink": {
-											"name": "LOCATION",
+											"name": "ROW_COUNT",
 											"type": "String"
 										}
 									},
@@ -801,7 +854,7 @@
 											"ordinal": 9
 										},
 										"sink": {
-											"name": "FILE_FORMAT_NAME",
+											"name": "BYTES",
 											"type": "String"
 										}
 									},
@@ -811,7 +864,127 @@
 											"ordinal": 10
 										},
 										"sink": {
-											"name": "FILE_FORMAT_TYPE",
+											"name": "RETENTION_TIME",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 11
+										},
+										"sink": {
+											"name": "SELF_REFERENCING_COLUMN_NAME",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 12
+										},
+										"sink": {
+											"name": "REFERENCE_GENERATION",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 13
+										},
+										"sink": {
+											"name": "USER_DEFINED_TYPE_CATALOG",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 14
+										},
+										"sink": {
+											"name": "USER_DEFINED_TYPE_SCHEMA",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 15
+										},
+										"sink": {
+											"name": "USER_DEFINED_TYPE_NAME",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 16
+										},
+										"sink": {
+											"name": "IS_INSERTABLE_INTO",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 17
+										},
+										"sink": {
+											"name": "IS_TYPED",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 18
+										},
+										"sink": {
+											"name": "COMMIT_ACTION",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 19
+										},
+										"sink": {
+											"name": "CREATED",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 20
+										},
+										"sink": {
+											"name": "LAST_ALTERED",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 21
+										},
+										"sink": {
+											"name": "AUTO_CLUSTERING_ON",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 22
+										},
+										"sink": {
+											"name": "COMMENT",
 											"type": "String"
 										}
 									}
@@ -820,14 +993,14 @@
 						},
 						"inputs": [
 							{
-								"referenceName": "SourceDataset_voo",
+								"referenceName": "SourceDataset_pou",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
 						],
 						"outputs": [
 							{
-								"referenceName": "DestinationDataset_voo",
+								"referenceName": "DestinationDataset_pou",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -838,14 +1011,10 @@
 					"elapsedTimeMetric": {},
 					"cancelAfter": {}
 				},
-				"folder": {
-					"name": "Sources/CopyFromGoldenToSnowflake"
-				},
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/SourceDataset_voo')]",
-				"[concat(variables('factoryId'), '/datasets/DestinationDataset_voo')]",
+				"[concat(variables('factoryId'), '/datasets/DestinationDataset_pou')]",
 				"[concat(variables('factoryId'), '/linkedServices/linkedService1')]"
 			]
 		}
