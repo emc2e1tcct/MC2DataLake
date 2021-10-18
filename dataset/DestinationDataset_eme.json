@@ -7,10 +7,6 @@
 		},
 		"annotations": [],
 		"type": "SnowflakeTable",
-		"schema": [],
-		"typeProperties": {
-			"schema": "PUBLIC",
-			"table": "RG_GOLDEN_DEV_MC2"
-		}
+		"schema": []
 	}
 }
