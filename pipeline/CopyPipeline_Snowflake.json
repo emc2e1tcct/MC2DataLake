@@ -20,7 +20,7 @@
 					},
 					{
 						"name": "Destination",
-						"value": "PUBLIC.RG_GOLDEN_DEV_MC2"
+						"value": "PUBLIC"
 					}
 				],
 				"typeProperties": {
@@ -28,8 +28,7 @@
 						"type": "DelimitedTextSource",
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
-							"recursive": true,
-							"wildcardFileName": "*",
+							"fileListPath": "mc2-bs-dev-golden/20211015-mc2_comentarios_pedidos.txt",
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
@@ -58,7 +57,21 @@
 						},
 						"path": "mc2-bs-dev-golden/"
 					},
-					"enableSkipIncompatibleRow": true
+					"enableSkipIncompatibleRow": true,
+					"logSettings": {
+						"enableCopyActivityLog": true,
+						"copyActivityLogSettings": {
+							"logLevel": "Warning",
+							"enableReliableLogging": false
+						},
+						"logLocationSettings": {
+							"linkedServiceName": {
+								"referenceName": "AzureDataLakeStorageGen2",
+								"type": "LinkedServiceReference"
+							},
+							"path": "contenedordatalake"
+						}
+					}
 				},
 				"inputs": [
 					{
