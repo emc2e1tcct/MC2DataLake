@@ -1,0 +1,16 @@
+{
+	"name": "DestinationDataset_eme",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Snowflake1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SnowflakeTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "PUBLIC",
+			"table": "RG_GOLDEN_DEV_MC2"
+		}
+	}
+}

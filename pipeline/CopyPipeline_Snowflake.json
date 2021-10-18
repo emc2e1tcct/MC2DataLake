@@ -1,0 +1,70 @@
+{
+	"name": "CopyPipeline_Snowflake",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_eme",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "mc2-bs-dev-golden//"
+					},
+					{
+						"name": "Destination",
+						"value": "PUBLIC.RG_GOLDEN_DEV_MC2"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"wildcardFileName": "*",
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings",
+							"skipLineCount": 0
+						}
+					},
+					"sink": {
+						"type": "SnowflakeSink",
+						"importSettings": {
+							"type": "SnowflakeImportCopyCommand"
+						}
+					},
+					"enableStaging": true,
+					"stagingSettings": {
+						"linkedServiceName": {
+							"referenceName": "linkedService1",
+							"type": "LinkedServiceReference"
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_eme",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_eme",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
