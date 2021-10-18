@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "20211015-mc2_elemento_pep.csv",
+				"fileName": "20211018-mc2_elemento_pep.csv",
 				"fileSystem": "mc2-bs-dev-golden"
 			},
 			"columnDelimiter": ",",
@@ -19,6 +19,12 @@
 			"quoteChar": "\""
 		},
 		"schema": [
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
 			{
 				"type": "String"
 			},
