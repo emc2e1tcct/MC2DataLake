@@ -22,7 +22,7 @@
 					"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-',dataset().cw_fileName)",
 					"type": "Expression"
 				},
-				"folderPath": "@{formatDatetime(utcnow(),'MMyyy')}",
+				"folderPath": "@{formatDatetime(utcnow(),'yyyMM')}",
 				"fileSystem": "mc2-bs-dev-bronze"
 			},
 			"columnDelimiter": ",",
