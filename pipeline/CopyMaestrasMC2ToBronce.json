@@ -67,7 +67,8 @@
 									"referenceName": "DestinationDataset_MaestrasBronce",
 									"type": "DatasetReference",
 									"parameters": {
-										"cw_fileName": "@item().destination.fileName"
+										"cw_fileName": "@item().destination.fileName",
+										"filename": "@item().destination.fileName"
 									}
 								}
 							]

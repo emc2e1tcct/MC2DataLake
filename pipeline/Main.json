@@ -357,6 +357,15 @@
 						}
 					}
 				]
+			},
+			"entity": {
+				"type": "string"
+			},
+			"dl_root_path": {
+				"type": "string"
+			},
+			"filename": {
+				"type": "string"
 			}
 		},
 		"folder": {
