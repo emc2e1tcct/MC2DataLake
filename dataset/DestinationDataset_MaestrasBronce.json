@@ -8,9 +8,6 @@
 		"parameters": {
 			"cw_fileName": {
 				"type": "String"
-			},
-			"filename": {
-				"type": "string"
 			}
 		},
 		"folder": {
