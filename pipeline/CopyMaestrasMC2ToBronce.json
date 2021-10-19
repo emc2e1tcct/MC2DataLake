@@ -32,7 +32,7 @@
 								},
 								{
 									"name": "Destination",
-									"value": "mc2-bs-dev-bronze//@{item().destination.fileName}"
+									"value": "mc2-bs-dev-bronze/formatDatetime(utcnow(),'MMyyy')/@{item().destination.fileName}"
 								}
 							],
 							"typeProperties": {
@@ -68,10 +68,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"cw_fileName": "@item().destination.fileName",
-										"filename": "@item().destination.fileName",
-										"partition_path": "@pileline().parameters.patition_path",
-										"entity": "@pipeline().parameters.entity",
-										"dl_root_path": "@pileline().parameters.dl_root_path"
+										"filename": "@item().destination.fileName"
 									}
 								}
 							]

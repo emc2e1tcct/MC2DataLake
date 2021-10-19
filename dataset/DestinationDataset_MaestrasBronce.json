@@ -11,15 +11,6 @@
 			},
 			"filename": {
 				"type": "string"
-			},
-			"partition_path": {
-				"type": "string"
-			},
-			"entity": {
-				"type": "string"
-			},
-			"dl_root_path": {
-				"type": "string"
 			}
 		},
 		"folder": {
