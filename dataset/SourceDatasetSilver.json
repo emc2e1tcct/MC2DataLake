@@ -13,7 +13,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileSystem": "mc2-bs-dev-bronze"
+				"fileSystem": "mc2-bs-dev-silver"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
