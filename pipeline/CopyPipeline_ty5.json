@@ -48,6 +48,21 @@
 						"linkedServiceName": {
 							"referenceName": "linkedService1",
 							"type": "LinkedServiceReference"
+						},
+						"path": "contenedordatalake"
+					},
+					"logSettings": {
+						"enableCopyActivityLog": true,
+						"copyActivityLogSettings": {
+							"logLevel": "Warning",
+							"enableReliableLogging": false
+						},
+						"logLocationSettings": {
+							"linkedServiceName": {
+								"referenceName": "linkedService1",
+								"type": "LinkedServiceReference"
+							},
+							"path": "contenedordatalake"
 						}
 					},
 					"translator": {
