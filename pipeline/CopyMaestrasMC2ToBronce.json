@@ -68,7 +68,10 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"cw_fileName": "@item().destination.fileName",
-										"filename": "@item().destination.fileName"
+										"filename": "@item().destination.fileName",
+										"partition_path": "@pileline().parameters.patition_path",
+										"entity": "@pipeline().parameters.entity",
+										"dl_root_path": "@pileline().parameters.dl_root_path"
 									}
 								}
 							]
