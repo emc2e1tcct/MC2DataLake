@@ -16,7 +16,7 @@
 				"userProperties": [
 					{
 						"name": "Source",
-						"value": "mc2-bs-dev-golden//20211018-mc2_elemento_pep.csv"
+						"value": "mc2-bs-dev-golden/20211018-mc2_elemento_pep.csv"
 					},
 					{
 						"name": "Destination",
@@ -29,6 +29,7 @@
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
 							"recursive": true,
+							"wildcardFileName": "20211018-mc2_elemento_pep.csv",
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
