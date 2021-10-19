@@ -16,11 +16,11 @@
 				"userProperties": [
 					{
 						"name": "Source",
-						"value": "mc2-bs-dev-bronze//"
+						"value": "mc2-bs-dev-bronze/@{formatDatetime(utcnow(),'MMyyy')}/"
 					},
 					{
 						"name": "Destination",
-						"value": "mc2-bs-dev-silver//"
+						"value": "mc2-bs-dev-silver/@{formatDatetime(utcnow(),'MMyyy')}/"
 					}
 				],
 				"typeProperties": {
