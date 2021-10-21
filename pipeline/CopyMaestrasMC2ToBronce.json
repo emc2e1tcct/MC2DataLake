@@ -170,10 +170,10 @@
 					},
 					{
 						"source": {
-							"entityName": "mc2_maestro_estado_pedido"
+							"entityName": "mc2_maestro_estado_pedidos"
 						},
 						"destination": {
-							"fileName": "mc2_maestro_estado_pedido.txt"
+							"fileName": "mc2_maestro_estado_pedidos.txt"
 						}
 					},
 					{
@@ -270,6 +270,22 @@
 						},
 						"destination": {
 							"fileName": "mc2_maestro_tipificacion.txt"
+						}
+					},
+					{
+						"source": {
+							"entityName": "mc2_maestro_sku"
+						},
+						"destination": {
+							"fileName": "mc2_maestro_sku.txt"
+						}
+					},
+					{
+						"source": {
+							"entityName": "mc2_maestro_bloque"
+						},
+						"destination": {
+							"fileName": "mc2_maestro_bloque.txt"
 						}
 					}
 				]
