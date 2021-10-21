@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_2at",
+				"name": "CopyBronceToSilver",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -29,7 +29,14 @@
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
 							"recursive": true,
-							"wildcardFileName": "*",
+							"wildcardFolderPath": {
+								"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+								"type": "Expression"
+							},
+							"wildcardFileName": {
+								"value": "@concat(formatDatetime(utcnow(),'ddMMyyy'),'-',dataset().cw_fileName)",
+								"type": "Expression"
+							},
 							"enablePartitionDiscovery": false
 						}
 					},
@@ -59,6 +66,9 @@
 				]
 			}
 		],
+		"folder": {
+			"name": "Main/Sources/CopyBronceToSilver"
+		},
 		"annotations": []
 	}
 }
