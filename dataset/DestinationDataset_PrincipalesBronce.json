@@ -23,7 +23,7 @@
 					"type": "Expression"
 				},
 				"folderPath": {
-					"value": "formatDatetime(utcnow(),'yyy')/formatDatetime(utcnow(),'MM')",
+					"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 					"type": "Expression"
 				},
 				"fileSystem": "mc2-bs-dev-bronze"
