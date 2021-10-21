@@ -14,7 +14,7 @@
 					},
 					"activities": [
 						{
-							"name": "Copy_m4q",
+							"name": "CopyPrincipalesToBronce",
 							"type": "Copy",
 							"dependsOn": [],
 							"policy": {
@@ -64,7 +64,7 @@
 									"referenceName": "DestinationDataset_m4q",
 									"type": "DatasetReference",
 									"parameters": {
-										"cw_fileName": "@item().destination.fileName"
+										"cw_fileName_Principales": "@item().destination.fileName"
 									}
 								}
 							]
@@ -74,7 +74,7 @@
 			}
 		],
 		"parameters": {
-			"cw_items": {
+			"cw_items_Principales": {
 				"type": "Array",
 				"defaultValue": [
 					{
@@ -127,6 +127,9 @@
 					}
 				]
 			}
+		},
+		"folder": {
+			"name": "Main/Sources/CopyMC2ToBronce"
 		},
 		"annotations": []
 	}

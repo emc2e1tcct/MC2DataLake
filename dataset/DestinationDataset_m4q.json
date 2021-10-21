@@ -6,7 +6,7 @@
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"cw_fileName": {
+			"cw_fileName_Principales": {
 				"type": "String"
 			}
 		},
@@ -16,7 +16,11 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": {
-					"value": "@dataset().cw_fileName",
+					"value": "@dataset().cw_fileName_Principales",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 					"type": "Expression"
 				},
 				"fileSystem": "mc2-bs-dev-bronze"
