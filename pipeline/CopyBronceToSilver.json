@@ -33,7 +33,6 @@
 								"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 								"type": "Expression"
 							},
-							"wildcardFileName": "*",
 							"enablePartitionDiscovery": false
 						}
 					},
@@ -57,7 +56,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_ksk",
+						"referenceName": "DestinationSilver",
 						"type": "DatasetReference"
 					}
 				]

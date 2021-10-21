@@ -1,5 +1,5 @@
 {
-	"name": "DestinationDataset_ksk",
+	"name": "DestinationSilver",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorageGen2",
