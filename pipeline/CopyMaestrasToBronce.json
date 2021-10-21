@@ -14,7 +14,7 @@
 					},
 					"activities": [
 						{
-							"name": "Copy_u6h",
+							"name": "CopyMaestrasToBronce",
 							"type": "Copy",
 							"dependsOn": [],
 							"policy": {
@@ -31,7 +31,7 @@
 								},
 								{
 									"name": "Destination",
-									"value": "mc2-bs-dev-bronze//@{item().destination.fileName}"
+									"value": "mc2-bs-dev-bronze/@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}/@{item().destination.fileName}"
 								}
 							],
 							"typeProperties": {
@@ -279,6 +279,9 @@
 					}
 				]
 			}
+		},
+		"folder": {
+			"name": "Main/Sources/CopyMC2ToBronce"
 		},
 		"annotations": []
 	}
