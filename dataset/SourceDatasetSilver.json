@@ -13,7 +13,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "@{formatDatetime(utcnow(),'yyyMM')}",
+				"folderPath": {
+					"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+					"type": "Expression"
+				},
 				"fileSystem": "mc2-bs-dev-silver"
 			},
 			"columnDelimiter": ",",

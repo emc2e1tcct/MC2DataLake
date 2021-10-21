@@ -29,7 +29,10 @@
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
 							"recursive": true,
-							"wildcardFolderPath": "@{formatDatetime(utcnow(),'yyyMM')}",
+							"wildcardFolderPath": {
+								"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+								"type": "Expression"
+							},
 							"wildcardFileName": "*",
 							"enablePartitionDiscovery": false
 						},
