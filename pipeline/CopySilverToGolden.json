@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_asy",
+				"name": "CopySilverToGolden",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -16,11 +16,11 @@
 				"userProperties": [
 					{
 						"name": "Source",
-						"value": "mc2-bs-dev-silver/[object Object]/"
+						"value": "mc2-bs-dev-silver/@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}//"
 					},
 					{
 						"name": "Destination",
-						"value": "mc2-bs-dev-golden/[object Object]/"
+						"value": "mc2-bs-dev-golden/@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}//"
 					}
 				],
 				"typeProperties": {
@@ -29,6 +29,7 @@
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
 							"recursive": true,
+							"wildcardFolderPath": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"wildcardFileName": "*",
 							"enablePartitionDiscovery": false
 						}
@@ -59,6 +60,9 @@
 				]
 			}
 		],
+		"folder": {
+			"name": "Main/Sources/CopySilverToGolden"
+		},
 		"annotations": []
 	}
 }
