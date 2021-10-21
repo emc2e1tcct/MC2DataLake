@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "ForEach_m4q",
+				"name": "ForEach_Principales",
 				"type": "ForEach",
 				"dependsOn": [],
 				"userProperties": [],
@@ -62,10 +62,7 @@
 							"outputs": [
 								{
 									"referenceName": "DestinationPrincipalesBronce",
-									"type": "DatasetReference",
-									"parameters": {
-										"cw_fileName_Principales": "@item().destination.fileName"
-									}
+									"type": "DatasetReference"
 								}
 							]
 						}
