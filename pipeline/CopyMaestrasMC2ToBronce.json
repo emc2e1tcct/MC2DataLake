@@ -50,8 +50,7 @@
 										"fileExtension": ".txt"
 									}
 								},
-								"enableStaging": false,
-								"validateDataConsistency": false
+								"enableStaging": false
 							},
 							"inputs": [
 								{
@@ -59,15 +58,6 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"cw_entityName": "@item().source.entityName"
-									}
-								}
-							],
-							"outputs": [
-								{
-									"referenceName": "DestinationDataset_MaestrasBronce",
-									"type": "DatasetReference",
-									"parameters": {
-										"cw_fileName": "@item().destination.fileName"
 									}
 								}
 							]
@@ -292,7 +282,7 @@
 			}
 		},
 		"folder": {
-			"name": "Sources/CopyFromMC2ToDataLakeBronce"
+			"name": "Sources_old/CopyFromMC2ToDataLakeBronce"
 		},
 		"annotations": []
 	}

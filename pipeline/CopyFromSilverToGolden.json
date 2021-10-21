@@ -52,25 +52,18 @@
 							"fileExtension": ".csv"
 						}
 					},
-					"enableStaging": false,
-					"validateDataConsistency": false
+					"enableStaging": false
 				},
 				"inputs": [
 					{
 						"referenceName": "SourceDatasetSilver",
 						"type": "DatasetReference"
 					}
-				],
-				"outputs": [
-					{
-						"referenceName": "DestinationDatasetGolden",
-						"type": "DatasetReference"
-					}
 				]
 			}
 		],
 		"folder": {
-			"name": "Sources/CopyFromSilverToGolden"
+			"name": "Sources_old/CopyFromSilverToGolden"
 		},
 		"annotations": []
 	}

@@ -11,7 +11,7 @@
 			}
 		},
 		"folder": {
-			"name": "DatasetSources"
+			"name": "DatasetSources_old"
 		},
 		"annotations": [],
 		"type": "CommonDataServiceForAppsEntity",
