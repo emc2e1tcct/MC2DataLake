@@ -82,10 +82,10 @@
 				"defaultValue": [
 					{
 						"source": {
-							"entityName": "mc2_comentarios_pedidos"
+							"entityName": "mc2_comentarios_proyecto"
 						},
 						"destination": {
-							"fileName": "mc2_comentarios_pedidos.txt"
+							"fileName": "mc2_comentarios_proyecto.txt"
 						}
 					},
 					{
