@@ -1,0 +1,133 @@
+{
+	"name": "CopyPrincipalesToBronce",
+	"properties": {
+		"activities": [
+			{
+				"name": "ForEach_m4q",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@pipeline().parameters.cw_items",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "Copy_m4q",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [
+								{
+									"name": "Source",
+									"value": "@{item().source.entityName}"
+								},
+								{
+									"name": "Destination",
+									"value": "mc2-bs-dev-bronze//@{item().destination.fileName}"
+								}
+							],
+							"typeProperties": {
+								"source": {
+									"type": "CommonDataServiceForAppsSource"
+								},
+								"sink": {
+									"type": "ParquetSink",
+									"storeSettings": {
+										"type": "AzureBlobFSWriteSettings"
+									},
+									"formatSettings": {
+										"type": "ParquetWriteSettings"
+									}
+								},
+								"enableStaging": false,
+								"validateDataConsistency": false
+							},
+							"inputs": [
+								{
+									"referenceName": "SourcePrincipales",
+									"type": "DatasetReference",
+									"parameters": {
+										"cw_entityName": "@item().source.entityName"
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "DestinationDataset_m4q",
+									"type": "DatasetReference",
+									"parameters": {
+										"cw_fileName": "@item().destination.fileName"
+									}
+								}
+							]
+						}
+					]
+				}
+			}
+		],
+		"parameters": {
+			"cw_items": {
+				"type": "Array",
+				"defaultValue": [
+					{
+						"source": {
+							"entityName": "mc2_comentarios_proyecto"
+						},
+						"destination": {
+							"fileName": "mc2_comentarios_proyecto.parquet"
+						}
+					},
+					{
+						"source": {
+							"entityName": "mc2_elemento_pep"
+						},
+						"destination": {
+							"fileName": "mc2_elemento_pep.parquet"
+						}
+					},
+					{
+						"source": {
+							"entityName": "mc2_lineas_adquira"
+						},
+						"destination": {
+							"fileName": "mc2_lineas_adquira.parquet"
+						}
+					},
+					{
+						"source": {
+							"entityName": "mc2_pedido"
+						},
+						"destination": {
+							"fileName": "mc2_pedido.parquet"
+						}
+					},
+					{
+						"source": {
+							"entityName": "mc2_planificacion"
+						},
+						"destination": {
+							"fileName": "mc2_planificacion.parquet"
+						}
+					},
+					{
+						"source": {
+							"entityName": "mc2_proyecto"
+						},
+						"destination": {
+							"fileName": "mc2_proyecto.parquet"
+						}
+					}
+				]
+			}
+		},
+		"annotations": []
+	}
+}
