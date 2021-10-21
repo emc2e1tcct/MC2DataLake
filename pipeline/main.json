@@ -281,7 +281,7 @@
 					}
 				]
 			},
-			"cw_items_Principales   ": {
+			"cw_items_Principales": {
 				"type": "array",
 				"defaultValue": [
 					{
