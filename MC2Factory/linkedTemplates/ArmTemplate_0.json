@@ -163,6 +163,10 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
+						"folderPath": {
+							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+							"type": "Expression"
+						},
 						"fileSystem": "mc2-bs-dev-golden"
 					},
 					"columnDelimiter": ",",
@@ -193,6 +197,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
+						"folderPath": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 						"fileSystem": "mc2-bs-dev-silver"
 					},
 					"columnDelimiter": ",",
@@ -229,7 +234,11 @@
 					"location": {
 						"type": "AzureBlobFSLocation",
 						"fileName": {
-							"value": "@concat(formatDatetime(utcnow(),'ddMMyyy'),'-',dataset().cw_fileName)",
+							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-',dataset().cw_fileName)",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
 						"fileSystem": "mc2-bs-dev-bronze"
@@ -269,6 +278,10 @@
 						"type": "AzureBlobFSLocation",
 						"fileName": {
 							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-',dataset().cw_fileName)",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
 						"fileSystem": "mc2-bs-dev-bronze"
@@ -509,7 +522,11 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
-						"fileSystem": "mc2-bs-dev-bronze"
+						"folderPath": {
+							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+							"type": "Expression"
+						},
+						"fileSystem": "mc2-bs-dev-silver"
 					},
 					"columnDelimiter": ",",
 					"escapeChar": "\\",
@@ -763,7 +780,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/SourceDataset_pou')]",
+			"name": "[concat(parameters('factoryName'), '/SourceDataset_h98')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -776,190 +793,262 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
-						"fileName": "20211015-mc2_elemento_pep.txt",
+						"fileName": "20211019-mc2_elemento_pep.csv",
+						"folderPath": "202110",
 						"fileSystem": "mc2-bs-dev-golden"
 					},
 					"columnDelimiter": ",",
 					"escapeChar": "\\",
-					"firstRowAsHeader": false,
+					"firstRowAsHeader": true,
 					"quoteChar": "\""
 				},
 				"schema": [
 					{
+						"name": "createdby",
 						"type": "String"
 					},
 					{
+						"name": "createdbyname",
 						"type": "String"
 					},
 					{
+						"name": "createdbyyominame",
 						"type": "String"
 					},
 					{
+						"name": "createdon",
 						"type": "String"
 					},
 					{
+						"name": "createdonbehalfby",
 						"type": "String"
 					},
 					{
+						"name": "createdonbehalfbyname",
 						"type": "String"
 					},
 					{
+						"name": "createdonbehalfbyyominame",
 						"type": "String"
 					},
 					{
+						"name": "importsequencenumber",
 						"type": "String"
 					},
 					{
+						"name": "mc2_bloque",
 						"type": "String"
 					},
 					{
+						"name": "mc2_bloquename",
 						"type": "String"
 					},
 					{
+						"name": "mc2_ceco",
 						"type": "String"
 					},
 					{
+						"name": "mc2_ceconame",
 						"type": "String"
 					},
 					{
+						"name": "mc2_coste_oferta",
 						"type": "String"
 					},
 					{
+						"name": "mc2_descripcion",
 						"type": "String"
 					},
 					{
+						"name": "mc2_elemento_pep",
 						"type": "String"
 					},
 					{
+						"name": "mc2_elemento_pepid",
 						"type": "String"
 					},
 					{
+						"name": "mc2_elementofacturacion",
 						"type": "String"
 					},
 					{
+						"name": "mc2_elementoimputacion",
 						"type": "String"
 					},
 					{
+						"name": "mc2_elementopep_superior",
 						"type": "String"
 					},
 					{
+						"name": "mc2_elementoplanificacion",
 						"type": "String"
 					},
 					{
+						"name": "mc2_fase",
 						"type": "String"
 					},
 					{
+						"name": "mc2_fasename",
 						"type": "String"
 					},
 					{
+						"name": "mc2_id_familia",
 						"type": "String"
 					},
 					{
+						"name": "mc2_id_pedido",
 						"type": "String"
 					},
 					{
+						"name": "mc2_id_pedidoname",
 						"type": "String"
 					},
 					{
+						"name": "mc2_id_producto",
 						"type": "String"
 					},
 					{
+						"name": "mc2_importe_expl",
 						"type": "String"
 					},
 					{
+						"name": "mc2_importe_impl",
 						"type": "String"
 					},
 					{
+						"name": "mc2_linea_de_negocio",
 						"type": "String"
 					},
 					{
+						"name": "mc2_linea_de_negocioname",
 						"type": "String"
 					},
 					{
+						"name": "mc2_naturaleza_utm",
 						"type": "String"
 					},
 					{
+						"name": "mc2_naturaleza_utmname",
 						"type": "String"
 					},
 					{
+						"name": "mc2_nivelpep",
 						"type": "String"
 					},
 					{
+						"name": "mc2_plancostes",
 						"type": "String"
 					},
 					{
+						"name": "mc2_planingresos",
 						"type": "String"
 					},
 					{
+						"name": "mc2_plazo_utm",
 						"type": "String"
 					},
 					{
+						"name": "mc2_plazo_utmname",
 						"type": "String"
 					},
 					{
+						"name": "mc2_prioridad",
 						"type": "String"
 					},
 					{
+						"name": "mc2_prioridadname",
 						"type": "String"
 					},
 					{
+						"name": "mc2_recurso",
 						"type": "String"
 					},
 					{
+						"name": "mc2_recursoname",
 						"type": "String"
 					},
 					{
+						"name": "modifiedby",
 						"type": "String"
 					},
 					{
+						"name": "modifiedbyname",
 						"type": "String"
 					},
 					{
+						"name": "modifiedbyyominame",
 						"type": "String"
 					},
 					{
+						"name": "modifiedon",
 						"type": "String"
 					},
 					{
+						"name": "modifiedonbehalfby",
 						"type": "String"
 					},
 					{
+						"name": "modifiedonbehalfbyname",
 						"type": "String"
 					},
 					{
+						"name": "modifiedonbehalfbyyominame",
 						"type": "String"
 					},
 					{
+						"name": "overriddencreatedon",
 						"type": "String"
 					},
 					{
+						"name": "ownerid",
 						"type": "String"
 					},
 					{
+						"name": "owneridname",
 						"type": "String"
 					},
 					{
+						"name": "owneridtype",
 						"type": "String"
 					},
 					{
+						"name": "owneridyominame",
 						"type": "String"
 					},
 					{
+						"name": "owningbusinessunit",
 						"type": "String"
 					},
 					{
+						"name": "owningbusinessunitname",
 						"type": "String"
 					},
 					{
+						"name": "owningteam",
 						"type": "String"
 					},
 					{
+						"name": "owninguser",
 						"type": "String"
 					},
 					{
+						"name": "statecode",
 						"type": "String"
 					},
 					{
+						"name": "statuscode",
+						"type": "String"
+					},
+					{
+						"name": "timezoneruleversionnumber",
+						"type": "String"
+					},
+					{
+						"name": "utcconversiontimezonecode",
+						"type": "String"
+					},
+					{
+						"name": "versionnumber",
 						"type": "String"
 					}
 				]
@@ -995,6 +1084,285 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/SourceDataset_h98_copy1')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureDataLakeStorageGen2",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"folderPath": "202110",
+						"fileSystem": "mc2-bs-dev-golden"
+					},
+					"columnDelimiter": ",",
+					"compressionCodec": "gzip",
+					"compressionLevel": "Fastest",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "createdby",
+						"type": "String"
+					},
+					{
+						"name": "createdbyname",
+						"type": "String"
+					},
+					{
+						"name": "createdbyyominame",
+						"type": "String"
+					},
+					{
+						"name": "createdon",
+						"type": "String"
+					},
+					{
+						"name": "createdonbehalfby",
+						"type": "String"
+					},
+					{
+						"name": "createdonbehalfbyname",
+						"type": "String"
+					},
+					{
+						"name": "createdonbehalfbyyominame",
+						"type": "String"
+					},
+					{
+						"name": "importsequencenumber",
+						"type": "String"
+					},
+					{
+						"name": "mc2_bloque",
+						"type": "String"
+					},
+					{
+						"name": "mc2_bloquename",
+						"type": "String"
+					},
+					{
+						"name": "mc2_ceco",
+						"type": "String"
+					},
+					{
+						"name": "mc2_ceconame",
+						"type": "String"
+					},
+					{
+						"name": "mc2_coste_oferta",
+						"type": "String"
+					},
+					{
+						"name": "mc2_descripcion",
+						"type": "String"
+					},
+					{
+						"name": "mc2_elemento_pep",
+						"type": "String"
+					},
+					{
+						"name": "mc2_elemento_pepid",
+						"type": "String"
+					},
+					{
+						"name": "mc2_elementofacturacion",
+						"type": "String"
+					},
+					{
+						"name": "mc2_elementoimputacion",
+						"type": "String"
+					},
+					{
+						"name": "mc2_elementopep_superior",
+						"type": "String"
+					},
+					{
+						"name": "mc2_elementoplanificacion",
+						"type": "String"
+					},
+					{
+						"name": "mc2_fase",
+						"type": "String"
+					},
+					{
+						"name": "mc2_fasename",
+						"type": "String"
+					},
+					{
+						"name": "mc2_id_familia",
+						"type": "String"
+					},
+					{
+						"name": "mc2_id_pedido",
+						"type": "String"
+					},
+					{
+						"name": "mc2_id_pedidoname",
+						"type": "String"
+					},
+					{
+						"name": "mc2_id_producto",
+						"type": "String"
+					},
+					{
+						"name": "mc2_importe_expl",
+						"type": "String"
+					},
+					{
+						"name": "mc2_importe_impl",
+						"type": "String"
+					},
+					{
+						"name": "mc2_linea_de_negocio",
+						"type": "String"
+					},
+					{
+						"name": "mc2_linea_de_negocioname",
+						"type": "String"
+					},
+					{
+						"name": "mc2_naturaleza_utm",
+						"type": "String"
+					},
+					{
+						"name": "mc2_naturaleza_utmname",
+						"type": "String"
+					},
+					{
+						"name": "mc2_nivelpep",
+						"type": "String"
+					},
+					{
+						"name": "mc2_plancostes",
+						"type": "String"
+					},
+					{
+						"name": "mc2_planingresos",
+						"type": "String"
+					},
+					{
+						"name": "mc2_plazo_utm",
+						"type": "String"
+					},
+					{
+						"name": "mc2_plazo_utmname",
+						"type": "String"
+					},
+					{
+						"name": "mc2_prioridad",
+						"type": "String"
+					},
+					{
+						"name": "mc2_prioridadname",
+						"type": "String"
+					},
+					{
+						"name": "mc2_recurso",
+						"type": "String"
+					},
+					{
+						"name": "mc2_recursoname",
+						"type": "String"
+					},
+					{
+						"name": "modifiedby",
+						"type": "String"
+					},
+					{
+						"name": "modifiedbyname",
+						"type": "String"
+					},
+					{
+						"name": "modifiedbyyominame",
+						"type": "String"
+					},
+					{
+						"name": "modifiedon",
+						"type": "String"
+					},
+					{
+						"name": "modifiedonbehalfby",
+						"type": "String"
+					},
+					{
+						"name": "modifiedonbehalfbyname",
+						"type": "String"
+					},
+					{
+						"name": "modifiedonbehalfbyyominame",
+						"type": "String"
+					},
+					{
+						"name": "overriddencreatedon",
+						"type": "String"
+					},
+					{
+						"name": "ownerid",
+						"type": "String"
+					},
+					{
+						"name": "owneridname",
+						"type": "String"
+					},
+					{
+						"name": "owneridtype",
+						"type": "String"
+					},
+					{
+						"name": "owneridyominame",
+						"type": "String"
+					},
+					{
+						"name": "owningbusinessunit",
+						"type": "String"
+					},
+					{
+						"name": "owningbusinessunitname",
+						"type": "String"
+					},
+					{
+						"name": "owningteam",
+						"type": "String"
+					},
+					{
+						"name": "owninguser",
+						"type": "String"
+					},
+					{
+						"name": "statecode",
+						"type": "String"
+					},
+					{
+						"name": "statuscode",
+						"type": "String"
+					},
+					{
+						"name": "timezoneruleversionnumber",
+						"type": "String"
+					},
+					{
+						"name": "utcconversiontimezonecode",
+						"type": "String"
+					},
+					{
+						"name": "versionnumber",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/CopyFromBronceToSilver')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
@@ -1014,11 +1382,11 @@
 						"userProperties": [
 							{
 								"name": "Source",
-								"value": "mc2-bs-dev-bronze//"
+								"value": "mc2-bs-dev-bronze/@{formatDatetime(utcnow(),'yyyMM')}/"
 							},
 							{
 								"name": "Destination",
-								"value": "mc2-bs-dev-silver//"
+								"value": "mc2-bs-dev-silver/@{formatDatetime(utcnow(),'yyyMM')}/"
 							}
 						],
 						"typeProperties": {
@@ -1027,6 +1395,10 @@
 								"storeSettings": {
 									"type": "AzureBlobFSReadSettings",
 									"recursive": true,
+									"wildcardFolderPath": {
+										"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+										"type": "Expression"
+									},
 									"wildcardFileName": "*",
 									"enablePartitionDiscovery": false
 								},
@@ -1099,11 +1471,11 @@
 						"userProperties": [
 							{
 								"name": "Source",
-								"value": "mc2-bs-dev-silver//"
+								"value": "mc2-bs-dev-silver/@{formatDatetime(utcnow(),'yyyMM')}/"
 							},
 							{
 								"name": "Destination",
-								"value": "mc2-bs-dev-golden//"
+								"value": "mc2-bs-dev-golden/@{formatDatetime(utcnow(),'yyyMM')}/"
 							}
 						],
 						"typeProperties": {
@@ -1112,6 +1484,10 @@
 								"storeSettings": {
 									"type": "AzureBlobFSReadSettings",
 									"recursive": true,
+									"wildcardFolderPath": {
+										"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+										"type": "Expression"
+									},
 									"wildcardFileName": "*",
 									"enablePartitionDiscovery": false
 								},
@@ -1162,299 +1538,6 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/SourceDatasetSilver')]",
 				"[concat(variables('factoryId'), '/datasets/DestinationDatasetGolden')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/CopyMaestrasMC2ToBronce')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"description": "Copia las tablas maestras del dataverse a la capa Bronce",
-				"activities": [
-					{
-						"name": "ForEach_Maestras",
-						"type": "ForEach",
-						"dependsOn": [],
-						"userProperties": [],
-						"typeProperties": {
-							"items": {
-								"value": "@pipeline().parameters.cw_items",
-								"type": "Expression"
-							},
-							"activities": [
-								{
-									"name": "Copy_Maestras",
-									"type": "Copy",
-									"dependsOn": [],
-									"policy": {
-										"timeout": "7.00:00:00",
-										"retry": 0,
-										"retryIntervalInSeconds": 30,
-										"secureOutput": false,
-										"secureInput": false
-									},
-									"userProperties": [
-										{
-											"name": "Source",
-											"value": "@{item().source.entityName}"
-										},
-										{
-											"name": "Destination",
-											"value": "mc2-bs-dev-bronze//@{item().destination.fileName}"
-										}
-									],
-									"typeProperties": {
-										"source": {
-											"type": "CommonDataServiceForAppsSource"
-										},
-										"sink": {
-											"type": "DelimitedTextSink",
-											"storeSettings": {
-												"type": "AzureBlobFSWriteSettings"
-											},
-											"formatSettings": {
-												"type": "DelimitedTextWriteSettings",
-												"quoteAllText": true,
-												"fileExtension": ".txt"
-											}
-										},
-										"enableStaging": false,
-										"validateDataConsistency": false
-									},
-									"inputs": [
-										{
-											"referenceName": "SourceDataset_MaestrasDataverse",
-											"type": "DatasetReference",
-											"parameters": {
-												"cw_entityName": "@item().source.entityName"
-											}
-										}
-									],
-									"outputs": [
-										{
-											"referenceName": "DestinationDataset_MaestrasBronce",
-											"type": "DatasetReference",
-											"parameters": {
-												"cw_fileName": "@item().destination.fileName"
-											}
-										}
-									]
-								}
-							]
-						}
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
-				},
-				"parameters": {
-					"cw_items": {
-						"type": "Array",
-						"defaultValue": [
-							{
-								"source": {
-									"entityName": "mc2_maestro_ceco"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_ceco.txt"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_perfil"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_perfil.txt"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_sociedad"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_sociedad.txt"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_tramitador"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_tramitador.txt"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_ambito"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_ambito.txt"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_cebe"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_cebe.txt"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_cliente_facturacion"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_cliente_facturacion.txt"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_cliente_gestion"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_cliente_gestion.txt"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_coste"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_coste.txt"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_costes_formula"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_costes_formula.txt"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_estado_compras"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_estado_compras.txt"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_estado_pedido"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_estado_pedido.txt"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_familia"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_familia.txt"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_fase"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_fase.txt"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_jefe_de_proyecto"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_jefe_de_proyecto.txt"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_lineapep"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_lineapep.txt"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_monedas"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_monedas.txt"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_naturaleza_utm"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_naturaleza_utm.txt"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_perfil_presupuesto"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_perfil_presupuesto.txt"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_planificacion"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_planificacion.txt"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_plazo_utm"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_plazo_utm.txt"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_prioridad"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_prioridad.txt"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_producto"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_producto.txt"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_tipificacion"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_tipificacion.txt"
-								}
-							}
-						]
-					}
-				},
-				"folder": {
-					"name": "Sources/CopyFromMC2ToDataLakeBronce"
-				},
-				"annotations": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/SourceDataset_MaestrasDataverse')]",
-				"[concat(variables('factoryId'), '/datasets/DestinationDataset_MaestrasBronce')]"
 			]
 		}
 	]

@@ -7,6 +7,10 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "MC2Factory"
 		},
+		"AzureBlobStorage1_sasUri": {
+			"type": "secureString",
+			"metadata": "Secure string for 'sasUri' of 'AzureBlobStorage1'"
+		},
 		"Snowflake1_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'Snowflake1'"
@@ -20,6 +24,57 @@
 		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
 	},
 	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureBlobStorage1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"sasUri": "[parameters('AzureBlobStorage1_sasUri')]"
+				},
+				"connectVia": {
+					"referenceName": "integrationRuntime",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Snowflake1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "Snowflake",
+				"typeProperties": {
+					"connectionString": "[parameters('Snowflake1_connectionString')]"
+				},
+				"connectVia": {
+					"referenceName": "integrationRuntime",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/linkedService1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"sasUri": "[parameters('linkedService1_sasUri')]"
+				},
+				"connectVia": {
+					"referenceName": "integrationRuntime",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": []
+		},
 		{
 			"name": "[concat(parameters('factoryName'), '/CopyPrincipalesMC2ToBronce')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
@@ -56,7 +111,7 @@
 										},
 										{
 											"name": "Destination",
-											"value": "mc2-bs-dev-bronze//@{item().destination.fileName}"
+											"value": " mc2-bs-dev-bronze/@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}/@{item().destination.fileName}"
 										}
 									],
 									"typeProperties": {
@@ -110,10 +165,10 @@
 						"defaultValue": [
 							{
 								"source": {
-									"entityName": "mc2_comentarios_pedidos"
+									"entityName": "mc2_comentarios_proyecto"
 								},
 								"destination": {
-									"fileName": "mc2_comentarios_pedidos.txt"
+									"fileName": "mc2_comentarios_proyecto.txt"
 								}
 							},
 							{
@@ -167,192 +222,310 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Snowflake1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"name": "[concat(parameters('factoryName'), '/CopyMaestrasMC2ToBronce')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"annotations": [],
-				"type": "Snowflake",
-				"typeProperties": {
-					"connectionString": "[parameters('Snowflake1_connectionString')]"
-				},
-				"connectVia": {
-					"referenceName": "integrationRuntime",
-					"type": "IntegrationRuntimeReference"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/linkedService1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobStorage",
-				"typeProperties": {
-					"sasUri": "[parameters('linkedService1_sasUri')]"
-				},
-				"connectVia": {
-					"referenceName": "integrationRuntime",
-					"type": "IntegrationRuntimeReference"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/DestinationDataset_pou')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "Snowflake1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "SnowflakeTable",
-				"schema": [
+				"description": "Copia las tablas maestras del dataverse a la capa Bronce",
+				"activities": [
 					{
-						"name": "TABLE_CATALOG",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "TABLE_SCHEMA",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "TABLE_NAME",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "TABLE_OWNER",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "TABLE_TYPE",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "IS_TRANSIENT",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "CLUSTERING_KEY",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "ROW_COUNT",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "BYTES",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "RETENTION_TIME",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "SELF_REFERENCING_COLUMN_NAME",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "REFERENCE_GENERATION",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "USER_DEFINED_TYPE_CATALOG",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "USER_DEFINED_TYPE_SCHEMA",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "USER_DEFINED_TYPE_NAME",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "IS_INSERTABLE_INTO",
-						"type": "VARCHAR",
-						"precision": 3,
-						"scale": 0
-					},
-					{
-						"name": "IS_TYPED",
-						"type": "VARCHAR",
-						"precision": 3,
-						"scale": 0
-					},
-					{
-						"name": "COMMIT_ACTION",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "CREATED",
-						"type": "TIMESTAMP_LTZ",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "LAST_ALTERED",
-						"type": "TIMESTAMP_LTZ",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "AUTO_CLUSTERING_ON",
-						"type": "VARCHAR",
-						"precision": 3,
-						"scale": 0
-					},
-					{
-						"name": "COMMENT",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
+						"name": "ForEach_Maestras",
+						"type": "ForEach",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"items": {
+								"value": "@pipeline().parameters.cw_items",
+								"type": "Expression"
+							},
+							"activities": [
+								{
+									"name": "Copy_Maestras",
+									"type": "Copy",
+									"dependsOn": [],
+									"policy": {
+										"timeout": "7.00:00:00",
+										"retry": 0,
+										"retryIntervalInSeconds": 30,
+										"secureOutput": false,
+										"secureInput": false
+									},
+									"userProperties": [
+										{
+											"name": "Source",
+											"value": "@{item().source.entityName}"
+										},
+										{
+											"name": "Destination",
+											"value": " mc2-bs-dev-bronze/@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}/@{item().destination.fileName}"
+										}
+									],
+									"typeProperties": {
+										"source": {
+											"type": "CommonDataServiceForAppsSource"
+										},
+										"sink": {
+											"type": "DelimitedTextSink",
+											"storeSettings": {
+												"type": "AzureBlobFSWriteSettings"
+											},
+											"formatSettings": {
+												"type": "DelimitedTextWriteSettings",
+												"quoteAllText": true,
+												"fileExtension": ".txt"
+											}
+										},
+										"enableStaging": false,
+										"validateDataConsistency": false
+									},
+									"inputs": [
+										{
+											"referenceName": "SourceDataset_MaestrasDataverse",
+											"type": "DatasetReference",
+											"parameters": {
+												"cw_entityName": "@item().source.entityName"
+											}
+										}
+									],
+									"outputs": [
+										{
+											"referenceName": "DestinationDataset_MaestrasBronce",
+											"type": "DatasetReference",
+											"parameters": {
+												"cw_fileName": "@item().destination.fileName"
+											}
+										}
+									]
+								}
+							]
+						}
 					}
 				],
-				"typeProperties": {
-					"schema": "INFORMATION_SCHEMA",
-					"table": "TABLES"
-				}
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
+				"parameters": {
+					"cw_items": {
+						"type": "Array",
+						"defaultValue": [
+							{
+								"source": {
+									"entityName": "mc2_maestro_ceco"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_ceco.txt"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_perfil"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_perfil.txt"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_sociedad"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_sociedad.txt"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_tramitador"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_tramitador.txt"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_ambito"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_ambito.txt"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_cebe"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_cebe.txt"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_cliente_facturacion"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_cliente_facturacion.txt"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_cliente_gestion"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_cliente_gestion.txt"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_coste"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_coste.txt"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_costes_formula"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_costes_formula.txt"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_estado_compras"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_estado_compras.txt"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_estado_pedidos"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_estado_pedidos.txt"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_familia"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_familia.txt"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_fase"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_fase.txt"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_jefe_de_proyecto"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_jefe_de_proyecto.txt"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_lineapep"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_lineapep.txt"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_monedas"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_monedas.txt"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_naturaleza_utm"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_naturaleza_utm.txt"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_perfil_presupuesto"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_perfil_presupuesto.txt"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_planificacion"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_planificacion.txt"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_plazo_utm"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_plazo_utm.txt"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_prioridad"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_prioridad.txt"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_producto"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_producto.txt"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_tipificacion"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_tipificacion.txt"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_sku"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_sku.txt"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_bloque"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_bloque.txt"
+								}
+							}
+						]
+					}
+				},
+				"folder": {
+					"name": "Sources/CopyFromMC2ToDataLakeBronce"
+				},
+				"annotations": []
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Main')]",
@@ -709,17 +882,794 @@
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/CopyPrincipalesMC2ToBronce')]"
+				"[concat(variables('factoryId'), '/pipelines/CopyPrincipalesMC2ToBronce')]",
+				"[concat(variables('factoryId'), '/pipelines/CopyMaestrasMC2ToBronce')]"
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/CopyPipeline_pou')]",
+			"name": "[concat(parameters('factoryName'), '/DestinationDataset_h98')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Snowflake1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "SnowflakeTable",
+				"schema": [
+					{
+						"name": "CREATEDBY",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "CREATEDBYNAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "CREATEDBYYOMINAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "CREATEDON",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "CREATEDONBEHALFBY",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "CREATEDONBEHALFBYNAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "CREATEDONBEHALFBYYOMINAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "IMPORTSEQUENCENUMBER",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_BLOQUE",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_BLOQUENAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_CECO",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_CECONAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_COSTE_OFERTA",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_DESCRIPCION",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_ELEMENTO_PEP",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_ELEMENTO_PEPID",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_ELEMENTOFACTURACION",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_ELEMENTOIMPUTACION",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_ELEMENTOPLANIFICACION",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_FASE",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_FASENAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_ID_FAMILIA",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_ID_PEDIDO",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_ID_PEDIDONAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_ID_PRODUCTO",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_IMPORTE_EXPL",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_IMPORTE_IMPL",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_LINEA_DE_NEGOCIO",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_LINEA_DE_NEGOCIONAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_NATURALEZA_UTM",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_NATURALEZA_UTMNAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_NIVELPEP",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_PLANCOSTES",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_PLANINGRESOS",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_PLAZO_UTM",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_PLAZO_UTMNAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_PRIORIDAD",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_PRIORIDADNAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_RECURSO",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_RECURSONAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MODIFIEDBY",
+						"type": "TIMESTAMP_NTZ",
+						"precision": 29,
+						"scale": 9
+					},
+					{
+						"name": "MODIFIEDBYNAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MODIFIEDBYYOMINAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MODIFIEDON",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MODIFIEDONBEHALFBY",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MODIFIEDONBEHALFBYNAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MODIFIEDONBEHALFBYYOMINAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "OVERRIDDENCREATEDON",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "OWNERID",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "OWNERIDNAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "OWNERIDTYPE",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "OWNERIDYOMINAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "OWNINGBUSINESSUNIT",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "OWNINGBUSINESSUNITNAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "OWNINGTEAM",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "OWNINGUSER",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "STATECODE",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "STATUSCODE",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "TIMEZONERULEVERSIONNUMBER",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "UTCCONVERSIONTIMEZONECODE",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "VERSIONNUMBER",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					}
+				],
+				"typeProperties": {
+					"schema": "PUBLIC",
+					"table": "MC2_ELEMENTO_PEP"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DestinationDataset_h98_copy1')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Snowflake1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "SnowflakeTable",
+				"schema": [
+					{
+						"name": "CREATEDBY",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "CREATEDBYNAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "CREATEDBYYOMINAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "CREATEDON",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "CREATEDONBEHALFBY",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "CREATEDONBEHALFBYNAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "CREATEDONBEHALFBYYOMINAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "IMPORTSEQUENCENUMBER",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_BLOQUE",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_BLOQUENAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_CECO",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_CECONAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_COSTE_OFERTA",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_DESCRIPCION",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_ELEMENTO_PEP",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_ELEMENTO_PEPID",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_ELEMENTOFACTURACION",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_ELEMENTOIMPUTACION",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_ELEMENTOPLANIFICACION",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_FASE",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_FASENAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_ID_FAMILIA",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_ID_PEDIDO",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_ID_PEDIDONAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_ID_PRODUCTO",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_IMPORTE_EXPL",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_IMPORTE_IMPL",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_LINEA_DE_NEGOCIO",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_LINEA_DE_NEGOCIONAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_NATURALEZA_UTM",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_NATURALEZA_UTMNAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_NIVELPEP",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_PLANCOSTES",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_PLANINGRESOS",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_PLAZO_UTM",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_PLAZO_UTMNAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_PRIORIDAD",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_PRIORIDADNAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_RECURSO",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MC2_RECURSONAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MODIFIEDBY",
+						"type": "TIMESTAMP_NTZ",
+						"precision": 29,
+						"scale": 9
+					},
+					{
+						"name": "MODIFIEDBYNAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MODIFIEDBYYOMINAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MODIFIEDON",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MODIFIEDONBEHALFBY",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MODIFIEDONBEHALFBYNAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "MODIFIEDONBEHALFBYYOMINAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "OVERRIDDENCREATEDON",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "OWNERID",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "OWNERIDNAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "OWNERIDTYPE",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "OWNERIDYOMINAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "OWNINGBUSINESSUNIT",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "OWNINGBUSINESSUNITNAME",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "OWNINGTEAM",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "OWNINGUSER",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "STATECODE",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "STATUSCODE",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "TIMEZONERULEVERSIONNUMBER",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "UTCCONVERSIONTIMEZONECODE",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "VERSIONNUMBER",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					}
+				],
+				"typeProperties": {
+					"schema": "PUBLIC",
+					"table": "MC2_ELEMENTO_PEP"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/CopyToSnowfleak')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"activities": [
 					{
-						"name": "Copy_pou",
+						"name": "Copy_h98",
 						"type": "Copy",
 						"dependsOn": [],
 						"policy": {
@@ -732,11 +1682,11 @@
 						"userProperties": [
 							{
 								"name": "Source",
-								"value": "mc2-bs-dev-golden//20211015-mc2_elemento_pep.txt"
+								"value": "mc2-bs-dev-golden/202110/20211019-mc2_elemento_pep.csv"
 							},
 							{
 								"name": "Destination",
-								"value": "INFORMATION_SCHEMA.TABLES"
+								"value": "PUBLIC.MC2_ELEMENTO_PEP"
 							}
 						],
 						"typeProperties": {
@@ -761,230 +1711,621 @@
 							"enableStaging": true,
 							"stagingSettings": {
 								"linkedServiceName": {
-									"referenceName": "linkedService1",
+									"referenceName": "AzureBlobStorage1",
 									"type": "LinkedServiceReference"
-								}
+								},
+								"path": "mc2-bs-dev-golden/"
 							},
 							"translator": {
 								"type": "TabularTranslator",
 								"mappings": [
 									{
 										"source": {
-											"type": "String",
-											"ordinal": 1
+											"name": "createdby",
+											"type": "String"
 										},
 										"sink": {
-											"name": "TABLE_CATALOG",
+											"name": "CREATEDBY",
 											"type": "String"
 										}
 									},
 									{
 										"source": {
-											"type": "String",
-											"ordinal": 2
+											"name": "createdbyname",
+											"type": "String"
 										},
 										"sink": {
-											"name": "TABLE_SCHEMA",
+											"name": "CREATEDBYNAME",
 											"type": "String"
 										}
 									},
 									{
 										"source": {
-											"type": "String",
-											"ordinal": 3
+											"name": "createdbyyominame",
+											"type": "String"
 										},
 										"sink": {
-											"name": "TABLE_NAME",
+											"name": "CREATEDBYYOMINAME",
 											"type": "String"
 										}
 									},
 									{
 										"source": {
-											"type": "String",
-											"ordinal": 4
+											"name": "createdon",
+											"type": "String"
 										},
 										"sink": {
-											"name": "TABLE_OWNER",
+											"name": "CREATEDON",
 											"type": "String"
 										}
 									},
 									{
 										"source": {
-											"type": "String",
-											"ordinal": 5
+											"name": "createdonbehalfby",
+											"type": "String"
 										},
 										"sink": {
-											"name": "TABLE_TYPE",
+											"name": "CREATEDONBEHALFBY",
 											"type": "String"
 										}
 									},
 									{
 										"source": {
-											"type": "String",
-											"ordinal": 6
+											"name": "createdonbehalfbyname",
+											"type": "String"
 										},
 										"sink": {
-											"name": "IS_TRANSIENT",
+											"name": "CREATEDONBEHALFBYNAME",
 											"type": "String"
 										}
 									},
 									{
 										"source": {
-											"type": "String",
-											"ordinal": 7
+											"name": "createdonbehalfbyyominame",
+											"type": "String"
 										},
 										"sink": {
-											"name": "CLUSTERING_KEY",
+											"name": "CREATEDONBEHALFBYYOMINAME",
 											"type": "String"
 										}
 									},
 									{
 										"source": {
-											"type": "String",
-											"ordinal": 8
+											"name": "importsequencenumber",
+											"type": "String"
 										},
 										"sink": {
-											"name": "ROW_COUNT",
+											"name": "IMPORTSEQUENCENUMBER",
 											"type": "String"
 										}
 									},
 									{
 										"source": {
-											"type": "String",
-											"ordinal": 9
+											"name": "mc2_bloque",
+											"type": "String"
 										},
 										"sink": {
-											"name": "BYTES",
+											"name": "MC2_BLOQUE",
 											"type": "String"
 										}
 									},
 									{
 										"source": {
-											"type": "String",
-											"ordinal": 10
+											"name": "mc2_bloquename",
+											"type": "String"
 										},
 										"sink": {
-											"name": "RETENTION_TIME",
+											"name": "MC2_BLOQUENAME",
 											"type": "String"
 										}
 									},
 									{
 										"source": {
-											"type": "String",
-											"ordinal": 11
+											"name": "mc2_ceco",
+											"type": "String"
 										},
 										"sink": {
-											"name": "SELF_REFERENCING_COLUMN_NAME",
+											"name": "MC2_CECO",
 											"type": "String"
 										}
 									},
 									{
 										"source": {
-											"type": "String",
-											"ordinal": 12
+											"name": "mc2_ceconame",
+											"type": "String"
 										},
 										"sink": {
-											"name": "REFERENCE_GENERATION",
+											"name": "MC2_CECONAME",
 											"type": "String"
 										}
 									},
 									{
 										"source": {
-											"type": "String",
-											"ordinal": 13
+											"name": "mc2_coste_oferta",
+											"type": "String"
 										},
 										"sink": {
-											"name": "USER_DEFINED_TYPE_CATALOG",
+											"name": "MC2_COSTE_OFERTA",
 											"type": "String"
 										}
 									},
 									{
 										"source": {
-											"type": "String",
-											"ordinal": 14
+											"name": "mc2_descripcion",
+											"type": "String"
 										},
 										"sink": {
-											"name": "USER_DEFINED_TYPE_SCHEMA",
+											"name": "MC2_DESCRIPCION",
 											"type": "String"
 										}
 									},
 									{
 										"source": {
-											"type": "String",
-											"ordinal": 15
+											"name": "mc2_elemento_pep",
+											"type": "String"
 										},
 										"sink": {
-											"name": "USER_DEFINED_TYPE_NAME",
+											"name": "MC2_ELEMENTO_PEP",
 											"type": "String"
 										}
 									},
 									{
 										"source": {
-											"type": "String",
-											"ordinal": 16
+											"name": "mc2_elemento_pepid",
+											"type": "String"
 										},
 										"sink": {
-											"name": "IS_INSERTABLE_INTO",
+											"name": "MC2_ELEMENTO_PEPID",
 											"type": "String"
 										}
 									},
 									{
 										"source": {
-											"type": "String",
-											"ordinal": 17
+											"name": "mc2_elementofacturacion",
+											"type": "String"
 										},
 										"sink": {
-											"name": "IS_TYPED",
+											"name": "MC2_ELEMENTOFACTURACION",
 											"type": "String"
 										}
 									},
 									{
 										"source": {
-											"type": "String",
-											"ordinal": 18
+											"name": "mc2_elementoimputacion",
+											"type": "String"
 										},
 										"sink": {
-											"name": "COMMIT_ACTION",
+											"name": "MC2_ELEMENTOIMPUTACION",
 											"type": "String"
 										}
 									},
 									{
 										"source": {
-											"type": "String",
-											"ordinal": 19
+											"name": "mc2_elementoplanificacion",
+											"type": "String"
 										},
 										"sink": {
-											"name": "CREATED",
+											"name": "MC2_ELEMENTOPLANIFICACION",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_fase",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_FASE",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_fasename",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_FASENAME",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_id_familia",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_ID_FAMILIA",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_id_pedido",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_ID_PEDIDO",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_id_pedidoname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_ID_PEDIDONAME",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_id_producto",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_ID_PRODUCTO",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_importe_expl",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_IMPORTE_EXPL",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_importe_impl",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_IMPORTE_IMPL",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_linea_de_negocio",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_LINEA_DE_NEGOCIO",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_linea_de_negocioname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_LINEA_DE_NEGOCIONAME",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_naturaleza_utm",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_NATURALEZA_UTM",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_naturaleza_utmname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_NATURALEZA_UTMNAME",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_nivelpep",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_NIVELPEP",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_plancostes",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_PLANCOSTES",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_planingresos",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_PLANINGRESOS",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_plazo_utm",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_PLAZO_UTM",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_plazo_utmname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_PLAZO_UTMNAME",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_prioridad",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_PRIORIDAD",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_prioridadname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_PRIORIDADNAME",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_recurso",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_RECURSO",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_recursoname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_RECURSONAME",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedby",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MODIFIEDBY",
 											"type": "DateTime"
 										}
 									},
 									{
 										"source": {
-											"type": "String",
-											"ordinal": 20
+											"name": "modifiedbyname",
+											"type": "String"
 										},
 										"sink": {
-											"name": "LAST_ALTERED",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"type": "String",
-											"ordinal": 21
-										},
-										"sink": {
-											"name": "AUTO_CLUSTERING_ON",
+											"name": "MODIFIEDBYNAME",
 											"type": "String"
 										}
 									},
 									{
 										"source": {
-											"type": "String",
-											"ordinal": 22
+											"name": "modifiedbyyominame",
+											"type": "String"
 										},
 										"sink": {
-											"name": "COMMENT",
+											"name": "MODIFIEDBYYOMINAME",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedon",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MODIFIEDON",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedonbehalfby",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MODIFIEDONBEHALFBY",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedonbehalfbyname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MODIFIEDONBEHALFBYNAME",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedonbehalfbyyominame",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MODIFIEDONBEHALFBYYOMINAME",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "overriddencreatedon",
+											"type": "String"
+										},
+										"sink": {
+											"name": "OVERRIDDENCREATEDON",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ownerid",
+											"type": "String"
+										},
+										"sink": {
+											"name": "OWNERID",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "owneridname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "OWNERIDNAME",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "owneridtype",
+											"type": "String"
+										},
+										"sink": {
+											"name": "OWNERIDTYPE",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "owneridyominame",
+											"type": "String"
+										},
+										"sink": {
+											"name": "OWNERIDYOMINAME",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "owningbusinessunit",
+											"type": "String"
+										},
+										"sink": {
+											"name": "OWNINGBUSINESSUNIT",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "owningbusinessunitname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "OWNINGBUSINESSUNITNAME",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "owningteam",
+											"type": "String"
+										},
+										"sink": {
+											"name": "OWNINGTEAM",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "owninguser",
+											"type": "String"
+										},
+										"sink": {
+											"name": "OWNINGUSER",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "statecode",
+											"type": "String"
+										},
+										"sink": {
+											"name": "STATECODE",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "statuscode",
+											"type": "String"
+										},
+										"sink": {
+											"name": "STATUSCODE",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "timezoneruleversionnumber",
+											"type": "String"
+										},
+										"sink": {
+											"name": "TIMEZONERULEVERSIONNUMBER",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "utcconversiontimezonecode",
+											"type": "String"
+										},
+										"sink": {
+											"name": "UTCCONVERSIONTIMEZONECODE",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "versionnumber",
+											"type": "String"
+										},
+										"sink": {
+											"name": "VERSIONNUMBER",
 											"type": "String"
 										}
 									}
@@ -993,14 +2334,14 @@
 						},
 						"inputs": [
 							{
-								"referenceName": "SourceDataset_pou",
+								"referenceName": "SourceDataset_h98",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
 						],
 						"outputs": [
 							{
-								"referenceName": "DestinationDataset_pou",
+								"referenceName": "DestinationDataset_h98",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -1014,8 +2355,705 @@
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/DestinationDataset_pou')]",
-				"[concat(variables('factoryId'), '/linkedServices/linkedService1')]"
+				"[concat(variables('factoryId'), '/datasets/DestinationDataset_h98')]",
+				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/CopyToSnowfleak_copy1')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Copy_h98",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [
+							{
+								"name": "Source",
+								"value": "mc2-bs-dev-golden/202110/20211019-mc2_elemento_pep.csv"
+							},
+							{
+								"name": "Destination",
+								"value": "PUBLIC.MC2_ELEMENTO_PEP"
+							}
+						],
+						"typeProperties": {
+							"source": {
+								"type": "DelimitedTextSource",
+								"storeSettings": {
+									"type": "AzureBlobFSReadSettings",
+									"recursive": true,
+									"enablePartitionDiscovery": false
+								},
+								"formatSettings": {
+									"type": "DelimitedTextReadSettings",
+									"skipLineCount": 0
+								}
+							},
+							"sink": {
+								"type": "SnowflakeSink",
+								"importSettings": {
+									"type": "SnowflakeImportCopyCommand"
+								}
+							},
+							"enableStaging": true,
+							"stagingSettings": {
+								"linkedServiceName": {
+									"referenceName": "AzureBlobStorage1",
+									"type": "LinkedServiceReference"
+								},
+								"path": "mc2-bs-dev-golden/"
+							},
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "createdby",
+											"type": "String"
+										},
+										"sink": {
+											"name": "CREATEDBY",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "createdbyname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "CREATEDBYNAME",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "createdbyyominame",
+											"type": "String"
+										},
+										"sink": {
+											"name": "CREATEDBYYOMINAME",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "createdon",
+											"type": "String"
+										},
+										"sink": {
+											"name": "CREATEDON",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "createdonbehalfby",
+											"type": "String"
+										},
+										"sink": {
+											"name": "CREATEDONBEHALFBY",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "createdonbehalfbyname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "CREATEDONBEHALFBYNAME",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "createdonbehalfbyyominame",
+											"type": "String"
+										},
+										"sink": {
+											"name": "CREATEDONBEHALFBYYOMINAME",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "importsequencenumber",
+											"type": "String"
+										},
+										"sink": {
+											"name": "IMPORTSEQUENCENUMBER",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_bloque",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_BLOQUE",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_bloquename",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_BLOQUENAME",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_ceco",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_CECO",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_ceconame",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_CECONAME",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_coste_oferta",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_COSTE_OFERTA",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_descripcion",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_DESCRIPCION",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_elemento_pep",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_ELEMENTO_PEP",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_elemento_pepid",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_ELEMENTO_PEPID",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_elementofacturacion",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_ELEMENTOFACTURACION",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_elementoimputacion",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_ELEMENTOIMPUTACION",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_elementoplanificacion",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_ELEMENTOPLANIFICACION",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_fase",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_FASE",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_fasename",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_FASENAME",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_id_familia",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_ID_FAMILIA",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_id_pedido",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_ID_PEDIDO",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_id_pedidoname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_ID_PEDIDONAME",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_id_producto",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_ID_PRODUCTO",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_importe_expl",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_IMPORTE_EXPL",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_importe_impl",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_IMPORTE_IMPL",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_linea_de_negocio",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_LINEA_DE_NEGOCIO",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_linea_de_negocioname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_LINEA_DE_NEGOCIONAME",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_naturaleza_utm",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_NATURALEZA_UTM",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_naturaleza_utmname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_NATURALEZA_UTMNAME",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_nivelpep",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_NIVELPEP",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_plancostes",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_PLANCOSTES",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_planingresos",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_PLANINGRESOS",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_plazo_utm",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_PLAZO_UTM",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_plazo_utmname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_PLAZO_UTMNAME",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_prioridad",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_PRIORIDAD",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_prioridadname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_PRIORIDADNAME",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_recurso",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_RECURSO",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_recursoname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MC2_RECURSONAME",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedby",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MODIFIEDBY",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedbyname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MODIFIEDBYNAME",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedbyyominame",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MODIFIEDBYYOMINAME",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedon",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MODIFIEDON",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedonbehalfby",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MODIFIEDONBEHALFBY",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedonbehalfbyname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MODIFIEDONBEHALFBYNAME",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedonbehalfbyyominame",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MODIFIEDONBEHALFBYYOMINAME",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "overriddencreatedon",
+											"type": "String"
+										},
+										"sink": {
+											"name": "OVERRIDDENCREATEDON",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ownerid",
+											"type": "String"
+										},
+										"sink": {
+											"name": "OWNERID",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "owneridname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "OWNERIDNAME",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "owneridtype",
+											"type": "String"
+										},
+										"sink": {
+											"name": "OWNERIDTYPE",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "owneridyominame",
+											"type": "String"
+										},
+										"sink": {
+											"name": "OWNERIDYOMINAME",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "owningbusinessunit",
+											"type": "String"
+										},
+										"sink": {
+											"name": "OWNINGBUSINESSUNIT",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "owningbusinessunitname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "OWNINGBUSINESSUNITNAME",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "owningteam",
+											"type": "String"
+										},
+										"sink": {
+											"name": "OWNINGTEAM",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "owninguser",
+											"type": "String"
+										},
+										"sink": {
+											"name": "OWNINGUSER",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "statecode",
+											"type": "String"
+										},
+										"sink": {
+											"name": "STATECODE",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "statuscode",
+											"type": "String"
+										},
+										"sink": {
+											"name": "STATUSCODE",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "timezoneruleversionnumber",
+											"type": "String"
+										},
+										"sink": {
+											"name": "TIMEZONERULEVERSIONNUMBER",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "utcconversiontimezonecode",
+											"type": "String"
+										},
+										"sink": {
+											"name": "UTCCONVERSIONTIMEZONECODE",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "versionnumber",
+											"type": "String"
+										},
+										"sink": {
+											"name": "VERSIONNUMBER",
+											"type": "String"
+										}
+									}
+								]
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "SourceDataset_h98",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "DestinationDataset_h98",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/DestinationDataset_h98')]",
+				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage1')]"
 			]
 		}
 	]

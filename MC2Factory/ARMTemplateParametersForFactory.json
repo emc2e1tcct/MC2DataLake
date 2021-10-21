@@ -14,6 +14,9 @@
 		"MC2Dataverse_servicePrincipalCredential": {
 			"value": ""
 		},
+		"AzureBlobStorage1_sasUri": {
+			"value": ""
+		},
 		"AzureDataLakeStorageGen2_properties_typeProperties_url": {
 			"value": "https://mc2datalake.dfs.core.windows.net"
 		},
