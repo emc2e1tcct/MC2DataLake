@@ -9,7 +9,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@pipeline().parameters.cw_items",
+						"value": "@pipeline().parameters.cw_items_Maestras",
 						"type": "Expression"
 					},
 					"activities": [
@@ -64,7 +64,7 @@
 									"referenceName": "DestinationMaestrasBronce",
 									"type": "DatasetReference",
 									"parameters": {
-										"cw_fileName": "@item().destination.fileName"
+										"cw_fileName_Maestras": "@item().destination.fileName"
 									}
 								}
 							]
@@ -74,7 +74,7 @@
 			}
 		],
 		"parameters": {
-			"cw_items": {
+			"cw_items_Maestras": {
 				"type": "Array",
 				"defaultValue": [
 					{
