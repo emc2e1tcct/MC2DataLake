@@ -32,6 +32,9 @@
 		"linkedService1_sasUri": {
 			"value": ""
 		},
+		"linkedServicePrueba_sasUri": {
+			"value": ""
+		},
 		"dataFactory_location": {
 			"value": "northeurope"
 		},

@@ -43,6 +43,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'sasUri' of 'linkedService1'"
 		},
+		"linkedServicePrueba_sasUri": {
+			"type": "secureString",
+			"metadata": "Secure string for 'sasUri' of 'linkedServicePrueba'"
+		},
 		"dataFactory_location": {
 			"type": "string",
 			"defaultValue": "northeurope"
@@ -128,6 +132,9 @@
 					},
 					"linkedService1_sasUri": {
 						"value": "[parameters('linkedService1_sasUri')]"
+					},
+					"linkedServicePrueba_sasUri": {
+						"value": "[parameters('linkedServicePrueba_sasUri')]"
 					}
 				}
 			},
