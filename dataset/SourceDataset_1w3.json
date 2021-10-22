@@ -14,7 +14,7 @@
 				"folderPath": "2021/10",
 				"fileSystem": "mc2-bs-dev-golden"
 			},
-			"compressionCodec": "snappy"
+			"compressionCodec": "none"
 		},
 		"schema": [
 			{
