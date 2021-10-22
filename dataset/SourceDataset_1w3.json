@@ -11,7 +11,6 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": "21102021-mc2_maestro_cebe.parquet",
-				"folderPath": "2021/10",
 				"fileSystem": "mc2-bs-dev-golden"
 			},
 			"compressionCodec": "none"
