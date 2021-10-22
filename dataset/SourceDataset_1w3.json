@@ -1,0 +1,162 @@
+{
+	"name": "SourceDataset_1w3",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorageGen2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "21102021-mc2_maestro_cebe.parquet",
+				"folderPath": "2021/10",
+				"fileSystem": "mc2-bs-dev-golden"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "createdby",
+				"type": "UTF8"
+			},
+			{
+				"name": "createdbyname",
+				"type": "UTF8"
+			},
+			{
+				"name": "createdbyyominame",
+				"type": "UTF8"
+			},
+			{
+				"name": "createdon",
+				"type": "INT96"
+			},
+			{
+				"name": "createdonbehalfby",
+				"type": "UTF8"
+			},
+			{
+				"name": "createdonbehalfbyname",
+				"type": "UTF8"
+			},
+			{
+				"name": "createdonbehalfbyyominame",
+				"type": "UTF8"
+			},
+			{
+				"name": "importsequencenumber",
+				"type": "INT32"
+			},
+			{
+				"name": "mc2_cebe",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_idioma",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_maestro_cebeid",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_responsable_cebe",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_spco",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_texto_cebe",
+				"type": "UTF8"
+			},
+			{
+				"name": "modifiedby",
+				"type": "UTF8"
+			},
+			{
+				"name": "modifiedbyname",
+				"type": "UTF8"
+			},
+			{
+				"name": "modifiedbyyominame",
+				"type": "UTF8"
+			},
+			{
+				"name": "modifiedon",
+				"type": "INT96"
+			},
+			{
+				"name": "modifiedonbehalfby",
+				"type": "UTF8"
+			},
+			{
+				"name": "modifiedonbehalfbyname",
+				"type": "UTF8"
+			},
+			{
+				"name": "modifiedonbehalfbyyominame",
+				"type": "UTF8"
+			},
+			{
+				"name": "overriddencreatedon",
+				"type": "INT96"
+			},
+			{
+				"name": "ownerid",
+				"type": "UTF8"
+			},
+			{
+				"name": "owneridname",
+				"type": "UTF8"
+			},
+			{
+				"name": "owneridtype",
+				"type": "UTF8"
+			},
+			{
+				"name": "owneridyominame",
+				"type": "UTF8"
+			},
+			{
+				"name": "owningbusinessunit",
+				"type": "UTF8"
+			},
+			{
+				"name": "owningbusinessunitname",
+				"type": "UTF8"
+			},
+			{
+				"name": "owningteam",
+				"type": "UTF8"
+			},
+			{
+				"name": "owninguser",
+				"type": "UTF8"
+			},
+			{
+				"name": "statecode",
+				"type": "INT32"
+			},
+			{
+				"name": "statuscode",
+				"type": "INT32"
+			},
+			{
+				"name": "timezoneruleversionnumber",
+				"type": "INT32"
+			},
+			{
+				"name": "utcconversiontimezonecode",
+				"type": "INT32"
+			},
+			{
+				"name": "versionnumber",
+				"type": "INT64"
+			}
+		]
+	}
+}
