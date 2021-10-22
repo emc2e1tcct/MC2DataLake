@@ -43,7 +43,8 @@
 						"linkedServiceName": {
 							"referenceName": "AzureBlobStorageForSnowflake",
 							"type": "LinkedServiceReference"
-						}
+						},
+						"path": ""
 					},
 					"translator": {
 						"type": "TabularTranslator",
