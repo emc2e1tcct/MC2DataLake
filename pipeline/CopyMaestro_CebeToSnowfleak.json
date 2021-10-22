@@ -41,7 +41,7 @@
 					"enableStaging": true,
 					"stagingSettings": {
 						"linkedServiceName": {
-							"referenceName": "linkedServicePrueba",
+							"referenceName": "AzureBlobStorageForSnowflake",
 							"type": "LinkedServiceReference"
 						}
 					},
