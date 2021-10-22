@@ -41,7 +41,7 @@
 					"enableStaging": true,
 					"stagingSettings": {
 						"linkedServiceName": {
-							"referenceName": "AzureBlobStorage1",
+							"referenceName": "linkedServicePrueba",
 							"type": "LinkedServiceReference"
 						}
 					},
