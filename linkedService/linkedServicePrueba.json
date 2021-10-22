@@ -6,7 +6,7 @@
 		"type": "AzureBlobStorage",
 		"typeProperties": {
 			"sasUri": "https://mc2datalake.blob.core.windows.net/mc2-bs-dev-golden",
-			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIk1DMkZBQ1RPUllfODQyMGUxMTEtNjNkZC00Nzk3LWI1Y2QtNmYyZjRhMDUwYWU2Ig0KfQ=="
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIk1DMkZBQ1RPUllfMzE0NjIxMTctYWE0NC00ZGY1LWJmMjItMGRjNWRiZmU0N2Y1Ig0KfQ=="
 		},
 		"connectVia": {
 			"referenceName": "integrationRuntime",
