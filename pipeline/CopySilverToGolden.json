@@ -59,6 +59,9 @@
 				]
 			}
 		],
+		"folder": {
+			"name": "Main/Sources/CopySilverToGolden"
+		},
 		"annotations": []
 	}
 }
