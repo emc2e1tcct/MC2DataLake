@@ -1,9 +1,12 @@
 {
-	"name": "SourceDataset_8g7",
+	"name": "SourceSilver",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorageGen2",
 			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Sources"
 		},
 		"annotations": [],
 		"type": "Parquet",

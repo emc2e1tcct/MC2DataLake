@@ -1,9 +1,9 @@
 {
-	"name": "CopyPipeline_8g7",
+	"name": "CopySilverToGolden",
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_8g7",
+				"name": "Copy_SilverToGolden",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -47,13 +47,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceDataset_8g7",
+						"referenceName": "SourceSilver",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_8g7",
+						"referenceName": "DestinationGolden",
 						"type": "DatasetReference"
 					}
 				]
