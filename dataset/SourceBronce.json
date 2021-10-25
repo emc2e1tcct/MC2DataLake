@@ -5,6 +5,11 @@
 			"referenceName": "AzureDataLakeStorageGen2",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"cw_fileName": {
+				"type": "string"
+			}
+		},
 		"folder": {
 			"name": "Sources"
 		},
@@ -13,6 +18,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-',dataset().cw_fileName)",
+					"type": "Expression"
+				},
 				"folderPath": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 				"fileSystem": "mc2-bs-dev-bronze"
 			},
