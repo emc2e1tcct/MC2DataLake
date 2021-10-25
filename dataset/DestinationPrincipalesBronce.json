@@ -6,7 +6,7 @@
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"cw_fileName_Principañes": {
+			"cw_fileName_Principales": {
 				"type": "String"
 			}
 		},
@@ -19,7 +19,7 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": {
-					"value": "@dataset().cw_fileName",
+					"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-',dataset().cw_fileName_Principales)",
 					"type": "Expression"
 				},
 				"folderPath": {

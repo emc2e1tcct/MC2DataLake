@@ -64,7 +64,7 @@
 									"referenceName": "DestinationPrincipalesBronce",
 									"type": "DatasetReference",
 									"parameters": {
-										"cw_fileName_Principañes": "@item().destination.fileName"
+										"cw_fileName_Principales": "@item().destination.fileName"
 									}
 								}
 							]
