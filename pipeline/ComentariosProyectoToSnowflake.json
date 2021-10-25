@@ -28,7 +28,7 @@
 						"type": "ParquetSource",
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
-							"fileListPath": "mc2-bs-dev-golden/2021/10/20211025-mc2_comentarios_proyecto.parquet",
+							"recursive": true,
 							"enablePartitionDiscovery": false
 						}
 					},
