@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_4qq",
+				"name": "CopyElementoPEPToSnowflake",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -674,18 +674,21 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceDataset_4qq",
+						"referenceName": "SourceElemento_PEP",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_4qq",
+						"referenceName": "Snowflake_MC2_ELEMENTO_PEP",
 						"type": "DatasetReference"
 					}
 				]
 			}
 		],
+		"folder": {
+			"name": "Main/Sources/CopyToSnowfake/CopyPrincipalesSnowflake/Copys"
+		},
 		"annotations": []
 	}
 }

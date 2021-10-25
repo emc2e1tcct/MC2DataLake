@@ -400,14 +400,14 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "SnowFlake_MC2_COMENTARIOS_PROYECTO",
+						"referenceName": "Snowflake_MC2_COMENTARIOS_PROYECTO",
 						"type": "DatasetReference"
 					}
 				]
 			}
 		],
 		"folder": {
-			"name": "Main/Sources/CopyToSnowfake/CopyPrincipalesSnowflake"
+			"name": "Main/Sources/CopyToSnowfake/CopyPrincipalesSnowflake/Copys"
 		},
 		"annotations": []
 	}

@@ -1,9 +1,12 @@
 {
-	"name": "DestinationDataset_4qq",
+	"name": "Snowflake_MC2_ELEMENTO_PEP",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Snowflake1",
 			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destination"
 		},
 		"annotations": [],
 		"type": "SnowflakeTable",

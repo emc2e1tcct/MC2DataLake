@@ -14,6 +14,19 @@
 					},
 					"waitOnCompletion": true
 				}
+			},
+			{
+				"name": "ElementoPEPToSnowflake",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "ElementoPEPToSnowflake",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
 			}
 		],
 		"folder": {

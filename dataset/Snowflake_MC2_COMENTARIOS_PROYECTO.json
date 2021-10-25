@@ -1,5 +1,5 @@
 {
-	"name": "SnowFlake_MC2_COMENTARIOS_PROYECTO",
+	"name": "Snowflake_MC2_COMENTARIOS_PROYECTO",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Snowflake1",
