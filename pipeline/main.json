@@ -22,42 +22,9 @@
 				}
 			},
 			{
-				"name": "CopyBronceToSilver",
-				"type": "ExecutePipeline",
-				"dependsOn": [
-					{
-						"activity": "CopyMaestrasToBronce",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					},
-					{
-						"activity": "CopyPrincipalesToBronce",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"userProperties": [],
-				"typeProperties": {
-					"pipeline": {
-						"referenceName": "CopyBronceToSilver",
-						"type": "PipelineReference"
-					},
-					"waitOnCompletion": true
-				}
-			},
-			{
 				"name": "CopySilverToGolden",
 				"type": "ExecutePipeline",
-				"dependsOn": [
-					{
-						"activity": "CopyBronceToSilver",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
 					"pipeline": {
@@ -84,6 +51,28 @@
 							"type": "Expression"
 						}
 					}
+				}
+			},
+			{
+				"name": "CopyBronceToSilver",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "CopyMaestrasToBronce",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "CopyPrincipalesToBronce",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"waitOnCompletion": true
 				}
 			}
 		],
