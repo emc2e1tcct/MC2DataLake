@@ -1,0 +1,19 @@
+{
+	"name": "DestinationDataset_bs0",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorageGen2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "mc2-bs-dev-silver"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
