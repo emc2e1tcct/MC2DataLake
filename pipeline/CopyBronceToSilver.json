@@ -33,7 +33,6 @@
 								"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 								"type": "Expression"
 							},
-							"wildcardFileName": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-',dataset().cw_fileName)",
 							"enablePartitionDiscovery": false
 						}
 					},
