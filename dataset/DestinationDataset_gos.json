@@ -7,7 +7,8 @@
 		},
 		"parameters": {
 			"cw_fileName": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-',dataset().cw_fileName)"
 			}
 		},
 		"annotations": [],
