@@ -120,26 +120,6 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/integrationRuntime1')]",
-			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"type": "Managed",
-				"typeProperties": {
-					"computeProperties": {
-						"location": "AutoResolve",
-						"dataFlowProperties": {
-							"computeType": "General",
-							"coreCount": 16,
-							"timeToLive": 0,
-							"cleanup": false
-						}
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/default')]",
 			"type": "Microsoft.DataFactory/factories/managedVirtualNetworks",
 			"apiVersion": "2018-06-01",
@@ -163,10 +143,6 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
-						"folderPath": {
-							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
-							"type": "Expression"
-						},
 						"fileSystem": "mc2-bs-dev-golden"
 					},
 					"compressionCodec": "snappy"
@@ -200,7 +176,7 @@
 					"location": {
 						"type": "AzureBlobFSLocation",
 						"fileName": {
-							"value": "@concat(formatDatetime(utcnow(),'ddMMyyy'),'-',dataset().cw_fileName_Maestras)",
+							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-',dataset().cw_fileName_Maestras)",
 							"type": "Expression"
 						},
 						"folderPath": {
@@ -240,7 +216,7 @@
 					"location": {
 						"type": "AzureBlobFSLocation",
 						"fileName": {
-							"value": "@concat(formatDatetime(utcnow(),'ddMMyyy'),'-',dataset().cw_fileName_Principales)",
+							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-',dataset().cw_fileName_Principales)",
 							"type": "Expression"
 						},
 						"folderPath": {
@@ -274,10 +250,6 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
-						"folderPath": {
-							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
-							"type": "Expression"
-						},
 						"fileSystem": "mc2-bs-dev-silver"
 					},
 					"compressionCodec": "snappy"
@@ -453,7 +425,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/SourceDataset_1w3')]",
+			"name": "[concat(parameters('factoryName'), '/SourceComentariosProyecto')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -461,13 +433,22 @@
 					"referenceName": "AzureDataLakeStorageGen2",
 					"type": "LinkedServiceReference"
 				},
+				"folder": {
+					"name": "Sources"
+				},
 				"annotations": [],
 				"type": "Parquet",
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
-						"fileName": "21102021-mc2_maestro_cebe.parquet",
-						"folderPath": "2021/10",
+						"fileName": {
+							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_comentarios_proyecto.parquet')",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+							"type": "Expression"
+						},
 						"fileSystem": "mc2-bs-dev-golden"
 					},
 					"compressionCodec": "snappy"
@@ -506,27 +487,307 @@
 						"type": "INT32"
 					},
 					{
-						"name": "mc2_cebe",
+						"name": "mc2_actividad_principal",
 						"type": "UTF8"
 					},
 					{
-						"name": "mc2_idioma",
+						"name": "mc2_aprobacion",
 						"type": "UTF8"
 					},
 					{
-						"name": "mc2_maestro_cebeid",
+						"name": "mc2_comentario",
 						"type": "UTF8"
 					},
 					{
-						"name": "mc2_responsable_cebe",
+						"name": "mc2_comentarios_proyectoid",
 						"type": "UTF8"
 					},
 					{
-						"name": "mc2_spco",
+						"name": "mc2_fecha",
+						"type": "INT96"
+					},
+					{
+						"name": "modifiedby",
 						"type": "UTF8"
 					},
 					{
-						"name": "mc2_texto_cebe",
+						"name": "modifiedbyname",
+						"type": "UTF8"
+					},
+					{
+						"name": "modifiedbyyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "modifiedon",
+						"type": "INT96"
+					},
+					{
+						"name": "modifiedonbehalfby",
+						"type": "UTF8"
+					},
+					{
+						"name": "modifiedonbehalfbyname",
+						"type": "UTF8"
+					},
+					{
+						"name": "modifiedonbehalfbyyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "overriddencreatedon",
+						"type": "INT96"
+					},
+					{
+						"name": "ownerid",
+						"type": "UTF8"
+					},
+					{
+						"name": "owneridname",
+						"type": "UTF8"
+					},
+					{
+						"name": "owneridtype",
+						"type": "UTF8"
+					},
+					{
+						"name": "owneridyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "owningbusinessunit",
+						"type": "UTF8"
+					},
+					{
+						"name": "owningbusinessunitname",
+						"type": "UTF8"
+					},
+					{
+						"name": "owningteam",
+						"type": "UTF8"
+					},
+					{
+						"name": "owninguser",
+						"type": "UTF8"
+					},
+					{
+						"name": "statecode",
+						"type": "INT32"
+					},
+					{
+						"name": "statuscode",
+						"type": "INT32"
+					},
+					{
+						"name": "timezoneruleversionnumber",
+						"type": "INT32"
+					},
+					{
+						"name": "utcconversiontimezonecode",
+						"type": "INT32"
+					},
+					{
+						"name": "versionnumber",
+						"type": "INT64"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SourceElemento_PEP')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureDataLakeStorageGen2",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Sources"
+				},
+				"annotations": [],
+				"type": "Parquet",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": {
+							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_elemento_pep.parquet')",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+							"type": "Expression"
+						},
+						"fileSystem": "mc2-bs-dev-golden"
+					},
+					"compressionCodec": "snappy"
+				},
+				"schema": [
+					{
+						"name": "createdby",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdbyname",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdbyyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdon",
+						"type": "INT96"
+					},
+					{
+						"name": "createdonbehalfby",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdonbehalfbyname",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdonbehalfbyyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "importsequencenumber",
+						"type": "INT32"
+					},
+					{
+						"name": "mc2_bloque",
+						"type": "UTF8"
+					},
+					{
+						"name": "mc2_bloquename",
+						"type": "UTF8"
+					},
+					{
+						"name": "mc2_ceco",
+						"type": "UTF8"
+					},
+					{
+						"name": "mc2_ceconame",
+						"type": "UTF8"
+					},
+					{
+						"name": "mc2_coste_oferta",
+						"type": "UTF8"
+					},
+					{
+						"name": "mc2_descripcion",
+						"type": "UTF8"
+					},
+					{
+						"name": "mc2_elemento_pep",
+						"type": "UTF8"
+					},
+					{
+						"name": "mc2_elemento_pepid",
+						"type": "UTF8"
+					},
+					{
+						"name": "mc2_elementofacturacion",
+						"type": "BOOLEAN"
+					},
+					{
+						"name": "mc2_elementoimputacion",
+						"type": "BOOLEAN"
+					},
+					{
+						"name": "mc2_elementopep_superior",
+						"type": "UTF8"
+					},
+					{
+						"name": "mc2_elementoplanificacion",
+						"type": "BOOLEAN"
+					},
+					{
+						"name": "mc2_fase",
+						"type": "UTF8"
+					},
+					{
+						"name": "mc2_fasename",
+						"type": "UTF8"
+					},
+					{
+						"name": "mc2_id_familia",
+						"type": "UTF8"
+					},
+					{
+						"name": "mc2_id_pedido",
+						"type": "UTF8"
+					},
+					{
+						"name": "mc2_id_pedidoname",
+						"type": "UTF8"
+					},
+					{
+						"name": "mc2_id_producto",
+						"type": "UTF8"
+					},
+					{
+						"name": "mc2_importe_expl",
+						"type": "UTF8"
+					},
+					{
+						"name": "mc2_importe_impl",
+						"type": "UTF8"
+					},
+					{
+						"name": "mc2_linea_de_negocio",
+						"type": "UTF8"
+					},
+					{
+						"name": "mc2_linea_de_negocioname",
+						"type": "UTF8"
+					},
+					{
+						"name": "mc2_naturaleza_utm",
+						"type": "UTF8"
+					},
+					{
+						"name": "mc2_naturaleza_utmname",
+						"type": "UTF8"
+					},
+					{
+						"name": "mc2_nivelpep",
+						"type": "INT32"
+					},
+					{
+						"name": "mc2_plancostes",
+						"type": "UTF8"
+					},
+					{
+						"name": "mc2_planingresos",
+						"type": "UTF8"
+					},
+					{
+						"name": "mc2_plazo_utm",
+						"type": "UTF8"
+					},
+					{
+						"name": "mc2_plazo_utmname",
+						"type": "UTF8"
+					},
+					{
+						"name": "mc2_prioridad",
+						"type": "UTF8"
+					},
+					{
+						"name": "mc2_prioridadname",
+						"type": "UTF8"
+					},
+					{
+						"name": "mc2_recurso",
+						"type": "UTF8"
+					},
+					{
+						"name": "mc2_recursoname",
 						"type": "UTF8"
 					},
 					{
@@ -698,10 +959,6 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
-						"folderPath": {
-							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
-							"type": "Expression"
-						},
 						"fileSystem": "mc2-bs-dev-silver"
 					},
 					"compressionCodec": "snappy"
@@ -876,6 +1133,32 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/integrationRuntimeVirtual')]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "Managed",
+				"typeProperties": {
+					"computeProperties": {
+						"location": "North Europe",
+						"dataFlowProperties": {
+							"computeType": "General",
+							"coreCount": 8,
+							"timeToLive": 10,
+							"cleanup": false
+						}
+					}
+				},
+				"managedVirtualNetwork": {
+					"type": "ManagedVirtualNetworkReference",
+					"referenceName": "default"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/managedVirtualNetworks/default')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/CopyBronceToSilver')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
@@ -895,11 +1178,11 @@
 						"userProperties": [
 							{
 								"name": "Source",
-								"value": "mc2-bs-dev-bronze/@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}//@concat(formatDatetime(utcnow(),'ddMMyyy'),'-',dataset().cw_fileName)"
+								"value": "mc2-bs-dev-bronze/@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}/@concat(formatDatetime(utcnow(),'yyyMMdd'),'-',dataset().cw_fileName)"
 							},
 							{
 								"name": "Destination",
-								"value": "mc2-bs-dev-silver/@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}/@concat(formatDatetime(utcnow(),'ddMMyyy'),'-',dataset().cw_fileName)"
+								"value": "mc2-bs-dev-silver/@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}/@concat(formatDatetime(utcnow(),'yyyMMdd'),'-',dataset().cw_fileName)"
 							}
 						],
 						"typeProperties": {
@@ -908,10 +1191,6 @@
 								"storeSettings": {
 									"type": "AzureBlobFSReadSettings",
 									"recursive": true,
-									"wildcardFolderPath": {
-										"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
-										"type": "Expression"
-									},
 									"wildcardFileName": "*",
 									"enablePartitionDiscovery": false
 								}
@@ -977,62 +1256,6 @@
 							"activities": [
 								{
 									"name": "CopyMaestrasToBronce",
-									"type": "Copy",
-									"dependsOn": [],
-									"policy": {
-										"timeout": "7.00:00:00",
-										"retry": 0,
-										"retryIntervalInSeconds": 30,
-										"secureOutput": false,
-										"secureInput": false
-									},
-									"userProperties": [
-										{
-											"name": "Source",
-											"value": "@{item().source.entityName}"
-										},
-										{
-											"name": "Destination",
-											"value": "mc2-bs-dev-bronze/@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}/@{item().destination.fileName}"
-										}
-									],
-									"typeProperties": {
-										"source": {
-											"type": "CommonDataServiceForAppsSource"
-										},
-										"sink": {
-											"type": "ParquetSink",
-											"storeSettings": {
-												"type": "AzureBlobFSWriteSettings"
-											},
-											"formatSettings": {
-												"type": "ParquetWriteSettings"
-											}
-										},
-										"enableStaging": false,
-										"validateDataConsistency": false
-									},
-									"inputs": [
-										{
-											"referenceName": "SourceMaestras",
-											"type": "DatasetReference",
-											"parameters": {
-												"cw_entityName": "@item().source.entityName"
-											}
-										}
-									],
-									"outputs": [
-										{
-											"referenceName": "DestinationMaestrasBronce",
-											"type": "DatasetReference",
-											"parameters": {
-												"cw_fileName_Maestras": "@item().destination.fileName"
-											}
-										}
-									]
-								},
-								{
-									"name": "CopyMaestrasToBronce_copy1",
 									"type": "Copy",
 									"dependsOn": [],
 									"policy": {
@@ -1310,152 +1533,6 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/SourceMaestras')]",
 				"[concat(variables('factoryId'), '/datasets/DestinationMaestrasBronce')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/CopyPrincipalesToBronce')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "ForEach_Principales",
-						"type": "ForEach",
-						"dependsOn": [],
-						"userProperties": [],
-						"typeProperties": {
-							"items": {
-								"value": "@pipeline().parameters.cw_items_Principales",
-								"type": "Expression"
-							},
-							"activities": [
-								{
-									"name": "CopyPrincipalesToBronce",
-									"type": "Copy",
-									"dependsOn": [],
-									"policy": {
-										"timeout": "7.00:00:00",
-										"retry": 0,
-										"retryIntervalInSeconds": 30,
-										"secureOutput": false,
-										"secureInput": false
-									},
-									"userProperties": [
-										{
-											"name": "Source",
-											"value": "@{item().source.entityName}"
-										},
-										{
-											"name": "Destination",
-											"value": "mc2-bs-dev-bronze//@{item().destination.fileName}"
-										}
-									],
-									"typeProperties": {
-										"source": {
-											"type": "CommonDataServiceForAppsSource"
-										},
-										"sink": {
-											"type": "ParquetSink",
-											"storeSettings": {
-												"type": "AzureBlobFSWriteSettings"
-											},
-											"formatSettings": {
-												"type": "ParquetWriteSettings"
-											}
-										},
-										"enableStaging": false,
-										"validateDataConsistency": false
-									},
-									"inputs": [
-										{
-											"referenceName": "SourcePrincipales",
-											"type": "DatasetReference",
-											"parameters": {
-												"cw_entityName": "@item().source.entityName"
-											}
-										}
-									],
-									"outputs": [
-										{
-											"referenceName": "DestinationPrincipalesBronce",
-											"type": "DatasetReference",
-											"parameters": {
-												"cw_fileName_Principales": "@item().source.entityName"
-											}
-										}
-									]
-								}
-							]
-						}
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
-				},
-				"parameters": {
-					"cw_items_Principales": {
-						"type": "Array",
-						"defaultValue": [
-							{
-								"source": {
-									"entityName": "mc2_comentarios_proyecto"
-								},
-								"destination": {
-									"fileName": "mc2_comentarios_proyecto.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_elemento_pep"
-								},
-								"destination": {
-									"fileName": "mc2_elemento_pep.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_lineas_adquira"
-								},
-								"destination": {
-									"fileName": "mc2_lineas_adquira.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_pedido"
-								},
-								"destination": {
-									"fileName": "mc2_pedido.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_planificacion"
-								},
-								"destination": {
-									"fileName": "mc2_planificacion.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_proyecto"
-								},
-								"destination": {
-									"fileName": "mc2_proyecto.parquet"
-								}
-							}
-						]
-					}
-				},
-				"folder": {
-					"name": "Main/Sources/CopyMC2ToBronce"
-				},
-				"annotations": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/SourcePrincipales')]",
-				"[concat(variables('factoryId'), '/datasets/DestinationPrincipalesBronce')]"
 			]
 		}
 	]
