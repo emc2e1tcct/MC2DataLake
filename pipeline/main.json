@@ -71,7 +71,13 @@
 						"referenceName": "CopyPrincipalesToBronce",
 						"type": "PipelineReference"
 					},
-					"waitOnCompletion": true
+					"waitOnCompletion": true,
+					"parameters": {
+						"cw_items_Principales": {
+							"value": "@pipeline().parameters.cw_items_Principales",
+							"type": "Expression"
+						}
+					}
 				}
 			}
 		],
