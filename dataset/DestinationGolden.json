@@ -13,10 +13,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": {
-					"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
-					"type": "Expression"
-				},
 				"fileSystem": "mc2-bs-dev-golden"
 			},
 			"compressionCodec": "snappy"
