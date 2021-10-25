@@ -1,9 +1,12 @@
 {
-	"name": "DestinationDataset_bs0",
+	"name": "DestinationSilver",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorageGen2",
 			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destination"
 		},
 		"annotations": [],
 		"type": "Parquet",

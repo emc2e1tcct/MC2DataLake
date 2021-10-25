@@ -24,7 +24,14 @@
 			{
 				"name": "CopySilverToGolden",
 				"type": "ExecutePipeline",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "CopyBronceToSilver",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"userProperties": [],
 				"typeProperties": {
 					"pipeline": {
@@ -51,6 +58,32 @@
 							"type": "Expression"
 						}
 					}
+				}
+			},
+			{
+				"name": "CopyBronceToSilver",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "CopyMaestrasToBronce",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "CopyPrincipalesToBronce",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "CopyBronceToSilver",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
 				}
 			}
 		],
