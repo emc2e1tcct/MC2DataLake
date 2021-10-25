@@ -1,9 +1,12 @@
 {
-	"name": "DestinationDataset_z68",
+	"name": "SnowFlake_MC2_COMENTARIOS_PROYECTO",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Snowflake1",
 			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destination"
 		},
 		"annotations": [],
 		"type": "SnowflakeTable",

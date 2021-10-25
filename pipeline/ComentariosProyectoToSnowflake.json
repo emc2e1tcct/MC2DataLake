@@ -400,12 +400,15 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_z68",
+						"referenceName": "SnowFlake_MC2_COMENTARIOS_PROYECTO",
 						"type": "DatasetReference"
 					}
 				]
 			}
 		],
+		"folder": {
+			"name": "Main/Sources/CopyToSnowfake/CopyPrincipalesSnowflake"
+		},
 		"annotations": []
 	}
 }
