@@ -52,28 +52,6 @@
 						}
 					}
 				}
-			},
-			{
-				"name": "CopyBronceToSilver",
-				"type": "ExecutePipeline",
-				"dependsOn": [
-					{
-						"activity": "CopyMaestrasToBronce",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					},
-					{
-						"activity": "CopyPrincipalesToBronce",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"userProperties": [],
-				"typeProperties": {
-					"waitOnCompletion": true
-				}
 			}
 		],
 		"parameters": {
