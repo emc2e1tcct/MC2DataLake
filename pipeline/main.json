@@ -60,6 +60,19 @@
 					},
 					"waitOnCompletion": true
 				}
+			},
+			{
+				"name": "CopyPrincipalesToBronce",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "CopyPrincipalesToBronce",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
 			}
 		],
 		"parameters": {

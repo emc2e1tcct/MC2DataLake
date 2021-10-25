@@ -1,5 +1,5 @@
 {
-	"name": "SourceDataset_px2",
+	"name": "SourcePrincipales",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "MC2Dataverse",
@@ -9,6 +9,9 @@
 			"cw_entityName": {
 				"type": "String"
 			}
+		},
+		"folder": {
+			"name": "Sources"
 		},
 		"annotations": [],
 		"type": "CommonDataServiceForAppsEntity",

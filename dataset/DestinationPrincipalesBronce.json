@@ -1,5 +1,5 @@
 {
-	"name": "DestinationDataset_px2",
+	"name": "DestinationPrincipalesBronce",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorageGen2",
@@ -9,6 +9,9 @@
 			"cw_fileName": {
 				"type": "String"
 			}
+		},
+		"folder": {
+			"name": "Destination"
 		},
 		"annotations": [],
 		"type": "Parquet",

@@ -3,18 +3,18 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "ForEach_px2",
+				"name": "ForEach_Principales",
 				"type": "ForEach",
 				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@pipeline().parameters.cw_items",
+						"value": "@pipeline().parameters.cw_items_Principales",
 						"type": "Expression"
 					},
 					"activities": [
 						{
-							"name": "Copy_px2",
+							"name": "Copy_Principales",
 							"type": "Copy",
 							"dependsOn": [],
 							"policy": {
@@ -52,7 +52,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "SourceDataset_px2",
+									"referenceName": "SourcePrincipales",
 									"type": "DatasetReference",
 									"parameters": {
 										"cw_entityName": "@item().source.entityName"
@@ -61,7 +61,7 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "DestinationDataset_px2",
+									"referenceName": "DestinationPrincipalesBronce",
 									"type": "DatasetReference",
 									"parameters": {
 										"cw_fileName": "@item().destination.fileName"
@@ -74,7 +74,7 @@
 			}
 		],
 		"parameters": {
-			"cw_items": {
+			"cw_items_Principales": {
 				"type": "Array",
 				"defaultValue": [
 					{
