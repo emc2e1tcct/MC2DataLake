@@ -7,7 +7,7 @@
 		},
 		"parameters": {
 			"cw_fileName": {
-				"type": "string"
+				"type": "array"
 			}
 		},
 		"folder": {

@@ -52,7 +52,10 @@
 				"inputs": [
 					{
 						"referenceName": "SourceBronce",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"cw_fileName": "@{item().destination.fileName}"
+						}
 					}
 				],
 				"outputs": [
