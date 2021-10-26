@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_sil",
+				"name": "CopyMaestroJefeDeProyecto",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -400,7 +400,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_sil",
+						"referenceName": "Snowflake_MC2_MAESTRO_JEFE_DE_PROYECTO",
 						"type": "DatasetReference"
 					}
 				]
