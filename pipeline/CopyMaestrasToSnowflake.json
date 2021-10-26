@@ -1,0 +1,24 @@
+{
+	"name": "CopyMaestrasToSnowflake",
+	"properties": {
+		"activities": [
+			{
+				"name": "MaestroAmbitoToSnowflake",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "ManestroAmbitoToSnowflake",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"folder": {
+			"name": "Main/Sources/CopyToSnowfake/CopyMaestrasToSnowflake"
+		},
+		"annotations": []
+	}
+}

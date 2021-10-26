@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_8lw",
+				"name": "CopyMaestroAmbitoToSnowflake",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -370,12 +370,15 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_8lw",
+						"referenceName": "Snowflake_MC2_MAESTRO_AMBITO",
 						"type": "DatasetReference"
 					}
 				]
 			}
 		],
+		"folder": {
+			"name": "Main/Sources/CopyToSnowfake/CopyMaestrasToSnowflake/Copys"
+		},
 		"annotations": []
 	}
 }
