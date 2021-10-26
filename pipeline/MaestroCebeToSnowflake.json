@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_ri7",
+				"name": "CopyMaestroCebeToSnowflake",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -416,6 +416,9 @@
 				]
 			}
 		],
+		"folder": {
+			"name": "Main/Sources/CopyToSnowfake/CopyMaestrasToSnowflake/Copys"
+		},
 		"annotations": []
 	}
 }
