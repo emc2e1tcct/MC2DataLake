@@ -13,6 +13,895 @@
 	},
 	"resources": [
 		{
+			"name": "[concat(parameters('factoryName'), '/MaestroCebeToSnowflake')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "CopyMaestroCebeToSnowflake",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [
+							{
+								"name": "Source",
+								"value": "mc2-bs-dev-golden/[object Object]/[object Object]"
+							},
+							{
+								"name": "Destination",
+								"value": "PUBLIC.MC2_MAESTRO_CEBE"
+							}
+						],
+						"typeProperties": {
+							"source": {
+								"type": "ParquetSource",
+								"storeSettings": {
+									"type": "AzureBlobFSReadSettings",
+									"recursive": true,
+									"enablePartitionDiscovery": false
+								}
+							},
+							"sink": {
+								"type": "SnowflakeSink",
+								"importSettings": {
+									"type": "SnowflakeImportCopyCommand"
+								}
+							},
+							"enableStaging": true,
+							"stagingSettings": {
+								"linkedServiceName": {
+									"referenceName": "AzureBlobStorageForSnowflake",
+									"type": "LinkedServiceReference"
+								},
+								"path": "mc2-bs-dev-golden/StoragePath"
+							},
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "owningbusinessunit",
+											"type": "String"
+										},
+										"sink": {
+											"name": "owningbusinessunit",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "owninguser",
+											"type": "String"
+										},
+										"sink": {
+											"name": "owninguser",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "statecode",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "statecode",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "createdby",
+											"type": "String"
+										},
+										"sink": {
+											"name": "createdby",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "createdonbehalfby",
+											"type": "String"
+										},
+										"sink": {
+											"name": "createdonbehalfby",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_spco",
+											"type": "String"
+										},
+										"sink": {
+											"name": "mc2_spco",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "utcconversiontimezonecode",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "utcconversiontimezonecode",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "importsequencenumber",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "importsequencenumber",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedonbehalfby",
+											"type": "String"
+										},
+										"sink": {
+											"name": "modifiedonbehalfby",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "owneridname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "owneridname",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_idioma",
+											"type": "String"
+										},
+										"sink": {
+											"name": "mc2_idioma",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_responsable_cebe",
+											"type": "String"
+										},
+										"sink": {
+											"name": "mc2_responsable_cebe",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedbyname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "modifiedbyname",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "owningbusinessunitname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "owningbusinessunitname",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "statuscode",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "statuscode",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ownerid",
+											"type": "String"
+										},
+										"sink": {
+											"name": "ownerid",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "owneridtype",
+											"type": "String"
+										},
+										"sink": {
+											"name": "owneridtype",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_texto_cebe",
+											"type": "String"
+										},
+										"sink": {
+											"name": "mc2_texto_cebe",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedonbehalfbyname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "modifiedonbehalfbyname",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "createdbyname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "createdbyname",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedonbehalfbyyominame",
+											"type": "String"
+										},
+										"sink": {
+											"name": "modifiedonbehalfbyyominame",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "owneridyominame",
+											"type": "String"
+										},
+										"sink": {
+											"name": "owneridyominame",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "owningteam",
+											"type": "String"
+										},
+										"sink": {
+											"name": "owningteam",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "timezoneruleversionnumber",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "timezoneruleversionnumber",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedbyyominame",
+											"type": "String"
+										},
+										"sink": {
+											"name": "modifiedbyyominame",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "createdonbehalfbyname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "createdonbehalfbyname",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedby",
+											"type": "String"
+										},
+										"sink": {
+											"name": "modifiedby",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "createdbyyominame",
+											"type": "String"
+										},
+										"sink": {
+											"name": "createdbyyominame",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "createdon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "createdon",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "createdonbehalfbyyominame",
+											"type": "String"
+										},
+										"sink": {
+											"name": "createdonbehalfbyyominame",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_cebe",
+											"type": "String"
+										},
+										"sink": {
+											"name": "mc2_cebe",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_maestro_cebeid",
+											"type": "String"
+										},
+										"sink": {
+											"name": "mc2_maestro_cebeid",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "modifiedon",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "overriddencreatedon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "overriddencreatedon",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "versionnumber",
+											"type": "Int64"
+										},
+										"sink": {
+											"name": "versionnumber",
+											"type": "String"
+										}
+									}
+								]
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "SourceMaestroCebe",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "Snowflake_MC2_MAESTRO_CEBE",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
+				"folder": {
+					"name": "Main/Sources/CopyToSnowfake/CopyMaestrasToSnowflake/Copys"
+				},
+				"annotations": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/ManestroAmbitoToSnowflake')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "CopyMaestroAmbitoToSnowflake",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [
+							{
+								"name": "Source",
+								"value": "mc2-bs-dev-golden/[object Object]/[object Object]"
+							},
+							{
+								"name": "Destination",
+								"value": "PUBLIC.MC2_MAESTRO_AMBITO"
+							}
+						],
+						"typeProperties": {
+							"source": {
+								"type": "ParquetSource",
+								"storeSettings": {
+									"type": "AzureBlobFSReadSettings",
+									"recursive": true,
+									"enablePartitionDiscovery": false
+								}
+							},
+							"sink": {
+								"type": "SnowflakeSink",
+								"importSettings": {
+									"type": "SnowflakeImportCopyCommand"
+								}
+							},
+							"enableStaging": true,
+							"stagingSettings": {
+								"linkedServiceName": {
+									"referenceName": "AzureBlobStorageForSnowflake",
+									"type": "LinkedServiceReference"
+								},
+								"path": "mc2-bs-dev-golden/StoragePath"
+							},
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "owningbusinessunit",
+											"type": "String"
+										},
+										"sink": {
+											"name": "owningbusinessunit",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "owninguser",
+											"type": "String"
+										},
+										"sink": {
+											"name": "owninguser",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "statecode",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "statecode",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "createdby",
+											"type": "String"
+										},
+										"sink": {
+											"name": "createdby",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "createdonbehalfby",
+											"type": "String"
+										},
+										"sink": {
+											"name": "createdonbehalfby",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_maestro_ambitoid",
+											"type": "String"
+										},
+										"sink": {
+											"name": "mc2_maestro_ambitoid",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "utcconversiontimezonecode",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "utcconversiontimezonecode",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "importsequencenumber",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "importsequencenumber",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "mc2_ambito",
+											"type": "String"
+										},
+										"sink": {
+											"name": "mc2_ambito",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedonbehalfby",
+											"type": "String"
+										},
+										"sink": {
+											"name": "modifiedonbehalfby",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "owneridname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "owneridname",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedbyname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "modifiedbyname",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "owningbusinessunitname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "owningbusinessunitname",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "statuscode",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "statuscode",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ownerid",
+											"type": "String"
+										},
+										"sink": {
+											"name": "ownerid",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "owneridtype",
+											"type": "String"
+										},
+										"sink": {
+											"name": "owneridtype",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedonbehalfbyname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "modifiedonbehalfbyname",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "createdbyname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "createdbyname",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedbyyominame",
+											"type": "String"
+										},
+										"sink": {
+											"name": "modifiedbyyominame",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedonbehalfbyyominame",
+											"type": "String"
+										},
+										"sink": {
+											"name": "modifiedonbehalfbyyominame",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "owneridyominame",
+											"type": "String"
+										},
+										"sink": {
+											"name": "owneridyominame",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "owningteam",
+											"type": "String"
+										},
+										"sink": {
+											"name": "owningteam",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "timezoneruleversionnumber",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "timezoneruleversionnumber",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "createdonbehalfbyname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "createdonbehalfbyname",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedby",
+											"type": "String"
+										},
+										"sink": {
+											"name": "modifiedby",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "createdbyyominame",
+											"type": "String"
+										},
+										"sink": {
+											"name": "createdbyyominame",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "createdon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "createdon",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "createdonbehalfbyyominame",
+											"type": "String"
+										},
+										"sink": {
+											"name": "createdonbehalfbyyominame",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "modifiedon",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "overriddencreatedon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "overriddencreatedon",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "versionnumber",
+											"type": "Int64"
+										},
+										"sink": {
+											"name": "versionnumber",
+											"type": "String"
+										}
+									}
+								]
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "SourceMaestroAmbito",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "Snowflake_MC2_MAESTRO_AMBITO",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
+				"folder": {
+					"name": "Main/Sources/CopyToSnowfake/CopyMaestrasToSnowflake/Copys"
+				},
+				"annotations": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/CopyMaestrasToSnowflake')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "MaestroAmbitoToSnowflake",
+						"type": "ExecutePipeline",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "ManestroAmbitoToSnowflake",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {}
+						}
+					},
+					{
+						"name": "MaestroBloqueToSnowflake",
+						"type": "ExecutePipeline",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "MaestroBloqueToSnowflake",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {}
+						}
+					},
+					{
+						"name": "MaestroCebeToSnowflake",
+						"type": "ExecutePipeline",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "MaestroCebeToSnowflake",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {}
+						}
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
+				"folder": {
+					"name": "Main/Sources/CopyToSnowfake/CopyMaestrasToSnowflake"
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/ManestroAmbitoToSnowflake')]",
+				"[concat(variables('factoryId'), '/pipelines/MaestroCebeToSnowflake')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/CopyPrincipalesToSnowflake')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
@@ -463,7 +1352,8 @@
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/CopyPrincipalesToSnowflake')]"
+				"[concat(variables('factoryId'), '/pipelines/CopyPrincipalesToSnowflake')]",
+				"[concat(variables('factoryId'), '/pipelines/CopyMaestrasToSnowflake')]"
 			]
 		}
 	]
