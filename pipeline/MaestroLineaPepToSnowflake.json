@@ -1,9 +1,9 @@
 {
-	"name": "MaestroLineaPep",
+	"name": "MaestroLineaPepToSnowflake",
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_o58",
+				"name": "CopyMaestroLineapepToSnowflake",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -406,6 +406,9 @@
 				]
 			}
 		],
+		"folder": {
+			"name": "Main/Sources/CopyToSnowfake/CopyMaestrasToSnowflake/Copys"
+		},
 		"annotations": []
 	}
 }

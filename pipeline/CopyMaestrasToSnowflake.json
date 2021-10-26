@@ -157,6 +157,19 @@
 					},
 					"waitOnCompletion": true
 				}
+			},
+			{
+				"name": "MaestroLineaPepToSnowflake",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "MaestroLineaPepToSnowflake",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
 			}
 		],
 		"folder": {
