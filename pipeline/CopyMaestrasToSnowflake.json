@@ -118,6 +118,19 @@
 					},
 					"waitOnCompletion": true
 				}
+			},
+			{
+				"name": "MestroEstadoPedidoToSnowflake",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "MestroEstadoPedidoToSnowflake",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
 			}
 		],
 		"folder": {
