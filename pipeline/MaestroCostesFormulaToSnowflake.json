@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_wkb",
+				"name": "CopyMaestroCostesFormula",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
