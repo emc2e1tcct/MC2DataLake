@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_gs6",
+				"name": "CopyMaestroMonedasToSnowflake",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
