@@ -374,7 +374,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceMaestroMonedasToSnowflake",
+						"referenceName": "SourceMaestroMonedas",
 						"type": "DatasetReference"
 					}
 				],
@@ -386,6 +386,9 @@
 				]
 			}
 		],
+		"folder": {
+			"name": "Main/Sources/CopyToSnowfake/CopyMaestrasToSnowflake/Copys"
+		},
 		"annotations": []
 	}
 }

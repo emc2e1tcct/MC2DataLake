@@ -1,9 +1,12 @@
 {
-	"name": "SourceMaestroMonedasToSnowflake",
+	"name": "SourceMaestroMonedas",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorageGen2",
 			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Sources"
 		},
 		"annotations": [],
 		"type": "Parquet",
