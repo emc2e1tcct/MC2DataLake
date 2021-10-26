@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_r7p",
+				"name": "CopyMaestroCecoToSnowflake",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
