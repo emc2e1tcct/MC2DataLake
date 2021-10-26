@@ -1,9 +1,12 @@
 {
-	"name": "DestinationDataset_lkm",
+	"name": "Snowflake_MC2_MAESTRO_CLIENTE_GESTION",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Snowflake1",
 			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destination"
 		},
 		"annotations": [],
 		"type": "SnowflakeTable",

@@ -1,9 +1,12 @@
 {
-	"name": "SourceDataset_lkm",
+	"name": "SourceMaestroClienteGestion",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorageGen2",
 			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Sources"
 		},
 		"annotations": [],
 		"type": "Parquet",

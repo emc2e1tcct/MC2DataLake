@@ -66,6 +66,19 @@
 					},
 					"waitOnCompletion": true
 				}
+			},
+			{
+				"name": "MaestroClienteGestionToSnowflake",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "MaestroClienteGestionToSnowflake",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
 			}
 		],
 		"folder": {

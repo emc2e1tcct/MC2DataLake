@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_lkm",
+				"name": "CopyMaestroClienteGestionToSnowflake",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -374,18 +374,21 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceDataset_lkm",
+						"referenceName": "SourceMaestroClienteGestion",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_lkm",
+						"referenceName": "Snowflake_MC2_MAESTRO_CLIENTE_GESTION",
 						"type": "DatasetReference"
 					}
 				]
 			}
 		],
+		"folder": {
+			"name": "Main/Sources/CopyToSnowfake/CopyMaestrasToSnowflake/Copys"
+		},
 		"annotations": []
 	}
 }
