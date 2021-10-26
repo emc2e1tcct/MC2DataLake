@@ -400,12 +400,15 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_ijo",
+						"referenceName": "Snowflake_MC2_MAESTRO_PERFIL_PRESUPUESTO",
 						"type": "DatasetReference"
 					}
 				]
 			}
 		],
+		"folder": {
+			"name": "Main/Sources/CopyToSnowfake/CopyMaestrasToSnowflake/Copys"
+		},
 		"annotations": []
 	}
 }
