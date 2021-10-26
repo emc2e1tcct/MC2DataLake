@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_ijo",
+				"name": "CopyMaestroPerfilPresupuestoToSnowflake",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
