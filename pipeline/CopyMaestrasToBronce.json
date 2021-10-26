@@ -276,6 +276,14 @@
 						"destination": {
 							"fileName": "mc2_maestro_tipificacion.parquet"
 						}
+					},
+					{
+						"source": {
+							"entityName": "mc2_maestro_SKU"
+						},
+						"destination": {
+							"fileName": "mc2_maestro_SKU.parquet"
+						}
 					}
 				]
 			}
