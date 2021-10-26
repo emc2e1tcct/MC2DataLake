@@ -51,7 +51,7 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "Prop_0",
+									"name": "owningbusinessunit",
 									"type": "String"
 								},
 								"sink": {
@@ -61,17 +61,17 @@
 							},
 							{
 								"source": {
-									"name": "Prop_1",
-									"type": "String"
+									"name": "statecode",
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "statecode",
-									"type": "String"
+									"type": "Int64"
 								}
 							},
 							{
 								"source": {
-									"name": "Prop_2",
+									"name": "owninguser",
 									"type": "String"
 								},
 								"sink": {
@@ -81,7 +81,7 @@
 							},
 							{
 								"source": {
-									"name": "Prop_3",
+									"name": "createdby",
 									"type": "String"
 								},
 								"sink": {
@@ -91,7 +91,7 @@
 							},
 							{
 								"source": {
-									"name": "Prop_4",
+									"name": "createdonbehalfby",
 									"type": "String"
 								},
 								"sink": {
@@ -101,7 +101,7 @@
 							},
 							{
 								"source": {
-									"name": "Prop_5",
+									"name": "mc2_perfil_prog_pep_codigo",
 									"type": "String"
 								},
 								"sink": {
@@ -111,7 +111,7 @@
 							},
 							{
 								"source": {
-									"name": "Prop_6",
+									"name": "mc2_perfil_prog_pep_descripcion",
 									"type": "String"
 								},
 								"sink": {
@@ -121,7 +121,7 @@
 							},
 							{
 								"source": {
-									"name": "Prop_7",
+									"name": "mc2_perfil_proyecto_descripcion",
 									"type": "String"
 								},
 								"sink": {
@@ -131,27 +131,27 @@
 							},
 							{
 								"source": {
-									"name": "Prop_8",
-									"type": "String"
+									"name": "utcconversiontimezonecode",
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "utcconversiontimezonecode",
-									"type": "String"
+									"type": "Int64"
 								}
 							},
 							{
 								"source": {
-									"name": "Prop_9",
-									"type": "String"
+									"name": "importsequencenumber",
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "importsequencenumber",
-									"type": "String"
+									"type": "Int64"
 								}
 							},
 							{
 								"source": {
-									"name": "Prop_10",
+									"name": "modifiedonbehalfby",
 									"type": "String"
 								},
 								"sink": {
@@ -161,7 +161,7 @@
 							},
 							{
 								"source": {
-									"name": "Prop_11",
+									"name": "owneridname",
 									"type": "String"
 								},
 								"sink": {
@@ -171,7 +171,7 @@
 							},
 							{
 								"source": {
-									"name": "Prop_12",
+									"name": "modifiedbyname",
 									"type": "String"
 								},
 								"sink": {
@@ -181,7 +181,7 @@
 							},
 							{
 								"source": {
-									"name": "Prop_13",
+									"name": "owningbusinessunitname",
 									"type": "String"
 								},
 								"sink": {
@@ -191,17 +191,17 @@
 							},
 							{
 								"source": {
-									"name": "Prop_14",
-									"type": "String"
+									"name": "statuscode",
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "statuscode",
-									"type": "String"
+									"type": "Int64"
 								}
 							},
 							{
 								"source": {
-									"name": "Prop_15",
+									"name": "ownerid",
 									"type": "String"
 								},
 								"sink": {
@@ -211,7 +211,7 @@
 							},
 							{
 								"source": {
-									"name": "Prop_16",
+									"name": "mc2_perfil_proyecto_codigo",
 									"type": "String"
 								},
 								"sink": {
@@ -221,7 +221,7 @@
 							},
 							{
 								"source": {
-									"name": "Prop_17",
+									"name": "owneridtype",
 									"type": "String"
 								},
 								"sink": {
@@ -231,7 +231,7 @@
 							},
 							{
 								"source": {
-									"name": "Prop_18",
+									"name": "modifiedonbehalfbyname",
 									"type": "String"
 								},
 								"sink": {
@@ -241,7 +241,7 @@
 							},
 							{
 								"source": {
-									"name": "Prop_19",
+									"name": "createdbyname",
 									"type": "String"
 								},
 								"sink": {
@@ -251,7 +251,7 @@
 							},
 							{
 								"source": {
-									"name": "Prop_20",
+									"name": "mc2_maestro_perfilid",
 									"type": "String"
 								},
 								"sink": {
@@ -261,7 +261,7 @@
 							},
 							{
 								"source": {
-									"name": "Prop_21",
+									"name": "modifiedbyyominame",
 									"type": "String"
 								},
 								"sink": {
@@ -271,7 +271,7 @@
 							},
 							{
 								"source": {
-									"name": "Prop_22",
+									"name": "modifiedonbehalfbyyominame",
 									"type": "String"
 								},
 								"sink": {
@@ -281,7 +281,7 @@
 							},
 							{
 								"source": {
-									"name": "Prop_23",
+									"name": "owningteam",
 									"type": "String"
 								},
 								"sink": {
@@ -291,17 +291,17 @@
 							},
 							{
 								"source": {
-									"name": "Prop_24",
-									"type": "String"
+									"name": "timezoneruleversionnumber",
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "timezoneruleversionnumber",
-									"type": "String"
+									"type": "Int64"
 								}
 							},
 							{
 								"source": {
-									"name": "Prop_25",
+									"name": "owneridyominame",
 									"type": "String"
 								},
 								"sink": {
@@ -311,7 +311,7 @@
 							},
 							{
 								"source": {
-									"name": "Prop_26",
+									"name": "createdonbehalfbyname",
 									"type": "String"
 								},
 								"sink": {
@@ -321,7 +321,7 @@
 							},
 							{
 								"source": {
-									"name": "Prop_27",
+									"name": "mc2_perfil_plan_codigo",
 									"type": "String"
 								},
 								"sink": {
@@ -331,7 +331,7 @@
 							},
 							{
 								"source": {
-									"name": "Prop_28",
+									"name": "modifiedby",
 									"type": "String"
 								},
 								"sink": {
@@ -341,7 +341,7 @@
 							},
 							{
 								"source": {
-									"name": "Prop_29",
+									"name": "createdbyyominame",
 									"type": "String"
 								},
 								"sink": {
@@ -351,8 +351,8 @@
 							},
 							{
 								"source": {
-									"name": "Prop_30",
-									"type": "String"
+									"name": "createdon",
+									"type": "DateTime"
 								},
 								"sink": {
 									"name": "createdon",
@@ -361,7 +361,7 @@
 							},
 							{
 								"source": {
-									"name": "Prop_31",
+									"name": "createdonbehalfbyyominame",
 									"type": "String"
 								},
 								"sink": {
@@ -371,7 +371,7 @@
 							},
 							{
 								"source": {
-									"name": "Prop_32",
+									"name": "mc2_perfil_plan_descripcion",
 									"type": "String"
 								},
 								"sink": {
@@ -381,8 +381,8 @@
 							},
 							{
 								"source": {
-									"name": "Prop_33",
-									"type": "String"
+									"name": "modifiedon",
+									"type": "DateTime"
 								},
 								"sink": {
 									"name": "modifiedon",
@@ -391,8 +391,8 @@
 							},
 							{
 								"source": {
-									"name": "Prop_34",
-									"type": "String"
+									"name": "overriddencreatedon",
+									"type": "DateTime"
 								},
 								"sink": {
 									"name": "overriddencreatedon",
@@ -401,12 +401,12 @@
 							},
 							{
 								"source": {
-									"name": "Prop_35",
-									"type": "String"
+									"name": "versionnumber",
+									"type": "Int64"
 								},
 								"sink": {
 									"name": "versionnumber",
-									"type": "String"
+									"type": "Int64"
 								}
 							}
 						]
