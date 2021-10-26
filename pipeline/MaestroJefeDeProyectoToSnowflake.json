@@ -406,6 +406,9 @@
 				]
 			}
 		],
+		"folder": {
+			"name": "Main/Sources/CopyToSnowfake/CopyMaestrasToSnowflake/Copys"
+		},
 		"annotations": []
 	}
 }

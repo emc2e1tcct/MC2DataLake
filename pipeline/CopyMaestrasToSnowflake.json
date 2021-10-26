@@ -144,6 +144,19 @@
 					},
 					"waitOnCompletion": true
 				}
+			},
+			{
+				"name": "MaestroJefeDeProyectoToSnowflake",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "MaestroJefeDeProyectoToSnowflake",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
 			}
 		],
 		"folder": {
