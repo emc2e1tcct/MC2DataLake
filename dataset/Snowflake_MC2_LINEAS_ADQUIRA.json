@@ -1,5 +1,5 @@
 {
-	"name": "LineasAdquiraToSnowflake",
+	"name": "Snowflake_MC2_LINEAS_ADQUIRA",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Snowflake1",

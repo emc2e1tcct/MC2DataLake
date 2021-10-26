@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_cr2",
+				"name": "CopyLineasAdquiraToSnowflake",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -599,12 +599,15 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "LineasAdquiraToSnowflake",
+						"referenceName": "Snowflake_MC2_LINEAS_ADQUIRA",
 						"type": "DatasetReference"
 					}
 				]
 			}
 		],
+		"folder": {
+			"name": "Main/Sources/CopyToSnowfake/CopyPrincipalesSnowflake/Copys"
+		},
 		"annotations": []
 	}
 }
