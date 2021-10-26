@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_tkh",
+				"name": "CopyMaestroEstadoComprasToSnowflake",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -376,6 +376,9 @@
 				]
 			}
 		],
+		"folder": {
+			"name": "Main/Sources/CopyToSnowfake/CopyMaestrasToSnowflake/Copys"
+		},
 		"annotations": []
 	}
 }

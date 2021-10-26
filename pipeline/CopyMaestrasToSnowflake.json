@@ -105,6 +105,19 @@
 					},
 					"waitOnCompletion": true
 				}
+			},
+			{
+				"name": "MaestroEstadoComprasToSnowflake",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "MaestroEstadoComprasToSnowflake",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
 			}
 		],
 		"folder": {
