@@ -1,9 +1,9 @@
 {
-	"name": "MaestroAmbitoToSnowflake",
+	"name": "MaestroBloqueToSnowflake",
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_5sv",
+				"name": "CopyMaestroBloqueToSnowflake",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
