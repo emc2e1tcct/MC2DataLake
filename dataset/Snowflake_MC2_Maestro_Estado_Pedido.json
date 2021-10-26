@@ -1,5 +1,5 @@
 {
-	"name": "DestinationDataset_gpp",
+	"name": "Snowflake_MC2_Maestro_Estado_Pedido",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Snowflake1",

@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_gpp",
+				"name": "CopyMaestroEstadoPedidoToSnowflake",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -370,7 +370,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_gpp",
+						"referenceName": "Snowflake_MC2_Maestro_Estado_Pedido",
 						"type": "DatasetReference"
 					}
 				]
