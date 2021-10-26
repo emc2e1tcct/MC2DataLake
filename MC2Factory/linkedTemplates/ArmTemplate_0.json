@@ -1238,24 +1238,24 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/CopyMaestrasToBronce')]",
+			"name": "[concat(parameters('factoryName'), '/CopyPrincipalesToBronce')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"activities": [
 					{
-						"name": "ForEach_Maestras",
+						"name": "ForEach_Principales",
 						"type": "ForEach",
 						"dependsOn": [],
 						"userProperties": [],
 						"typeProperties": {
 							"items": {
-								"value": "@pipeline().parameters.cw_items_Maestras",
+								"value": "@pipeline().parameters.cw_items_Principales",
 								"type": "Expression"
 							},
 							"activities": [
 								{
-									"name": "CopyMaestrasToBronce",
+									"name": "Copy_Principales",
 									"type": "Copy",
 									"dependsOn": [],
 									"policy": {
@@ -1293,7 +1293,7 @@
 									},
 									"inputs": [
 										{
-											"referenceName": "SourceMaestras",
+											"referenceName": "SourcePrincipales",
 											"type": "DatasetReference",
 											"parameters": {
 												"cw_entityName": "@item().source.entityName"
@@ -1302,10 +1302,10 @@
 									],
 									"outputs": [
 										{
-											"referenceName": "DestinationMaestrasBronce",
+											"referenceName": "DestinationPrincipalesBronce",
 											"type": "DatasetReference",
 											"parameters": {
-												"cw_fileName_Maestras": "@item().destination.fileName"
+												"cw_fileName_Principales": "@item().destination.fileName"
 											}
 										}
 									]
@@ -1319,207 +1319,55 @@
 					"cancelAfter": {}
 				},
 				"parameters": {
-					"cw_items_Maestras": {
+					"cw_items_Principales": {
 						"type": "Array",
 						"defaultValue": [
 							{
 								"source": {
-									"entityName": "mc2_maestro_ceco"
+									"entityName": "mc2_comentarios_proyecto"
 								},
 								"destination": {
-									"fileName": "mc2_maestro_ceco.parquet"
+									"fileName": "mc2_comentarios_proyecto.parquet"
 								}
 							},
 							{
 								"source": {
-									"entityName": "mc2_maestro_perfil"
+									"entityName": "mc2_elemento_pep"
 								},
 								"destination": {
-									"fileName": "mc2_maestro_perfil.parquet"
+									"fileName": "mc2_elemento_pep.parquet"
 								}
 							},
 							{
 								"source": {
-									"entityName": "mc2_maestro_sociedad"
+									"entityName": "mc2_lineas_adquira"
 								},
 								"destination": {
-									"fileName": "mc2_maestro_sociedad.parquet"
+									"fileName": "mc2_lineas_adquira.parquet"
 								}
 							},
 							{
 								"source": {
-									"entityName": "mc2_maestro_tramitador"
+									"entityName": "mc2_pedido"
 								},
 								"destination": {
-									"fileName": "mc2_maestro_tramitador.parquet"
+									"fileName": "mc2_pedido.parquet"
 								}
 							},
 							{
 								"source": {
-									"entityName": "mc2_maestro_ambito"
+									"entityName": "mc2_planificacion"
 								},
 								"destination": {
-									"fileName": "mc2_maestro_ambito.parquet"
+									"fileName": "mc2_planificacion.parquet"
 								}
 							},
 							{
 								"source": {
-									"entityName": "mc2_maestro_bloque"
+									"entityName": "mc2_proyecto"
 								},
 								"destination": {
-									"fileName": "mc2_maestro_bloque.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_cebe"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_cebe.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_cliente_facturacion"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_cliente_facturacion.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_cliente_gestion"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_cliente_gestion.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_coste"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_coste.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_costes_formula"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_costes_formula.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_estado_compras"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_estado_compras.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_estado_pedido"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_estado_pedido.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_familia"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_familia.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_fase"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_fase.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_jefe_de_proyecto"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_jefe_de_proyecto.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_lineapep"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_lineapep.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_monedas"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_monedas.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_naturaleza_utm"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_naturaleza_utm.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_perfil_presupuesto"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_perfil_presupuesto.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_planificacion"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_planificacion.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_plazo_utm"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_plazo_utm.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_prioridad"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_prioridad.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_producto"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_producto.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_tipificacion"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_tipificacion.parquet"
+									"fileName": "mc2_proyecto.parquet"
 								}
 							}
 						]
@@ -1531,8 +1379,8 @@
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/SourceMaestras')]",
-				"[concat(variables('factoryId'), '/datasets/DestinationMaestrasBronce')]"
+				"[concat(variables('factoryId'), '/datasets/SourcePrincipales')]",
+				"[concat(variables('factoryId'), '/datasets/DestinationPrincipalesBronce')]"
 			]
 		}
 	]
