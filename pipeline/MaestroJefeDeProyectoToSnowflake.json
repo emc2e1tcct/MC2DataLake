@@ -394,7 +394,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceMaestroJefeDeProyectoToSnowflake",
+						"referenceName": "SourceMaestroJefeDeProyecto",
 						"type": "DatasetReference"
 					}
 				],

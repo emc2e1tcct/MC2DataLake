@@ -404,7 +404,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceMaestroFamiliaToSnowflake",
+						"referenceName": "SourceMaestroFamilia",
 						"type": "DatasetReference"
 					}
 				],

@@ -1,5 +1,5 @@
 {
-	"name": "SourceMaestroFamiliaToSnowflake",
+	"name": "SourceMaestroFamilia",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorageGen2",
