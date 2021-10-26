@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_kxj",
+				"name": "CopyMaestroNaturalezaUtmToSnowflake",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
