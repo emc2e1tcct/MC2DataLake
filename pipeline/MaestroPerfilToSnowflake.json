@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_3qm",
+				"name": "CopyMaestroPerfilToSnowflake",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -426,6 +426,9 @@
 				]
 			}
 		],
+		"folder": {
+			"name": "Main/Sources/CopyToSnowfake/CopyMaestrasToSnowflake/Copys"
+		},
 		"annotations": []
 	}
 }
