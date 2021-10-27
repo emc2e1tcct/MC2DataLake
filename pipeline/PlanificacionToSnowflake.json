@@ -486,6 +486,9 @@
 				]
 			}
 		],
+		"folder": {
+			"name": "Main/Sources/CopyToSnowfake/CopyPrincipalesSnowflake/Principales"
+		},
 		"annotations": []
 	}
 }

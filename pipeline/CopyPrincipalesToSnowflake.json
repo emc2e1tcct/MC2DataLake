@@ -40,6 +40,19 @@
 					},
 					"waitOnCompletion": true
 				}
+			},
+			{
+				"name": "PlanificacionToSnowflake",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "PlanificacionToSnowflake",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
 			}
 		],
 		"folder": {
