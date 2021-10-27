@@ -7515,6 +7515,37 @@
 				"[concat(variables('factoryId'), '/pipelines/CopyPrincipalesToSnowflake')]",
 				"[concat(variables('factoryId'), '/pipelines/CopyMaestrasToSnowflake')]"
 			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DAILY-TRIGGER')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Started",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "main",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2021-10-28T03:00:00Z",
+						"timeZone": "UTC",
+						"schedule": {}
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/main')]"
+			]
 		}
 	]
 }
