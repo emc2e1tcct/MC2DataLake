@@ -14,9 +14,6 @@
 		"MC2Dataverse_servicePrincipalCredential": {
 			"value": ""
 		},
-		"AzureBlobStorage1_sasUri": {
-			"value": ""
-		},
 		"AzureBlobStorageForSnowflake_sasUri": {
 			"value": ""
 		},
@@ -30,9 +27,6 @@
 			"value": "f16b031b-29a7-4264-8271-f2844c7b7084"
 		},
 		"Snowflake1_connectionString": {
-			"value": ""
-		},
-		"linkedServicePrueba_sasUri": {
 			"value": ""
 		},
 		"dataFactory_location": {

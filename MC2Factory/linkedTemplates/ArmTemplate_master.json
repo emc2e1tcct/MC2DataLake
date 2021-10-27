@@ -19,10 +19,6 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'servicePrincipalCredential' of 'MC2Dataverse'"
 		},
-		"AzureBlobStorage1_sasUri": {
-			"type": "secureString",
-			"metadata": "Secure string for 'sasUri' of 'AzureBlobStorage1'"
-		},
 		"AzureBlobStorageForSnowflake_sasUri": {
 			"type": "secureString",
 			"metadata": "Secure string for 'sasUri' of 'AzureBlobStorageForSnowflake'"
@@ -42,10 +38,6 @@
 		"Snowflake1_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'Snowflake1'"
-		},
-		"linkedServicePrueba_sasUri": {
-			"type": "secureString",
-			"metadata": "Secure string for 'sasUri' of 'linkedServicePrueba'"
 		},
 		"dataFactory_location": {
 			"type": "string",
@@ -144,17 +136,11 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"AzureBlobStorage1_sasUri": {
-						"value": "[parameters('AzureBlobStorage1_sasUri')]"
-					},
 					"AzureBlobStorageForSnowflake_sasUri": {
 						"value": "[parameters('AzureBlobStorageForSnowflake_sasUri')]"
 					},
 					"Snowflake1_connectionString": {
 						"value": "[parameters('Snowflake1_connectionString')]"
-					},
-					"linkedServicePrueba_sasUri": {
-						"value": "[parameters('linkedServicePrueba_sasUri')]"
 					}
 				}
 			},

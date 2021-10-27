@@ -19,10 +19,6 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'servicePrincipalCredential' of 'MC2Dataverse'"
 		},
-		"AzureBlobStorage1_sasUri": {
-			"type": "secureString",
-			"metadata": "Secure string for 'sasUri' of 'AzureBlobStorage1'"
-		},
 		"AzureBlobStorageForSnowflake_sasUri": {
 			"type": "secureString",
 			"metadata": "Secure string for 'sasUri' of 'AzureBlobStorageForSnowflake'"
@@ -42,10 +38,6 @@
 		"Snowflake1_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'Snowflake1'"
-		},
-		"linkedServicePrueba_sasUri": {
-			"type": "secureString",
-			"metadata": "Secure string for 'sasUri' of 'linkedServicePrueba'"
 		},
 		"dataFactory_location": {
 			"type": "string",
@@ -29202,26 +29194,6 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/AzureBlobStorage1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobStorage",
-				"typeProperties": {
-					"sasUri": "[parameters('AzureBlobStorage1_sasUri')]"
-				},
-				"connectVia": {
-					"referenceName": "integrationRuntime",
-					"type": "IntegrationRuntimeReference"
-				}
-			},
-			"dependsOn": [
-				"[variables('factoryId')]",
-				"[concat(variables('factoryId'), '/integrationRuntimes/integrationRuntime')]"
-			]
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/AzureBlobStorageForSnowflake')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -29334,23 +29306,43 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/linkedServicePrueba')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"name": "[concat(parameters('factoryName'), '/DAILY-TRIGGER')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"annotations": [],
-				"type": "AzureBlobStorage",
+				"runtimeState": "Started",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "main",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
+				"type": "ScheduleTrigger",
 				"typeProperties": {
-					"sasUri": "[parameters('linkedServicePrueba_sasUri')]"
-				},
-				"connectVia": {
-					"referenceName": "integrationRuntime",
-					"type": "IntegrationRuntimeReference"
+					"recurrence": {
+						"frequency": "Week",
+						"interval": 5,
+						"startTime": "2021-10-28T03:00:00Z",
+						"timeZone": "UTC",
+						"schedule": {
+							"weekDays": [
+								"Monday",
+								"Tuesday",
+								"Wednesday",
+								"Thursday",
+								"Friday"
+							]
+						}
+					}
 				}
 			},
 			"dependsOn": [
 				"[variables('factoryId')]",
-				"[concat(variables('factoryId'), '/integrationRuntimes/integrationRuntime')]"
+				"[concat(variables('factoryId'), '/pipelines/main')]"
 			]
 		},
 		{
@@ -29414,46 +29406,6 @@
 			"properties": {},
 			"dependsOn": [
 				"[variables('factoryId')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/DAILY-TRIGGER')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"runtimeState": "Started",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "main",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
-					}
-				],
-				"type": "ScheduleTrigger",
-				"typeProperties": {
-					"recurrence": {
-						"frequency": "Week",
-						"interval": 5,
-						"startTime": "2021-10-28T03:00:00Z",
-						"timeZone": "UTC",
-						"schedule": {
-							"weekDays": [
-								"Monday",
-								"Tuesday",
-								"Wednesday",
-								"Thursday",
-								"Friday"
-							]
-						}
-					}
-				}
-			},
-			"dependsOn": [
-				"[variables('factoryId')]",
-				"[concat(variables('factoryId'), '/pipelines/main')]"
 			]
 		},
 		{
