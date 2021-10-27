@@ -10,7 +10,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-',dataset().cw_fileName)",
+				"fileName": {
+					"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-','mc2_maestrocodigoproyecto')",
+					"type": "Expression"
+				},
 				"folderPath": {
 					"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 					"type": "Expression"
