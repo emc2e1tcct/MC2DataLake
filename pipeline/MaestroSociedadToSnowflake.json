@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_aep",
+				"name": "Copy MaestroSociedadToSnowflake",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
