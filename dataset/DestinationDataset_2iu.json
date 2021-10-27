@@ -5,11 +5,17 @@
 			"referenceName": "AzureDataLakeStorageGen2",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"cw_fileName": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "Parquet",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"fileName": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-',dataset().cw_fileName)",
 				"folderPath": {
 					"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 					"type": "Expression"
