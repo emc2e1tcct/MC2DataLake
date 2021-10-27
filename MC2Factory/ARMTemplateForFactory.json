@@ -561,6 +561,313 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/CopyMaestrasToBronce')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "ForEach_Maestras",
+						"type": "ForEach",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"items": {
+								"value": "@pipeline().parameters.cw_items_Maestras",
+								"type": "Expression"
+							},
+							"activities": [
+								{
+									"name": "CopyMaestrasToBronce",
+									"type": "Copy",
+									"dependsOn": [],
+									"policy": {
+										"timeout": "7.00:00:00",
+										"retry": 0,
+										"retryIntervalInSeconds": 30,
+										"secureOutput": false,
+										"secureInput": false
+									},
+									"userProperties": [
+										{
+											"name": "Source",
+											"value": "@{item().source.entityName}"
+										},
+										{
+											"name": "Destination",
+											"value": "mc2-bs-dev-bronze/@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}/@{item().destination.fileName}"
+										}
+									],
+									"typeProperties": {
+										"source": {
+											"type": "CommonDataServiceForAppsSource"
+										},
+										"sink": {
+											"type": "ParquetSink",
+											"storeSettings": {
+												"type": "AzureBlobFSWriteSettings"
+											},
+											"formatSettings": {
+												"type": "ParquetWriteSettings"
+											}
+										},
+										"enableStaging": false,
+										"validateDataConsistency": false
+									},
+									"inputs": [
+										{
+											"referenceName": "SourceMaestras",
+											"type": "DatasetReference",
+											"parameters": {
+												"cw_entityName": "@item().source.entityName"
+											}
+										}
+									],
+									"outputs": [
+										{
+											"referenceName": "DestinationMaestrasBronce",
+											"type": "DatasetReference",
+											"parameters": {
+												"cw_fileName_Maestras": "@item().destination.fileName"
+											}
+										}
+									]
+								}
+							]
+						}
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
+				"parameters": {
+					"cw_items_Maestras": {
+						"type": "Array",
+						"defaultValue": [
+							{
+								"source": {
+									"entityName": "mc2_maestro_ceco"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_ceco.parquet"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_perfil"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_perfil.parquet"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_sociedad"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_sociedad.parquet"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_tramitador"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_tramitador.parquet"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_ambito"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_ambito.parquet"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_bloque"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_bloque.parquet"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_cebe"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_cebe.parquet"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_cliente_facturacion"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_cliente_facturacion.parquet"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_cliente_gestion"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_cliente_gestion.parquet"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_coste"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_coste.parquet"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_costes_formula"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_costes_formula.parquet"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_estado_compras"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_estado_compras.parquet"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_estado_pedido"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_estado_pedido.parquet"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_familia"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_familia.parquet"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_fase"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_fase.parquet"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_jefe_de_proyecto"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_jefe_de_proyecto.parquet"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_lineapep"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_lineapep.parquet"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_monedas"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_monedas.parquet"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_naturaleza_utm"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_naturaleza_utm.parquet"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_perfil_presupuesto"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_perfil_presupuesto.parquet"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_planificacion"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_planificacion.parquet"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_plazo_utm"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_plazo_utm.parquet"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_prioridad"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_prioridad.parquet"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_producto"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_producto.parquet"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestro_tipificacion"
+								},
+								"destination": {
+									"fileName": "mc2_maestro_tipificacion.parquet"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestrocodigoproyecto"
+								},
+								"destination": {
+									"fileName": "mc2_maestrocodigoproyecto.parquet"
+								}
+							}
+						]
+					}
+				},
+				"folder": {
+					"name": "Main/Sources/CopyMC2ToBronce"
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[variables('factoryId')]",
+				"[concat(variables('factoryId'), '/datasets/SourceMaestras')]",
+				"[concat(variables('factoryId'), '/datasets/DestinationMaestrasBronce')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/CopyMaestrasToSnowflake')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
@@ -14749,420 +15056,6 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/main')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "CopyMaestrasToBronce",
-						"type": "ExecutePipeline",
-						"dependsOn": [],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "CopyMaestrasToBronce",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {
-								"cw_items_Maestras": {
-									"value": "@pipeline().parameters.cw_items_Maestras",
-									"type": "Expression"
-								}
-							}
-						}
-					},
-					{
-						"name": "CopyPrincipalesToBronce",
-						"type": "ExecutePipeline",
-						"dependsOn": [],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "CopyPrincipalesToBronce",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {
-								"cw_items_Principales": {
-									"value": "@pipeline().parameters.cw_items_Principales",
-									"type": "Expression"
-								}
-							}
-						}
-					},
-					{
-						"name": "CopyBronceToSilver",
-						"type": "ExecutePipeline",
-						"dependsOn": [
-							{
-								"activity": "CopyMaestrasToBronce",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							},
-							{
-								"activity": "CopyPrincipalesToBronce",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "CopyBronceToSilver",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {}
-						}
-					},
-					{
-						"name": "CopySilverToGolden",
-						"type": "ExecutePipeline",
-						"dependsOn": [
-							{
-								"activity": "CopyBronceToSilver",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "CopySilverToGolden",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {}
-						}
-					},
-					{
-						"name": "CopyPrincipalesToSnowflake",
-						"type": "ExecutePipeline",
-						"dependsOn": [
-							{
-								"activity": "CopySilverToGolden",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "CopyPrincipalesToSnowflake",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {}
-						}
-					},
-					{
-						"name": "CopyMaestrasToSnowflake",
-						"type": "ExecutePipeline",
-						"dependsOn": [
-							{
-								"activity": "CopySilverToGolden",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "CopyMaestrasToSnowflake",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {}
-						}
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
-				},
-				"parameters": {
-					"cw_items_Maestras": {
-						"type": "array",
-						"defaultValue": [
-							{
-								"source": {
-									"entityName": "mc2_maestro_ceco"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_ceco.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_perfil"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_perfil.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_sociedad"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_sociedad.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_tramitador"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_tramitador.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_ambito"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_ambito.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_bloque"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_bloque.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_cebe"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_cebe.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_cliente_facturacion"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_cliente_facturacion.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_cliente_gestion"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_cliente_gestion.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_coste"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_coste.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_costes_formula"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_costes_formula.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_estado_compras"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_estado_compras.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_estado_pedido"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_estado_pedido.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_familia"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_familia.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_fase"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_fase.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_jefe_de_proyecto"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_jefe_de_proyecto.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_lineapep"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_lineapep.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_monedas"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_monedas.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_naturaleza_utm"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_naturaleza_utm.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_perfil_presupuesto"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_perfil_presupuesto.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_planificacion"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_planificacion.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_plazo_utm"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_plazo_utm.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_prioridad"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_prioridad.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_producto"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_producto.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestro_tipificacion"
-								},
-								"destination": {
-									"fileName": "mc2_maestro_tipificacion.parquet"
-								}
-							}
-						]
-					},
-					"cw_items_Principales": {
-						"type": "array",
-						"defaultValue": [
-							{
-								"source": {
-									"entityName": "mc2_comentarios_proyecto"
-								},
-								"destination": {
-									"fileName": "mc2_comentarios_proyecto.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_elemento_pep"
-								},
-								"destination": {
-									"fileName": "mc2_elemento_pep.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_lineas_adquira"
-								},
-								"destination": {
-									"fileName": "mc2_lineas_adquira.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_pedido"
-								},
-								"destination": {
-									"fileName": "mc2_pedido.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_planificacion"
-								},
-								"destination": {
-									"fileName": "mc2_planificacion.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_proyecto"
-								},
-								"destination": {
-									"fileName": "mc2_proyecto.parquet"
-								}
-							}
-						]
-					}
-				},
-				"folder": {
-					"name": "Main"
-				},
-				"annotations": []
-			},
-			"dependsOn": [
-				"[variables('factoryId')]",
-				"[concat(variables('factoryId'), '/pipelines/CopyMaestrasToBronce')]",
-				"[concat(variables('factoryId'), '/pipelines/CopyPrincipalesToBronce')]",
-				"[concat(variables('factoryId'), '/pipelines/CopyBronceToSilver')]",
-				"[concat(variables('factoryId'), '/pipelines/CopySilverToGolden')]",
-				"[concat(variables('factoryId'), '/pipelines/CopyPrincipalesToSnowflake')]",
-				"[concat(variables('factoryId'), '/pipelines/CopyMaestrasToSnowflake')]"
-			]
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/DestinationGolden')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -15213,7 +15106,7 @@
 					"location": {
 						"type": "AzureBlobFSLocation",
 						"fileName": {
-							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-',dataset().cw_fileName_Maestras)",
+							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-','mc2_maestrocodigoproyecto')",
 							"type": "Expression"
 						},
 						"folderPath": {
@@ -29039,6 +28932,46 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/daily')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Started",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "main",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Week",
+						"interval": 1,
+						"startTime": "2021-10-27T16:00:00",
+						"timeZone": "Romance Standard Time",
+						"schedule": {
+							"weekDays": [
+								"Monday",
+								"Tuesday",
+								"Wednesday",
+								"Thursday",
+								"Friday"
+							]
+						}
+					}
+				}
+			},
+			"dependsOn": [
+				"[variables('factoryId')]",
+				"[concat(variables('factoryId'), '/pipelines/main')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/integrationRuntime')]",
 			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
 			"apiVersion": "2018-06-01",
@@ -29102,79 +29035,137 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/CopyMaestrasToBronce')]",
+			"name": "[concat(parameters('factoryName'), '/main')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"activities": [
 					{
-						"name": "ForEach_Maestras",
-						"type": "ForEach",
+						"name": "CopyMaestrasToBronce",
+						"type": "ExecutePipeline",
 						"dependsOn": [],
 						"userProperties": [],
 						"typeProperties": {
-							"items": {
-								"value": "@pipeline().parameters.cw_items_Maestras",
-								"type": "Expression"
+							"pipeline": {
+								"referenceName": "CopyMaestrasToBronce",
+								"type": "PipelineReference"
 							},
-							"activities": [
-								{
-									"name": "CopyMaestrasToBronce",
-									"type": "Copy",
-									"dependsOn": [],
-									"policy": {
-										"timeout": "7.00:00:00",
-										"retry": 0,
-										"retryIntervalInSeconds": 30,
-										"secureOutput": false,
-										"secureInput": false
-									},
-									"userProperties": [
-										{
-											"name": "Source",
-											"value": "@{item().source.entityName}"
-										},
-										{
-											"name": "Destination",
-											"value": "mc2-bs-dev-bronze/@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}/@{item().destination.fileName}"
-										}
-									],
-									"typeProperties": {
-										"source": {
-											"type": "CommonDataServiceForAppsSource"
-										},
-										"sink": {
-											"type": "ParquetSink",
-											"storeSettings": {
-												"type": "AzureBlobFSWriteSettings"
-											},
-											"formatSettings": {
-												"type": "ParquetWriteSettings"
-											}
-										},
-										"enableStaging": false,
-										"validateDataConsistency": false
-									},
-									"inputs": [
-										{
-											"referenceName": "SourceMaestras",
-											"type": "DatasetReference",
-											"parameters": {
-												"cw_entityName": "@item().source.entityName"
-											}
-										}
-									],
-									"outputs": [
-										{
-											"referenceName": "DestinationMaestrasBronce",
-											"type": "DatasetReference",
-											"parameters": {
-												"cw_fileName_Maestras": "@item().destination.fileName"
-											}
-										}
-									]
+							"waitOnCompletion": true,
+							"parameters": {
+								"cw_items_Maestras": {
+									"value": "@pipeline().parameters.cw_items_Maestras",
+									"type": "Expression"
 								}
-							]
+							}
+						}
+					},
+					{
+						"name": "CopyPrincipalesToBronce",
+						"type": "ExecutePipeline",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "CopyPrincipalesToBronce",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {
+								"cw_items_Principales": {
+									"value": "@pipeline().parameters.cw_items_Principales",
+									"type": "Expression"
+								}
+							}
+						}
+					},
+					{
+						"name": "CopyBronceToSilver",
+						"type": "ExecutePipeline",
+						"dependsOn": [
+							{
+								"activity": "CopyMaestrasToBronce",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							},
+							{
+								"activity": "CopyPrincipalesToBronce",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "CopyBronceToSilver",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {}
+						}
+					},
+					{
+						"name": "CopySilverToGolden",
+						"type": "ExecutePipeline",
+						"dependsOn": [
+							{
+								"activity": "CopyBronceToSilver",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "CopySilverToGolden",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {}
+						}
+					},
+					{
+						"name": "CopyPrincipalesToSnowflake",
+						"type": "ExecutePipeline",
+						"dependsOn": [
+							{
+								"activity": "CopySilverToGolden",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "CopyPrincipalesToSnowflake",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {}
+						}
+					},
+					{
+						"name": "CopyMaestrasToSnowflake",
+						"type": "ExecutePipeline",
+						"dependsOn": [
+							{
+								"activity": "CopySilverToGolden",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "CopyMaestrasToSnowflake",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {}
 						}
 					}
 				],
@@ -29184,7 +29175,7 @@
 				},
 				"parameters": {
 					"cw_items_Maestras": {
-						"type": "Array",
+						"type": "array",
 						"defaultValue": [
 							{
 								"source": {
@@ -29385,6 +29376,59 @@
 								"destination": {
 									"fileName": "mc2_maestro_tipificacion.parquet"
 								}
+							}
+						]
+					},
+					"cw_items_Principales": {
+						"type": "array",
+						"defaultValue": [
+							{
+								"source": {
+									"entityName": "mc2_comentarios_proyecto"
+								},
+								"destination": {
+									"fileName": "mc2_comentarios_proyecto.parquet"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_elemento_pep"
+								},
+								"destination": {
+									"fileName": "mc2_elemento_pep.parquet"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_lineas_adquira"
+								},
+								"destination": {
+									"fileName": "mc2_lineas_adquira.parquet"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_pedido"
+								},
+								"destination": {
+									"fileName": "mc2_pedido.parquet"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_planificacion"
+								},
+								"destination": {
+									"fileName": "mc2_planificacion.parquet"
+								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_proyecto"
+								},
+								"destination": {
+									"fileName": "mc2_proyecto.parquet"
+								}
 							},
 							{
 								"source": {
@@ -29398,54 +29442,18 @@
 					}
 				},
 				"folder": {
-					"name": "Main/Sources/CopyMC2ToBronce"
+					"name": "Main"
 				},
 				"annotations": []
 			},
 			"dependsOn": [
 				"[variables('factoryId')]",
-				"[concat(variables('factoryId'), '/datasets/SourceMaestras')]",
-				"[concat(variables('factoryId'), '/datasets/DestinationMaestrasBronce')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/daily')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"runtimeState": "Started",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "main",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
-					}
-				],
-				"type": "ScheduleTrigger",
-				"typeProperties": {
-					"recurrence": {
-						"frequency": "Week",
-						"interval": 1,
-						"startTime": "2021-10-27T16:00:00",
-						"timeZone": "Romance Standard Time",
-						"schedule": {
-							"weekDays": [
-								"Monday",
-								"Tuesday",
-								"Wednesday",
-								"Thursday",
-								"Friday"
-							]
-						}
-					}
-				}
-			},
-			"dependsOn": [
-				"[variables('factoryId')]",
-				"[concat(variables('factoryId'), '/pipelines/main')]"
+				"[concat(variables('factoryId'), '/pipelines/CopyMaestrasToBronce')]",
+				"[concat(variables('factoryId'), '/pipelines/CopyPrincipalesToBronce')]",
+				"[concat(variables('factoryId'), '/pipelines/CopyBronceToSilver')]",
+				"[concat(variables('factoryId'), '/pipelines/CopySilverToGolden')]",
+				"[concat(variables('factoryId'), '/pipelines/CopyPrincipalesToSnowflake')]",
+				"[concat(variables('factoryId'), '/pipelines/CopyMaestrasToSnowflake')]"
 			]
 		},
 		{
