@@ -279,10 +279,10 @@
 					},
 					{
 						"source": {
-							"entityName": "mc2_maestro_SKU"
+							"entityName": "mc2_maestrocodigoproyecto"
 						},
 						"destination": {
-							"fileName": "mc2_maestro_SKU.parquet"
+							"fileName": "mc2_maestrocodigoproyecto.parquet"
 						}
 					}
 				]
