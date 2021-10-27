@@ -27,6 +27,19 @@
 					},
 					"waitOnCompletion": true
 				}
+			},
+			{
+				"name": "PedidoToSnowflake",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "PedidoToSnowflake",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
 			}
 		],
 		"folder": {

@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_s40",
+				"name": "CopyPedidoToSnowflake",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -926,6 +926,9 @@
 				]
 			}
 		],
+		"folder": {
+			"name": "Main/Sources/CopyToSnowfake/CopyPrincipalesSnowflake/Principales"
+		},
 		"annotations": []
 	}
 }
