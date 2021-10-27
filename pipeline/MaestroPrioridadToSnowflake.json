@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_bvu",
+				"name": "CopyMaestroPrioridadToSnowflake",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -386,6 +386,9 @@
 				]
 			}
 		],
+		"folder": {
+			"name": "Main/Sources/CopyToSnowfake/CopyMaestrasToSnowflake/Maestras"
+		},
 		"annotations": []
 	}
 }
