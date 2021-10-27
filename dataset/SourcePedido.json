@@ -1,0 +1,376 @@
+{
+	"name": "SourcePedido",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorageGen2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_pedido.parquet')",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+					"type": "Expression"
+				},
+				"fileSystem": "mc2-bs-dev-golden"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "createdby",
+				"type": "UTF8"
+			},
+			{
+				"name": "createdbyname",
+				"type": "UTF8"
+			},
+			{
+				"name": "createdbyyominame",
+				"type": "UTF8"
+			},
+			{
+				"name": "createdon",
+				"type": "INT96"
+			},
+			{
+				"name": "createdonbehalfby",
+				"type": "UTF8"
+			},
+			{
+				"name": "createdonbehalfbyname",
+				"type": "UTF8"
+			},
+			{
+				"name": "createdonbehalfbyyominame",
+				"type": "UTF8"
+			},
+			{
+				"name": "importsequencenumber",
+				"type": "INT32"
+			},
+			{
+				"name": "mc2_ap_descripcion",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_ap_pedido",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_cebe",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_cliente_facturacion_nif_pe",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_cliente_facturacion_nombre_pe",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_cliente_gestion_cif_pe",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_cliente_gestion_nombre_pe",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_codigo_proyecto",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_comentario_adquira",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_comentario_tsol",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_comentarios",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_contrato_pe",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_coste_pedido",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_enviado_sap",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "mc2_escalado",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "mc2_estado_compra",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_estado_compraname",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_estado_pedido",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_estado_pedidoname",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_fecha",
+				"type": "INT96"
+			},
+			{
+				"name": "mc2_fecha_fin_ap_pedido",
+				"type": "INT96"
+			},
+			{
+				"name": "mc2_fecha_fin_ap_ultimodia",
+				"type": "INT96"
+			},
+			{
+				"name": "mc2_fecha_fin_sa_pedido",
+				"type": "INT96"
+			},
+			{
+				"name": "mc2_fecha_inicio_ap_pedido",
+				"type": "INT96"
+			},
+			{
+				"name": "mc2_fecha_inicio_ap_primerdia",
+				"type": "INT96"
+			},
+			{
+				"name": "mc2_fecha_inicio_sa_pedido",
+				"type": "INT96"
+			},
+			{
+				"name": "mc2_fecha_sap",
+				"type": "INT96"
+			},
+			{
+				"name": "mc2_id_proyecto",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_id_proyectoname",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_importe",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_importe_compra_pe",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_imputacion_pe",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_informacion_proveedor_pe",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_jdp_pedido",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_jdp_pedidoname",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_margen",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_moneda_compra_pe",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_moneda_compra_pename",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_moneda_pedido",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_moneda_pedidoname",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_numero_pedido",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_padre",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_pedidoid",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_peticionario",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_producto",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_productoname",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_proveedor_pe",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_responsable_tsol",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_sa",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_sa_descripcion",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_secuencia_producto",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_servicio_comercial_tsol",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_solicitar_compra",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "mc2_solpes",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_tipo",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_tramitador",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_tramitadorname",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_url_carpeta_sharepoint",
+				"type": "UTF8"
+			},
+			{
+				"name": "modifiedby",
+				"type": "UTF8"
+			},
+			{
+				"name": "modifiedbyname",
+				"type": "UTF8"
+			},
+			{
+				"name": "modifiedbyyominame",
+				"type": "UTF8"
+			},
+			{
+				"name": "modifiedon",
+				"type": "INT96"
+			},
+			{
+				"name": "modifiedonbehalfby",
+				"type": "UTF8"
+			},
+			{
+				"name": "modifiedonbehalfbyname",
+				"type": "UTF8"
+			},
+			{
+				"name": "modifiedonbehalfbyyominame",
+				"type": "UTF8"
+			},
+			{
+				"name": "overriddencreatedon",
+				"type": "INT96"
+			},
+			{
+				"name": "ownerid",
+				"type": "UTF8"
+			},
+			{
+				"name": "owneridname",
+				"type": "UTF8"
+			},
+			{
+				"name": "owneridtype",
+				"type": "UTF8"
+			},
+			{
+				"name": "owneridyominame",
+				"type": "UTF8"
+			},
+			{
+				"name": "owningbusinessunit",
+				"type": "UTF8"
+			},
+			{
+				"name": "owningbusinessunitname",
+				"type": "UTF8"
+			},
+			{
+				"name": "owningteam",
+				"type": "UTF8"
+			},
+			{
+				"name": "owninguser",
+				"type": "UTF8"
+			},
+			{
+				"name": "statecode",
+				"type": "INT32"
+			},
+			{
+				"name": "statuscode",
+				"type": "INT32"
+			},
+			{
+				"name": "timezoneruleversionnumber",
+				"type": "INT32"
+			},
+			{
+				"name": "utcconversiontimezonecode",
+				"type": "INT32"
+			},
+			{
+				"name": "versionnumber",
+				"type": "INT64"
+			}
+		]
+	}
+}
