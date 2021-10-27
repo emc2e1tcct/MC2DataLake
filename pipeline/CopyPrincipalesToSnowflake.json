@@ -53,6 +53,19 @@
 					},
 					"waitOnCompletion": true
 				}
+			},
+			{
+				"name": "ProyectoToSnoflake",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "ProyectoToSnoflake",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
 			}
 		],
 		"folder": {
