@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_5q4",
+				"name": "CopyMaestroCodigoProyectoToSnowflake",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
