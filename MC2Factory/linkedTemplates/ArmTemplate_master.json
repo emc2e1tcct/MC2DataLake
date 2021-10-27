@@ -123,18 +123,6 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
-					},
-					"AzureBlobStorage1_sasUri": {
-						"value": "[parameters('AzureBlobStorage1_sasUri')]"
-					},
-					"AzureBlobStorageForSnowflake_sasUri": {
-						"value": "[parameters('AzureBlobStorageForSnowflake_sasUri')]"
-					},
-					"Snowflake1_connectionString": {
-						"value": "[parameters('Snowflake1_connectionString')]"
-					},
-					"linkedServicePrueba_sasUri": {
-						"value": "[parameters('linkedServicePrueba_sasUri')]"
 					}
 				}
 			},
@@ -155,11 +143,63 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"AzureBlobStorage1_sasUri": {
+						"value": "[parameters('AzureBlobStorage1_sasUri')]"
+					},
+					"AzureBlobStorageForSnowflake_sasUri": {
+						"value": "[parameters('AzureBlobStorageForSnowflake_sasUri')]"
+					},
+					"Snowflake1_connectionString": {
+						"value": "[parameters('Snowflake1_connectionString')]"
+					},
+					"linkedServicePrueba_sasUri": {
+						"value": "[parameters('linkedServicePrueba_sasUri')]"
 					}
 				}
 			},
 			"dependsOn": [
 				"[resourceId('Microsoft.Resources/deployments', 'MC2Factory_ArmTemplate_1')]"
+			]
+		},
+		{
+			"name": "MC2Factory_ArmTemplate_3",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_3.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'MC2Factory_ArmTemplate_2')]"
+			]
+		},
+		{
+			"name": "MC2Factory_ArmTemplate_4",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_4.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'MC2Factory_ArmTemplate_3')]"
 			]
 		}
 	]
