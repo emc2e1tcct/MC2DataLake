@@ -287,6 +287,9 @@
 				"startTime": "2021-10-28T09:40:00",
 				"timeZone": "Romance Standard Time",
 				"schedule": {
+					"minutes": [
+						3
+					],
 					"weekDays": [
 						"Monday",
 						"Tuesday",
