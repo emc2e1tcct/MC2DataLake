@@ -4,24 +4,24 @@
 	"parameters": {
 		"factoryName": {
 			"type": "string",
-			"metadata": "Nombre de instancia de Data Factory",
+			"metadata": "Data Factory name",
 			"defaultValue": "MC2Factory"
 		},
 		"AzureDataLakeStorageGen2_accountKey": {
 			"type": "secureString",
-			"metadata": "Cadena protegida para \"accountKey\"de \"AzureDataLakeStorageGen2\""
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorageGen2'"
 		},
 		"AzureTableStoragePrueba_connectionString": {
 			"type": "secureString",
-			"metadata": "Cadena protegida para \"connectionString\"de \"AzureTableStoragePrueba\""
+			"metadata": "Secure string for 'connectionString' of 'AzureTableStoragePrueba'"
 		},
 		"MC2Dataverse_servicePrincipalCredential": {
 			"type": "secureString",
-			"metadata": "Cadena protegida para \"servicePrincipalCredential\"de \"MC2Dataverse\""
+			"metadata": "Secure string for 'servicePrincipalCredential' of 'MC2Dataverse'"
 		},
 		"AzureBlobStorageForSnowflake_sasUri": {
 			"type": "secureString",
-			"metadata": "Cadena protegida para \"sasUri\"de \"AzureBlobStorageForSnowflake\""
+			"metadata": "Secure string for 'sasUri' of 'AzureBlobStorageForSnowflake'"
 		},
 		"AzureDataLakeStorageGen2_properties_typeProperties_url": {
 			"type": "string",
@@ -37,7 +37,7 @@
 		},
 		"Snowflake1_connectionString": {
 			"type": "secureString",
-			"metadata": "Cadena protegida para \"connectionString\"de \"Snowflake1\""
+			"metadata": "Secure string for 'connectionString' of 'Snowflake1'"
 		},
 		"TablasTrigger_properties_main_parameters_cw_items_Maestras": {
 			"type": "array",
@@ -16136,6 +16136,14 @@
 								"destination": {
 									"fileName": "mc2_maestro_tipificacion.parquet"
 								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestrocodigoproyecto"
+								},
+								"destination": {
+									"fileName": "mc2_maestrocodigoproyecto.parquet"
+								}
 							}
 						]
 					},
@@ -16188,14 +16196,6 @@
 								},
 								"destination": {
 									"fileName": "mc2_proyecto.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestrocodigoproyecto"
-								},
-								"destination": {
-									"fileName": "mc2_maestrocodigoproyecto.parquet"
 								}
 							}
 						]

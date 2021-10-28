@@ -4,7 +4,7 @@
 	"parameters": {
 		"factoryName": {
 			"type": "string",
-			"metadata": "Nombre de instancia de Data Factory",
+			"metadata": "Data Factory name",
 			"defaultValue": "MC2Factory"
 		}
 	},
@@ -8695,6 +8695,14 @@
 								"destination": {
 									"fileName": "mc2_maestro_tipificacion.parquet"
 								}
+							},
+							{
+								"source": {
+									"entityName": "mc2_maestrocodigoproyecto"
+								},
+								"destination": {
+									"fileName": "mc2_maestrocodigoproyecto.parquet"
+								}
 							}
 						]
 					},
@@ -8747,14 +8755,6 @@
 								},
 								"destination": {
 									"fileName": "mc2_proyecto.parquet"
-								}
-							},
-							{
-								"source": {
-									"entityName": "mc2_maestrocodigoproyecto"
-								},
-								"destination": {
-									"fileName": "mc2_maestrocodigoproyecto.parquet"
 								}
 							}
 						]

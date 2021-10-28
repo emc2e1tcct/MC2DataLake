@@ -4,16 +4,16 @@
 	"parameters": {
 		"factoryName": {
 			"type": "string",
-			"metadata": "Nombre de instancia de Data Factory",
+			"metadata": "Data Factory name",
 			"defaultValue": "MC2Factory"
 		},
 		"AzureBlobStorageForSnowflake_sasUri": {
 			"type": "secureString",
-			"metadata": "Cadena protegida para \"sasUri\"de \"AzureBlobStorageForSnowflake\""
+			"metadata": "Secure string for 'sasUri' of 'AzureBlobStorageForSnowflake'"
 		},
 		"Snowflake1_connectionString": {
 			"type": "secureString",
-			"metadata": "Cadena protegida para \"connectionString\"de \"Snowflake1\""
+			"metadata": "Secure string for 'connectionString' of 'Snowflake1'"
 		}
 	},
 	"variables": {
