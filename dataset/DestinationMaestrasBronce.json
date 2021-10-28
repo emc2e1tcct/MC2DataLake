@@ -19,7 +19,7 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": {
-					"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-','mc2_maestrocodigoproyecto')",
+					"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-',dataset().cw_fileName_Maestras)",
 					"type": "Expression"
 				},
 				"folderPath": {
