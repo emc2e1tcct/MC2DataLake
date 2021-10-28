@@ -4,24 +4,24 @@
 	"parameters": {
 		"factoryName": {
 			"type": "string",
-			"metadata": "Data Factory name",
+			"metadata": "Nombre de instancia de Data Factory",
 			"defaultValue": "MC2Factory"
 		},
 		"AzureDataLakeStorageGen2_accountKey": {
 			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorageGen2'"
+			"metadata": "Cadena protegida para \"accountKey\"de \"AzureDataLakeStorageGen2\""
 		},
 		"AzureTableStoragePrueba_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureTableStoragePrueba'"
+			"metadata": "Cadena protegida para \"connectionString\"de \"AzureTableStoragePrueba\""
 		},
 		"MC2Dataverse_servicePrincipalCredential": {
 			"type": "secureString",
-			"metadata": "Secure string for 'servicePrincipalCredential' of 'MC2Dataverse'"
+			"metadata": "Cadena protegida para \"servicePrincipalCredential\"de \"MC2Dataverse\""
 		},
 		"AzureBlobStorageForSnowflake_sasUri": {
 			"type": "secureString",
-			"metadata": "Secure string for 'sasUri' of 'AzureBlobStorageForSnowflake'"
+			"metadata": "Cadena protegida para \"sasUri\"de \"AzureBlobStorageForSnowflake\""
 		},
 		"AzureDataLakeStorageGen2_properties_typeProperties_url": {
 			"type": "string",
@@ -37,7 +37,7 @@
 		},
 		"Snowflake1_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'Snowflake1'"
+			"metadata": "Cadena protegida para \"connectionString\"de \"Snowflake1\""
 		},
 		"TablasTrigger_properties_main_parameters_cw_items_Maestras": {
 			"type": "array",
@@ -315,11 +315,11 @@
 		},
 		"containerUri": {
 			"type": "string",
-			"metadata": "URI to storage account containing linked ARM templates"
+			"metadata": "URI de la cuenta de almacenamiento que contiene las plantillas de ARM vinculadas."
 		},
 		"containerSasToken": {
 			"type": "string",
-			"metadata": "Sas token to storage account containing linked ARM templates"
+			"metadata": "Token de SAS para la cuenta de almacenamiento que contiene las plantillas de ARM vinculadas"
 		}
 	},
 	"variables": {
