@@ -120,6 +120,64 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/DAILY-TRIGGER')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Stopped",
+				"pipelines": [],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Week",
+						"interval": 5,
+						"startTime": "2021-10-28T03:00:00Z",
+						"timeZone": "UTC",
+						"schedule": {
+							"weekDays": [
+								"Monday",
+								"Tuesday",
+								"Wednesday",
+								"Thursday",
+								"Friday"
+							]
+						}
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/daily')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Stopped",
+				"pipelines": [],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Week",
+						"interval": 1,
+						"startTime": "2021-10-27T16:00:00",
+						"timeZone": "Romance Standard Time",
+						"schedule": {
+							"weekDays": [
+								"Monday",
+								"Tuesday",
+								"Wednesday",
+								"Thursday",
+								"Friday"
+							]
+						}
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/default')]",
 			"type": "Microsoft.DataFactory/factories/managedVirtualNetworks",
 			"apiVersion": "2018-06-01",
@@ -1573,338 +1631,6 @@
 					},
 					{
 						"name": "mc2_texto_cebe",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedby",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedbyname",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedbyyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedon",
-						"type": "INT96"
-					},
-					{
-						"name": "modifiedonbehalfby",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedonbehalfbyname",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedonbehalfbyyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "overriddencreatedon",
-						"type": "INT96"
-					},
-					{
-						"name": "ownerid",
-						"type": "UTF8"
-					},
-					{
-						"name": "owneridname",
-						"type": "UTF8"
-					},
-					{
-						"name": "owneridtype",
-						"type": "UTF8"
-					},
-					{
-						"name": "owneridyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "owningbusinessunit",
-						"type": "UTF8"
-					},
-					{
-						"name": "owningbusinessunitname",
-						"type": "UTF8"
-					},
-					{
-						"name": "owningteam",
-						"type": "UTF8"
-					},
-					{
-						"name": "owninguser",
-						"type": "UTF8"
-					},
-					{
-						"name": "statecode",
-						"type": "INT32"
-					},
-					{
-						"name": "statuscode",
-						"type": "INT32"
-					},
-					{
-						"name": "timezoneruleversionnumber",
-						"type": "INT32"
-					},
-					{
-						"name": "utcconversiontimezonecode",
-						"type": "INT32"
-					},
-					{
-						"name": "versionnumber",
-						"type": "INT64"
-					}
-				]
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/SourceMaestroCeco')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureDataLakeStorageGen2",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "Sources"
-				},
-				"annotations": [],
-				"type": "Parquet",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobFSLocation",
-						"fileName": {
-							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_maestro_ceco.parquet')",
-							"type": "Expression"
-						},
-						"folderPath": {
-							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
-							"type": "Expression"
-						},
-						"fileSystem": "mc2-bs-dev-golden"
-					},
-					"compressionCodec": "snappy"
-				},
-				"schema": [
-					{
-						"name": "createdby",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdbyname",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdbyyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdon",
-						"type": "INT96"
-					},
-					{
-						"name": "createdonbehalfby",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdonbehalfbyname",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdonbehalfbyyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "importsequencenumber",
-						"type": "INT32"
-					},
-					{
-						"name": "mc2_ceco",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_maestro_cecoid",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_texto",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedby",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedbyname",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedbyyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedon",
-						"type": "INT96"
-					},
-					{
-						"name": "modifiedonbehalfby",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedonbehalfbyname",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedonbehalfbyyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "overriddencreatedon",
-						"type": "INT96"
-					},
-					{
-						"name": "ownerid",
-						"type": "UTF8"
-					},
-					{
-						"name": "owneridname",
-						"type": "UTF8"
-					},
-					{
-						"name": "owneridtype",
-						"type": "UTF8"
-					},
-					{
-						"name": "owneridyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "owningbusinessunit",
-						"type": "UTF8"
-					},
-					{
-						"name": "owningbusinessunitname",
-						"type": "UTF8"
-					},
-					{
-						"name": "owningteam",
-						"type": "UTF8"
-					},
-					{
-						"name": "owninguser",
-						"type": "UTF8"
-					},
-					{
-						"name": "statecode",
-						"type": "INT32"
-					},
-					{
-						"name": "statuscode",
-						"type": "INT32"
-					},
-					{
-						"name": "timezoneruleversionnumber",
-						"type": "INT32"
-					},
-					{
-						"name": "utcconversiontimezonecode",
-						"type": "INT32"
-					},
-					{
-						"name": "versionnumber",
-						"type": "INT64"
-					}
-				]
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/SourceMaestroClienteFacturacion')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureDataLakeStorageGen2",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "Sources"
-				},
-				"annotations": [],
-				"type": "Parquet",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobFSLocation",
-						"fileName": {
-							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_maestro_cliente_facturacion.parquet')",
-							"type": "Expression"
-						},
-						"folderPath": {
-							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
-							"type": "Expression"
-						},
-						"fileSystem": "mc2-bs-dev-golden"
-					},
-					"compressionCodec": "snappy"
-				},
-				"schema": [
-					{
-						"name": "createdby",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdbyname",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdbyyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdon",
-						"type": "INT96"
-					},
-					{
-						"name": "createdonbehalfby",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdonbehalfbyname",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdonbehalfbyyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "importsequencenumber",
-						"type": "INT32"
-					},
-					{
-						"name": "mc2_cif",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_cliente",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_maestro_cliente_facturacionid",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_nombre_facturacion",
 						"type": "UTF8"
 					},
 					{
