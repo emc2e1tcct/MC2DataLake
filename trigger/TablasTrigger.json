@@ -9,6 +9,12 @@
 					"referenceName": "CopyMaestrasToBronce",
 					"type": "PipelineReference"
 				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "main",
+					"type": "PipelineReference"
+				}
 			}
 		],
 		"type": "ScheduleTrigger",
@@ -16,8 +22,8 @@
 			"recurrence": {
 				"frequency": "Week",
 				"interval": 1,
-				"startTime": "2021-10-28T09:00:00Z",
-				"timeZone": "UTC",
+				"startTime": "2021-10-28T09:40:00",
+				"timeZone": "Romance Standard Time",
 				"schedule": {
 					"weekDays": [
 						"Monday",
