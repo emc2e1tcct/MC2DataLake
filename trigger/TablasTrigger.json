@@ -282,22 +282,10 @@
 		"type": "ScheduleTrigger",
 		"typeProperties": {
 			"recurrence": {
-				"frequency": "Week",
+				"frequency": "Minute",
 				"interval": 1,
 				"startTime": "2021-10-28T09:40:00",
-				"timeZone": "Romance Standard Time",
-				"schedule": {
-					"minutes": [
-						1
-					],
-					"weekDays": [
-						"Monday",
-						"Tuesday",
-						"Wednesday",
-						"Thursday",
-						"Friday"
-					]
-				}
+				"timeZone": "Romance Standard Time"
 			}
 		}
 	}
