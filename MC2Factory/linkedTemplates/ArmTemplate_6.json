@@ -307,19 +307,11 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Week",
-						"interval": 5,
-						"startTime": "2021-10-29T09:00:00",
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2021-10-29T00:30:00",
 						"timeZone": "Romance Standard Time",
-						"schedule": {
-							"weekDays": [
-								"Monday",
-								"Tuesday",
-								"Wednesday",
-								"Thursday",
-								"Friday"
-							]
-						}
+						"schedule": {}
 					}
 				}
 			},
