@@ -308,8 +308,8 @@
 				"typeProperties": {
 					"recurrence": {
 						"frequency": "Week",
-						"interval": 1,
-						"startTime": "2021-10-29T03:00:00",
+						"interval": 5,
+						"startTime": "2021-10-29T09:00:00",
 						"timeZone": "Romance Standard Time",
 						"schedule": {
 							"weekDays": [
