@@ -1,0 +1,309 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "MC2Factory"
+		},
+		"AzureDataLakeStorageGen2_accountKey": {
+			"value": ""
+		},
+		"AzureTableStoragePrueba_connectionString": {
+			"value": ""
+		},
+		"MC2Dataverse_servicePrincipalCredential": {
+			"value": ""
+		},
+		"AzureBlobStorageForSnowflake_sasUri": {
+			"value": ""
+		},
+		"AzureDataLakeStorageGen2_properties_typeProperties_url": {
+			"value": "https://mc2datalake.dfs.core.windows.net"
+		},
+		"MC2AzureKeyVault_properties_typeProperties_baseUrl": {
+			"value": "https://kvMC2.vault.azure.net/"
+		},
+		"MC2Dataverse_properties_typeProperties_servicePrincipalId": {
+			"value": "f16b031b-29a7-4264-8271-f2844c7b7084"
+		},
+		"Snowflake1_connectionString": {
+			"value": ""
+		},
+		"TablasTrigger_properties_main_parameters_cw_items_Maestras": {
+			"value": [
+				{
+					"source": {
+						"entityName": "mc2_maestro_ceco"
+					},
+					"destination": {
+						"fileName": "mc2_maestro_ceco.parquet"
+					}
+				},
+				{
+					"source": {
+						"entityName": "mc2_maestro_perfil"
+					},
+					"destination": {
+						"fileName": "mc2_maestro_perfil.parquet"
+					}
+				},
+				{
+					"source": {
+						"entityName": "mc2_maestro_sociedad"
+					},
+					"destination": {
+						"fileName": "mc2_maestro_sociedad.parquet"
+					}
+				},
+				{
+					"source": {
+						"entityName": "mc2_maestro_tramitador"
+					},
+					"destination": {
+						"fileName": "mc2_maestro_tramitador.parquet"
+					}
+				},
+				{
+					"source": {
+						"entityName": "mc2_maestro_ambito"
+					},
+					"destination": {
+						"fileName": "mc2_maestro_ambito.parquet"
+					}
+				},
+				{
+					"source": {
+						"entityName": "mc2_maestro_bloque"
+					},
+					"destination": {
+						"fileName": "mc2_maestro_bloque.parquet"
+					}
+				},
+				{
+					"source": {
+						"entityName": "mc2_maestro_cebe"
+					},
+					"destination": {
+						"fileName": "mc2_maestro_cebe.parquet"
+					}
+				},
+				{
+					"source": {
+						"entityName": "mc2_maestro_cliente_facturacion"
+					},
+					"destination": {
+						"fileName": "mc2_maestro_cliente_facturacion.parquet"
+					}
+				},
+				{
+					"source": {
+						"entityName": "mc2_maestro_cliente_gestion"
+					},
+					"destination": {
+						"fileName": "mc2_maestro_cliente_gestion.parquet"
+					}
+				},
+				{
+					"source": {
+						"entityName": "mc2_maestro_coste"
+					},
+					"destination": {
+						"fileName": "mc2_maestro_coste.parquet"
+					}
+				},
+				{
+					"source": {
+						"entityName": "mc2_maestro_costes_formula"
+					},
+					"destination": {
+						"fileName": "mc2_maestro_costes_formula.parquet"
+					}
+				},
+				{
+					"source": {
+						"entityName": "mc2_maestro_estado_compras"
+					},
+					"destination": {
+						"fileName": "mc2_maestro_estado_compras.parquet"
+					}
+				},
+				{
+					"source": {
+						"entityName": "mc2_maestro_estado_pedido"
+					},
+					"destination": {
+						"fileName": "mc2_maestro_estado_pedido.parquet"
+					}
+				},
+				{
+					"source": {
+						"entityName": "mc2_maestro_familia"
+					},
+					"destination": {
+						"fileName": "mc2_maestro_familia.parquet"
+					}
+				},
+				{
+					"source": {
+						"entityName": "mc2_maestro_fase"
+					},
+					"destination": {
+						"fileName": "mc2_maestro_fase.parquet"
+					}
+				},
+				{
+					"source": {
+						"entityName": "mc2_maestro_jefe_de_proyecto"
+					},
+					"destination": {
+						"fileName": "mc2_maestro_jefe_de_proyecto.parquet"
+					}
+				},
+				{
+					"source": {
+						"entityName": "mc2_maestro_lineapep"
+					},
+					"destination": {
+						"fileName": "mc2_maestro_lineapep.parquet"
+					}
+				},
+				{
+					"source": {
+						"entityName": "mc2_maestro_monedas"
+					},
+					"destination": {
+						"fileName": "mc2_maestro_monedas.parquet"
+					}
+				},
+				{
+					"source": {
+						"entityName": "mc2_maestro_naturaleza_utm"
+					},
+					"destination": {
+						"fileName": "mc2_maestro_naturaleza_utm.parquet"
+					}
+				},
+				{
+					"source": {
+						"entityName": "mc2_maestro_perfil_presupuesto"
+					},
+					"destination": {
+						"fileName": "mc2_maestro_perfil_presupuesto.parquet"
+					}
+				},
+				{
+					"source": {
+						"entityName": "mc2_maestro_planificacion"
+					},
+					"destination": {
+						"fileName": "mc2_maestro_planificacion.parquet"
+					}
+				},
+				{
+					"source": {
+						"entityName": "mc2_maestro_plazo_utm"
+					},
+					"destination": {
+						"fileName": "mc2_maestro_plazo_utm.parquet"
+					}
+				},
+				{
+					"source": {
+						"entityName": "mc2_maestro_prioridad"
+					},
+					"destination": {
+						"fileName": "mc2_maestro_prioridad.parquet"
+					}
+				},
+				{
+					"source": {
+						"entityName": "mc2_maestro_producto"
+					},
+					"destination": {
+						"fileName": "mc2_maestro_producto.parquet"
+					}
+				},
+				{
+					"source": {
+						"entityName": "mc2_maestro_tipificacion"
+					},
+					"destination": {
+						"fileName": "mc2_maestro_tipificacion.parquet"
+					}
+				}
+			]
+		},
+		"TablasTrigger_properties_main_parameters_cw_items_Principales": {
+			"value": [
+				{
+					"source": {
+						"entityName": "mc2_comentarios_proyecto"
+					},
+					"destination": {
+						"fileName": "mc2_comentarios_proyecto.parquet"
+					}
+				},
+				{
+					"source": {
+						"entityName": "mc2_elemento_pep"
+					},
+					"destination": {
+						"fileName": "mc2_elemento_pep.parquet"
+					}
+				},
+				{
+					"source": {
+						"entityName": "mc2_lineas_adquira"
+					},
+					"destination": {
+						"fileName": "mc2_lineas_adquira.parquet"
+					}
+				},
+				{
+					"source": {
+						"entityName": "mc2_pedido"
+					},
+					"destination": {
+						"fileName": "mc2_pedido.parquet"
+					}
+				},
+				{
+					"source": {
+						"entityName": "mc2_planificacion"
+					},
+					"destination": {
+						"fileName": "mc2_planificacion.parquet"
+					}
+				},
+				{
+					"source": {
+						"entityName": "mc2_proyecto"
+					},
+					"destination": {
+						"fileName": "mc2_proyecto.parquet"
+					}
+				},
+				{
+					"source": {
+						"entityName": "mc2_maestrocodigoproyecto"
+					},
+					"destination": {
+						"fileName": "mc2_maestrocodigoproyecto.parquet"
+					}
+				}
+			]
+		},
+		"dataFactory_location": {
+			"value": "northeurope"
+		},
+		"dataFactory_identity_type": {
+			"value": "SystemAssigned"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
