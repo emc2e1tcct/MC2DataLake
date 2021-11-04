@@ -1,0 +1,7 @@
+{
+	"name": "AzureKeyVault1",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/f5c3112c-3ffb-471c-8bb5-79213cb5ec52/resourceGroups/rg-mc2dl-dev/providers/Microsoft.KeyVault/vaults/kvMC2",
+		"groupId": "vault"
+	}
+}
