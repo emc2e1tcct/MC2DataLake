@@ -1,0 +1,10 @@
+{
+	"name": "kv_storage",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://kv-bi4tcct-dev-storage.vault.azure.net/"
+		}
+	}
+}
