@@ -5,9 +5,6 @@
 		"factoryName": {
 			"value": "MC2Factory"
 		},
-		"AzureDataLakeStorageGen2_accountKey": {
-			"value": ""
-		},
 		"AzureTableStoragePrueba_connectionString": {
 			"value": ""
 		},
@@ -18,7 +15,7 @@
 			"value": ""
 		},
 		"AzureDataLakeStorageGen2_properties_typeProperties_url": {
-			"value": "https://mc2datalake.dfs.core.windows.net"
+			"value": "https://mc2datalake.dfs.core.windows.net/"
 		},
 		"MC2AzureKeyVault_properties_typeProperties_baseUrl": {
 			"value": "https://kvMC2.vault.azure.net/"
@@ -28,6 +25,12 @@
 		},
 		"Snowflake1_connectionString": {
 			"value": ""
+		},
+		"kv_adf_properties_typeProperties_baseUrl": {
+			"value": "https://kv-bi4tcct-dev-adf.vault.azure.net/"
+		},
+		"kv_storage_properties_typeProperties_baseUrl": {
+			"value": "https://kv-bi4tcct-dev-storage.vault.azure.net/"
 		},
 		"TablasTrigger_properties_main_parameters_cw_items_Maestras": {
 			"value": [
@@ -292,6 +295,18 @@
 					}
 				}
 			]
+		},
+		"AzureKeyVault1_properties_privateLinkResourceId": {
+			"value": "/subscriptions/f5c3112c-3ffb-471c-8bb5-79213cb5ec52/resourceGroups/rg-mc2dl-dev/providers/Microsoft.KeyVault/vaults/kvMC2"
+		},
+		"AzureKeyVault1_properties_groupId": {
+			"value": "vault"
+		},
+		"AzureKeyVault2_properties_privateLinkResourceId": {
+			"value": "/subscriptions/f5c3112c-3ffb-471c-8bb5-79213cb5ec52/resourceGroups/rg-mc2dl-dev/providers/Microsoft.KeyVault/vaults/kv-bi4tcct-dev-storage"
+		},
+		"AzureKeyVault2_properties_groupId": {
+			"value": "vault"
 		},
 		"dataFactory_location": {
 			"value": "northeurope"

@@ -7,10 +7,6 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "MC2Factory"
 		},
-		"AzureDataLakeStorageGen2_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorageGen2'"
-		},
 		"AzureTableStoragePrueba_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureTableStoragePrueba'"
@@ -25,7 +21,7 @@
 		},
 		"AzureDataLakeStorageGen2_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://mc2datalake.dfs.core.windows.net"
+			"defaultValue": "https://mc2datalake.dfs.core.windows.net/"
 		},
 		"MC2AzureKeyVault_properties_typeProperties_baseUrl": {
 			"type": "string",
@@ -38,6 +34,14 @@
 		"Snowflake1_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'Snowflake1'"
+		},
+		"kv_adf_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://kv-bi4tcct-dev-adf.vault.azure.net/"
+		},
+		"kv_storage_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://kv-bi4tcct-dev-storage.vault.azure.net/"
 		},
 		"TablasTrigger_properties_main_parameters_cw_items_Maestras": {
 			"type": "array",
@@ -304,6 +308,22 @@
 					}
 				}
 			]
+		},
+		"AzureKeyVault1_properties_privateLinkResourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/f5c3112c-3ffb-471c-8bb5-79213cb5ec52/resourceGroups/rg-mc2dl-dev/providers/Microsoft.KeyVault/vaults/kvMC2"
+		},
+		"AzureKeyVault1_properties_groupId": {
+			"type": "string",
+			"defaultValue": "vault"
+		},
+		"AzureKeyVault2_properties_privateLinkResourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/f5c3112c-3ffb-471c-8bb5-79213cb5ec52/resourceGroups/rg-mc2dl-dev/providers/Microsoft.KeyVault/vaults/kv-bi4tcct-dev-storage"
+		},
+		"AzureKeyVault2_properties_groupId": {
+			"type": "string",
+			"defaultValue": "vault"
 		},
 		"dataFactory_location": {
 			"type": "string",
@@ -30401,15 +30421,12 @@
 				"annotations": [],
 				"type": "AzureBlobFS",
 				"typeProperties": {
-					"url": "[parameters('AzureDataLakeStorageGen2_properties_typeProperties_url')]",
-					"accountKey": {
-						"type": "SecureString",
-						"value": "[parameters('AzureDataLakeStorageGen2_accountKey')]"
-					}
+					"url": "[parameters('AzureDataLakeStorageGen2_properties_typeProperties_url')]"
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]"
+				"[variables('factoryId')]",
+				"[concat(variables('factoryId'), '/linkedServices/MC2AzureKeyVault')]"
 			]
 		},
 		{
@@ -30483,6 +30500,36 @@
 			"dependsOn": [
 				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/integrationRuntimes/integrationRuntime')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/kv_adf')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureKeyVault",
+				"typeProperties": {
+					"baseUrl": "[parameters('kv_adf_properties_typeProperties_baseUrl')]"
+				}
+			},
+			"dependsOn": [
+				"[variables('factoryId')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/kv_storage')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureKeyVault",
+				"typeProperties": {
+					"baseUrl": "[parameters('kv_storage_properties_typeProperties_baseUrl')]"
+				}
+			},
+			"dependsOn": [
+				"[variables('factoryId')]"
 			]
 		},
 		{
@@ -30659,6 +30706,32 @@
 			"properties": {},
 			"dependsOn": [
 				"[variables('factoryId')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/default/AzureKeyVault1')]",
+			"type": "Microsoft.DataFactory/factories/managedVirtualNetworks/managedPrivateEndpoints",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"privateLinkResourceId": "[parameters('AzureKeyVault1_properties_privateLinkResourceId')]",
+				"groupId": "[parameters('AzureKeyVault1_properties_groupId')]"
+			},
+			"dependsOn": [
+				"[variables('factoryId')]",
+				"[concat(variables('factoryId'), '/managedVirtualNetworks/default')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/default/AzureKeyVault2')]",
+			"type": "Microsoft.DataFactory/factories/managedVirtualNetworks/managedPrivateEndpoints",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"privateLinkResourceId": "[parameters('AzureKeyVault2_properties_privateLinkResourceId')]",
+				"groupId": "[parameters('AzureKeyVault2_properties_groupId')]"
+			},
+			"dependsOn": [
+				"[variables('factoryId')]",
+				"[concat(variables('factoryId'), '/managedVirtualNetworks/default')]"
 			]
 		},
 		{
