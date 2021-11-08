@@ -4,15 +4,7 @@
 		"annotations": [],
 		"type": "AzureBlobFS",
 		"typeProperties": {
-			"url": "https://mc2datalake.dfs.core.windows.net/",
-			"accountKey": {
-				"type": "AzureKeyVaultSecret",
-				"store": {
-					"referenceName": "MC2AzureKeyVault",
-					"type": "LinkedServiceReference"
-				},
-				"secretName": "SecretoDataLake"
-			}
+			"url": "https://mc2datalake.dfs.core.windows.net/"
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/linkedservices"
