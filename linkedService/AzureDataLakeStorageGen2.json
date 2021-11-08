@@ -13,10 +13,6 @@
 				},
 				"secretName": "SecretoDataLake"
 			}
-		},
-		"connectVia": {
-			"referenceName": "integrationRuntime",
-			"type": "IntegrationRuntimeReference"
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/linkedservices"
