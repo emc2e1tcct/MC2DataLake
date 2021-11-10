@@ -5,6 +5,10 @@
 		"type": "AzureBlobFS",
 		"typeProperties": {
 			"url": "https://mc2datalake.dfs.core.windows.net/"
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntimeDataFact",
+			"type": "IntegrationRuntimeReference"
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/linkedservices"
