@@ -345,20 +345,11 @@
 					"dataFactory_identity_type": {
 						"value": "[parameters('dataFactory_identity_type')]"
 					},
-					"MC2Dataverse_properties_typeProperties_servicePrincipalId": {
-						"value": "[parameters('MC2Dataverse_properties_typeProperties_servicePrincipalId')]"
-					},
-					"AzureDataLakeStorageDataFact_properties_privateLinkResourceId": {
-						"value": "[parameters('AzureDataLakeStorageDataFact_properties_privateLinkResourceId')]"
-					},
-					"AzureDataLakeStorageDataFact_properties_groupId": {
-						"value": "[parameters('AzureDataLakeStorageDataFact_properties_groupId')]"
-					},
 					"AzureBlobStorageForSnowflake_sasUri": {
 						"value": "[parameters('AzureBlobStorageForSnowflake_sasUri')]"
 					},
-					"AzureDataLakeStorageGen2_properties_typeProperties_url": {
-						"value": "[parameters('AzureDataLakeStorageGen2_properties_typeProperties_url')]"
+					"MC2Dataverse_properties_typeProperties_servicePrincipalId": {
+						"value": "[parameters('MC2Dataverse_properties_typeProperties_servicePrincipalId')]"
 					},
 					"Snowflake1_connectionString": {
 						"value": "[parameters('Snowflake1_connectionString')]"
@@ -380,6 +371,12 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"AzureDataLakeStorageDataFact_properties_privateLinkResourceId": {
+						"value": "[parameters('AzureDataLakeStorageDataFact_properties_privateLinkResourceId')]"
+					},
+					"AzureDataLakeStorageDataFact_properties_groupId": {
+						"value": "[parameters('AzureDataLakeStorageDataFact_properties_groupId')]"
 					}
 				}
 			},
@@ -400,6 +397,9 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"AzureDataLakeStorageGen2_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorageGen2_properties_typeProperties_url')]"
 					}
 				}
 			},
