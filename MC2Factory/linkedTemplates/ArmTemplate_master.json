@@ -4,28 +4,20 @@
 	"parameters": {
 		"factoryName": {
 			"type": "string",
-			"metadata": "Data Factory name",
+			"metadata": "Nombre de instancia de Data Factory",
 			"defaultValue": "MC2Factory"
-		},
-		"AzureTableStoragePrueba_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureTableStoragePrueba'"
 		},
 		"MC2Dataverse_servicePrincipalCredential": {
 			"type": "secureString",
-			"metadata": "Secure string for 'servicePrincipalCredential' of 'MC2Dataverse'"
+			"metadata": "Cadena protegida para \"servicePrincipalCredential\"de \"MC2Dataverse\""
 		},
 		"AzureBlobStorageForSnowflake_sasUri": {
 			"type": "secureString",
-			"metadata": "Secure string for 'sasUri' of 'AzureBlobStorageForSnowflake'"
+			"metadata": "Cadena protegida para \"sasUri\"de \"AzureBlobStorageForSnowflake\""
 		},
 		"AzureDataLakeStorageGen2_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://mc2datalake.dfs.core.windows.net/"
-		},
-		"MC2AzureKeyVault_properties_typeProperties_baseUrl": {
-			"type": "string",
-			"defaultValue": "https://kvMC2.vault.azure.net/"
 		},
 		"MC2Dataverse_properties_typeProperties_servicePrincipalId": {
 			"type": "string",
@@ -33,15 +25,7 @@
 		},
 		"Snowflake1_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'Snowflake1'"
-		},
-		"kv_adf_properties_typeProperties_baseUrl": {
-			"type": "string",
-			"defaultValue": "https://kv-bi4tcct-dev-adf.vault.azure.net/"
-		},
-		"kv_storage_properties_typeProperties_baseUrl": {
-			"type": "string",
-			"defaultValue": "https://kv-bi4tcct-dev-storage.vault.azure.net/"
+			"metadata": "Cadena protegida para \"connectionString\"de \"Snowflake1\""
 		},
 		"TablasTrigger_properties_main_parameters_cw_items_Maestras": {
 			"type": "array",
@@ -309,6 +293,14 @@
 				}
 			]
 		},
+		"AzureDataLakeStorageDataFact_properties_privateLinkResourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/f5c3112c-3ffb-471c-8bb5-79213cb5ec52/resourceGroups/rg-mc2dl-dev/providers/Microsoft.Storage/storageAccounts/mc2datalake"
+		},
+		"AzureDataLakeStorageDataFact_properties_groupId": {
+			"type": "string",
+			"defaultValue": "dfs"
+		},
 		"AzureKeyVault1_properties_privateLinkResourceId": {
 			"type": "string",
 			"defaultValue": "/subscriptions/f5c3112c-3ffb-471c-8bb5-79213cb5ec52/resourceGroups/rg-mc2dl-dev/providers/Microsoft.KeyVault/vaults/kvMC2"
@@ -335,11 +327,11 @@
 		},
 		"containerUri": {
 			"type": "string",
-			"metadata": "URI to storage account containing linked ARM templates"
+			"metadata": "URI de la cuenta de almacenamiento que contiene las plantillas de ARM vinculadas."
 		},
 		"containerSasToken": {
 			"type": "string",
-			"metadata": "Sas token to storage account containing linked ARM templates"
+			"metadata": "Token de SAS para la cuenta de almacenamiento que contiene las plantillas de ARM vinculadas"
 		}
 	},
 	"variables": {
@@ -360,9 +352,6 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"AzureTableStoragePrueba_connectionString": {
-						"value": "[parameters('AzureTableStoragePrueba_connectionString')]"
-					},
 					"MC2Dataverse_servicePrincipalCredential": {
 						"value": "[parameters('MC2Dataverse_servicePrincipalCredential')]"
 					},
@@ -372,20 +361,14 @@
 					"dataFactory_identity_type": {
 						"value": "[parameters('dataFactory_identity_type')]"
 					},
-					"MC2AzureKeyVault_properties_typeProperties_baseUrl": {
-						"value": "[parameters('MC2AzureKeyVault_properties_typeProperties_baseUrl')]"
-					},
 					"MC2Dataverse_properties_typeProperties_servicePrincipalId": {
 						"value": "[parameters('MC2Dataverse_properties_typeProperties_servicePrincipalId')]"
 					},
-					"kv_adf_properties_typeProperties_baseUrl": {
-						"value": "[parameters('kv_adf_properties_typeProperties_baseUrl')]"
+					"AzureDataLakeStorageDataFact_properties_privateLinkResourceId": {
+						"value": "[parameters('AzureDataLakeStorageDataFact_properties_privateLinkResourceId')]"
 					},
-					"kv_storage_properties_typeProperties_baseUrl": {
-						"value": "[parameters('kv_storage_properties_typeProperties_baseUrl')]"
-					},
-					"AzureDataLakeStorageGen2_properties_typeProperties_url": {
-						"value": "[parameters('AzureDataLakeStorageGen2_properties_typeProperties_url')]"
+					"AzureDataLakeStorageDataFact_properties_groupId": {
+						"value": "[parameters('AzureDataLakeStorageDataFact_properties_groupId')]"
 					},
 					"AzureKeyVault1_properties_privateLinkResourceId": {
 						"value": "[parameters('AzureKeyVault1_properties_privateLinkResourceId')]"
@@ -398,6 +381,15 @@
 					},
 					"AzureKeyVault2_properties_groupId": {
 						"value": "[parameters('AzureKeyVault2_properties_groupId')]"
+					},
+					"AzureBlobStorageForSnowflake_sasUri": {
+						"value": "[parameters('AzureBlobStorageForSnowflake_sasUri')]"
+					},
+					"AzureDataLakeStorageGen2_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorageGen2_properties_typeProperties_url')]"
+					},
+					"Snowflake1_connectionString": {
+						"value": "[parameters('Snowflake1_connectionString')]"
 					}
 				}
 			},
@@ -436,12 +428,6 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
-					},
-					"AzureBlobStorageForSnowflake_sasUri": {
-						"value": "[parameters('AzureBlobStorageForSnowflake_sasUri')]"
-					},
-					"Snowflake1_connectionString": {
-						"value": "[parameters('Snowflake1_connectionString')]"
 					}
 				}
 			},

@@ -4,28 +4,20 @@
 	"parameters": {
 		"factoryName": {
 			"type": "string",
-			"metadata": "Data Factory name",
+			"metadata": "Nombre de instancia de Data Factory",
 			"defaultValue": "MC2Factory"
-		},
-		"AzureTableStoragePrueba_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureTableStoragePrueba'"
 		},
 		"MC2Dataverse_servicePrincipalCredential": {
 			"type": "secureString",
-			"metadata": "Secure string for 'servicePrincipalCredential' of 'MC2Dataverse'"
+			"metadata": "Cadena protegida para \"servicePrincipalCredential\"de \"MC2Dataverse\""
 		},
 		"AzureBlobStorageForSnowflake_sasUri": {
 			"type": "secureString",
-			"metadata": "Secure string for 'sasUri' of 'AzureBlobStorageForSnowflake'"
+			"metadata": "Cadena protegida para \"sasUri\"de \"AzureBlobStorageForSnowflake\""
 		},
 		"AzureDataLakeStorageGen2_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://mc2datalake.dfs.core.windows.net/"
-		},
-		"MC2AzureKeyVault_properties_typeProperties_baseUrl": {
-			"type": "string",
-			"defaultValue": "https://kvMC2.vault.azure.net/"
 		},
 		"MC2Dataverse_properties_typeProperties_servicePrincipalId": {
 			"type": "string",
@@ -33,15 +25,7 @@
 		},
 		"Snowflake1_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'Snowflake1'"
-		},
-		"kv_adf_properties_typeProperties_baseUrl": {
-			"type": "string",
-			"defaultValue": "https://kv-bi4tcct-dev-adf.vault.azure.net/"
-		},
-		"kv_storage_properties_typeProperties_baseUrl": {
-			"type": "string",
-			"defaultValue": "https://kv-bi4tcct-dev-storage.vault.azure.net/"
+			"metadata": "Cadena protegida para \"connectionString\"de \"Snowflake1\""
 		},
 		"TablasTrigger_properties_main_parameters_cw_items_Maestras": {
 			"type": "array",
@@ -308,6 +292,14 @@
 					}
 				}
 			]
+		},
+		"AzureDataLakeStorageDataFact_properties_privateLinkResourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/f5c3112c-3ffb-471c-8bb5-79213cb5ec52/resourceGroups/rg-mc2dl-dev/providers/Microsoft.Storage/storageAccounts/mc2datalake"
+		},
+		"AzureDataLakeStorageDataFact_properties_groupId": {
+			"type": "string",
+			"defaultValue": "dfs"
 		},
 		"AzureKeyVault1_properties_privateLinkResourceId": {
 			"type": "string",
@@ -30422,41 +30414,15 @@
 				"type": "AzureBlobFS",
 				"typeProperties": {
 					"url": "[parameters('AzureDataLakeStorageGen2_properties_typeProperties_url')]"
+				},
+				"connectVia": {
+					"referenceName": "integrationRuntimeDataFact",
+					"type": "IntegrationRuntimeReference"
 				}
 			},
 			"dependsOn": [
 				"[variables('factoryId')]",
-				"[concat(variables('factoryId'), '/linkedServices/MC2AzureKeyVault')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureTableStoragePrueba')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureTableStorage",
-				"typeProperties": {
-					"connectionString": "[parameters('AzureTableStoragePrueba_connectionString')]"
-				}
-			},
-			"dependsOn": [
-				"[variables('factoryId')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/MC2AzureKeyVault')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureKeyVault",
-				"typeProperties": {
-					"baseUrl": "[parameters('MC2AzureKeyVault_properties_typeProperties_baseUrl')]"
-				}
-			},
-			"dependsOn": [
-				"[variables('factoryId')]"
+				"[concat(variables('factoryId'), '/integrationRuntimes/integrationRuntimeDataFact')]"
 			]
 		},
 		{
@@ -30500,36 +30466,6 @@
 			"dependsOn": [
 				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/integrationRuntimes/integrationRuntime')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/kv_adf')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureKeyVault",
-				"typeProperties": {
-					"baseUrl": "[parameters('kv_adf_properties_typeProperties_baseUrl')]"
-				}
-			},
-			"dependsOn": [
-				"[variables('factoryId')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/kv_storage')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureKeyVault",
-				"typeProperties": {
-					"baseUrl": "[parameters('kv_storage_properties_typeProperties_baseUrl')]"
-				}
-			},
-			"dependsOn": [
-				"[variables('factoryId')]"
 			]
 		},
 		{
@@ -30673,6 +30609,33 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/integrationRuntimeDataFact')]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "Managed",
+				"typeProperties": {
+					"computeProperties": {
+						"location": "North Europe",
+						"dataFlowProperties": {
+							"computeType": "General",
+							"coreCount": 8,
+							"timeToLive": 10,
+							"cleanup": false
+						}
+					}
+				},
+				"managedVirtualNetwork": {
+					"type": "ManagedVirtualNetworkReference",
+					"referenceName": "default"
+				}
+			},
+			"dependsOn": [
+				"[variables('factoryId')]",
+				"[concat(variables('factoryId'), '/managedVirtualNetworks/default')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/integrationRuntimeVirtual')]",
 			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
 			"apiVersion": "2018-06-01",
@@ -30706,6 +30669,19 @@
 			"properties": {},
 			"dependsOn": [
 				"[variables('factoryId')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/default/AzureDataLakeStorageDataFact')]",
+			"type": "Microsoft.DataFactory/factories/managedVirtualNetworks/managedPrivateEndpoints",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"privateLinkResourceId": "[parameters('AzureDataLakeStorageDataFact_properties_privateLinkResourceId')]",
+				"groupId": "[parameters('AzureDataLakeStorageDataFact_properties_groupId')]"
+			},
+			"dependsOn": [
+				"[variables('factoryId')]",
+				"[concat(variables('factoryId'), '/managedVirtualNetworks/default')]"
 			]
 		},
 		{

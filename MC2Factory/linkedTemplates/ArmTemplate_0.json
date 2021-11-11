@@ -4,16 +4,12 @@
 	"parameters": {
 		"factoryName": {
 			"type": "string",
-			"metadata": "Data Factory name",
+			"metadata": "Nombre de instancia de Data Factory",
 			"defaultValue": "MC2Factory"
-		},
-		"AzureTableStoragePrueba_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureTableStoragePrueba'"
 		},
 		"MC2Dataverse_servicePrincipalCredential": {
 			"type": "secureString",
-			"metadata": "Secure string for 'servicePrincipalCredential' of 'MC2Dataverse'"
+			"metadata": "Cadena protegida para \"servicePrincipalCredential\"de \"MC2Dataverse\""
 		},
 		"dataFactory_location": {
 			"type": "string",
@@ -23,25 +19,17 @@
 			"type": "string",
 			"defaultValue": "SystemAssigned"
 		},
-		"MC2AzureKeyVault_properties_typeProperties_baseUrl": {
-			"type": "string",
-			"defaultValue": "https://kvMC2.vault.azure.net/"
-		},
 		"MC2Dataverse_properties_typeProperties_servicePrincipalId": {
 			"type": "string",
 			"defaultValue": "f16b031b-29a7-4264-8271-f2844c7b7084"
 		},
-		"kv_adf_properties_typeProperties_baseUrl": {
+		"AzureDataLakeStorageDataFact_properties_privateLinkResourceId": {
 			"type": "string",
-			"defaultValue": "https://kv-bi4tcct-dev-adf.vault.azure.net/"
+			"defaultValue": "/subscriptions/f5c3112c-3ffb-471c-8bb5-79213cb5ec52/resourceGroups/rg-mc2dl-dev/providers/Microsoft.Storage/storageAccounts/mc2datalake"
 		},
-		"kv_storage_properties_typeProperties_baseUrl": {
+		"AzureDataLakeStorageDataFact_properties_groupId": {
 			"type": "string",
-			"defaultValue": "https://kv-bi4tcct-dev-storage.vault.azure.net/"
-		},
-		"AzureDataLakeStorageGen2_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://mc2datalake.dfs.core.windows.net/"
+			"defaultValue": "dfs"
 		},
 		"AzureKeyVault1_properties_privateLinkResourceId": {
 			"type": "string",
@@ -58,6 +46,18 @@
 		"AzureKeyVault2_properties_groupId": {
 			"type": "string",
 			"defaultValue": "vault"
+		},
+		"AzureBlobStorageForSnowflake_sasUri": {
+			"type": "secureString",
+			"metadata": "Cadena protegida para \"sasUri\"de \"AzureBlobStorageForSnowflake\""
+		},
+		"AzureDataLakeStorageGen2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://mc2datalake.dfs.core.windows.net/"
+		},
+		"Snowflake1_connectionString": {
+			"type": "secureString",
+			"metadata": "Cadena protegida para \"connectionString\"de \"Snowflake1\""
 		}
 	},
 	"variables": {
@@ -76,32 +76,6 @@
 			}
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/AzureTableStoragePrueba')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureTableStorage",
-				"typeProperties": {
-					"connectionString": "[parameters('AzureTableStoragePrueba_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/MC2AzureKeyVault')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureKeyVault",
-				"typeProperties": {
-					"baseUrl": "[parameters('MC2AzureKeyVault_properties_typeProperties_baseUrl')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/MC2Dataverse')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -118,32 +92,6 @@
 						"type": "SecureString",
 						"value": "[parameters('MC2Dataverse_servicePrincipalCredential')]"
 					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/kv_adf')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureKeyVault",
-				"typeProperties": {
-					"baseUrl": "[parameters('kv_adf_properties_typeProperties_baseUrl')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/kv_storage')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureKeyVault",
-				"typeProperties": {
-					"baseUrl": "[parameters('kv_storage_properties_typeProperties_baseUrl')]"
 				}
 			},
 			"dependsOn": []
@@ -276,22 +224,33 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/AzureDataLakeStorageGen2')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"name": "[concat(parameters('factoryName'), '/integrationRuntime')]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"annotations": [],
-				"type": "AzureBlobFS",
+				"type": "Managed",
 				"typeProperties": {
-					"url": "[parameters('AzureDataLakeStorageGen2_properties_typeProperties_url')]"
+					"computeProperties": {
+						"location": "North Europe",
+						"dataFlowProperties": {
+							"computeType": "General",
+							"coreCount": 8,
+							"timeToLive": 10,
+							"cleanup": false
+						}
+					}
+				},
+				"managedVirtualNetwork": {
+					"type": "ManagedVirtualNetworkReference",
+					"referenceName": "default"
 				}
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/MC2AzureKeyVault')]"
+				"[concat(variables('factoryId'), '/managedVirtualNetworks/default')]"
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/integrationRuntime')]",
+			"name": "[concat(parameters('factoryName'), '/integrationRuntimeDataFact')]",
 			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -343,6 +302,18 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/default/AzureDataLakeStorageDataFact')]",
+			"type": "Microsoft.DataFactory/factories/managedVirtualNetworks/managedPrivateEndpoints",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"privateLinkResourceId": "[parameters('AzureDataLakeStorageDataFact_properties_privateLinkResourceId')]",
+				"groupId": "[parameters('AzureDataLakeStorageDataFact_properties_groupId')]"
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/managedVirtualNetworks/default')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/default/AzureKeyVault1')]",
 			"type": "Microsoft.DataFactory/factories/managedVirtualNetworks/managedPrivateEndpoints",
 			"apiVersion": "2018-06-01",
@@ -364,6 +335,63 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/managedVirtualNetworks/default')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureBlobStorageForSnowflake')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"sasUri": "[parameters('AzureBlobStorageForSnowflake_sasUri')]"
+				},
+				"connectVia": {
+					"referenceName": "integrationRuntimeVirtual",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/integrationRuntimes/integrationRuntimeVirtual')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureDataLakeStorageGen2')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('AzureDataLakeStorageGen2_properties_typeProperties_url')]"
+				},
+				"connectVia": {
+					"referenceName": "integrationRuntimeDataFact",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/integrationRuntimes/integrationRuntimeDataFact')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Snowflake1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "Snowflake",
+				"typeProperties": {
+					"connectionString": "[parameters('Snowflake1_connectionString')]"
+				},
+				"connectVia": {
+					"referenceName": "integrationRuntime",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/integrationRuntimes/integrationRuntime')]"
 			]
 		},
 		{
