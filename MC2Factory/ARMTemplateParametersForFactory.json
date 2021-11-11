@@ -290,18 +290,6 @@
 		"AzureDataLakeStorageDataFact_properties_groupId": {
 			"value": "dfs"
 		},
-		"AzureKeyVault1_properties_privateLinkResourceId": {
-			"value": "/subscriptions/f5c3112c-3ffb-471c-8bb5-79213cb5ec52/resourceGroups/rg-mc2dl-dev/providers/Microsoft.KeyVault/vaults/kvMC2"
-		},
-		"AzureKeyVault1_properties_groupId": {
-			"value": "vault"
-		},
-		"AzureKeyVault2_properties_privateLinkResourceId": {
-			"value": "/subscriptions/f5c3112c-3ffb-471c-8bb5-79213cb5ec52/resourceGroups/rg-mc2dl-dev/providers/Microsoft.KeyVault/vaults/kv-bi4tcct-dev-storage"
-		},
-		"AzureKeyVault2_properties_groupId": {
-			"value": "vault"
-		},
 		"dataFactory_location": {
 			"value": "northeurope"
 		},

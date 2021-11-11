@@ -301,22 +301,6 @@
 			"type": "string",
 			"defaultValue": "dfs"
 		},
-		"AzureKeyVault1_properties_privateLinkResourceId": {
-			"type": "string",
-			"defaultValue": "/subscriptions/f5c3112c-3ffb-471c-8bb5-79213cb5ec52/resourceGroups/rg-mc2dl-dev/providers/Microsoft.KeyVault/vaults/kvMC2"
-		},
-		"AzureKeyVault1_properties_groupId": {
-			"type": "string",
-			"defaultValue": "vault"
-		},
-		"AzureKeyVault2_properties_privateLinkResourceId": {
-			"type": "string",
-			"defaultValue": "/subscriptions/f5c3112c-3ffb-471c-8bb5-79213cb5ec52/resourceGroups/rg-mc2dl-dev/providers/Microsoft.KeyVault/vaults/kv-bi4tcct-dev-storage"
-		},
-		"AzureKeyVault2_properties_groupId": {
-			"type": "string",
-			"defaultValue": "vault"
-		},
 		"dataFactory_location": {
 			"type": "string",
 			"defaultValue": "northeurope"
@@ -369,18 +353,6 @@
 					},
 					"AzureDataLakeStorageDataFact_properties_groupId": {
 						"value": "[parameters('AzureDataLakeStorageDataFact_properties_groupId')]"
-					},
-					"AzureKeyVault1_properties_privateLinkResourceId": {
-						"value": "[parameters('AzureKeyVault1_properties_privateLinkResourceId')]"
-					},
-					"AzureKeyVault1_properties_groupId": {
-						"value": "[parameters('AzureKeyVault1_properties_groupId')]"
-					},
-					"AzureKeyVault2_properties_privateLinkResourceId": {
-						"value": "[parameters('AzureKeyVault2_properties_privateLinkResourceId')]"
-					},
-					"AzureKeyVault2_properties_groupId": {
-						"value": "[parameters('AzureKeyVault2_properties_groupId')]"
 					},
 					"AzureBlobStorageForSnowflake_sasUri": {
 						"value": "[parameters('AzureBlobStorageForSnowflake_sasUri')]"
@@ -488,26 +460,6 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
-					}
-				}
-			},
-			"dependsOn": [
-				"[resourceId('Microsoft.Resources/deployments', 'MC2Factory_ArmTemplate_4')]"
-			]
-		},
-		{
-			"name": "MC2Factory_ArmTemplate_6",
-			"type": "Microsoft.Resources/deployments",
-			"apiVersion": "2018-02-01",
-			"properties": {
-				"mode": "incremental",
-				"templateLink": {
-					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_6.json', parameters('containerSasToken'))]",
-					"contentVersion": "1.0.0.0"
-				},
-				"parameters": {
-					"factoryName": {
-						"value": "[parameters('factoryName')]"
 					},
 					"TablasTrigger_properties_main_parameters_cw_items_Maestras": {
 						"value": "[parameters('TablasTrigger_properties_main_parameters_cw_items_Maestras')]"
@@ -518,7 +470,7 @@
 				}
 			},
 			"dependsOn": [
-				"[resourceId('Microsoft.Resources/deployments', 'MC2Factory_ArmTemplate_5')]"
+				"[resourceId('Microsoft.Resources/deployments', 'MC2Factory_ArmTemplate_4')]"
 			]
 		}
 	]
