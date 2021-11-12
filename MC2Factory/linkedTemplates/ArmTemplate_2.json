@@ -50,7 +50,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -90,7 +90,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-bronze"
+						"fileSystem": "mc2-bs-bronze"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -130,7 +130,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-bronze"
+						"fileSystem": "mc2-bs-bronze"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -157,7 +157,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
-						"fileSystem": "mc2-bs-dev-silver"
+						"fileSystem": "mc2-bs-silver"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -184,7 +184,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
-						"fileSystem": "mc2-bs-dev-bronze"
+						"fileSystem": "mc2-bs-bronze"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -356,7 +356,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -528,7 +528,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -812,7 +812,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -1070,7 +1070,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -1230,7 +1230,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -1390,7 +1390,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -1566,7 +1566,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -1730,7 +1730,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -1898,7 +1898,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -2062,7 +2062,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -2246,7 +2246,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -2414,7 +2414,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -2594,7 +2594,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -2754,7 +2754,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},

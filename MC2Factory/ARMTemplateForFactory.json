@@ -334,7 +334,7 @@
 						"userProperties": [
 							{
 								"name": "Source",
-								"value": "mc2-bs-dev-golden//"
+								"value": "mc2-bs-golden//"
 							},
 							{
 								"name": "Destination",
@@ -362,7 +362,7 @@
 									"referenceName": "AzureBlobStorageForSnowflake",
 									"type": "LinkedServiceReference"
 								},
-								"path": "mc2-bs-dev-golden/StoragePath"
+								"path": "mc2-bs-golden/StoragePath"
 							},
 							"translator": {
 								"type": "TabularTranslator",
@@ -762,11 +762,11 @@
 						"userProperties": [
 							{
 								"name": "Source",
-								"value": "mc2-bs-dev-bronze/@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}/@concat(formatDatetime(utcnow(),'yyyMMdd'),'-',dataset().cw_fileName)"
+								"value": "mc2-bs-bronze/@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}/@concat(formatDatetime(utcnow(),'yyyMMdd'),'-',dataset().cw_fileName)"
 							},
 							{
 								"name": "Destination",
-								"value": "mc2-bs-dev-silver/@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}/@concat(formatDatetime(utcnow(),'yyyMMdd'),'-',dataset().cw_fileName)"
+								"value": "mc2-bs-silver/@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}/@concat(formatDatetime(utcnow(),'yyyMMdd'),'-',dataset().cw_fileName)"
 							}
 						],
 						"typeProperties": {
@@ -857,7 +857,7 @@
 										},
 										{
 											"name": "Destination",
-											"value": "mc2-bs-dev-bronze/@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}/@{item().destination.fileName}"
+											"value": "mc2-bs-bronze/@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}/@{item().destination.fileName}"
 										}
 									],
 									"typeProperties": {
@@ -1544,7 +1544,7 @@
 										},
 										{
 											"name": "Destination",
-											"value": "mc2-bs-dev-bronze/@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}/@{item().destination.fileName}"
+											"value": "mc2-bs-bronze/@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}/@{item().destination.fileName}"
 										}
 									],
 									"typeProperties": {
@@ -1771,11 +1771,11 @@
 						"userProperties": [
 							{
 								"name": "Source",
-								"value": "mc2-bs-dev-silver/@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}/@concat(formatDatetime(utcnow(),'yyyMMdd'),'-',dataset().cw_fileName)"
+								"value": "mc2-bs-silver/@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}/@concat(formatDatetime(utcnow(),'yyyMMdd'),'-',dataset().cw_fileName)"
 							},
 							{
 								"name": "Destination",
-								"value": "mc2-bs-dev-golden/@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}/@concat(formatDatetime(utcnow(),'yyyMMdd'),'-',dataset().cw_fileName)"
+								"value": "mc2-bs-golden/@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}/@concat(formatDatetime(utcnow(),'yyyMMdd'),'-',dataset().cw_fileName)"
 							}
 						],
 						"typeProperties": {
@@ -1851,7 +1851,7 @@
 						"userProperties": [
 							{
 								"name": "Source",
-								"value": "mc2-bs-dev-golden/[object Object]/[object Object]"
+								"value": "mc2-bs-golden/[object Object]/[object Object]"
 							},
 							{
 								"name": "Destination",
@@ -1879,7 +1879,7 @@
 									"referenceName": "AzureBlobStorageForSnowflake",
 									"type": "LinkedServiceReference"
 								},
-								"path": "mc2-bs-dev-golden/StoragePath"
+								"path": "mc2-bs-golden/StoragePath"
 							},
 							"translator": {
 								"type": "TabularTranslator",
@@ -2559,7 +2559,7 @@
 						"userProperties": [
 							{
 								"name": "Source",
-								"value": "mc2-bs-dev-golden/[object Object]/[object Object]"
+								"value": "mc2-bs-golden/[object Object]/[object Object]"
 							},
 							{
 								"name": "Destination",
@@ -2586,7 +2586,8 @@
 								"linkedServiceName": {
 									"referenceName": "AzureBlobStorageForSnowflake",
 									"type": "LinkedServiceReference"
-								}
+								},
+								"path": "mc2-bs-golden/StoragePath"
 							},
 							"translator": {
 								"type": "TabularTranslator",
@@ -3186,7 +3187,7 @@
 						"userProperties": [
 							{
 								"name": "Source",
-								"value": "mc2-bs-dev-golden/[object Object]/[object Object]"
+								"value": "mc2-bs-golden/[object Object]/[object Object]"
 							},
 							{
 								"name": "Destination",
@@ -3214,7 +3215,7 @@
 									"referenceName": "AzureBlobStorageForSnowflake",
 									"type": "LinkedServiceReference"
 								},
-								"path": "mc2-bs-dev-golden/StoragePath"
+								"path": "mc2-bs-golden/StoragePath"
 							},
 							"translator": {
 								"type": "TabularTranslator",
@@ -3584,7 +3585,7 @@
 						"userProperties": [
 							{
 								"name": "Source",
-								"value": "mc2-bs-dev-golden/[object Object]/[object Object]"
+								"value": "mc2-bs-golden/[object Object]/[object Object]"
 							},
 							{
 								"name": "Destination",
@@ -3612,7 +3613,7 @@
 									"referenceName": "AzureBlobStorageForSnowflake",
 									"type": "LinkedServiceReference"
 								},
-								"path": "mc2-bs-dev-golden/StoragePath"
+								"path": "mc2-bs-golden/StoragePath"
 							},
 							"translator": {
 								"type": "TabularTranslator",
@@ -4022,7 +4023,7 @@
 						"userProperties": [
 							{
 								"name": "Source",
-								"value": "mc2-bs-dev-golden/[object Object]/[object Object]"
+								"value": "mc2-bs-golden/[object Object]/[object Object]"
 							},
 							{
 								"name": "Destination",
@@ -4050,7 +4051,7 @@
 									"referenceName": "AzureBlobStorageForSnowflake",
 									"type": "LinkedServiceReference"
 								},
-								"path": "mc2-bs-dev-golden/StoragePath"
+								"path": "mc2-bs-golden/StoragePath"
 							},
 							"translator": {
 								"type": "TabularTranslator",
@@ -4430,7 +4431,7 @@
 						"userProperties": [
 							{
 								"name": "Source",
-								"value": "mc2-bs-dev-golden/[object Object]/[object Object]"
+								"value": "mc2-bs-golden/[object Object]/[object Object]"
 							},
 							{
 								"name": "Destination",
@@ -4458,7 +4459,7 @@
 									"referenceName": "AzureBlobStorageForSnowflake",
 									"type": "LinkedServiceReference"
 								},
-								"path": "mc2-bs-dev-golden/StoragePath"
+								"path": "mc2-bs-golden/StoragePath"
 							},
 							"translator": {
 								"type": "TabularTranslator",
@@ -4848,7 +4849,7 @@
 						"userProperties": [
 							{
 								"name": "Source",
-								"value": "mc2-bs-dev-golden/[object Object]/[object Object]"
+								"value": "mc2-bs-golden/[object Object]/[object Object]"
 							},
 							{
 								"name": "Destination",
@@ -4876,7 +4877,7 @@
 									"referenceName": "AzureBlobStorageForSnowflake",
 									"type": "LinkedServiceReference"
 								},
-								"path": "mc2-bs-dev-golden/StoragePath"
+								"path": "mc2-bs-golden/StoragePath"
 							},
 							"translator": {
 								"type": "TabularTranslator",
@@ -5256,7 +5257,7 @@
 						"userProperties": [
 							{
 								"name": "Source",
-								"value": "mc2-bs-dev-golden/[object Object]/[object Object]"
+								"value": "mc2-bs-golden/[object Object]/[object Object]"
 							},
 							{
 								"name": "Destination",
@@ -5284,7 +5285,7 @@
 									"referenceName": "AzureBlobStorageForSnowflake",
 									"type": "LinkedServiceReference"
 								},
-								"path": "mc2-bs-dev-golden/StoragePath"
+								"path": "mc2-bs-golden/StoragePath"
 							},
 							"translator": {
 								"type": "TabularTranslator",
@@ -5714,7 +5715,7 @@
 						"userProperties": [
 							{
 								"name": "Source",
-								"value": "mc2-bs-dev-golden/[object Object]/[object Object]"
+								"value": "mc2-bs-golden/[object Object]/[object Object]"
 							},
 							{
 								"name": "Destination",
@@ -5742,7 +5743,7 @@
 									"referenceName": "AzureBlobStorageForSnowflake",
 									"type": "LinkedServiceReference"
 								},
-								"path": "mc2-bs-dev-golden/StoragePath"
+								"path": "mc2-bs-golden/StoragePath"
 							},
 							"translator": {
 								"type": "TabularTranslator",
@@ -6132,7 +6133,7 @@
 						"userProperties": [
 							{
 								"name": "Source",
-								"value": "mc2-bs-dev-golden/[object Object]/[object Object]"
+								"value": "mc2-bs-golden/[object Object]/[object Object]"
 							},
 							{
 								"name": "Destination",
@@ -6160,7 +6161,7 @@
 									"referenceName": "AzureBlobStorageForSnowflake",
 									"type": "LinkedServiceReference"
 								},
-								"path": "mc2-bs-dev-golden/StoragePath"
+								"path": "mc2-bs-golden/StoragePath"
 							},
 							"translator": {
 								"type": "TabularTranslator",
@@ -6580,7 +6581,7 @@
 						"userProperties": [
 							{
 								"name": "Source",
-								"value": "mc2-bs-dev-golden/[object Object]/[object Object]"
+								"value": "mc2-bs-golden/[object Object]/[object Object]"
 							},
 							{
 								"name": "Destination",
@@ -6608,7 +6609,7 @@
 									"referenceName": "AzureBlobStorageForSnowflake",
 									"type": "LinkedServiceReference"
 								},
-								"path": "mc2-bs-dev-golden/StoragePath"
+								"path": "mc2-bs-golden/StoragePath"
 							},
 							"translator": {
 								"type": "TabularTranslator",
@@ -6978,7 +6979,7 @@
 						"userProperties": [
 							{
 								"name": "Source",
-								"value": "mc2-bs-dev-golden/[object Object]/[object Object]"
+								"value": "mc2-bs-golden/[object Object]/[object Object]"
 							},
 							{
 								"name": "Destination",
@@ -7006,7 +7007,7 @@
 									"referenceName": "AzureBlobStorageForSnowflake",
 									"type": "LinkedServiceReference"
 								},
-								"path": "mc2-bs-dev-golden/StoragePath"
+								"path": "mc2-bs-golden/StoragePath"
 							},
 							"translator": {
 								"type": "TabularTranslator",
@@ -7416,7 +7417,7 @@
 						"userProperties": [
 							{
 								"name": "Source",
-								"value": "mc2-bs-dev-golden/[object Object]/[object Object]"
+								"value": "mc2-bs-golden/[object Object]/[object Object]"
 							},
 							{
 								"name": "Destination",
@@ -7444,7 +7445,7 @@
 									"referenceName": "AzureBlobStorageForSnowflake",
 									"type": "LinkedServiceReference"
 								},
-								"path": "mc2-bs-dev-golden/StoragePath"
+								"path": "mc2-bs-golden/StoragePath"
 							},
 							"translator": {
 								"type": "TabularTranslator",
@@ -7844,7 +7845,7 @@
 						"userProperties": [
 							{
 								"name": "Source",
-								"value": "mc2-bs-dev-golden/[object Object]/[object Object]"
+								"value": "mc2-bs-golden/[object Object]/[object Object]"
 							},
 							{
 								"name": "Destination",
@@ -7872,7 +7873,7 @@
 									"referenceName": "AzureBlobStorageForSnowflake",
 									"type": "LinkedServiceReference"
 								},
-								"path": "mc2-bs-dev-golden/StoragePath"
+								"path": "mc2-bs-golden/StoragePath"
 							},
 							"translator": {
 								"type": "TabularTranslator",
@@ -8272,7 +8273,7 @@
 						"userProperties": [
 							{
 								"name": "Source",
-								"value": "mc2-bs-dev-golden/[object Object]/[object Object]"
+								"value": "mc2-bs-golden/[object Object]/[object Object]"
 							},
 							{
 								"name": "Destination",
@@ -8300,7 +8301,7 @@
 									"referenceName": "AzureBlobStorageForSnowflake",
 									"type": "LinkedServiceReference"
 								},
-								"path": "mc2-bs-dev-golden/StoragePath"
+								"path": "mc2-bs-golden/StoragePath"
 							},
 							"translator": {
 								"type": "TabularTranslator",
@@ -8680,7 +8681,7 @@
 						"userProperties": [
 							{
 								"name": "Source",
-								"value": "mc2-bs-dev-golden/[object Object]/[object Object]"
+								"value": "mc2-bs-golden/[object Object]/[object Object]"
 							},
 							{
 								"name": "Destination",
@@ -8708,7 +8709,7 @@
 									"referenceName": "AzureBlobStorageForSnowflake",
 									"type": "LinkedServiceReference"
 								},
-								"path": "mc2-bs-dev-golden/StoragePath"
+								"path": "mc2-bs-golden/StoragePath"
 							},
 							"translator": {
 								"type": "TabularTranslator",
@@ -9088,7 +9089,7 @@
 						"userProperties": [
 							{
 								"name": "Source",
-								"value": "mc2-bs-dev-golden/[object Object]/[object Object]"
+								"value": "mc2-bs-golden/[object Object]/[object Object]"
 							},
 							{
 								"name": "Destination",
@@ -9116,7 +9117,7 @@
 									"referenceName": "AzureBlobStorageForSnowflake",
 									"type": "LinkedServiceReference"
 								},
-								"path": "mc2-bs-dev-golden/StoragePath"
+								"path": "mc2-bs-golden/StoragePath"
 							},
 							"translator": {
 								"type": "TabularTranslator",
@@ -9516,7 +9517,7 @@
 						"userProperties": [
 							{
 								"name": "Source",
-								"value": "mc2-bs-dev-golden/[object Object]/[object Object]"
+								"value": "mc2-bs-golden/[object Object]/[object Object]"
 							},
 							{
 								"name": "Destination",
@@ -9544,7 +9545,7 @@
 									"referenceName": "AzureBlobStorageForSnowflake",
 									"type": "LinkedServiceReference"
 								},
-								"path": "mc2-bs-dev-golden/StoragePath"
+								"path": "mc2-bs-golden/StoragePath"
 							},
 							"translator": {
 								"type": "TabularTranslator",
@@ -9964,7 +9965,7 @@
 						"userProperties": [
 							{
 								"name": "Source",
-								"value": "mc2-bs-dev-golden/[object Object]/[object Object]"
+								"value": "mc2-bs-golden/[object Object]/[object Object]"
 							},
 							{
 								"name": "Destination",
@@ -9992,7 +9993,7 @@
 									"referenceName": "AzureBlobStorageForSnowflake",
 									"type": "LinkedServiceReference"
 								},
-								"path": "mc2-bs-dev-golden/StoragePath"
+								"path": "mc2-bs-golden/StoragePath"
 							},
 							"translator": {
 								"type": "TabularTranslator",
@@ -10372,7 +10373,7 @@
 						"userProperties": [
 							{
 								"name": "Source",
-								"value": "mc2-bs-dev-golden/[object Object]/[object Object]"
+								"value": "mc2-bs-golden/[object Object]/[object Object]"
 							},
 							{
 								"name": "Destination",
@@ -10400,7 +10401,7 @@
 									"referenceName": "AzureBlobStorageForSnowflake",
 									"type": "LinkedServiceReference"
 								},
-								"path": "mc2-bs-dev-golden/StoragePath"
+								"path": "mc2-bs-golden/StoragePath"
 							},
 							"translator": {
 								"type": "TabularTranslator",
@@ -10780,7 +10781,7 @@
 						"userProperties": [
 							{
 								"name": "Source",
-								"value": "mc2-bs-dev-golden/[object Object]/[object Object]"
+								"value": "mc2-bs-golden/[object Object]/[object Object]"
 							},
 							{
 								"name": "Destination",
@@ -10808,7 +10809,7 @@
 									"referenceName": "AzureBlobStorageForSnowflake",
 									"type": "LinkedServiceReference"
 								},
-								"path": "mc2-bs-dev-golden/StoragePath"
+								"path": "mc2-bs-golden/StoragePath"
 							},
 							"translator": {
 								"type": "TabularTranslator",
@@ -11188,7 +11189,7 @@
 						"userProperties": [
 							{
 								"name": "Source",
-								"value": "mc2-bs-dev-golden/[object Object]/[object Object]"
+								"value": "mc2-bs-golden/[object Object]/[object Object]"
 							},
 							{
 								"name": "Destination",
@@ -11216,7 +11217,7 @@
 									"referenceName": "AzureBlobStorageForSnowflake",
 									"type": "LinkedServiceReference"
 								},
-								"path": "mc2-bs-dev-golden/StoragePath"
+								"path": "mc2-bs-golden/StoragePath"
 							},
 							"translator": {
 								"type": "TabularTranslator",
@@ -11626,7 +11627,7 @@
 						"userProperties": [
 							{
 								"name": "Source",
-								"value": "mc2-bs-dev-golden/[object Object]/[object Object]"
+								"value": "mc2-bs-golden/[object Object]/[object Object]"
 							},
 							{
 								"name": "Destination",
@@ -11654,7 +11655,7 @@
 									"referenceName": "AzureBlobStorageForSnowflake",
 									"type": "LinkedServiceReference"
 								},
-								"path": "mc2-bs-dev-golden/StoragePath"
+								"path": "mc2-bs-golden/StoragePath"
 							},
 							"translator": {
 								"type": "TabularTranslator",
@@ -12074,7 +12075,7 @@
 						"userProperties": [
 							{
 								"name": "Source",
-								"value": "mc2-bs-dev-golden/[object Object]/[object Object]"
+								"value": "mc2-bs-golden/[object Object]/[object Object]"
 							},
 							{
 								"name": "Destination",
@@ -12102,7 +12103,7 @@
 									"referenceName": "AzureBlobStorageForSnowflake",
 									"type": "LinkedServiceReference"
 								},
-								"path": "mc2-bs-dev-golden/StoragePath"
+								"path": "mc2-bs-golden/StoragePath"
 							},
 							"translator": {
 								"type": "TabularTranslator",
@@ -12482,7 +12483,7 @@
 						"userProperties": [
 							{
 								"name": "Source",
-								"value": "mc2-bs-dev-golden/[object Object]/[object Object]"
+								"value": "mc2-bs-golden/[object Object]/[object Object]"
 							},
 							{
 								"name": "Destination",
@@ -12510,7 +12511,7 @@
 									"referenceName": "AzureBlobStorageForSnowflake",
 									"type": "LinkedServiceReference"
 								},
-								"path": "mc2-bs-dev-golden/StoragePath"
+								"path": "mc2-bs-golden/StoragePath"
 							},
 							"translator": {
 								"type": "TabularTranslator",
@@ -12900,7 +12901,7 @@
 						"userProperties": [
 							{
 								"name": "Source",
-								"value": "mc2-bs-dev-golden/[object Object]/[object Object]"
+								"value": "mc2-bs-golden/[object Object]/[object Object]"
 							},
 							{
 								"name": "Destination",
@@ -12928,7 +12929,7 @@
 									"referenceName": "AzureBlobStorageForSnowflake",
 									"type": "LinkedServiceReference"
 								},
-								"path": "mc2-bs-dev-golden/StoragePath"
+								"path": "mc2-bs-golden/StoragePath"
 							},
 							"translator": {
 								"type": "TabularTranslator",
@@ -13298,7 +13299,7 @@
 						"userProperties": [
 							{
 								"name": "Source",
-								"value": "mc2-bs-dev-golden/[object Object]/[object Object]"
+								"value": "mc2-bs-golden/[object Object]/[object Object]"
 							},
 							{
 								"name": "Destination",
@@ -13326,7 +13327,7 @@
 									"referenceName": "AzureBlobStorageForSnowflake",
 									"type": "LinkedServiceReference"
 								},
-								"path": "mc2-bs-dev-golden/StoragePath"
+								"path": "mc2-bs-golden/StoragePath"
 							},
 							"translator": {
 								"type": "TabularTranslator",
@@ -13696,7 +13697,7 @@
 						"userProperties": [
 							{
 								"name": "Source",
-								"value": "mc2-bs-dev-golden/[object Object]/[object Object]"
+								"value": "mc2-bs-golden/[object Object]/[object Object]"
 							},
 							{
 								"name": "Destination",
@@ -13724,7 +13725,7 @@
 									"referenceName": "AzureBlobStorageForSnowflake",
 									"type": "LinkedServiceReference"
 								},
-								"path": "mc2-bs-dev-golden/StoragePath"
+								"path": "mc2-bs-golden/StoragePath"
 							},
 							"translator": {
 								"type": "TabularTranslator",
@@ -14644,7 +14645,7 @@
 						"userProperties": [
 							{
 								"name": "Source",
-								"value": "mc2-bs-dev-golden/[object Object]/[object Object]"
+								"value": "mc2-bs-golden/[object Object]/[object Object]"
 							},
 							{
 								"name": "Destination",
@@ -14672,7 +14673,7 @@
 									"referenceName": "AzureBlobStorageForSnowflake",
 									"type": "LinkedServiceReference"
 								},
-								"path": "mc2-bs-dev-golden/StoragePath"
+								"path": "mc2-bs-golden/StoragePath"
 							},
 							"translator": {
 								"type": "TabularTranslator",
@@ -15152,7 +15153,7 @@
 						"userProperties": [
 							{
 								"name": "Source",
-								"value": "mc2-bs-dev-golden/[object Object]/[object Object]"
+								"value": "mc2-bs-golden/[object Object]/[object Object]"
 							},
 							{
 								"name": "Destination",
@@ -15180,7 +15181,7 @@
 									"referenceName": "AzureBlobStorageForSnowflake",
 									"type": "LinkedServiceReference"
 								},
-								"path": "mc2-bs-dev-golden/StoragePath"
+								"path": "mc2-bs-golden/StoragePath"
 							},
 							"translator": {
 								"type": "TabularTranslator",
@@ -16229,7 +16230,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -16270,7 +16271,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-bronze"
+						"fileSystem": "mc2-bs-bronze"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -16311,7 +16312,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-bronze"
+						"fileSystem": "mc2-bs-bronze"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -16339,7 +16340,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
-						"fileSystem": "mc2-bs-dev-silver"
+						"fileSystem": "mc2-bs-silver"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -24169,7 +24170,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
-						"fileSystem": "mc2-bs-dev-bronze"
+						"fileSystem": "mc2-bs-bronze"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -24342,7 +24343,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -24515,7 +24516,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -24800,7 +24801,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -25091,7 +25092,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -25252,7 +25253,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -25413,7 +25414,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -25590,7 +25591,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -25755,7 +25756,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -25924,7 +25925,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -26089,7 +26090,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -26274,7 +26275,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -26443,7 +26444,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -26624,7 +26625,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -26785,7 +26786,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -26962,7 +26963,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -27135,7 +27136,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -27308,7 +27309,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -27473,7 +27474,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -27638,7 +27639,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -27819,7 +27820,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -27992,7 +27993,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -28157,7 +28158,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -28322,7 +28323,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -28487,7 +28488,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -28664,7 +28665,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -28845,7 +28846,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -29010,7 +29011,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -29179,7 +29180,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -29340,7 +29341,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -29725,7 +29726,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -29962,7 +29963,7 @@
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
 						},
-						"fileSystem": "mc2-bs-dev-golden"
+						"fileSystem": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -30221,7 +30222,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
-						"fileSystem": "mc2-bs-dev-silver"
+						"fileSystem": "mc2-bs-silver"
 					},
 					"compressionCodec": "snappy"
 				},
