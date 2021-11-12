@@ -17,8 +17,11 @@
 					"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_comentarios_proyecto.parquet')",
 					"type": "Expression"
 				},
-				"folderPath": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
-				"fileSystem": "mc2-bs-dev-golden"
+				"folderPath": {
+					"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+					"type": "Expression"
+				},
+				"fileSystem": "mc2-bs-golden"
 			},
 			"compressionCodec": "snappy"
 		},
