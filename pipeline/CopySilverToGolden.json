@@ -16,11 +16,11 @@
 				"userProperties": [
 					{
 						"name": "Source",
-						"value": "mc2-bs-dev-silver/@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}/@concat(formatDatetime(utcnow(),'yyyMMdd'),'-',dataset().cw_fileName)"
+						"value": "mc2-bs-silver/@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}/@concat(formatDatetime(utcnow(),'yyyMMdd'),'-',dataset().cw_fileName)"
 					},
 					{
 						"name": "Destination",
-						"value": "mc2-bs-dev-golden/@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}/@concat(formatDatetime(utcnow(),'yyyMMdd'),'-',dataset().cw_fileName)"
+						"value": "mc2-bs-golden/@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}/@concat(formatDatetime(utcnow(),'yyyMMdd'),'-',dataset().cw_fileName)"
 					}
 				],
 				"typeProperties": {
