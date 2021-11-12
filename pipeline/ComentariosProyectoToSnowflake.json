@@ -16,7 +16,7 @@
 				"userProperties": [
 					{
 						"name": "Source",
-						"value": "mc2-bs-dev-golden//"
+						"value": "mc2-bs-golden//"
 					},
 					{
 						"name": "Destination",
@@ -44,7 +44,7 @@
 							"referenceName": "AzureBlobStorageForSnowflake",
 							"type": "LinkedServiceReference"
 						},
-						"path": "mc2-bs-dev-golden/StoragePath"
+						"path": "mc2-bs-golden/StoragePath"
 					},
 					"translator": {
 						"type": "TabularTranslator",
