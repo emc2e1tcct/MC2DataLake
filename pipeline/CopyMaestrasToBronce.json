@@ -191,14 +191,6 @@
 					},
 					{
 						"source": {
-							"entityName": "mc2_maestro_fase"
-						},
-						"destination": {
-							"fileName": "mc2_maestro_fase.parquet"
-						}
-					},
-					{
-						"source": {
 							"entityName": "mc2_maestro_jefe_de_proyecto"
 						},
 						"destination": {
