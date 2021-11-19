@@ -1,0 +1,23 @@
+{
+	"name": "DestinationDataset_l4e",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorageGen2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": {
+					"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}/@{item().destination.fileName}",
+					"type": "Expression"
+				},
+				"fileSystem": "mc2-bs-golden"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
