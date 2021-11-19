@@ -10,7 +10,7 @@
 		"schema": [],
 		"typeProperties": {
 			"schema": "PUBLIC",
-			"table": "MC2_ELEMENTO_PEP"
+			"table": "MC2_LINEAS_ADQUIRA"
 		}
 	}
 }
