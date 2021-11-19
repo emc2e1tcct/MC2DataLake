@@ -279,6 +279,10 @@
 			{
 				"name": "versionnumber",
 				"type": "INT64"
+			},
+			{
+				"name": "COLUMPRUEBA",
+				"type": "UTF8"
 			}
 		]
 	}
