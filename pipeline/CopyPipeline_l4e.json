@@ -57,6 +57,26 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "CopyPipeline_bhb",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Copy_l4e",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "CopyPipeline_bhb",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
 			}
 		],
 		"annotations": []
