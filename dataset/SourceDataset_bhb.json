@@ -10,8 +10,11 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "20211112-mc2_elemento_pep.parquet",
-				"folderPath": "2021/11",
+				"fileName": {
+					"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_elemento_pep.parquet')",
+					"type": "Expression"
+				},
+				"folderPath": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 				"fileSystem": "mc2-bs-golden"
 			},
 			"compressionCodec": "snappy"
