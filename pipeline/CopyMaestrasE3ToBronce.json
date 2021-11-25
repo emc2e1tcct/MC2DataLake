@@ -55,7 +55,63 @@
 									"referenceName": "SourceMaestrasE3",
 									"type": "DatasetReference",
 									"parameters": {
-										"cw_entityName": "@item().destination.fileName"
+										"cw_entityName": "@item().source.entityName"
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "DestinationMaestrasE3",
+									"type": "DatasetReference",
+									"parameters": {
+										"cw_fileName_MaestrasE3": "@item().destination.fileName"
+									}
+								}
+							]
+						},
+						{
+							"name": "CopyMaestrasE3ToBronce_copy1",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [
+								{
+									"name": "Source",
+									"value": "@{item().source.entityName}"
+								},
+								{
+									"name": "Destination",
+									"value": "mc2-bs-bronze/[object Object]/@{item().destination.fileName}"
+								}
+							],
+							"typeProperties": {
+								"source": {
+									"type": "CommonDataServiceForAppsSource"
+								},
+								"sink": {
+									"type": "ParquetSink",
+									"storeSettings": {
+										"type": "AzureBlobFSWriteSettings"
+									},
+									"formatSettings": {
+										"type": "ParquetWriteSettings"
+									}
+								},
+								"enableStaging": false,
+								"validateDataConsistency": false
+							},
+							"inputs": [
+								{
+									"referenceName": "SourceMaestrasE3",
+									"type": "DatasetReference",
+									"parameters": {
+										"cw_entityName": "@item().source.entityName"
 									}
 								}
 							],
