@@ -9,7 +9,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@pipeline().parameters.cw_items",
+						"value": "@pipeline().parameters.cw_items_PrincipalesE3",
 						"type": "Expression"
 					},
 					"activities": [
@@ -64,7 +64,7 @@
 									"referenceName": "DestinationPrincipalesE3",
 									"type": "DatasetReference",
 									"parameters": {
-										"cw_fileName": "@item().destination.fileName"
+										"cw_fileName_PrincipalesE3": "@item().destination.fileName"
 									}
 								}
 							]
@@ -74,7 +74,7 @@
 			}
 		],
 		"parameters": {
-			"cw_items": {
+			"cw_items_PrincipalesE3": {
 				"type": "Array",
 				"defaultValue": [
 					{

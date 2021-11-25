@@ -167,10 +167,7 @@
 						"referenceName": "CopyPrincipalesE3ToBronze",
 						"type": "PipelineReference"
 					},
-					"waitOnCompletion": true,
-					"parameters": {
-						"cw_items": "@pipeline().parameters.cw_items_PrincipalesE3"
-					}
+					"waitOnCompletion": true
 				}
 			}
 		],

@@ -6,7 +6,7 @@
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"cw_fileName": {
+			"cw_fileName_PrincipalesE3": {
 				"type": "String"
 			}
 		},
