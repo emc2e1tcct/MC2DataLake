@@ -3,18 +3,18 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "ForEach_m17",
+				"name": "ForEach_PrincipalesE3",
 				"type": "ForEach",
 				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@pipeline().parameters.cw_items",
+						"value": "@pipeline().parameters.cw_items_PrincipalesE3",
 						"type": "Expression"
 					},
 					"activities": [
 						{
-							"name": "Copy_m17",
+							"name": "CopyMaestrasE3ToBronce",
 							"type": "Copy",
 							"dependsOn": [],
 							"policy": {
@@ -74,7 +74,7 @@
 			}
 		],
 		"parameters": {
-			"cw_items": {
+			"cw_items_PrincipalesE3": {
 				"type": "Array",
 				"defaultValue": [
 					{
