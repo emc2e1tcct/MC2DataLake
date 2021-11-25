@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "ForEach_5ma",
+				"name": "ForEach_PrincipalesE3",
 				"type": "ForEach",
 				"dependsOn": [],
 				"userProperties": [],
@@ -14,7 +14,7 @@
 					},
 					"activities": [
 						{
-							"name": "Copy_5ma",
+							"name": "CopyPrincipalesE3ToBronze",
 							"type": "Copy",
 							"dependsOn": [],
 							"policy": {
@@ -52,7 +52,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "SourceDataset_5ma",
+									"referenceName": "SourcePrincipalesE3",
 									"type": "DatasetReference",
 									"parameters": {
 										"cw_entityName": "@item().source.entityName"
@@ -61,7 +61,7 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "DestinationDataset_5ma",
+									"referenceName": "DestinationPrincipalesE3",
 									"type": "DatasetReference",
 									"parameters": {
 										"cw_fileName": "@item().destination.fileName"
@@ -95,6 +95,9 @@
 					}
 				]
 			}
+		},
+		"folder": {
+			"name": "Main/Sources/CopyMC2ToBronce"
 		},
 		"annotations": []
 	}

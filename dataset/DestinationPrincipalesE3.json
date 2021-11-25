@@ -1,5 +1,5 @@
 {
-	"name": "DestinationDataset_5ma",
+	"name": "DestinationPrincipalesE3",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorageGen2",
@@ -16,7 +16,7 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": {
-					"value": "@dataset().cw_fileName",
+					"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-',dataset().cw_fileName_PrincipalesE3)",
 					"type": "Expression"
 				},
 				"folderPath": {
