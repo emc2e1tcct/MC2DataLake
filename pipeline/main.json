@@ -61,6 +61,12 @@
 						"dependencyConditions": [
 							"Succeeded"
 						]
+					},
+					{
+						"activity": "CopyPrincipalesE3ToBronze",
+						"dependencyConditions": [
+							"Succeeded"
+						]
 					}
 				],
 				"userProperties": [],
@@ -149,6 +155,19 @@
 							"type": "Expression"
 						}
 					}
+				}
+			},
+			{
+				"name": "CopyPrincipalesE3ToBronze",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "CopyPrincipalesE3ToBronze",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
 				}
 			}
 		],
@@ -532,6 +551,27 @@
 						},
 						"destination": {
 							"fileName": "e3c_maestro_compra_tipo_imputacion.parquet"
+						}
+					}
+				]
+			},
+			"cw_items_PrincipalesE3": {
+				"type": "array",
+				"defaultValue": [
+					{
+						"source": {
+							"entityName": "e3c_cestas"
+						},
+						"destination": {
+							"fileName": "e3c_cestas.parquet"
+						}
+					},
+					{
+						"source": {
+							"entityName": "e3c_lineas_cesta"
+						},
+						"destination": {
+							"fileName": "e3c_lineas_cesta.parquet"
 						}
 					}
 				]
