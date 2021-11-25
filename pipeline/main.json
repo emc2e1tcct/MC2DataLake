@@ -55,6 +55,12 @@
 						"dependencyConditions": [
 							"Succeeded"
 						]
+					},
+					{
+						"activity": "CopyMaestrasE3ToBronce",
+						"dependencyConditions": [
+							"Succeeded"
+						]
 					}
 				],
 				"userProperties": [],
@@ -121,6 +127,19 @@
 				"typeProperties": {
 					"pipeline": {
 						"referenceName": "CopyMaestrasToSnowflake",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "CopyMaestrasE3ToBronce",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "CopyMaestrasE3ToBronce",
 						"type": "PipelineReference"
 					},
 					"waitOnCompletion": true
@@ -382,6 +401,131 @@
 						},
 						"destination": {
 							"fileName": "mc2_proyecto.parquet"
+						}
+					}
+				]
+			},
+			"cw_items_MaestrasE3": {
+				"type": "array",
+				"defaultValue": [
+					{
+						"source": {
+							"entityName": "e3c_maestro_compra_area_funcional"
+						},
+						"destination": {
+							"fileName": "e3c_maestro_compra_area_funcional.parquet"
+						}
+					},
+					{
+						"source": {
+							"entityName": "e3c_maestro_compra_ariba"
+						},
+						"destination": {
+							"fileName": "e3c_maestro_compra_ariba.parquet"
+						}
+					},
+					{
+						"source": {
+							"entityName": "e3c_maestro_compra_categoria"
+						},
+						"destination": {
+							"fileName": "e3c_maestro_compra_categoria.parquet"
+						}
+					},
+					{
+						"source": {
+							"entityName": "e3c_maestro_compra_ceco"
+						},
+						"destination": {
+							"fileName": "e3c_maestro_compra_ceco.parquet"
+						}
+					},
+					{
+						"source": {
+							"entityName": "e3c_maestro_compra_centro_gestor"
+						},
+						"destination": {
+							"fileName": "e3c_maestro_compra_centro_gestor.parquet"
+						}
+					},
+					{
+						"source": {
+							"entityName": "e3c_maestro_compra_contrato"
+						},
+						"destination": {
+							"fileName": "e3c_maestro_compra_contrato.parquet"
+						}
+					},
+					{
+						"source": {
+							"entityName": "e3c_maestro_compra_estado_cesta_derivada"
+						},
+						"destination": {
+							"fileName": "e3c_maestro_compra_estado_cesta_derivada.parquet"
+						}
+					},
+					{
+						"source": {
+							"entityName": "e3c_maestro_compra_estado_cesta_ordinaria"
+						},
+						"destination": {
+							"fileName": "e3c_maestro_compra_estado_cesta_ordinaria.parquet"
+						}
+					},
+					{
+						"source": {
+							"entityName": "e3c_maestro_compra_gasto_inversion"
+						},
+						"destination": {
+							"fileName": "e3c_maestro_compra_gasto_inversion.parquet"
+						}
+					},
+					{
+						"source": {
+							"entityName": "e3c_maestro_compra_grupo_compras"
+						},
+						"destination": {
+							"fileName": "e3c_maestro_compra_grupo_compras.parquet"
+						}
+					},
+					{
+						"source": {
+							"entityName": "e3c_maestro_compra_moneda"
+						},
+						"destination": {
+							"fileName": "e3c_maestro_compra_moneda.parquet"
+						}
+					},
+					{
+						"source": {
+							"entityName": "e3c_maestro_compra_org_compras"
+						},
+						"destination": {
+							"fileName": "e3c_maestro_compra_org_compras.parquet"
+						}
+					},
+					{
+						"source": {
+							"entityName": "e3c_maestro_compra_sociedad"
+						},
+						"destination": {
+							"fileName": "e3c_maestro_compra_sociedad.parquet"
+						}
+					},
+					{
+						"source": {
+							"entityName": "e3c_maestro_compra_tipo_facturacion"
+						},
+						"destination": {
+							"fileName": "e3c_maestro_compra_tipo_facturacion.parquet"
+						}
+					},
+					{
+						"source": {
+							"entityName": "e3c_maestro_compra_tipo_imputacion"
+						},
+						"destination": {
+							"fileName": "e3c_maestro_compra_tipo_imputacion.parquet"
 						}
 					}
 				]

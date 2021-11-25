@@ -9,7 +9,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@pipeline().parameters.cw_items_PrincipalesE3",
+						"value": "@pipeline().parameters.cw_items_MaestrasE3",
 						"type": "Expression"
 					},
 					"activities": [
@@ -74,7 +74,7 @@
 			}
 		],
 		"parameters": {
-			"cw_items_PrincipalesE3": {
+			"cw_items_MaestrasE3": {
 				"type": "Array",
 				"defaultValue": [
 					{
