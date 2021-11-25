@@ -55,7 +55,7 @@
 									"referenceName": "SourceMaestras",
 									"type": "DatasetReference",
 									"parameters": {
-										"cw_entityName": "@item().destination.fileName"
+										"cw_entityName": "@item().source.entityName"
 									}
 								}
 							],
