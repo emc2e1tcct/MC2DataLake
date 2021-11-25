@@ -52,16 +52,16 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "SourceDatasetMaestrasE3",
+									"referenceName": "SourceMaestrasE3",
 									"type": "DatasetReference",
 									"parameters": {
-										"cw_entityName": "@item().source.entityName"
+										"cw_entityName": "@item().destination.fileName"
 									}
 								}
 							],
 							"outputs": [
 								{
-									"referenceName": "DestinationDataset_m17",
+									"referenceName": "DestinationMaestrasE3",
 									"type": "DatasetReference",
 									"parameters": {
 										"cw_fileName": "@item().destination.fileName"
@@ -199,6 +199,9 @@
 					}
 				]
 			}
+		},
+		"folder": {
+			"name": "Main/Sources/CopyMC2ToBronce"
 		},
 		"annotations": []
 	}
