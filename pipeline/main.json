@@ -179,7 +179,14 @@
 			{
 				"name": "CopyPrincipalesE3ToSnowflake",
 				"type": "ExecutePipeline",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "CopySilverToGolden",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"userProperties": [],
 				"typeProperties": {
 					"pipeline": {
