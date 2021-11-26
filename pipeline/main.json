@@ -169,8 +169,24 @@
 					},
 					"waitOnCompletion": true,
 					"parameters": {
-						"cw_items_PrincipalesE3": "@pipeline().parameters.cw_items_PrincipalesE3"
+						"cw_items_PrincipalesE3": {
+							"value": "@pipeline().parameters.cw_items_PrincipalesE3",
+							"type": "Expression"
+						}
 					}
+				}
+			},
+			{
+				"name": "CopyPrincipalesE3ToSnowflake",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "CopyPrincipalesToSnowflake",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
 				}
 			}
 		],
