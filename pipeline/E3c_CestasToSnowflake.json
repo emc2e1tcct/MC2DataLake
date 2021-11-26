@@ -400,7 +400,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "Snowflake_MC2_COMENTARIOS_PROYECTO",
+						"referenceName": "Snowflake_E3C_CESTAS",
 						"type": "DatasetReference"
 					}
 				]
