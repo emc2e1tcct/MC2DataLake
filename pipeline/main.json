@@ -183,7 +183,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"pipeline": {
-						"referenceName": "CopyPrincipalesToSnowflake",
+						"referenceName": "CopyPrincipalesE3ToSnowflake",
 						"type": "PipelineReference"
 					},
 					"waitOnCompletion": true
