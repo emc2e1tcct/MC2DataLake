@@ -51,11 +51,131 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "mc2_comentario",
+									"name": "e3c_categoria_producto",
 									"type": "String"
 								},
 								"sink": {
-									"name": "mc2_comentario",
+									"name": "e3c_categoria_producto",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_categoria_productoname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_categoria_productoname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_centro_gestorname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_centro_gestorname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_enviado_sap",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "e3c_enviado_sap",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_revisor_exp",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_revisor_exp",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_sa_tr",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_sa_tr",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_unidad",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_unidad",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_envio_urgente_ordinaria",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_envio_urgente_ordinaria",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_org_comprasname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_org_comprasname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_revisor_expname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_revisor_expname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_solicitante_ordinarianame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_solicitante_ordinarianame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_tipo_imputacion",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_tipo_imputacion",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_url_carpeta_sharepoint_tr",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_url_carpeta_sharepoint_tr",
 									"type": "String"
 								}
 							},
@@ -66,16 +186,6 @@
 								},
 								"sink": {
 									"name": "owningbusinessunit",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "owninguser",
-									"type": "String"
-								},
-								"sink": {
-									"name": "owninguser",
 									"type": "String"
 								}
 							},
@@ -86,6 +196,16 @@
 								},
 								"sink": {
 									"name": "statecode",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "owninguser",
+									"type": "String"
+								},
+								"sink": {
+									"name": "owninguser",
 									"type": "String"
 								}
 							},
@@ -111,11 +231,61 @@
 							},
 							{
 								"source": {
-									"name": "utcconversiontimezonecode",
-									"type": "Int32"
+									"name": "e3c_aprobacion_compra",
+									"type": "Boolean"
 								},
 								"sink": {
-									"name": "utcconversiontimezonecode",
+									"name": "e3c_aprobacion_compra",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_centro_gestor",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_centro_gestor",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_contrato",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_contrato",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_fecha_inicio_tr",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "e3c_fecha_inicio_tr",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_grupo_compras",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_grupo_compras",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_area_funcional",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_area_funcional",
 									"type": "String"
 								}
 							},
@@ -126,36 +296,66 @@
 								},
 								"sink": {
 									"name": "importsequencenumber",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "utcconversiontimezonecode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "utcconversiontimezonecode",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_num_pedido_cliente",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_num_pedido_cliente",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "mc2_actividad_principal",
+									"name": "e3c_fecha_fin_tr",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "e3c_fecha_fin_tr",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_grupo_comprasname",
 									"type": "String"
 								},
 								"sink": {
-									"name": "mc2_actividad_principal",
+									"name": "e3c_grupo_comprasname",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "mc2_aprobacion",
+									"name": "e3c_moneda_tr",
 									"type": "String"
 								},
 								"sink": {
-									"name": "mc2_aprobacion",
+									"name": "e3c_moneda_tr",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "owneridname",
+									"name": "e3c_nota_tramitacion",
 									"type": "String"
 								},
 								"sink": {
-									"name": "owneridname",
+									"name": "e3c_nota_tramitacion",
 									"type": "String"
 								}
 							},
@@ -171,11 +371,141 @@
 							},
 							{
 								"source": {
+									"name": "owneridname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "owneridname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_estado_cesta_ordinaria",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_estado_cesta_ordinaria",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_gasto_inversionname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_gasto_inversionname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_precio_bruto",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_precio_bruto",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_proveedor_tr",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_proveedor_tr",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_proyecto_tr",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_proyecto_tr",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_area_funcionalname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_area_funcionalname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_cliente_tr",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_cliente_tr",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_dest_mercanciasname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_dest_mercanciasname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_fecha_contabilizacion",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "e3c_fecha_contabilizacion",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_org_compras",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_org_compras",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_solicitante_derivadaname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_solicitante_derivadaname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
 									"name": "modifiedbyname",
 									"type": "String"
 								},
 								"sink": {
 									"name": "modifiedbyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_nombre_cesta",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_nombre_cesta",
 									"type": "String"
 								}
 							},
@@ -196,26 +526,66 @@
 								},
 								"sink": {
 									"name": "statuscode",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_ap_tr",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_ap_tr",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "mc2_fecha",
-									"type": "DateTime"
+									"name": "e3c_contratoname",
+									"type": "String"
 								},
 								"sink": {
-									"name": "mc2_fecha",
-									"type": "DateTime"
+									"name": "e3c_contratoname",
+									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "ownerid",
+									"name": "e3c_descripcion_proyecto_tr",
 									"type": "String"
 								},
 								"sink": {
-									"name": "ownerid",
+									"name": "e3c_descripcion_proyecto_tr",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_importe_total_tr",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_importe_total_tr",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_status_ariba",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_status_ariba",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_tipo_facturacion_tr",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_tipo_facturacion_tr",
 									"type": "String"
 								}
 							},
@@ -231,11 +601,61 @@
 							},
 							{
 								"source": {
+									"name": "e3c_fecha_entrega_tr",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "e3c_fecha_entrega_tr",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_nota_aprobacion",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_nota_aprobacion",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_sociedadname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_sociedadname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
 									"name": "modifiedonbehalfbyname",
 									"type": "String"
 								},
 								"sink": {
 									"name": "modifiedonbehalfbyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ownerid",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ownerid",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_gasto_inversion",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_gasto_inversion",
 									"type": "String"
 								}
 							},
@@ -251,11 +671,31 @@
 							},
 							{
 								"source": {
-									"name": "mc2_comentarios_proyectoid",
+									"name": "e3c_cestasid",
 									"type": "String"
 								},
 								"sink": {
-									"name": "mc2_comentarios_proyectoid",
+									"name": "e3c_cestasid",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_contrato_tr",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_contrato_tr",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_centro",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_centro",
 									"type": "String"
 								}
 							},
@@ -306,6 +746,26 @@
 								},
 								"sink": {
 									"name": "timezoneruleversionnumber",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_nota_proveedores",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_nota_proveedores",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_tipo_compra",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_tipo_compra",
 									"type": "String"
 								}
 							},
@@ -321,11 +781,71 @@
 							},
 							{
 								"source": {
-									"name": "modifiedby",
+									"name": "e3c_centroname",
 									"type": "String"
 								},
 								"sink": {
-									"name": "modifiedby",
+									"name": "e3c_centroname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_codigosap",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_codigosap",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_dest_mercancias",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_dest_mercancias",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_elemento_pep_tr",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_elemento_pep_tr",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_estado_cesta_derivadaname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_estado_cesta_derivadaname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_pedidotcct",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_pedidotcct",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_sociedad",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_sociedad",
 									"type": "String"
 								}
 							},
@@ -336,6 +856,46 @@
 								},
 								"sink": {
 									"name": "createdbyyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_solicitante_derivada",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_solicitante_derivada",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedby",
+									"type": "String"
+								},
+								"sink": {
+									"name": "modifiedby",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_status_aribaname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_status_aribaname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_pedido",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_pedido",
 									"type": "String"
 								}
 							},
@@ -356,6 +916,66 @@
 								},
 								"sink": {
 									"name": "createdonbehalfbyyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_cantidad_base_ordinaria",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_cantidad_base_ordinaria",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_estado_cesta_derivada",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_estado_cesta_derivada",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_tipo_imputacionname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_tipo_imputacionname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_estado_cesta_ordinarianame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_estado_cesta_ordinarianame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_fecha_sap",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "e3c_fecha_sap",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_solicitante_ordinaria",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_solicitante_ordinaria",
 									"type": "String"
 								}
 							},
@@ -386,6 +1006,16 @@
 								},
 								"sink": {
 									"name": "versionnumber",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "e3c_tipo_cesta_ordinaria",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e3c_tipo_cesta_ordinaria",
 									"type": "String"
 								}
 							}
