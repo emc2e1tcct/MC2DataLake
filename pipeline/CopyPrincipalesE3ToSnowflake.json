@@ -9,20 +9,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"pipeline": {
-						"referenceName": "ComentariosProyectoToSnowflake",
-						"type": "PipelineReference"
-					},
-					"waitOnCompletion": true
-				}
-			},
-			{
-				"name": "ElementoPEPToSnowflake",
-				"type": "ExecutePipeline",
-				"dependsOn": [],
-				"userProperties": [],
-				"typeProperties": {
-					"pipeline": {
-						"referenceName": "ElementoPEPToSnowflake",
+						"referenceName": "E3c_CestasToSnowflake",
 						"type": "PipelineReference"
 					},
 					"waitOnCompletion": true
