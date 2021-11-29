@@ -505,7 +505,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "EC3MaestroCompraContrato",
+						"referenceName": "SourceEC3MaestroCompraContrato",
 						"type": "DatasetReference"
 					}
 				],
@@ -517,6 +517,9 @@
 				]
 			}
 		],
+		"folder": {
+			"name": "Main/Sources/CopyToSnowfake/CopyMaestrasToSnowflake/Maestras"
+		},
 		"annotations": []
 	}
 }
