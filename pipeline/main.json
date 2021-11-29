@@ -195,6 +195,26 @@
 					},
 					"waitOnCompletion": true
 				}
+			},
+			{
+				"name": "CopyMaestrasE3ToSnowflake",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "CopySilverToGolden",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "CopyMaestrasE3ToSnowflake",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
 			}
 		],
 		"parameters": {
