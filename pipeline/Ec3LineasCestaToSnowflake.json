@@ -1,5 +1,5 @@
 {
-	"name": "CopyEc3LineasCestaToSnowflake",
+	"name": "Ec3LineasCestaToSnowflake",
 	"properties": {
 		"activities": [
 			{
@@ -457,6 +457,9 @@
 				]
 			}
 		],
+		"folder": {
+			"name": "Main/Sources/CopyToSnowfake/CopyPrincipalesSnowflake/Principales"
+		},
 		"annotations": []
 	}
 }

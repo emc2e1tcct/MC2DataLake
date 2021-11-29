@@ -1,0 +1,21 @@
+{
+	"name": "CopyMaestrasE3ToSnowflake",
+	"properties": {
+		"activities": [
+			{
+				"name": "Ec3LineasCestaToSnowflake",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Ec3LineasCestaToSnowflake",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"annotations": []
+	}
+}
