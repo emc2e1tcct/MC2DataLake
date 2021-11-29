@@ -1,5 +1,5 @@
 {
-	"name": "CopyE3c_MaestroCompraAreaFuncionalToSnowflake",
+	"name": "E3CMaestroCompraAreaFuncionalToSnowflake",
 	"properties": {
 		"activities": [
 			{
@@ -387,6 +387,9 @@
 				]
 			}
 		],
+		"folder": {
+			"name": "Main/Sources/CopyToSnowfake/CopyMaestrasToSnowflake/Maestras"
+		},
 		"annotations": []
 	}
 }
