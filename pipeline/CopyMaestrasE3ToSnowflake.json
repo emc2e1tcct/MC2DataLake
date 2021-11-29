@@ -1,6 +1,21 @@
 {
 	"name": "CopyMaestrasE3ToSnowflake",
 	"properties": {
+		"activities": [
+			{
+				"name": "E3CMaestroCompraAreaFuncionalToSnowflake",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "E3CMaestroCompraAreaFuncionalToSnowflake",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
 		"folder": {
 			"name": "Main/Sources/CopyToSnowfake/CopyMaestrasToSnowflake"
 		},
