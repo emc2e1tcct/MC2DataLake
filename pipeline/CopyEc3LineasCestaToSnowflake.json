@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_flp",
+				"name": "CopyE3c_lineasCestaToSnowflake",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -445,13 +445,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceDataset_flp",
+						"referenceName": "SourceEc3_LineasCesta",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_flp",
+						"referenceName": "Snowflake_LINEAS_CESTA",
 						"type": "DatasetReference"
 					}
 				]

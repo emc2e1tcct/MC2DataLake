@@ -14,6 +14,19 @@
 					},
 					"waitOnCompletion": true
 				}
+			},
+			{
+				"name": "ec3_lineasCestaToSnowflake",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "CopyEc3LineasCestaToSnowflake",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
 			}
 		],
 		"folder": {

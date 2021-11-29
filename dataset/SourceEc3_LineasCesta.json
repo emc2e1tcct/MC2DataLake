@@ -1,9 +1,12 @@
 {
-	"name": "SourceDataset_flp",
+	"name": "SourceEc3_LineasCesta",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorageGen2",
 			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Sources"
 		},
 		"annotations": [],
 		"type": "Parquet",

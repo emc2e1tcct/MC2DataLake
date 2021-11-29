@@ -1,9 +1,12 @@
 {
-	"name": "DestinationDataset_flp",
+	"name": "Snowflake_LINEAS_CESTA",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Snowflake1",
 			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destination"
 		},
 		"annotations": [],
 		"type": "SnowflakeTable",
