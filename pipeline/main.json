@@ -148,13 +148,7 @@
 						"referenceName": "CopyMaestrasE3ToBronce",
 						"type": "PipelineReference"
 					},
-					"waitOnCompletion": true,
-					"parameters": {
-						"cw_items_MaestrasE3": {
-							"value": "@pipeline().parameters.cw_items_MaestrasE3\n",
-							"type": "Expression"
-						}
-					}
+					"waitOnCompletion": true
 				}
 			},
 			{
