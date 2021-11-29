@@ -1,5 +1,5 @@
 {
-	"name": "Snowflake_MC2_MAESTSRO_BLOQUE",
+	"name": "Snowflake_MC2_MAESTRO_BLOQUE",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Snowflake1",

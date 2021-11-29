@@ -34,6 +34,7 @@
 					},
 					"sink": {
 						"type": "SnowflakeSink",
+						"preCopyScript": "TRUNCATE TABLE \"MC2_DEV\".\"PUBLIC\".\"MC2_MAESTRO_BLOQUE\"",
 						"importSettings": {
 							"type": "SnowflakeImportCopyCommand"
 						}
@@ -370,7 +371,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "Snowflake_MC2_MAESTSRO_BLOQUE",
+						"referenceName": "Snowflake_MC2_MAESTRO_BLOQUE",
 						"type": "DatasetReference"
 					}
 				]
