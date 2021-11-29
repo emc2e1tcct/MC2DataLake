@@ -16,7 +16,7 @@
 				}
 			},
 			{
-				"name": "ec3_lineasCestaToSnowflake",
+				"name": "e3c_lineasCestaToSnowflake",
 				"type": "ExecutePipeline",
 				"dependsOn": [],
 				"userProperties": [],
