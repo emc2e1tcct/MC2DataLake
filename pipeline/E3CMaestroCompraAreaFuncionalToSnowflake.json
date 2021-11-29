@@ -375,7 +375,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceE3C_MaestroCompraAreaFuncional",
+						"referenceName": "SourceE3CMaestroCompraAreaFuncional",
 						"type": "DatasetReference"
 					}
 				],

@@ -1,5 +1,5 @@
 {
-	"name": "SourceE3C_MaestroCompraAreaFuncional",
+	"name": "SourceE3CMaestroCompraAreaFuncional",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorageGen2",
