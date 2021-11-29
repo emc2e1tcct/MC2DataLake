@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_ma6",
+				"name": "Copy_E3CMaestroCompraAribaToSnowflake",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -375,18 +375,21 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceE3CMaestroCompraAribaToSnowflake",
+						"referenceName": "SourceE3CMaestroCompraAriba",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "Snowflake_E3CMaestroCompraAribaToSnowflake",
+						"referenceName": "Snowflake_E3C_MAESTRO_COMPRA_ARIBA",
 						"type": "DatasetReference"
 					}
 				]
 			}
 		],
+		"folder": {
+			"name": "Main/Sources/CopyToSnowfake/CopyMaestrasToSnowflake/Maestras"
+		},
 		"annotations": []
 	}
 }

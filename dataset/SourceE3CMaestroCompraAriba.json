@@ -1,9 +1,12 @@
 {
-	"name": "SourceE3CMaestroCompraAribaToSnowflake",
+	"name": "SourceE3CMaestroCompraAriba",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorageGen2",
 			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Sources"
 		},
 		"annotations": [],
 		"type": "Parquet",
