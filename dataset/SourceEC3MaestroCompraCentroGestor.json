@@ -1,9 +1,12 @@
 {
-	"name": "EC3MaestroCompraCentroGestor",
+	"name": "SourceEC3MaestroCompraCentroGestor",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorageGen2",
 			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Sources"
 		},
 		"annotations": [],
 		"type": "Parquet",

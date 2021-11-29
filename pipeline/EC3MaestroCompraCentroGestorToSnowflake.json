@@ -425,7 +425,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "EC3MaestroCompraCentroGestor",
+						"referenceName": "SourceEC3MaestroCompraCentroGestor",
 						"type": "DatasetReference"
 					}
 				],
@@ -437,6 +437,9 @@
 				]
 			}
 		],
+		"folder": {
+			"name": "Main/Sources/CopyToSnowfake/CopyMaestrasToSnowflake/Maestras"
+		},
 		"annotations": []
 	}
 }
