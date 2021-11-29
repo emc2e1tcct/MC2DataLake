@@ -22,7 +22,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"pipeline": {
-						"referenceName": "CopyEc3LineasCestaToSnowflake",
+						"referenceName": "Ec3LineasCestaToSnowflake",
 						"type": "PipelineReference"
 					},
 					"waitOnCompletion": true
