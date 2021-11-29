@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "CopyE3c_lineasCestaToSnowflake",
+				"name": "E3c_lineasCestaToSnowflake",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
