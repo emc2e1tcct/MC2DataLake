@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_q52",
+				"name": "CopyEC3MaestroCompraEstadoCestaDerivada",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -377,6 +377,9 @@
 				]
 			}
 		],
+		"folder": {
+			"name": "Main/Sources/CopyToSnowfake/CopyMaestrasToSnowflake/Maestras"
+		},
 		"annotations": []
 	}
 }
