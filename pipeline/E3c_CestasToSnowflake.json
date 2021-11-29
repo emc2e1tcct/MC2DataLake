@@ -34,6 +34,7 @@
 					},
 					"sink": {
 						"type": "SnowflakeSink",
+						"preCopyScript": "TRUNCATE TABLE \"MC2_DEV\".\"PUBLIC\".\"E3C_CESTAS\";",
 						"importSettings": {
 							"type": "SnowflakeImportCopyCommand"
 						}
@@ -131,26 +132,6 @@
 							},
 							{
 								"source": {
-									"name": "e3c_org_comprasname",
-									"type": "String"
-								},
-								"sink": {
-									"name": "e3c_org_comprasname",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "e3c_revisor_expname",
-									"type": "String"
-								},
-								"sink": {
-									"name": "e3c_revisor_expname",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
 									"name": "e3c_solicitante_ordinarianame",
 									"type": "String"
 								},
@@ -186,6 +167,16 @@
 								},
 								"sink": {
 									"name": "owningbusinessunit",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "owninguser",
+									"type": "String"
+								},
+								"sink": {
+									"name": "owninguser",
 									"type": "String"
 								}
 							},
@@ -197,16 +188,6 @@
 								"sink": {
 									"name": "statecode",
 									"type": "Int64"
-								}
-							},
-							{
-								"source": {
-									"name": "owninguser",
-									"type": "String"
-								},
-								"sink": {
-									"name": "owninguser",
-									"type": "String"
 								}
 							},
 							{
@@ -431,31 +412,11 @@
 							},
 							{
 								"source": {
-									"name": "e3c_area_funcionalname",
-									"type": "String"
-								},
-								"sink": {
-									"name": "e3c_area_funcionalname",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
 									"name": "e3c_cliente_tr",
 									"type": "String"
 								},
 								"sink": {
 									"name": "e3c_cliente_tr",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "e3c_dest_mercanciasname",
-									"type": "String"
-								},
-								"sink": {
-									"name": "e3c_dest_mercanciasname",
 									"type": "String"
 								}
 							},
@@ -621,16 +582,6 @@
 							},
 							{
 								"source": {
-									"name": "e3c_sociedadname",
-									"type": "String"
-								},
-								"sink": {
-									"name": "e3c_sociedadname",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
 									"name": "modifiedonbehalfbyname",
 									"type": "String"
 								},
@@ -781,16 +732,6 @@
 							},
 							{
 								"source": {
-									"name": "e3c_centroname",
-									"type": "String"
-								},
-								"sink": {
-									"name": "e3c_centroname",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
 									"name": "e3c_codigosap",
 									"type": "String"
 								},
@@ -816,16 +757,6 @@
 								},
 								"sink": {
 									"name": "e3c_elemento_pep_tr",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "e3c_estado_cesta_derivadaname",
-									"type": "String"
-								},
-								"sink": {
-									"name": "e3c_estado_cesta_derivadaname",
 									"type": "String"
 								}
 							},
@@ -951,12 +882,12 @@
 							},
 							{
 								"source": {
-									"name": "e3c_estado_cesta_ordinarianame",
-									"type": "String"
+									"name": "modifiedon",
+									"type": "DateTime"
 								},
 								"sink": {
-									"name": "e3c_estado_cesta_ordinarianame",
-									"type": "String"
+									"name": "modifiedon",
+									"type": "DateTime"
 								}
 							},
 							{
@@ -977,16 +908,6 @@
 								"sink": {
 									"name": "e3c_solicitante_ordinaria",
 									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "modifiedon",
-									"type": "DateTime"
-								},
-								"sink": {
-									"name": "modifiedon",
-									"type": "DateTime"
 								}
 							},
 							{
