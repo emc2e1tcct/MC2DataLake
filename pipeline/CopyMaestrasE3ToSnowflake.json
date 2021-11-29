@@ -79,6 +79,19 @@
 					},
 					"waitOnCompletion": true
 				}
+			},
+			{
+				"name": "EC3MaestroCompraEstadoCestaOrdinariaToSnowflake",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "EC3MaestroCompraEstadoCestaOrdinariaToSnowflake",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
 			}
 		],
 		"folder": {
