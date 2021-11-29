@@ -1,6 +1,9 @@
 {
 	"name": "CopyMaestrasE3ToSnowflake",
 	"properties": {
+		"folder": {
+			"name": "Main/Sources/CopyToSnowfake/CopyMaestrasToSnowflake"
+		},
 		"annotations": []
 	}
 }
