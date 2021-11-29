@@ -40,6 +40,19 @@
 					},
 					"waitOnCompletion": true
 				}
+			},
+			{
+				"name": "EC3MaestroCompraCecoToSnowflake",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "EC3MaestroCompraCecoToSnowflake",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
 			}
 		],
 		"folder": {
