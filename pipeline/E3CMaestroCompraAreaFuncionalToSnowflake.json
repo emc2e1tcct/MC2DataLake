@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_823",
+				"name": "CopyE3CMaestroCompraAreaFuncionalToSnowflake",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -375,13 +375,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceDataset_823",
+						"referenceName": "SourceE3C_MaestroCompraAreaFuncional",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_823",
+						"referenceName": "Snowflake_E3C_MAESTRO_COMPRA_AREA_FUNCIONAL",
 						"type": "DatasetReference"
 					}
 				]

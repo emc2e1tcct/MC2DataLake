@@ -1,9 +1,12 @@
 {
-	"name": "SourceDataset_823",
+	"name": "SourceE3C_MaestroCompraAreaFuncional",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorageGen2",
 			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Sources"
 		},
 		"annotations": [],
 		"type": "Parquet",
