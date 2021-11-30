@@ -1,9 +1,12 @@
 {
-	"name": "DestinationDataset_bv6",
+	"name": "Snowflake_E3C_MAESTRO_COMPRA_USUARIO_SOLICITANTE_ORD",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Snowflake1",
 			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destination"
 		},
 		"annotations": [],
 		"type": "SnowflakeTable",

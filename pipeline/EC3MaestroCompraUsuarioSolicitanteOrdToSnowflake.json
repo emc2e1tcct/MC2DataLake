@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_bv6",
+				"name": "CopyEC3MaestroCompraUsuarioSolicitanteOrdToSnowflake",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -411,12 +411,15 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_bv6",
+						"referenceName": "Snowflake_E3C_MAESTRO_COMPRA_USUARIO_SOLICITANTE_ORD",
 						"type": "DatasetReference"
 					}
 				]
 			}
 		],
+		"folder": {
+			"name": "Main/Sources/CopyToSnowfake/CopyMaestrasToSnowflake/Maestras"
+		},
 		"annotations": []
 	}
 }
