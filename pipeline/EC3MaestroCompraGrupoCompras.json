@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_2il",
+				"name": "CopyEC3MaestroCompragrupoCompras",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
