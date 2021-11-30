@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_tdk",
+				"name": "CopyEC3MaestroCompraEstadoCestaOrdinariaToSnowflake",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
