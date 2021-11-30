@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_nxh",
+				"name": "CopyEC3MaestroCompraPosicionContratoToSnowflake",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -471,7 +471,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_nxh",
+						"referenceName": "Snowflake_E3C_MAESTRO_COMPRA_POSICION_CONTRATO",
 						"type": "DatasetReference"
 					}
 				]

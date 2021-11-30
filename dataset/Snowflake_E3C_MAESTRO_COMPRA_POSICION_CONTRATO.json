@@ -1,5 +1,5 @@
 {
-	"name": "DestinationDataset_nxh",
+	"name": "Snowflake_E3C_MAESTRO_COMPRA_POSICION_CONTRATO",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Snowflake1",
