@@ -313,6 +313,19 @@
 					},
 					"waitOnCompletion": true
 				}
+			},
+			{
+				"name": "EC3MaestroCompraTipoImputacionToSnowflake",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "EC3MaestroCompraTipoImputacionToSnowflake",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
 			}
 		],
 		"folder": {
