@@ -598,6 +598,30 @@
 						"destination": {
 							"fileName": "e3c_maestro_compra_tipo_imputacion.parquet"
 						}
+					},
+					{
+						"source": {
+							"entityName": "e3c_maestro_compra_posicion_contrato"
+						},
+						"destination": {
+							"fileName": "e3c_maestro_compra_posicion_contrato.parquet"
+						}
+					},
+					{
+						"source": {
+							"entityName": "e3c_maestro_compra_revisor_exp"
+						},
+						"destination": {
+							"fileName": "e3c_maestro_compra_revisor_exp.parquet"
+						}
+					},
+					{
+						"source": {
+							"entityName": "e3c_maestro_compra_usuario_solicitante_ord"
+						},
+						"destination": {
+							"fileName": "e3c_maestro_compra_usuario_solicitante_ord.parquet"
+						}
 					}
 				]
 			},
