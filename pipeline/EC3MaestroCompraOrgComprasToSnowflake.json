@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_idq",
+				"name": "CopyEC3MaestroCompraOrgComprasToSnowflake",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
