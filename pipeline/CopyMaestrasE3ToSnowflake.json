@@ -35,7 +35,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"pipeline": {
-						"referenceName": "EC3MaestroCompraCategiaToSnowflake",
+						"referenceName": "EC3MaestroCompraCategoriaToSnowflake",
 						"type": "PipelineReference"
 					},
 					"waitOnCompletion": true
