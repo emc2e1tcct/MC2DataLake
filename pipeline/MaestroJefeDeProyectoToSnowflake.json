@@ -4,7 +4,7 @@
 		"activities": [
 			{
 				"name": "CopyMaestroJefeDeProyecto",
-				"description": "TRUNCATE TABLE \"MC2_DEV\".\"PUBLIC\".\"MC2_MAESTRO_JEFE_DE_PROYECTO\";",
+				"description": "",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -35,6 +35,7 @@
 					},
 					"sink": {
 						"type": "SnowflakeSink",
+						"preCopyScript": "TRUNCATE TABLE \"MC2_DEV\".\"PUBLIC\".\"MC2_MAESTRO_JEFE_DE_PROYECTO\";",
 						"importSettings": {
 							"type": "SnowflakeImportCopyCommand"
 						}
