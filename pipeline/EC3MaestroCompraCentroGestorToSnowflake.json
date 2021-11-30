@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_b7s",
+				"name": "CopyEC3MaestroCompraGastoInversion",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
