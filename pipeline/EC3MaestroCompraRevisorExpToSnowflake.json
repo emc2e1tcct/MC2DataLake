@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_lou",
+				"name": "CopyEC3MaestroCompraRevisorExpToSnowflake",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
