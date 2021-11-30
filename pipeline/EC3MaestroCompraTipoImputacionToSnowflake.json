@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_nzc",
+				"name": "CopyEC3MaestroCompraTipoImputacionToSnowflake",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -387,6 +387,9 @@
 				]
 			}
 		],
+		"folder": {
+			"name": "Main/Sources/CopyToSnowfake/CopyMaestrasToSnowflake/Maestras"
+		},
 		"annotations": []
 	}
 }
