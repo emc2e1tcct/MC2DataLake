@@ -4,6 +4,7 @@
 		"activities": [
 			{
 				"name": "CopyMaestroCostesFormula",
+				"description": "TRUNCATE TABLE \"MC2_DEV\".\"PUBLIC\".\"MC2_MAESTRO_COSTES_FORMULA\";",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {

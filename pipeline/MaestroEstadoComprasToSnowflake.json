@@ -4,6 +4,7 @@
 		"activities": [
 			{
 				"name": "CopyMaestroEstadoComprasToSnowflake",
+				"description": "TRUNCATE TABLE \"MC2_DEV\".\"PUBLIC\".\"MC2_MAESTRO_ESTADO_COMPRAS\";",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {

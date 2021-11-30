@@ -3,7 +3,8 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy MaestroProductoToSnowflake",
+				"name": "CopyMaestroProductoToSnowflake",
+				"description": "TRUNCATE TABLE \"MC2_DEV\".\"PUBLIC\".\"MC2_MAESTRO_PRODUCTO\";",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {

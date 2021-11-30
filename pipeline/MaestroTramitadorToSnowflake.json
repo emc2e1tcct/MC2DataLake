@@ -4,6 +4,7 @@
 		"activities": [
 			{
 				"name": "CopyMaestroTramitadorToSnowflake",
+				"description": "TRUNCATE TABLE \"MC2_DEV\".\"PUBLIC\".\"MC2_MAESTRO_TRAMITADOR\";",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {

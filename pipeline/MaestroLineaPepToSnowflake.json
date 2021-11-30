@@ -4,6 +4,7 @@
 		"activities": [
 			{
 				"name": "CopyMaestroLineapepToSnowflake",
+				"description": "TRUNCATE TABLE \"MC2_DEV\".\"PUBLIC\".\"MC2_MAESTRO_LINEAPEP\";",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {

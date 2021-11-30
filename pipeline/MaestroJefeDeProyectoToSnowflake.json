@@ -4,6 +4,7 @@
 		"activities": [
 			{
 				"name": "CopyMaestroJefeDeProyecto",
+				"description": "TRUNCATE TABLE \"MC2_DEV\".\"PUBLIC\".\"MC2_MAESTRO_JEFE_DE_PROYECTO\";",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {

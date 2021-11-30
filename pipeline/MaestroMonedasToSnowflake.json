@@ -4,6 +4,7 @@
 		"activities": [
 			{
 				"name": "CopyMaestroMonedasToSnowflake",
+				"description": "TRUNCATE TABLE \"MC2_DEV\".\"PUBLIC\".\"MC2_MAESTRO_MONEDAS\";",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {

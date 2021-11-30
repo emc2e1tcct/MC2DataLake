@@ -4,6 +4,7 @@
 		"activities": [
 			{
 				"name": "CopyMaestroCebeToSnowflake",
+				"description": "TRUNCATE TABLE \"MC2_DEV\".\"PUBLIC\".\"MC2_MAESTRO_CEBE\";",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
