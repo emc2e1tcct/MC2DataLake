@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_0t6",
+				"name": "CopyEC3MaestroCompraGastoInversionToSnowflake",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
