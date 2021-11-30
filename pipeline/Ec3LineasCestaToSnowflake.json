@@ -451,7 +451,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "Snowflake_LINEAS_CESTA",
+						"referenceName": "Snowflake_E3C_LINEAS_CESTA",
 						"type": "DatasetReference"
 					}
 				]

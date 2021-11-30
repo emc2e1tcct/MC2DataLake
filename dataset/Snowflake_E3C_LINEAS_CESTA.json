@@ -1,5 +1,5 @@
 {
-	"name": "Snowflake_LINEAS_CESTA",
+	"name": "Snowflake_E3C_LINEAS_CESTA",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Snowflake1",
