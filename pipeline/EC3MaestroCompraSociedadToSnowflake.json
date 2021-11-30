@@ -421,7 +421,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationEC3MaestroCompraSociedadToSnowflake",
+						"referenceName": "Snowflake_E3C_MAESTRO_COMPRA_SOCIEDAD",
 						"type": "DatasetReference"
 					}
 				]

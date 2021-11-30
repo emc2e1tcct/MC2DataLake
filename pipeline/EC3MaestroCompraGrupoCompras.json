@@ -415,7 +415,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceEC3MaestroCompraGrupoComprasToSnowflake",
+						"referenceName": "SourceEC3MaestroCompraGrupoCompras",
 						"type": "DatasetReference"
 					}
 				],

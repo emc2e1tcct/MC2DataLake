@@ -1,5 +1,5 @@
 {
-	"name": "SourceEC3MaestroCompraGastoInversionToSnowflake",
+	"name": "SourceEC3MaestroCompraGastoInversion",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorageGen2",

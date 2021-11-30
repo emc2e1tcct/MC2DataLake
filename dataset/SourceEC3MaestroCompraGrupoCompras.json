@@ -1,5 +1,5 @@
 {
-	"name": "SourceEC3MaestroCompraGrupoComprasToSnowflake",
+	"name": "SourceEC3MaestroCompraGrupoCompras",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorageGen2",

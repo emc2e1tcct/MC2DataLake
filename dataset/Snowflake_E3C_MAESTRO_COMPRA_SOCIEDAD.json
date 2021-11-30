@@ -1,9 +1,12 @@
 {
-	"name": "DestinationEC3MaestroCompraSociedadToSnowflake",
+	"name": "Snowflake_E3C_MAESTRO_COMPRA_SOCIEDAD",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Snowflake1",
 			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destination"
 		},
 		"annotations": [],
 		"type": "SnowflakeTable",

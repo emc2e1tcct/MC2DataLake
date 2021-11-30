@@ -375,7 +375,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceEC3MaestroCompraGastoInversionToSnowflake",
+						"referenceName": "SourceEC3MaestroCompraGastoInversion",
 						"type": "DatasetReference"
 					}
 				],
