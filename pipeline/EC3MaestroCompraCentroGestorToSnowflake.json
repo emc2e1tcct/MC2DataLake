@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "CopyEC3MaestroCompraGastoInversion",
+				"name": "CopyEC3MaestroCompraCentroGestion",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
