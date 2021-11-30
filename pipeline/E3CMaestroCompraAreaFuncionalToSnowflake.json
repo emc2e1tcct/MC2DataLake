@@ -4,6 +4,7 @@
 		"activities": [
 			{
 				"name": "CopyE3CMaestroCompraAreaFuncionalToSnowflake",
+				"description": "TRUNCATE TABLE \"MC2_DEV\".\"PUBLIC\".\"E3C_MAESTRO_COMPRA_AREA_FUNCIONAL\";",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
