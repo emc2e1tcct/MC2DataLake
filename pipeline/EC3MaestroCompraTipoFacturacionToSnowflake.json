@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_rhg",
+				"name": "CopyEC3MaestroCompraTipoFacturacionToSnowflake",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
