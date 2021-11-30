@@ -34,6 +34,7 @@
 					},
 					"sink": {
 						"type": "SnowflakeSink",
+						"preCopyScript": "TRUNCATE TABLE \"MC2_DEV\".\"PUBLIC\".\"MC2_PROYECTO\";",
 						"importSettings": {
 							"type": "SnowflakeImportCopyCommand"
 						}

@@ -4,6 +4,7 @@
 		"activities": [
 			{
 				"name": "CopyPlanificacionToSnowflake",
+				"description": "TRUNCATE TABLE \"MC2_DEV\".\"PUBLIC\".\"MC2_PLANIFICACION\";",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
