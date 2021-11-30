@@ -1,5 +1,5 @@
 {
-	"name": "EC3MaestroCompraTipoFacturacion",
+	"name": "EC3MaestroCompraTipoFacturacionToSnowflake",
 	"properties": {
 		"activities": [
 			{
@@ -387,6 +387,9 @@
 				]
 			}
 		],
+		"folder": {
+			"name": "Main/Sources/CopyToSnowfake/CopyMaestrasToSnowflake/Maestras"
+		},
 		"annotations": []
 	}
 }
