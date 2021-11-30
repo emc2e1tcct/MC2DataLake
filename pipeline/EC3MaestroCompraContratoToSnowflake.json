@@ -42,7 +42,7 @@
 					"enableStaging": true,
 					"stagingSettings": {
 						"linkedServiceName": {
-							"referenceName": "AzureDataLakeStorageGen2",
+							"referenceName": "AzureBlobStorageForSnowflake",
 							"type": "LinkedServiceReference"
 						},
 						"path": "mc2-bs-golden/StoragePath"
