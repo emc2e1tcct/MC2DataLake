@@ -292,14 +292,6 @@
 						"destination": {
 							"fileName": "mc2_maestro_tipo_facturacion.parquet"
 						}
-					},
-					{
-						"source": {
-							"entityName": "mc2_maestro_estado_envio"
-						},
-						"destination": {
-							"fileName": "mc2_maestro_estado_envio.parquet"
-						}
 					}
 				]
 			}
