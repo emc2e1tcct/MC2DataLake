@@ -276,6 +276,30 @@
 						"destination": {
 							"fileName": "mc2_maestrocodigoproyecto.parquet"
 						}
+					},
+					{
+						"source": {
+							"entityName": "mc2_maestro_fase"
+						},
+						"destination": {
+							"fileName": "mc2_maestro_fase.parquet"
+						}
+					},
+					{
+						"source": {
+							"entityName": "mc2_maestro_tipo_facturacion"
+						},
+						"destination": {
+							"fileName": "mc2_maestro_tipo_facturacion.parquet"
+						}
+					},
+					{
+						"source": {
+							"entityName": "mc2_maestro_estado_envio"
+						},
+						"destination": {
+							"fileName": "mc2_maestro_estado_envio.parquet"
+						}
 					}
 				]
 			}
