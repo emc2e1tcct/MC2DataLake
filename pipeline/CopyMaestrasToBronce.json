@@ -292,6 +292,14 @@
 						"destination": {
 							"fileName": "mc2_maestro_tipo_facturacion.parquet"
 						}
+					},
+					{
+						"source": {
+							"entityName": "mc2_maestro_estado_venta"
+						},
+						"destination": {
+							"fileName": "mc2_maestro_estado_venta.parquet"
+						}
 					}
 				]
 			}
