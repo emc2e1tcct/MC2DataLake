@@ -371,7 +371,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "Snowflake_MC2_MAESTRO_TIPO_FACTURACION",
+						"referenceName": "Snowflake_MC2_MAESTRO_FASE",
 						"type": "DatasetReference"
 					}
 				]
