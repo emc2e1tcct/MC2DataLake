@@ -371,12 +371,6 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
-					},
-					"AzureDataLakeStorageDataFact_properties_privateLinkResourceId": {
-						"value": "[parameters('AzureDataLakeStorageDataFact_properties_privateLinkResourceId')]"
-					},
-					"AzureDataLakeStorageDataFact_properties_groupId": {
-						"value": "[parameters('AzureDataLakeStorageDataFact_properties_groupId')]"
 					}
 				}
 			},
@@ -397,9 +391,6 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
-					},
-					"AzureDataLakeStorageGen2_properties_typeProperties_url": {
-						"value": "[parameters('AzureDataLakeStorageGen2_properties_typeProperties_url')]"
 					}
 				}
 			},
@@ -420,6 +411,15 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"AzureDataLakeStorageDataFact_properties_privateLinkResourceId": {
+						"value": "[parameters('AzureDataLakeStorageDataFact_properties_privateLinkResourceId')]"
+					},
+					"AzureDataLakeStorageDataFact_properties_groupId": {
+						"value": "[parameters('AzureDataLakeStorageDataFact_properties_groupId')]"
+					},
+					"AzureDataLakeStorageGen2_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorageGen2_properties_typeProperties_url')]"
 					}
 				}
 			},
@@ -460,6 +460,86 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'MC2Factory_ArmTemplate_4')]"
+			]
+		},
+		{
+			"name": "MC2Factory_ArmTemplate_6",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_6.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'MC2Factory_ArmTemplate_5')]"
+			]
+		},
+		{
+			"name": "MC2Factory_ArmTemplate_7",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_7.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'MC2Factory_ArmTemplate_6')]"
+			]
+		},
+		{
+			"name": "MC2Factory_ArmTemplate_8",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_8.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'MC2Factory_ArmTemplate_7')]"
+			]
+		},
+		{
+			"name": "MC2Factory_ArmTemplate_9",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_9.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
 					},
 					"TablasTrigger_properties_main_parameters_cw_items_Maestras": {
 						"value": "[parameters('TablasTrigger_properties_main_parameters_cw_items_Maestras')]"
@@ -470,7 +550,7 @@
 				}
 			},
 			"dependsOn": [
-				"[resourceId('Microsoft.Resources/deployments', 'MC2Factory_ArmTemplate_4')]"
+				"[resourceId('Microsoft.Resources/deployments', 'MC2Factory_ArmTemplate_8')]"
 			]
 		}
 	]

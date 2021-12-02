@@ -102,7 +102,7 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Snowflake_MC2_CODIGOPROYECTO')]",
+			"name": "[concat(parameters('factoryName'), '/Snowflake_E3C_CESTAS')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -117,954 +117,153 @@
 				"type": "SnowflakeTable",
 				"schema": [
 					{
-						"name": "owningbusinessunit",
+						"name": "e3c_categoria_producto",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
 					},
 					{
-						"name": "owninguser",
+						"name": "e3c_categoria_productoname",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
 					},
 					{
-						"name": "statecode",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "createdby",
+						"name": "e3c_centro_gestorname",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
 					},
 					{
-						"name": "createdonbehalfby",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_codigo_sap",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "utcconversiontimezonecode",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "importsequencenumber",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "mc2_ambito",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_codigo_proyectoname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedonbehalfby",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owneridname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedbyname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owningbusinessunitname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "statuscode",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "ownerid",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owneridtype",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedonbehalfbyname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "createdbyname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_codigo_proyecto",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_maestrocodigoproyectoid",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedbyyominame",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owneridyominame",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owningteam",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "timezoneruleversionnumber",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "mc2_codigo_sociedad",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedonbehalfbyyominame",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "createdonbehalfbyname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_ano",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_name",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "createdbyyominame",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedby",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "createdon",
-						"type": "TIMESTAMP_NTZ",
-						"precision": 29,
-						"scale": 9
-					},
-					{
-						"name": "createdonbehalfbyyominame",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedon",
-						"type": "TIMESTAMP_NTZ",
-						"precision": 29,
-						"scale": 9
-					},
-					{
-						"name": "overriddencreatedon",
-						"type": "TIMESTAMP_NTZ",
-						"precision": 29,
-						"scale": 9
-					},
-					{
-						"name": "versionnumber",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					}
-				],
-				"typeProperties": {
-					"schema": "PUBLIC",
-					"table": "MC2_MAESTROCODIGOPROYECTO"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Snowflake_MC2_COMENTARIOS_PROYECTO')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "Snowflake1",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "Destination"
-				},
-				"annotations": [],
-				"type": "SnowflakeTable",
-				"schema": [
-					{
-						"name": "mc2_comentario",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owningbusinessunit",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owninguser",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "statecode",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "createdby",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "createdonbehalfby",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "utcconversiontimezonecode",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "importsequencenumber",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "mc2_actividad_principal",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_aprobacion",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owneridname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedonbehalfby",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedbyname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owningbusinessunitname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "statuscode",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "mc2_fecha",
-						"type": "TIMESTAMP_NTZ",
-						"precision": 29,
-						"scale": 9
-					},
-					{
-						"name": "ownerid",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owneridtype",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedonbehalfbyname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "createdbyname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_comentarios_proyectoid",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedbyyominame",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedonbehalfbyyominame",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owneridyominame",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owningteam",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "timezoneruleversionnumber",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "createdonbehalfbyname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedby",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "createdbyyominame",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "createdon",
-						"type": "TIMESTAMP_NTZ",
-						"precision": 29,
-						"scale": 9
-					},
-					{
-						"name": "createdonbehalfbyyominame",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedon",
-						"type": "TIMESTAMP_NTZ",
-						"precision": 29,
-						"scale": 9
-					},
-					{
-						"name": "overriddencreatedon",
-						"type": "TIMESTAMP_NTZ",
-						"precision": 29,
-						"scale": 9
-					},
-					{
-						"name": "versionnumber",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					}
-				],
-				"typeProperties": {
-					"schema": "PUBLIC",
-					"table": "MC2_COMENTARIOS_PROYECTO"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Snowflake_MC2_ELEMENTO_PEP')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "Snowflake1",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "Destination"
-				},
-				"annotations": [],
-				"type": "SnowflakeTable",
-				"schema": [
-					{
-						"name": "mc2_ceconame",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_linea_de_negocio",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_plazo_utmname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_prioridadname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owninguser",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "statecode",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "owningbusinessunit",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_importe_impl",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "createdby",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "createdonbehalfby",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_elemento_pepid",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_elementofacturacion",
+						"name": "e3c_enviado_sap",
 						"type": "BOOLEAN",
 						"precision": 1,
 						"scale": 0
 					},
 					{
-						"name": "mc2_recursoname",
+						"name": "e3c_revisor_exp",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
 					},
 					{
-						"name": "importsequencenumber",
+						"name": "e3c_sa_tr",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_unidad",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_url_carpeta_sharepoint_tr",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_envio_urgente_ordinaria",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_org_comprasname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_pedidosap",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_revisor_expname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_solicitante_ordinarianame",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_tipo_imputacion",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owningbusinessunit",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "statecode",
 						"type": "NUMBER",
 						"precision": 38,
 						"scale": 0
 					},
 					{
-						"name": "mc2_coste_oferta",
+						"name": "owninguser",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
 					},
 					{
-						"name": "utcconversiontimezonecode",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "mc2_prioridad",
+						"name": "createdby",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
 					},
 					{
-						"name": "mc2_elementoplanificacion",
+						"name": "createdonbehalfby",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_aprobacion_compra",
 						"type": "BOOLEAN",
 						"precision": 1,
 						"scale": 0
 					},
 					{
-						"name": "mc2_elementoimputacion",
-						"type": "BOOLEAN",
-						"precision": 1,
-						"scale": 0
-					},
-					{
-						"name": "mc2_fase",
+						"name": "e3c_centro_gestor",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
 					},
 					{
-						"name": "mc2_id_familia",
+						"name": "e3c_contrato",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
 					},
 					{
-						"name": "modifiedonbehalfby",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owneridname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_naturaleza_utmname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_bloquename",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_elementopep_superior",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_fasename",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_id_pedido",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owningbusinessunitname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "statuscode",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "mc2_nivelpep",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "modifiedbyname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_importe_expl",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_ceco",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "ownerid",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedonbehalfbyname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owneridtype",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "createdbyname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_descripcion",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_id_producto",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_linea_de_negocioname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_plancostes",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedbyyominame",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedonbehalfbyyominame",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owneridyominame",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_recurso",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owningteam",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "timezoneruleversionnumber",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "createdonbehalfbyname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_elemento_pep",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_id_pedidoname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_planingresos",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "createdbyyominame",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_bloque",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_plazo_utm",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedby",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "createdon",
+						"name": "e3c_fecha_inicio_tr",
 						"type": "TIMESTAMP_NTZ",
 						"precision": 29,
 						"scale": 9
 					},
 					{
-						"name": "createdonbehalfbyyominame",
+						"name": "e3c_grupo_compras",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
 					},
 					{
-						"name": "mc2_naturaleza_utm",
+						"name": "e3c_area_funcional",
 						"type": "VARCHAR",
 						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedon",
-						"type": "TIMESTAMP_NTZ",
-						"precision": 29,
-						"scale": 9
-					},
-					{
-						"name": "overriddencreatedon",
-						"type": "TIMESTAMP_NTZ",
-						"precision": 29,
-						"scale": 9
-					},
-					{
-						"name": "versionnumber",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					}
-				],
-				"typeProperties": {
-					"schema": "PUBLIC",
-					"table": "MC2_ELEMENTO_PEP"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Snowflake_MC2_LINEAS_ADQUIRA')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "Snowflake1",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "Destination"
-				},
-				"annotations": [],
-				"type": "SnowflakeTable",
-				"schema": [
-					{
-						"name": "mc2_estado",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_impuesto",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owningbusinessunit",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owninguser",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "statecode",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "mc2_importe_neto",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 18
-					},
-					{
-						"name": "mc2_lineas_adquiraid",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "createdby",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "createdonbehalfby",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_cantidad",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_id_pedido_comprador",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_precio_unitario",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "utcconversiontimezonecode",
-						"type": "NUMBER",
-						"precision": 38,
 						"scale": 0
 					},
 					{
@@ -1074,13 +273,43 @@
 						"scale": 0
 					},
 					{
-						"name": "mc2_base_imponible",
+						"name": "utcconversiontimezonecode",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "e3c_num_pedido_cliente",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
 					},
 					{
-						"name": "mc2_cantidad_precio_unitario",
+						"name": "e3c_fecha_fin_tr",
+						"type": "TIMESTAMP_NTZ",
+						"precision": 29,
+						"scale": 9
+					},
+					{
+						"name": "e3c_grupo_comprasname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_moneda_tr",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_nota_tramitacion",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedonbehalfby",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
@@ -1092,19 +321,67 @@
 						"scale": 0
 					},
 					{
-						"name": "mc2_linea_cerrada_a_facturacion",
+						"name": "e3c_estado_cesta_ordinaria",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
 					},
 					{
-						"name": "mc2_porcentaje_linea",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 18
+						"name": "e3c_gasto_inversionname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
 					},
 					{
-						"name": "modifiedonbehalfby",
+						"name": "e3c_precio_bruto",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_proveedor_tr",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_proyecto_tr",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_area_funcionalname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_cliente_tr",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_dest_mercanciasname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_fecha_contabilizacion",
+						"type": "TIMESTAMP_NTZ",
+						"precision": 29,
+						"scale": 9
+					},
+					{
+						"name": "e3c_org_compras",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_solicitante_derivadaname",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
@@ -1116,7 +393,7 @@
 						"scale": 0
 					},
 					{
-						"name": "mc2_unidad_de_medida",
+						"name": "e3c_nombre_cesta",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
@@ -1134,31 +411,61 @@
 						"scale": 0
 					},
 					{
-						"name": "mc2_articulo",
+						"name": "e3c_ap_tr",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
 					},
 					{
-						"name": "mc2_comentarios",
+						"name": "e3c_contratoname",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
 					},
 					{
-						"name": "mc2_fecha_estimada_de_entrega",
-						"type": "TIMESTAMP_NTZ",
-						"precision": 29,
-						"scale": 9
+						"name": "e3c_descripcion_proyecto_tr",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
 					},
 					{
-						"name": "mc2_referencia_proveedor",
+						"name": "e3c_importe_total_tr",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_status_ariba",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_tipo_facturacion_tr",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
 					},
 					{
 						"name": "owneridtype",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_fecha_entrega_tr",
+						"type": "TIMESTAMP_NTZ",
+						"precision": 29,
+						"scale": 9
+					},
+					{
+						"name": "e3c_nota_aprobacion",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_sociedadname",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
@@ -1176,7 +483,7 @@
 						"scale": 0
 					},
 					{
-						"name": "mc2_n_linea",
+						"name": "e3c_gasto_inversion",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
@@ -1188,16 +495,22 @@
 						"scale": 0
 					},
 					{
-						"name": "mc2_id_de_proyecto",
+						"name": "e3c_cestasid",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
 					},
 					{
-						"name": "mc2_importe",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 18
+						"name": "e3c_contrato_tr",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_centro",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
 					},
 					{
 						"name": "modifiedbyyominame",
@@ -1218,13 +531,25 @@
 						"scale": 0
 					},
 					{
+						"name": "owningteam",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
 						"name": "timezoneruleversionnumber",
 						"type": "NUMBER",
 						"precision": 38,
 						"scale": 0
 					},
 					{
-						"name": "owningteam",
+						"name": "e3c_nota_proveedores",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_tipo_compra",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
@@ -1236,25 +561,37 @@
 						"scale": 0
 					},
 					{
-						"name": "mc2_linea_cerrada",
+						"name": "e3c_centroname",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
 					},
 					{
-						"name": "mc2_porcentaje",
+						"name": "e3c_codigosap",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
 					},
 					{
-						"name": "mc2_referencia_comprador",
+						"name": "e3c_dest_mercancias",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
 					},
 					{
-						"name": "modifiedby",
+						"name": "e3c_elemento_pep_tr",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_estado_cesta_derivadaname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_sociedad",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
@@ -1266,7 +603,25 @@
 						"scale": 0
 					},
 					{
-						"name": "mc2_name",
+						"name": "e3c_solicitante_derivada",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedby",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_status_aribaname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_pedido",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
@@ -1284,13 +639,37 @@
 						"scale": 0
 					},
 					{
-						"name": "mc2_direccion_de_expedicion",
+						"name": "e3c_cantidad_base_ordinaria",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
 					},
 					{
-						"name": "mc2_referencia_fabricante",
+						"name": "e3c_estado_cesta_derivada",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_tipo_imputacionname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_estado_cesta_ordinarianame",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_fecha_sap",
+						"type": "TIMESTAMP_NTZ",
+						"precision": 29,
+						"scale": 9
+					},
+					{
+						"name": "e3c_solicitante_ordinaria",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
@@ -1312,11 +691,17 @@
 						"type": "NUMBER",
 						"precision": 38,
 						"scale": 0
+					},
+					{
+						"name": "e3c_tipo_cesta_ordinaria",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
 					}
 				],
 				"typeProperties": {
 					"schema": "PUBLIC",
-					"table": "MC2_LINEAS_ADQUIRA"
+					"table": "E3C_CESTAS"
 				}
 			},
 			"dependsOn": [
@@ -1324,7 +709,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Snowflake_MC2_MAESTRO_AMBITO')]",
+			"name": "[concat(parameters('factoryName'), '/Snowflake_E3C_LINEAS_CESTA')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -1345,15 +730,21 @@
 						"scale": 0
 					},
 					{
-						"name": "owninguser",
+						"name": "statecode",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "e3c_porcentaje",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
 					},
 					{
-						"name": "statecode",
-						"type": "NUMBER",
-						"precision": 38,
+						"name": "owninguser",
+						"type": "VARCHAR",
+						"precision": 0,
 						"scale": 0
 					},
 					{
@@ -1369,15 +760,15 @@
 						"scale": 0
 					},
 					{
-						"name": "mc2_maestro_ambitoid",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
 						"name": "utcconversiontimezonecode",
 						"type": "NUMBER",
 						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "e3c_lineas_cestaid",
+						"type": "VARCHAR",
+						"precision": 0,
 						"scale": 0
 					},
 					{
@@ -1387,7 +778,13 @@
 						"scale": 0
 					},
 					{
-						"name": "mc2_ambito",
+						"name": "e3c_num_pedido",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owneridname",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
@@ -1399,7 +796,13 @@
 						"scale": 0
 					},
 					{
-						"name": "owneridname",
+						"name": "e3c_fecha",
+						"type": "TIMESTAMP_NTZ",
+						"precision": 29,
+						"scale": 9
+					},
+					{
+						"name": "e3c_posicion_contratoname",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
@@ -1447,6 +850,12 @@
 						"scale": 0
 					},
 					{
+						"name": "e3c_posicion",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
 						"name": "modifiedbyyominame",
 						"type": "VARCHAR",
 						"precision": 0,
@@ -1477,7 +886,19 @@
 						"scale": 0
 					},
 					{
+						"name": "e3c_pedido_id",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
 						"name": "createdonbehalfbyname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_num_pedidoname",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
@@ -1507,6 +928,18 @@
 						"scale": 0
 					},
 					{
+						"name": "e3c_importe",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_posicion_contrato",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
 						"name": "modifiedon",
 						"type": "TIMESTAMP_NTZ",
 						"precision": 29,
@@ -1527,7 +960,7 @@
 				],
 				"typeProperties": {
 					"schema": "PUBLIC",
-					"table": "MC2_MAESTRO_AMBITO"
+					"table": "E3C_LINEAS_CESTA"
 				}
 			},
 			"dependsOn": [
@@ -1535,7 +968,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Snowflake_MC2_MAESTRO_CEBE')]",
+			"name": "[concat(parameters('factoryName'), '/Snowflake_E3C_MAESTRO_CENTRO_GESTOR')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -1580,7 +1013,13 @@
 						"scale": 0
 					},
 					{
-						"name": "mc2_spco",
+						"name": "e3c_centro_gestor",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_maestro_compra_centro_gestorid",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
@@ -1598,6 +1037,12 @@
 						"scale": 0
 					},
 					{
+						"name": "e3c_usuario",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
 						"name": "modifiedonbehalfby",
 						"type": "VARCHAR",
 						"precision": 0,
@@ -1610,13 +1055,7 @@
 						"scale": 0
 					},
 					{
-						"name": "mc2_idioma",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_responsable_cebe",
+						"name": "e3c_nombre_responsable",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
@@ -1640,6 +1079,12 @@
 						"scale": 0
 					},
 					{
+						"name": "e3c_fondo",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
 						"name": "ownerid",
 						"type": "VARCHAR",
 						"precision": 0,
@@ -1647,12 +1092,6 @@
 					},
 					{
 						"name": "owneridtype",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_texto_cebe",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
@@ -1670,7 +1109,19 @@
 						"scale": 0
 					},
 					{
-						"name": "modifiedonbehalfbyyominame",
+						"name": "e3c_denominacion",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_fecha_desde",
+						"type": "TIMESTAMP_NTZ",
+						"precision": 29,
+						"scale": 9
+					},
+					{
+						"name": "modifiedbyyominame",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
@@ -1694,7 +1145,7 @@
 						"scale": 0
 					},
 					{
-						"name": "modifiedbyyominame",
+						"name": "modifiedonbehalfbyyominame",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
@@ -1706,13 +1157,13 @@
 						"scale": 0
 					},
 					{
-						"name": "modifiedby",
+						"name": "createdbyyominame",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
 					},
 					{
-						"name": "createdbyyominame",
+						"name": "modifiedby",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
@@ -1730,25 +1181,13 @@
 						"scale": 0
 					},
 					{
-						"name": "mc2_cebe",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_maestro_cebeid",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedon",
+						"name": "e3c_fecha_hasta",
 						"type": "TIMESTAMP_NTZ",
 						"precision": 29,
 						"scale": 9
 					},
 					{
-						"name": "overriddencreatedon",
+						"name": "modifiedon",
 						"type": "TIMESTAMP_NTZ",
 						"precision": 29,
 						"scale": 9
@@ -1758,11 +1197,17 @@
 						"type": "NUMBER",
 						"precision": 38,
 						"scale": 0
+					},
+					{
+						"name": "overriddencreatedon",
+						"type": "TIMESTAMP_NTZ",
+						"precision": 29,
+						"scale": 9
 					}
 				],
 				"typeProperties": {
 					"schema": "PUBLIC",
-					"table": "MC2_MAESTRO_CEBE"
+					"table": "E3C_MAESTRO_COMPRA_CENTRO_GESTOR"
 				}
 			},
 			"dependsOn": [
@@ -1770,7 +1215,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Snowflake_MC2_MAESTRO_CECO')]",
+			"name": "[concat(parameters('factoryName'), '/Snowflake_E3C_MAESTRO_COMPRA_AREA_FUNCIONAL')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -1784,12 +1229,6 @@
 				"annotations": [],
 				"type": "SnowflakeTable",
 				"schema": [
-					{
-						"name": "mc2_maestro_cecoid",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
 					{
 						"name": "owningbusinessunit",
 						"type": "VARCHAR",
@@ -1821,15 +1260,15 @@
 						"scale": 0
 					},
 					{
-						"name": "mc2_texto",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
 						"name": "utcconversiontimezonecode",
 						"type": "NUMBER",
 						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "e3c_area_funcional",
+						"type": "VARCHAR",
+						"precision": 0,
 						"scale": 0
 					},
 					{
@@ -1846,6 +1285,12 @@
 					},
 					{
 						"name": "owneridname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_maestro_compra_area_funcionalid",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
@@ -1881,12 +1326,6 @@
 						"scale": 0
 					},
 					{
-						"name": "mc2_ceco",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
 						"name": "modifiedonbehalfbyname",
 						"type": "VARCHAR",
 						"precision": 0,
@@ -1899,13 +1338,13 @@
 						"scale": 0
 					},
 					{
-						"name": "modifiedbyyominame",
+						"name": "e3c_denominacion",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
 					},
 					{
-						"name": "modifiedonbehalfbyyominame",
+						"name": "modifiedbyyominame",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
@@ -1926,6 +1365,12 @@
 						"name": "timezoneruleversionnumber",
 						"type": "NUMBER",
 						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "modifiedonbehalfbyyominame",
+						"type": "VARCHAR",
+						"precision": 0,
 						"scale": 0
 					},
 					{
@@ -1979,7 +1424,7 @@
 				],
 				"typeProperties": {
 					"schema": "PUBLIC",
-					"table": "MC2_MAESTRO_CECO"
+					"table": "E3C_MAESTRO_COMPRA_AREA_FUNCIONAL"
 				}
 			},
 			"dependsOn": [
@@ -1987,670 +1432,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Snowflake_MC2_MAESTRO_CLIENTE_FACTURACION')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "Snowflake1",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "Destination"
-				},
-				"annotations": [],
-				"type": "SnowflakeTable",
-				"schema": [
-					{
-						"name": "statecode",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "owningbusinessunit",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owninguser",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "createdby",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "createdonbehalfby",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "utcconversiontimezonecode",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "importsequencenumber",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "modifiedonbehalfby",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owneridname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedbyname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owningbusinessunitname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "statuscode",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "mc2_nombre_facturacion",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "ownerid",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owneridtype",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedonbehalfbyname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "createdbyname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_cliente",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedonbehalfbyyominame",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owneridyominame",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owningteam",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "timezoneruleversionnumber",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "modifiedbyyominame",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "createdonbehalfbyname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_cif",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_maestro_cliente_facturacionid",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedby",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "createdbyyominame",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "createdon",
-						"type": "TIMESTAMP_NTZ",
-						"precision": 29,
-						"scale": 9
-					},
-					{
-						"name": "createdonbehalfbyyominame",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedon",
-						"type": "TIMESTAMP_NTZ",
-						"precision": 29,
-						"scale": 9
-					},
-					{
-						"name": "overriddencreatedon",
-						"type": "TIMESTAMP_NTZ",
-						"precision": 29,
-						"scale": 9
-					},
-					{
-						"name": "versionnumber",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					}
-				],
-				"typeProperties": {
-					"schema": "PUBLIC",
-					"table": "MC2_MAESTRO_CLIENTE_FACTURACION"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Snowflake_MC2_MAESTRO_CLIENTE_GESTION')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "Snowflake1",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "Destination"
-				},
-				"annotations": [],
-				"type": "SnowflakeTable",
-				"schema": [
-					{
-						"name": "owninguser",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "statecode",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "owningbusinessunit",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "createdby",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "createdonbehalfby",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_maestro_cliente_gestionid",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "utcconversiontimezonecode",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "importsequencenumber",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "modifiedonbehalfby",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owneridname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedbyname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owningbusinessunitname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "statuscode",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "ownerid",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owneridtype",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedonbehalfbyname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "createdbyname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedbyyominame",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedonbehalfbyyominame",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owneridyominame",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owningteam",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "timezoneruleversionnumber",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "mc2_cliente_gestion",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "createdonbehalfbyname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_denominacion",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedby",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "createdbyyominame",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "createdon",
-						"type": "TIMESTAMP_NTZ",
-						"precision": 29,
-						"scale": 9
-					},
-					{
-						"name": "createdonbehalfbyyominame",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedon",
-						"type": "TIMESTAMP_NTZ",
-						"precision": 29,
-						"scale": 9
-					},
-					{
-						"name": "overriddencreatedon",
-						"type": "TIMESTAMP_NTZ",
-						"precision": 29,
-						"scale": 9
-					},
-					{
-						"name": "versionnumber",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					}
-				],
-				"typeProperties": {
-					"schema": "PUBLIC",
-					"table": "MC2_MAESTRO_CLIENTE_GESTION"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Snowflake_MC2_MAESTRO_COSTE')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "Snowflake1",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "Destination"
-				},
-				"annotations": [],
-				"type": "SnowflakeTable",
-				"schema": [
-					{
-						"name": "owninguser",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "statecode",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "owningbusinessunit",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "createdby",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "createdonbehalfby",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "utcconversiontimezonecode",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "importsequencenumber",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "mc2_definicion",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_nat_coste",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedonbehalfby",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owneridname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_maestro_costeid",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedbyname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owningbusinessunitname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "statuscode",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "owneridtype",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "ownerid",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedonbehalfbyname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "createdbyname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_descripcion",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedbyyominame",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedonbehalfbyyominame",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owneridyominame",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owningteam",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "timezoneruleversionnumber",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "createdonbehalfbyname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedby",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "createdbyyominame",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "createdon",
-						"type": "TIMESTAMP_NTZ",
-						"precision": 29,
-						"scale": 9
-					},
-					{
-						"name": "createdonbehalfbyyominame",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedon",
-						"type": "TIMESTAMP_NTZ",
-						"precision": 29,
-						"scale": 9
-					},
-					{
-						"name": "overriddencreatedon",
-						"type": "TIMESTAMP_NTZ",
-						"precision": 29,
-						"scale": 9
-					},
-					{
-						"name": "versionnumber",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					}
-				],
-				"typeProperties": {
-					"schema": "PUBLIC",
-					"table": "MC2_MAESTRO_COSTE"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Snowflake_MC2_MAESTRO_COSTES_FORMULA')]",
+			"name": "[concat(parameters('factoryName'), '/Snowflake_E3C_MAESTRO_COMPRA_ARIBA')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -2707,12 +1489,6 @@
 						"scale": 0
 					},
 					{
-						"name": "mc2_familia",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
 						"name": "modifiedonbehalfby",
 						"type": "VARCHAR",
 						"precision": 0,
@@ -2725,31 +1501,13 @@
 						"scale": 0
 					},
 					{
-						"name": "mc2_coste",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_maestro_costes_formulaid",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_oferta",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_producto",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
 						"name": "modifiedbyname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owningbusinessunitname",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
@@ -2761,7 +1519,7 @@
 						"scale": 0
 					},
 					{
-						"name": "owningbusinessunitname",
+						"name": "e3c_id",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
@@ -2791,6 +1549,18 @@
 						"scale": 0
 					},
 					{
+						"name": "e3c_descripcion",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedbyyominame",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
 						"name": "modifiedonbehalfbyyominame",
 						"type": "VARCHAR",
 						"precision": 0,
@@ -2815,15 +1585,238 @@
 						"scale": 0
 					},
 					{
+						"name": "createdonbehalfbyname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedby",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "createdbyyominame",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "createdon",
+						"type": "TIMESTAMP_NTZ",
+						"precision": 29,
+						"scale": 9
+					},
+					{
+						"name": "createdonbehalfbyyominame",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_maestro_compra_aribaid",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedon",
+						"type": "TIMESTAMP_NTZ",
+						"precision": 29,
+						"scale": 9
+					},
+					{
+						"name": "overriddencreatedon",
+						"type": "TIMESTAMP_NTZ",
+						"precision": 29,
+						"scale": 9
+					},
+					{
+						"name": "versionnumber",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					}
+				],
+				"typeProperties": {
+					"schema": "PUBLIC",
+					"table": "E3C_MAESTRO_COMPRA_ARIBA"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Snowflake_E3C_MAESTRO_COMPRA_CATEGORIA')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Snowflake1",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Destination"
+				},
+				"annotations": [],
+				"type": "SnowflakeTable",
+				"schema": [
+					{
+						"name": "owningbusinessunit",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owninguser",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "statecode",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "createdby",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "createdonbehalfby",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_denominacion_articulos",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "importsequencenumber",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "utcconversiontimezonecode",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "e3c_denominacion2_articulos",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedonbehalfby",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owneridname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_maestro_compra_categoriaid",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedbyname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owningbusinessunitname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "statuscode",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "e3c_grupo_articulos",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "ownerid",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owneridtype",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedonbehalfbyname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "createdbyname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_grupo_autorizaciones",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
 						"name": "modifiedbyyominame",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
 					},
 					{
-						"name": "mc2_coste_formula",
+						"name": "modifiedonbehalfbyyominame",
 						"type": "VARCHAR",
 						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owneridyominame",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owningteam",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "timezoneruleversionnumber",
+						"type": "NUMBER",
+						"precision": 38,
 						"scale": 0
 					},
 					{
@@ -2845,7 +1838,790 @@
 						"scale": 0
 					},
 					{
-						"name": "mc2_bloque",
+						"name": "createdon",
+						"type": "TIMESTAMP_NTZ",
+						"precision": 29,
+						"scale": 9
+					},
+					{
+						"name": "createdonbehalfbyyominame",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_categoria_valoracion",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedon",
+						"type": "TIMESTAMP_NTZ",
+						"precision": 29,
+						"scale": 9
+					},
+					{
+						"name": "overriddencreatedon",
+						"type": "TIMESTAMP_NTZ",
+						"precision": 29,
+						"scale": 9
+					},
+					{
+						"name": "versionnumber",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					}
+				],
+				"typeProperties": {
+					"schema": "PUBLIC",
+					"table": "E3C_MAESTRO_COMPRA_CATEGORIA"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Snowflake_E3C_MAESTRO_COMPRA_CECO')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Snowflake1",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Destination"
+				},
+				"annotations": [],
+				"type": "SnowflakeTable",
+				"schema": [
+					{
+						"name": "e3c_responsable",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owningbusinessunit",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owninguser",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "statecode",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "createdby",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "createdonbehalfby",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_soc_fi",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "utcconversiontimezonecode",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "importsequencenumber",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "modifiedonbehalfby",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owneridname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_texto_breve",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedbyname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "statuscode",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "e3c_valido_hasta",
+						"type": "TIMESTAMP_NTZ",
+						"precision": 29,
+						"scale": 9
+					},
+					{
+						"name": "owningbusinessunitname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owneridtype",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedonbehalfbyname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "ownerid",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "createdbyname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_soc_co",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedbyyominame",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owneridyominame",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owningteam",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "timezoneruleversionnumber",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "modifiedonbehalfbyyominame",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "createdonbehalfbyname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_valido_desde",
+						"type": "TIMESTAMP_NTZ",
+						"precision": 29,
+						"scale": 9
+					},
+					{
+						"name": "modifiedby",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "createdbyyominame",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "createdon",
+						"type": "TIMESTAMP_NTZ",
+						"precision": 29,
+						"scale": 9
+					},
+					{
+						"name": "createdonbehalfbyyominame",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_clase_ceco",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_maestro_compra_cecoid",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedon",
+						"type": "TIMESTAMP_NTZ",
+						"precision": 29,
+						"scale": 9
+					},
+					{
+						"name": "e3c_ceco",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "overriddencreatedon",
+						"type": "TIMESTAMP_NTZ",
+						"precision": 29,
+						"scale": 9
+					},
+					{
+						"name": "versionnumber",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					}
+				],
+				"typeProperties": {
+					"schema": "PUBLIC",
+					"table": "E3C_MAESTRO_COMPRA_CECO"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Snowflake_E3C_MAESTRO_COMPRA_CONTRATO')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Snowflake1",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Destination"
+				},
+				"annotations": [],
+				"type": "SnowflakeTable",
+				"schema": [
+					{
+						"name": "e3c_moneda_valor_entreganame",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owningbusinessunit",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owninguser",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "statecode",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "createdby",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "createdonbehalfby",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "utcconversiontimezonecode",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "e3c_alerta_fecha_vencimiento",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_fecha_fin_validez",
+						"type": "TIMESTAMP_NTZ",
+						"precision": 29,
+						"scale": 9
+					},
+					{
+						"name": "importsequencenumber",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "e3c_clase_pedido_abierto",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_num_pedido_abierto",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owneridname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedonbehalfby",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_nombre_pedido_abierto",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_estado",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_id_proveedor",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_moneda_valor_entrega",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedbyname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "statuscode",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "owningbusinessunitname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_valor_previsto",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "ownerid",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owneridtype",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedonbehalfbyname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "createdbyname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_moneda_valor_previsto",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_valor_orden_entrega",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_valor_orden_entrega_p",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedonbehalfbyyominame",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owneridyominame",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owningteam",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedbyyominame",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "timezoneruleversionnumber",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "createdonbehalfbyname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_nombre_proveedor",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedby",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "createdbyyominame",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_maestro_compra_contratoid",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "createdon",
+						"type": "TIMESTAMP_NTZ",
+						"precision": 29,
+						"scale": 9
+					},
+					{
+						"name": "createdonbehalfbyyominame",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_moneda_valor_previstoname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedon",
+						"type": "TIMESTAMP_NTZ",
+						"precision": 29,
+						"scale": 9
+					},
+					{
+						"name": "overriddencreatedon",
+						"type": "TIMESTAMP_NTZ",
+						"precision": 29,
+						"scale": 9
+					},
+					{
+						"name": "versionnumber",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					}
+				],
+				"typeProperties": {
+					"schema": "PUBLIC",
+					"table": "E3C_MAESTRO_COMPRA_CONTRATO"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Snowflake_E3C_MAESTRO_COMPRA_DEST_MERCANCIAS')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Snowflake1",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Destination"
+				},
+				"annotations": [],
+				"type": "SnowflakeTable",
+				"schema": [
+					{
+						"name": "owningbusinessunit",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owninguser",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "statecode",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "createdby",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "createdonbehalfby",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_nombre_completo",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "utcconversiontimezonecode",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "importsequencenumber",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "e3c_usuario",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedonbehalfby",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owneridname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedbyname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "statuscode",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "e3c_valido_hasta",
+						"type": "TIMESTAMP_NTZ",
+						"precision": 29,
+						"scale": 9
+					},
+					{
+						"name": "owningbusinessunitname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_tipo_usuario",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "ownerid",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owneridtype",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedonbehalfbyname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "createdbyname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_maestro_compra_dest_mercanciasid",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedbyyominame",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owningteam",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "timezoneruleversionnumber",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "owneridyominame",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedonbehalfbyyominame",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "createdonbehalfbyname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_valido_desde",
+						"type": "TIMESTAMP_NTZ",
+						"precision": 29,
+						"scale": 9
+					},
+					{
+						"name": "modifiedby",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "createdbyyominame",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
@@ -2883,7 +2659,7 @@
 				],
 				"typeProperties": {
 					"schema": "PUBLIC",
-					"table": "MC2_MAESTRO_COSTES_FORMULA"
+					"table": "E3C_MAESTRO_COMPRA_DEST_MERCANCIAS"
 				}
 			},
 			"dependsOn": [
@@ -2891,7 +2667,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Snowflake_MC2_MAESTRO_ESTADO_COMPRAS')]",
+			"name": "[concat(parameters('factoryName'), '/Snowflake_E3C_MAESTRO_COMPRA_ESTADO_CESTA_DERIVADA')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -2906,13 +2682,224 @@
 				"type": "SnowflakeTable",
 				"schema": [
 					{
-						"name": "mc2_estado",
+						"name": "owningbusinessunit",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
 					},
 					{
-						"name": "mc2_maestro_estado_comprasid",
+						"name": "owninguser",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "statecode",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "createdby",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "createdonbehalfby",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "utcconversiontimezonecode",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "importsequencenumber",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "e3c_maestro_compra_estado_cesta_derivadaid",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedonbehalfby",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owneridname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedbyname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owningbusinessunitname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "statuscode",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "ownerid",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owneridtype",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedonbehalfbyname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "createdbyname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_estado_derivada",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedbyyominame",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedonbehalfbyyominame",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owneridyominame",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owningteam",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "timezoneruleversionnumber",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "createdonbehalfbyname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedby",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "createdbyyominame",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "createdon",
+						"type": "TIMESTAMP_NTZ",
+						"precision": 29,
+						"scale": 9
+					},
+					{
+						"name": "createdonbehalfbyyominame",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedon",
+						"type": "TIMESTAMP_NTZ",
+						"precision": 29,
+						"scale": 9
+					},
+					{
+						"name": "overriddencreatedon",
+						"type": "TIMESTAMP_NTZ",
+						"precision": 29,
+						"scale": 9
+					},
+					{
+						"name": "versionnumber",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					}
+				],
+				"typeProperties": {
+					"schema": "PUBLIC",
+					"table": "E3C_MAESTRO_COMPRA_ESTADO_CESTA_DERIVADA"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Snowflake_E3C_MAESTRO_COMPRA_ESTADO_CESTA_ORDINARIA')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Snowflake1",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Destination"
+				},
+				"annotations": [],
+				"type": "SnowflakeTable",
+				"schema": [
+					{
+						"name": "e3c_estado_ordinaria",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_maestro_compra_estado_cesta_ordinariaid",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
@@ -3094,7 +3081,7 @@
 				],
 				"typeProperties": {
 					"schema": "PUBLIC",
-					"table": "MC2_MAESTRO_ESTADO_COMPRAS"
+					"table": "E3C_MAESTRO_COMPRA_ESTADO_CESTA_ORDINARIA"
 				}
 			},
 			"dependsOn": [
@@ -3102,7 +3089,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Snowflake_MC2_MAESTRO_FAMILIA')]",
+			"name": "[concat(parameters('factoryName'), '/Snowflake_E3C_MAESTRO_COMPRA_GASTO_INVERSION')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -3116,253 +3103,6 @@
 				"annotations": [],
 				"type": "SnowflakeTable",
 				"schema": [
-					{
-						"name": "mc2_ambitoname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owningbusinessunit",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owninguser",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "statecode",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "createdby",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "createdonbehalfby",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "utcconversiontimezonecode",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "importsequencenumber",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "mc2_ambito",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_id_familia",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedonbehalfby",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owneridname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_maestro_familiaid",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedbyname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owningbusinessunitname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "statuscode",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "ownerid",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owneridtype",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedonbehalfbyname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "createdbyname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedbyyominame",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedonbehalfbyyominame",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owneridyominame",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owningteam",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "timezoneruleversionnumber",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "createdonbehalfbyname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_linea_negocio",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedby",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "createdbyyominame",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "createdon",
-						"type": "TIMESTAMP_NTZ",
-						"precision": 29,
-						"scale": 9
-					},
-					{
-						"name": "createdonbehalfbyyominame",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_familia_descripcion",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedon",
-						"type": "TIMESTAMP_NTZ",
-						"precision": 29,
-						"scale": 9
-					},
-					{
-						"name": "overriddencreatedon",
-						"type": "TIMESTAMP_NTZ",
-						"precision": 29,
-						"scale": 9
-					},
-					{
-						"name": "versionnumber",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					}
-				],
-				"typeProperties": {
-					"schema": "PUBLIC",
-					"table": "MC2_MAESTRO_FAMILIA"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Snowflake_MC2_MAESTRO_JEFE_DE_PROYECTO')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "Snowflake1",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "Destination"
-				},
-				"annotations": [],
-				"type": "SnowflakeTable",
-				"schema": [
-					{
-						"name": "mc2_codigo_matricula",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_mail",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
 					{
 						"name": "owningbusinessunit",
 						"type": "VARCHAR",
@@ -3418,6 +3158,12 @@
 						"scale": 0
 					},
 					{
+						"name": "e3c_maestro_compra_gasto_inversionid",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
 						"name": "modifiedbyname",
 						"type": "VARCHAR",
 						"precision": 0,
@@ -3433,6 +3179,12 @@
 						"name": "statuscode",
 						"type": "NUMBER",
 						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "e3c_id",
+						"type": "VARCHAR",
+						"precision": 0,
 						"scale": 0
 					},
 					{
@@ -3460,248 +3212,7 @@
 						"scale": 0
 					},
 					{
-						"name": "mc2_maestro_jefe_de_proyectoid",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedbyyominame",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedonbehalfbyyominame",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owneridyominame",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owningteam",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "timezoneruleversionnumber",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "createdonbehalfbyname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_id_responsable",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedby",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "createdbyyominame",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "createdon",
-						"type": "TIMESTAMP_NTZ",
-						"precision": 29,
-						"scale": 9
-					},
-					{
-						"name": "createdonbehalfbyyominame",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_nombre_apellidos",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedon",
-						"type": "TIMESTAMP_NTZ",
-						"precision": 29,
-						"scale": 9
-					},
-					{
-						"name": "overriddencreatedon",
-						"type": "TIMESTAMP_NTZ",
-						"precision": 29,
-						"scale": 9
-					},
-					{
-						"name": "versionnumber",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					}
-				],
-				"typeProperties": {
-					"schema": "PUBLIC",
-					"table": "MC2_MAESTRO_JEFE_DE_PROYECTO"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Snowflake_MC2_MAESTRO_LINEAPEP')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "Snowflake1",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "Destination"
-				},
-				"annotations": [],
-				"type": "SnowflakeTable",
-				"schema": [
-					{
-						"name": "mc2_ambitoname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owningbusinessunit",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owninguser",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "statecode",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "createdby",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "createdonbehalfby",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "utcconversiontimezonecode",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "importsequencenumber",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "mc2_ambito",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedonbehalfby",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owneridname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_coste",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedbyname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owningbusinessunitname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "statuscode",
-						"type": "NUMBER",
-						"precision": 38,
-						"scale": 0
-					},
-					{
-						"name": "mc2_maestro_lineapepid",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "owneridtype",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "ownerid",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "modifiedonbehalfbyname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "createdbyname",
-						"type": "VARCHAR",
-						"precision": 0,
-						"scale": 0
-					},
-					{
-						"name": "mc2_descripcion",
+						"name": "e3c_descripcion",
 						"type": "VARCHAR",
 						"precision": 0,
 						"scale": 0
@@ -3787,7 +3298,706 @@
 				],
 				"typeProperties": {
 					"schema": "PUBLIC",
-					"table": "MC2_MAESTRO_LINEAPEP"
+					"table": "E3C_MAESTRO_COMPRA_GASTO_INVERSION"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Snowflake_E3C_MAESTRO_COMPRA_GRUPO_COMPRAS')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Snowflake1",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Destination"
+				},
+				"annotations": [],
+				"type": "SnowflakeTable",
+				"schema": [
+					{
+						"name": "owningbusinessunit",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owninguser",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "statecode",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "e3c_categorias_producto",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "createdby",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "createdonbehalfby",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "utcconversiontimezonecode",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "importsequencenumber",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "e3c_id_grupo_compras_preproductivo",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedonbehalfby",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owneridname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_ecc_grupos_compra",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedbyname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owningbusinessunitname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "statuscode",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "e3c_maestro_compra_grupo_comprasid",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "ownerid",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owneridtype",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedonbehalfbyname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "createdbyname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_descripcion",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedonbehalfbyyominame",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owneridyominame",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owningteam",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "timezoneruleversionnumber",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "modifiedbyyominame",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "createdonbehalfbyname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_sociedad",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedby",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "createdbyyominame",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "createdon",
+						"type": "TIMESTAMP_NTZ",
+						"precision": 29,
+						"scale": 9
+					},
+					{
+						"name": "createdonbehalfbyyominame",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_id_grupo_compras_productivo",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedon",
+						"type": "TIMESTAMP_NTZ",
+						"precision": 29,
+						"scale": 9
+					},
+					{
+						"name": "overriddencreatedon",
+						"type": "TIMESTAMP_NTZ",
+						"precision": 29,
+						"scale": 9
+					},
+					{
+						"name": "versionnumber",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					}
+				],
+				"typeProperties": {
+					"schema": "PUBLIC",
+					"table": "E3C_MAESTRO_COMPRA_GRUPO_COMPRAS"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Snowflake_E3C_MAESTRO_COMPRA_MONEDA')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Snowflake1",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Destination"
+				},
+				"annotations": [],
+				"type": "SnowflakeTable",
+				"schema": [
+					{
+						"name": "owningbusinessunit",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owninguser",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "statecode",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "createdby",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "createdonbehalfby",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "importsequencenumber",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "utcconversiontimezonecode",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "modifiedonbehalfby",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owneridname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedbyname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owningbusinessunitname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "statuscode",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "ownerid",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owneridtype",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_moneda",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedonbehalfbyname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "createdbyname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_descripcion",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_maestro_compra_monedaid",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedbyyominame",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedonbehalfbyyominame",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owneridyominame",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owningteam",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "timezoneruleversionnumber",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "createdonbehalfbyname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedby",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "createdbyyominame",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "createdon",
+						"type": "TIMESTAMP_NTZ",
+						"precision": 29,
+						"scale": 9
+					},
+					{
+						"name": "createdonbehalfbyyominame",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedon",
+						"type": "TIMESTAMP_NTZ",
+						"precision": 29,
+						"scale": 9
+					},
+					{
+						"name": "versionnumber",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "overriddencreatedon",
+						"type": "TIMESTAMP_NTZ",
+						"precision": 29,
+						"scale": 9
+					}
+				],
+				"typeProperties": {
+					"schema": "PUBLIC",
+					"table": "E3C_MAESTRO_COMPRA_MONEDA"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Snowflake_E3C_MAESTRO_COMPRA_ORG_COMPRAS')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Snowflake1",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Destination"
+				},
+				"annotations": [],
+				"type": "SnowflakeTable",
+				"schema": [
+					{
+						"name": "e3c_id_org_compras_productivo",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owninguser",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "statecode",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "owningbusinessunit",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "createdby",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "createdonbehalfby",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_organizacion",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "utcconversiontimezonecode",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "importsequencenumber",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "e3c_maestro_compra_org_comprasid",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedonbehalfby",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owneridname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedbyname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owningbusinessunitname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "statuscode",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "ownerid",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owneridtype",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedonbehalfbyname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "createdbyname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_denominacion_sociedad",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedbyyominame",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedonbehalfbyyominame",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owneridyominame",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "owningteam",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "timezoneruleversionnumber",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "createdonbehalfbyname",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_denominacion_org_compras",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_sociedad",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedby",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "createdbyyominame",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "createdon",
+						"type": "TIMESTAMP_NTZ",
+						"precision": 29,
+						"scale": 9
+					},
+					{
+						"name": "createdonbehalfbyyominame",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "e3c_id_org_compras_preproductivo",
+						"type": "VARCHAR",
+						"precision": 0,
+						"scale": 0
+					},
+					{
+						"name": "modifiedon",
+						"type": "TIMESTAMP_NTZ",
+						"precision": 29,
+						"scale": 9
+					},
+					{
+						"name": "overriddencreatedon",
+						"type": "TIMESTAMP_NTZ",
+						"precision": 29,
+						"scale": 9
+					},
+					{
+						"name": "versionnumber",
+						"type": "NUMBER",
+						"precision": 38,
+						"scale": 0
+					}
+				],
+				"typeProperties": {
+					"schema": "PUBLIC",
+					"table": "E3C_MAESTRO_COMPRA_ORG_COMPRAS"
 				}
 			},
 			"dependsOn": [
