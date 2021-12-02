@@ -126,7 +126,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"pipeline": {
-						"referenceName": "MestroEstadoPedidoToSnowflake",
+						"referenceName": "MaestroEstadoPedidoToSnowflake",
 						"type": "PipelineReference"
 					},
 					"waitOnCompletion": true
