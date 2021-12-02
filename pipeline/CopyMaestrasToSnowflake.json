@@ -352,6 +352,19 @@
 					},
 					"waitOnCompletion": true
 				}
+			},
+			{
+				"name": "MaestroTipoFacturacionToSnowflake",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "MaestroTipoFacturacionToSnowflake",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
 			}
 		],
 		"folder": {

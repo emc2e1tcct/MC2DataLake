@@ -381,12 +381,15 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "Snowflake_MC2_MAESTRO_TIPO_FACTURACIONn",
+						"referenceName": "Snowflake_MC2_MAESTRO_TIPO_FACTURACION",
 						"type": "DatasetReference"
 					}
 				]
 			}
 		],
+		"folder": {
+			"name": "Main/Sources/CopyToSnowfake/CopyMaestrasToSnowflake/Maestras"
+		},
 		"annotations": []
 	}
 }

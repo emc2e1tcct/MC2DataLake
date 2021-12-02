@@ -1,9 +1,12 @@
 {
-	"name": "Snowflake_MC2_MAESTRO_TIPO_FACTURACIONn",
+	"name": "Snowflake_MC2_MAESTRO_TIPO_FACTURACION",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Snowflake1",
 			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Destination"
 		},
 		"annotations": [],
 		"type": "SnowflakeTable",
