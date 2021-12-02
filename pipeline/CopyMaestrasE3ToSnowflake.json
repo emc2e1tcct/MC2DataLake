@@ -29,7 +29,7 @@
 				}
 			},
 			{
-				"name": "EC3MaestroCompraCategiaToSnowflake",
+				"name": "EC3MaestroCompraCategoriaToSnowflake",
 				"type": "ExecutePipeline",
 				"dependsOn": [],
 				"userProperties": [],
