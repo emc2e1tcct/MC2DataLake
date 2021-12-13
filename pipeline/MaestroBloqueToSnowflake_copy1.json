@@ -35,7 +35,7 @@
 					"sink": {
 						"type": "SnowflakeSink",
 						"preCopyScript": {
-							"value": "IncomingStream sink(allowSchemaDrift: true\n  ) ~> SnowflakeSink",
+							"value": "IncomingStream (allowSchemaDrift: true\n  ) ~> SnowflakeSink",
 							"type": "Expression"
 						},
 						"importSettings": {
