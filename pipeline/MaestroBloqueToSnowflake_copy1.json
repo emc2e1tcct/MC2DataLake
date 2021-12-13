@@ -34,10 +34,6 @@
 					},
 					"sink": {
 						"type": "SnowflakeSink",
-						"preCopyScript": {
-							"value": "validateSchema: false, deletable:true, insertable:true, updateable:true, upsertable:false, keys:['movieId'],  format: 'table', skipDuplicateMapInputs: true, skipDuplicateMapOutputs: true",
-							"type": "Expression"
-						},
 						"importSettings": {
 							"type": "SnowflakeImportCopyCommand"
 						}
