@@ -35,7 +35,7 @@
 					"sink": {
 						"type": "SnowflakeSink",
 						"preCopyScript": {
-							"value": "IncomingStream (allowSchemaDrift: true\n  ) ~> SnowflakeSink",
+							"value": "allowSchemaDrift: true,\n    validateSchema: false,\n    deletable:true,\n    insertable:true,\n    updateable:true,\n    upsertable:false,\n    keys:['movieId'],\n    format: 'table',\n    skipDuplicateMapInputs: true,\n    skipDuplicateMapOutputs: true",
 							"type": "Expression"
 						},
 						"importSettings": {
