@@ -34,9 +34,12 @@
 					},
 					"sink": {
 						"type": "SnowflakeSink",
-						"preCopyScript": "snowsql  IF EXISTS (SELECT * FROM [@PUBLIC.MC2_COMENTARIOS_PROYECTO.TABLE_SCHEMA}].[PUBLIC.MC2_COMENTARIOS_PROYECTO.TABLE_NAME}]) TRUNCATE TABLE [PUBLIC.MC2_COMENTARIOS_PROYECTO.TABLE_SCHEMA}].[PUBLIC.MC2_COMENTARIOS_PROYECTO.TABLE_NAME}]",
+						"preCopyScript": "!load IF EXISTS (SELECT * FROM [@PUBLIC.MC2_COMENTARIOS_PROYECTO.TABLE_SCHEMA}].[PUBLIC.MC2_COMENTARIOS_PROYECTO.TABLE_NAME}]) TRUNCATE TABLE [PUBLIC.MC2_COMENTARIOS_PROYECTO.TABLE_SCHEMA}].[PUBLIC.MC2_COMENTARIOS_PROYECTO.TABLE_NAME}]",
 						"importSettings": {
-							"type": "SnowflakeImportCopyCommand"
+							"type": "SnowflakeImportCopyCommand",
+							"additionalCopyOptions": {
+								"LOAD_UNCERTAIN_FILES": "FALSE"
+							}
 						}
 					},
 					"enableStaging": true,
