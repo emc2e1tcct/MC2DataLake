@@ -34,7 +34,7 @@
 					},
 					"sink": {
 						"type": "SnowflakeSink",
-						"preCopyScript": "TRUNCATE TABLE \"MC2_DEV\".\"PUBLIC\".\"E3C_CESTAS\";",
+						"preCopyScript": "create or replace table  mc2_maestro_fase  using template (\n  select array_agg(object_construct(*))      from table ( \n    infer_schema( location=>'@AZURESTAGE/20211201-mc2_maestro_fase.parquet', file_format=>'my_parquet_formats')));",
 						"importSettings": {
 							"type": "SnowflakeImportCopyCommand"
 						}
