@@ -34,7 +34,7 @@
 					},
 					"sink": {
 						"type": "SnowflakeSink",
-						"preCopyScript": "DELETE FROM @PUBLIC.MC2_COMENTARIOS_PROYECTO.TABLE_SCHEMA",
+						"preCopyScript": "DELETE FROM \"MC2_DEV\".\"PUBLIC\".\"E3C_CESTAS\"",
 						"importSettings": {
 							"type": "SnowflakeImportCopyCommand",
 							"additionalCopyOptions": {
