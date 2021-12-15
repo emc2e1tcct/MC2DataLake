@@ -34,7 +34,6 @@
 					},
 					"sink": {
 						"type": "SnowflakeSink",
-						"preCopyScript": "DELETE FROM \"MC2_DEV\".\"PUBLIC\".\"E3C_CESTAS\"",
 						"importSettings": {
 							"type": "SnowflakeImportCopyCommand",
 							"additionalCopyOptions": {
