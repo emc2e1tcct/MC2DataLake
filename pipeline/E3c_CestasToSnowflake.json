@@ -34,7 +34,7 @@
 					},
 					"sink": {
 						"type": "SnowflakeSink",
-						"preCopyScript": "DELETE FROM [@PUBLIC.MC2_COMENTARIOS_PROYECTO.TABLE_SCHEMA].[PUBLIC.MC2_COMENTARIOS_PROYECTO.TABLE_NAME]",
+						"preCopyScript": "DELETE FROM @PUBLIC.MC2_COMENTARIOS_PROYECTO.TABLE_SCHEMA",
 						"importSettings": {
 							"type": "SnowflakeImportCopyCommand",
 							"additionalCopyOptions": {
