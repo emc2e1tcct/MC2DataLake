@@ -179,5 +179,6 @@
 				"type": "INT64"
 			}
 		]
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

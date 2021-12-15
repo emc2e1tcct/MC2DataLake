@@ -268,5 +268,6 @@
 			"schema": "PUBLIC",
 			"table": "MC2_PLANIFICACION"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

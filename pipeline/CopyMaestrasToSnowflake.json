@@ -370,6 +370,8 @@
 		"folder": {
 			"name": "Main/Sources/CopyToSnowfake/CopyMaestrasToSnowflake"
 		},
-		"annotations": []
-	}
+		"annotations": [],
+		"lastPublishTime": "2021-12-15T12:14:22Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
 }

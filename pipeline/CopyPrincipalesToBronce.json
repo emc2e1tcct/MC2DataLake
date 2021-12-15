@@ -78,51 +78,51 @@
 				"type": "Array",
 				"defaultValue": [
 					{
-						"source": {
-							"entityName": "mc2_comentarios_proyecto"
-						},
 						"destination": {
 							"fileName": "mc2_comentarios_proyecto.parquet"
+						},
+						"source": {
+							"entityName": "mc2_comentarios_proyecto"
 						}
 					},
 					{
-						"source": {
-							"entityName": "mc2_elemento_pep"
-						},
 						"destination": {
 							"fileName": "mc2_elemento_pep.parquet"
+						},
+						"source": {
+							"entityName": "mc2_elemento_pep"
 						}
 					},
 					{
-						"source": {
-							"entityName": "mc2_lineas_adquira"
-						},
 						"destination": {
 							"fileName": "mc2_lineas_adquira.parquet"
+						},
+						"source": {
+							"entityName": "mc2_lineas_adquira"
 						}
 					},
 					{
-						"source": {
-							"entityName": "mc2_pedido"
-						},
 						"destination": {
 							"fileName": "mc2_pedido.parquet"
+						},
+						"source": {
+							"entityName": "mc2_pedido"
 						}
 					},
 					{
-						"source": {
-							"entityName": "mc2_planificacion"
-						},
 						"destination": {
 							"fileName": "mc2_planificacion.parquet"
+						},
+						"source": {
+							"entityName": "mc2_planificacion"
 						}
 					},
 					{
-						"source": {
-							"entityName": "mc2_proyecto"
-						},
 						"destination": {
 							"fileName": "mc2_proyecto.parquet"
+						},
+						"source": {
+							"entityName": "mc2_proyecto"
 						}
 					}
 				]
@@ -131,6 +131,8 @@
 		"folder": {
 			"name": "Main/Sources/CopyMC2ToBronce"
 		},
-		"annotations": []
-	}
+		"annotations": [],
+		"lastPublishTime": "2021-12-15T12:13:54Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
 }

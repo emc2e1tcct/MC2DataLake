@@ -226,5 +226,6 @@
 			"schema": "PUBLIC",
 			"table": "E3C_MAESTRO_COMPRA_CATEGORIA"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

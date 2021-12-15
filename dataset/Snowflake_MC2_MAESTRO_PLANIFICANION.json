@@ -208,5 +208,6 @@
 			"schema": "PUBLIC",
 			"table": "MC2_MAESTRO_PLANIFICACION"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

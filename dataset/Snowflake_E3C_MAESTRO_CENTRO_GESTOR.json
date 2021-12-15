@@ -238,5 +238,6 @@
 			"schema": "PUBLIC",
 			"table": "E3C_MAESTRO_COMPRA_CENTRO_GESTOR"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

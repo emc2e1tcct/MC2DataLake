@@ -1,0 +1,9 @@
+{
+	"name": "adf-mc2dl-pro",
+	"location": "northeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "4eb3f5bf-cc3f-4ed6-9ae7-64889f8871ab",
+		"tenantId": "9b03d892-fe8c-4e05-80f1-32e928a16ba2"
+	}
+}

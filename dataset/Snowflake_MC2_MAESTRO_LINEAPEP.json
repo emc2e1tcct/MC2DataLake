@@ -220,5 +220,6 @@
 			"schema": "PUBLIC",
 			"table": "MC2_MAESTRO_LINEAPEP"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

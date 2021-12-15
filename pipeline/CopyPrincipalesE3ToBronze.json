@@ -78,19 +78,19 @@
 				"type": "Array",
 				"defaultValue": [
 					{
-						"source": {
-							"entityName": "e3c_cestas"
-						},
 						"destination": {
 							"fileName": "e3c_cestas.parquet"
+						},
+						"source": {
+							"entityName": "e3c_cestas"
 						}
 					},
 					{
-						"source": {
-							"entityName": "e3c_lineas_cesta"
-						},
 						"destination": {
 							"fileName": "e3c_lineas_cesta.parquet"
+						},
+						"source": {
+							"entityName": "e3c_lineas_cesta"
 						}
 					}
 				]
@@ -99,6 +99,8 @@
 		"folder": {
 			"name": "Main/Sources/CopyMC2ToBronce"
 		},
-		"annotations": []
-	}
+		"annotations": [],
+		"lastPublishTime": "2021-12-15T12:13:54Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
 }

@@ -32,6 +32,8 @@
 		"folder": {
 			"name": "Main/Sources/CopyToSnowfake/CopyPrincipalesSnowflake"
 		},
-		"annotations": []
-	}
+		"annotations": [],
+		"lastPublishTime": "2021-12-15T12:13:56Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
 }

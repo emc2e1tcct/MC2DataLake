@@ -222,280 +222,227 @@
 				"type": "array",
 				"defaultValue": [
 					{
-						"source": {
-							"entityName": "mc2_maestro_ceco"
-						},
 						"destination": {
 							"fileName": "mc2_maestro_ceco.parquet"
+						},
+						"source": {
+							"entityName": "mc2_maestro_ceco"
 						}
 					},
 					{
-						"source": {
-							"entityName": "mc2_maestro_perfil"
-						},
 						"destination": {
 							"fileName": "mc2_maestro_perfil.parquet"
+						},
+						"source": {
+							"entityName": "mc2_maestro_perfil"
 						}
 					},
 					{
-						"source": {
-							"entityName": "mc2_maestro_sociedad"
-						},
 						"destination": {
 							"fileName": "mc2_maestro_sociedad.parquet"
+						},
+						"source": {
+							"entityName": "mc2_maestro_sociedad"
 						}
 					},
 					{
-						"source": {
-							"entityName": "mc2_maestro_tramitador"
-						},
 						"destination": {
 							"fileName": "mc2_maestro_tramitador.parquet"
+						},
+						"source": {
+							"entityName": "mc2_maestro_tramitador"
 						}
 					},
 					{
-						"source": {
-							"entityName": "mc2_maestro_ambito"
-						},
 						"destination": {
 							"fileName": "mc2_maestro_ambito.parquet"
+						},
+						"source": {
+							"entityName": "mc2_maestro_ambito"
 						}
 					},
 					{
-						"source": {
-							"entityName": "mc2_maestro_bloque"
-						},
 						"destination": {
 							"fileName": "mc2_maestro_bloque.parquet"
+						},
+						"source": {
+							"entityName": "mc2_maestro_bloque"
 						}
 					},
 					{
-						"source": {
-							"entityName": "mc2_maestro_cebe"
-						},
 						"destination": {
 							"fileName": "mc2_maestro_cebe.parquet"
+						},
+						"source": {
+							"entityName": "mc2_maestro_cebe"
 						}
 					},
 					{
-						"source": {
-							"entityName": "mc2_maestro_cliente_facturacion"
-						},
 						"destination": {
 							"fileName": "mc2_maestro_cliente_facturacion.parquet"
+						},
+						"source": {
+							"entityName": "mc2_maestro_cliente_facturacion"
 						}
 					},
 					{
-						"source": {
-							"entityName": "mc2_maestro_cliente_gestion"
-						},
 						"destination": {
 							"fileName": "mc2_maestro_cliente_gestion.parquet"
+						},
+						"source": {
+							"entityName": "mc2_maestro_cliente_gestion"
 						}
 					},
 					{
-						"source": {
-							"entityName": "mc2_maestro_coste"
-						},
 						"destination": {
 							"fileName": "mc2_maestro_coste.parquet"
+						},
+						"source": {
+							"entityName": "mc2_maestro_coste"
 						}
 					},
 					{
-						"source": {
-							"entityName": "mc2_maestro_costes_formula"
-						},
 						"destination": {
 							"fileName": "mc2_maestro_costes_formula.parquet"
+						},
+						"source": {
+							"entityName": "mc2_maestro_costes_formula"
 						}
 					},
 					{
-						"source": {
-							"entityName": "mc2_maestro_estado_compras"
-						},
 						"destination": {
 							"fileName": "mc2_maestro_estado_compras.parquet"
+						},
+						"source": {
+							"entityName": "mc2_maestro_estado_compras"
 						}
 					},
 					{
-						"source": {
-							"entityName": "mc2_maestro_estado_pedido"
-						},
 						"destination": {
 							"fileName": "mc2_maestro_estado_pedido.parquet"
+						},
+						"source": {
+							"entityName": "mc2_maestro_estado_pedido"
 						}
 					},
 					{
-						"source": {
-							"entityName": "mc2_maestro_familia"
-						},
 						"destination": {
 							"fileName": "mc2_maestro_familia.parquet"
+						},
+						"source": {
+							"entityName": "mc2_maestro_familia"
 						}
 					},
 					{
-						"source": {
-							"entityName": "mc2_maestro_jefe_de_proyecto"
-						},
 						"destination": {
 							"fileName": "mc2_maestro_jefe_de_proyecto.parquet"
+						},
+						"source": {
+							"entityName": "mc2_maestro_jefe_de_proyecto"
 						}
 					},
 					{
-						"source": {
-							"entityName": "mc2_maestro_lineapep"
-						},
 						"destination": {
 							"fileName": "mc2_maestro_lineapep.parquet"
+						},
+						"source": {
+							"entityName": "mc2_maestro_lineapep"
 						}
 					},
 					{
-						"source": {
-							"entityName": "mc2_maestro_monedas"
-						},
 						"destination": {
 							"fileName": "mc2_maestro_monedas.parquet"
+						},
+						"source": {
+							"entityName": "mc2_maestro_monedas"
 						}
 					},
 					{
-						"source": {
-							"entityName": "mc2_maestro_naturaleza_utm"
-						},
 						"destination": {
 							"fileName": "mc2_maestro_naturaleza_utm.parquet"
+						},
+						"source": {
+							"entityName": "mc2_maestro_naturaleza_utm"
 						}
 					},
 					{
-						"source": {
-							"entityName": "mc2_maestro_perfil_presupuesto"
-						},
 						"destination": {
 							"fileName": "mc2_maestro_perfil_presupuesto.parquet"
+						},
+						"source": {
+							"entityName": "mc2_maestro_perfil_presupuesto"
 						}
 					},
 					{
-						"source": {
-							"entityName": "mc2_maestro_planificacion"
-						},
 						"destination": {
 							"fileName": "mc2_maestro_planificacion.parquet"
+						},
+						"source": {
+							"entityName": "mc2_maestro_planificacion"
 						}
 					},
 					{
-						"source": {
-							"entityName": "mc2_maestro_plazo_utm"
-						},
 						"destination": {
 							"fileName": "mc2_maestro_plazo_utm.parquet"
+						},
+						"source": {
+							"entityName": "mc2_maestro_plazo_utm"
 						}
 					},
 					{
-						"source": {
-							"entityName": "mc2_maestro_prioridad"
-						},
 						"destination": {
 							"fileName": "mc2_maestro_prioridad.parquet"
+						},
+						"source": {
+							"entityName": "mc2_maestro_prioridad"
 						}
 					},
 					{
-						"source": {
-							"entityName": "mc2_maestro_producto"
-						},
 						"destination": {
 							"fileName": "mc2_maestro_producto.parquet"
+						},
+						"source": {
+							"entityName": "mc2_maestro_producto"
 						}
 					},
 					{
-						"source": {
-							"entityName": "mc2_maestro_tipificacion"
-						},
 						"destination": {
 							"fileName": "mc2_maestro_tipificacion.parquet"
+						},
+						"source": {
+							"entityName": "mc2_maestro_tipificacion"
 						}
 					},
 					{
-						"source": {
-							"entityName": "mc2_maestrocodigoproyecto"
-						},
 						"destination": {
 							"fileName": "mc2_maestrocodigoproyecto.parquet"
+						},
+						"source": {
+							"entityName": "mc2_maestrocodigoproyecto"
 						}
 					},
 					{
-						"source": {
-							"entityName": "mc2_maestro_fase"
-						},
 						"destination": {
 							"fileName": "mc2_maestro_fase.parquet"
+						},
+						"source": {
+							"entityName": "mc2_maestro_fase"
 						}
 					},
 					{
-						"source": {
-							"entityName": "mc2_maestro_tipo_facturacion"
-						},
 						"destination": {
 							"fileName": "mc2_maestro_tipo_facturacion.parquet"
+						},
+						"source": {
+							"entityName": "mc2_maestro_tipo_facturacion"
 						}
 					},
 					{
-						"source": {
-							"entityName": "mc2_maestro_estado_venta"
-						},
 						"destination": {
 							"fileName": "mc2_maestro_estado_venta.parquet"
-						}
-					}
-				]
-			},
-			"cw_items_Principales": {
-				"type": "array",
-				"defaultValue": [
-					{
-						"source": {
-							"entityName": "mc2_comentarios_proyecto"
 						},
-						"destination": {
-							"fileName": "mc2_comentarios_proyecto.parquet"
-						}
-					},
-					{
 						"source": {
-							"entityName": "mc2_elemento_pep"
-						},
-						"destination": {
-							"fileName": "mc2_elemento_pep.parquet"
-						}
-					},
-					{
-						"source": {
-							"entityName": "mc2_lineas_adquira"
-						},
-						"destination": {
-							"fileName": "mc2_lineas_adquira.parquet"
-						}
-					},
-					{
-						"source": {
-							"entityName": "mc2_pedido"
-						},
-						"destination": {
-							"fileName": "mc2_pedido.parquet"
-						}
-					},
-					{
-						"source": {
-							"entityName": "mc2_planificacion"
-						},
-						"destination": {
-							"fileName": "mc2_planificacion.parquet"
-						}
-					},
-					{
-						"source": {
-							"entityName": "mc2_proyecto"
-						},
-						"destination": {
-							"fileName": "mc2_proyecto.parquet"
+							"entityName": "mc2_maestro_estado_venta"
 						}
 					}
 				]
@@ -504,155 +451,208 @@
 				"type": "array",
 				"defaultValue": [
 					{
-						"source": {
-							"entityName": "e3c_maestro_compra_area_funcional"
-						},
 						"destination": {
 							"fileName": "e3c_maestro_compra_area_funcional.parquet"
+						},
+						"source": {
+							"entityName": "e3c_maestro_compra_area_funcional"
 						}
 					},
 					{
-						"source": {
-							"entityName": "e3c_maestro_compra_ariba"
-						},
 						"destination": {
 							"fileName": "e3c_maestro_compra_ariba.parquet"
+						},
+						"source": {
+							"entityName": "e3c_maestro_compra_ariba"
 						}
 					},
 					{
-						"source": {
-							"entityName": "e3c_maestro_compra_categoria"
-						},
 						"destination": {
 							"fileName": "e3c_maestro_compra_categoria.parquet"
+						},
+						"source": {
+							"entityName": "e3c_maestro_compra_categoria"
 						}
 					},
 					{
-						"source": {
-							"entityName": "e3c_maestro_compra_ceco"
-						},
 						"destination": {
 							"fileName": "e3c_maestro_compra_ceco.parquet"
+						},
+						"source": {
+							"entityName": "e3c_maestro_compra_ceco"
 						}
 					},
 					{
-						"source": {
-							"entityName": "e3c_maestro_compra_centro_gestor"
-						},
 						"destination": {
 							"fileName": "e3c_maestro_compra_centro_gestor.parquet"
+						},
+						"source": {
+							"entityName": "e3c_maestro_compra_centro_gestor"
 						}
 					},
 					{
-						"source": {
-							"entityName": "e3c_maestro_compra_contrato"
-						},
 						"destination": {
 							"fileName": "e3c_maestro_compra_contrato.parquet"
+						},
+						"source": {
+							"entityName": "e3c_maestro_compra_contrato"
 						}
 					},
 					{
-						"source": {
-							"entityName": "e3c_maestro_compra_estado_cesta_derivada"
-						},
 						"destination": {
 							"fileName": "e3c_maestro_compra_estado_cesta_derivada.parquet"
+						},
+						"source": {
+							"entityName": "e3c_maestro_compra_estado_cesta_derivada"
 						}
 					},
 					{
-						"source": {
-							"entityName": "e3c_maestro_compra_estado_cesta_ordinaria"
-						},
 						"destination": {
 							"fileName": "e3c_maestro_compra_estado_cesta_ordinaria.parquet"
+						},
+						"source": {
+							"entityName": "e3c_maestro_compra_estado_cesta_ordinaria"
 						}
 					},
 					{
-						"source": {
-							"entityName": "e3c_maestro_compra_gasto_inversion"
-						},
 						"destination": {
 							"fileName": "e3c_maestro_compra_gasto_inversion.parquet"
+						},
+						"source": {
+							"entityName": "e3c_maestro_compra_gasto_inversion"
 						}
 					},
 					{
-						"source": {
-							"entityName": "e3c_maestro_compra_grupo_compras"
-						},
 						"destination": {
 							"fileName": "e3c_maestro_compra_grupo_compras.parquet"
+						},
+						"source": {
+							"entityName": "e3c_maestro_compra_grupo_compras"
 						}
 					},
 					{
-						"source": {
-							"entityName": "e3c_maestro_compra_moneda"
-						},
 						"destination": {
 							"fileName": "e3c_maestro_compra_moneda.parquet"
+						},
+						"source": {
+							"entityName": "e3c_maestro_compra_moneda"
 						}
 					},
 					{
-						"source": {
-							"entityName": "e3c_maestro_compra_org_compras"
-						},
 						"destination": {
 							"fileName": "e3c_maestro_compra_org_compras.parquet"
+						},
+						"source": {
+							"entityName": "e3c_maestro_compra_org_compras"
 						}
 					},
 					{
-						"source": {
-							"entityName": "e3c_maestro_compra_sociedad"
-						},
 						"destination": {
 							"fileName": "e3c_maestro_compra_sociedad.parquet"
+						},
+						"source": {
+							"entityName": "e3c_maestro_compra_sociedad"
 						}
 					},
 					{
-						"source": {
-							"entityName": "e3c_maestro_compra_tipo_facturacion"
-						},
 						"destination": {
 							"fileName": "e3c_maestro_compra_tipo_facturacion.parquet"
+						},
+						"source": {
+							"entityName": "e3c_maestro_compra_tipo_facturacion"
 						}
 					},
 					{
-						"source": {
-							"entityName": "e3c_maestro_compra_tipo_imputacion"
-						},
 						"destination": {
 							"fileName": "e3c_maestro_compra_tipo_imputacion.parquet"
+						},
+						"source": {
+							"entityName": "e3c_maestro_compra_tipo_imputacion"
 						}
 					},
 					{
-						"source": {
-							"entityName": "e3c_maestro_compra_posicion_contrato"
-						},
 						"destination": {
 							"fileName": "e3c_maestro_compra_posicion_contrato.parquet"
+						},
+						"source": {
+							"entityName": "e3c_maestro_compra_posicion_contrato"
 						}
 					},
 					{
-						"source": {
-							"entityName": "e3c_maestro_compra_revisor_exp"
-						},
 						"destination": {
 							"fileName": "e3c_maestro_compra_revisor_exp.parquet"
+						},
+						"source": {
+							"entityName": "e3c_maestro_compra_revisor_exp"
 						}
 					},
 					{
-						"source": {
-							"entityName": "e3c_maestro_compra_usuario_solicitante_ord"
-						},
 						"destination": {
 							"fileName": "e3c_maestro_compra_usuario_solicitante_ord.parquet"
+						},
+						"source": {
+							"entityName": "e3c_maestro_compra_usuario_solicitante_ord"
 						}
 					},
 					{
-						"source": {
-							"entityName": "e3c_maestro_compra_dest_mercancias"
-						},
 						"destination": {
 							"fileName": "e3c_maestro_compra_dest_mercancias.parquet"
+						},
+						"source": {
+							"entityName": "e3c_maestro_compra_dest_mercancias"
+						}
+					}
+				]
+			},
+			"cw_items_Principales": {
+				"type": "array",
+				"defaultValue": [
+					{
+						"destination": {
+							"fileName": "mc2_comentarios_proyecto.parquet"
+						},
+						"source": {
+							"entityName": "mc2_comentarios_proyecto"
+						}
+					},
+					{
+						"destination": {
+							"fileName": "mc2_elemento_pep.parquet"
+						},
+						"source": {
+							"entityName": "mc2_elemento_pep"
+						}
+					},
+					{
+						"destination": {
+							"fileName": "mc2_lineas_adquira.parquet"
+						},
+						"source": {
+							"entityName": "mc2_lineas_adquira"
+						}
+					},
+					{
+						"destination": {
+							"fileName": "mc2_pedido.parquet"
+						},
+						"source": {
+							"entityName": "mc2_pedido"
+						}
+					},
+					{
+						"destination": {
+							"fileName": "mc2_planificacion.parquet"
+						},
+						"source": {
+							"entityName": "mc2_planificacion"
+						}
+					},
+					{
+						"destination": {
+							"fileName": "mc2_proyecto.parquet"
+						},
+						"source": {
+							"entityName": "mc2_proyecto"
 						}
 					}
 				]
@@ -661,19 +661,19 @@
 				"type": "array",
 				"defaultValue": [
 					{
-						"source": {
-							"entityName": "e3c_cestas"
-						},
 						"destination": {
 							"fileName": "e3c_cestas.parquet"
+						},
+						"source": {
+							"entityName": "e3c_cestas"
 						}
 					},
 					{
-						"source": {
-							"entityName": "e3c_lineas_cesta"
-						},
 						"destination": {
 							"fileName": "e3c_lineas_cesta.parquet"
+						},
+						"source": {
+							"entityName": "e3c_lineas_cesta"
 						}
 					}
 				]
@@ -682,6 +682,8 @@
 		"folder": {
 			"name": "Main"
 		},
-		"annotations": []
-	}
+		"annotations": [],
+		"lastPublishTime": "2021-12-15T12:14:23Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
 }

@@ -340,5 +340,6 @@
 			"schema": "PUBLIC",
 			"table": "MC2_LINEAS_ADQUIRA"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

@@ -62,6 +62,8 @@
 		"folder": {
 			"name": "Main/Sources/CopyBronceToSilver"
 		},
-		"annotations": []
-	}
+		"annotations": [],
+		"lastPublishTime": "2021-12-15T12:13:54Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
 }

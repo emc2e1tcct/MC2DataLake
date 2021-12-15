@@ -208,5 +208,6 @@
 			"schema": "PUBLIC",
 			"table": "MC2_MAESTRO_PLAZO_UTM"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

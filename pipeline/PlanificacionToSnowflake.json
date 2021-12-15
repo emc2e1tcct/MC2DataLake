@@ -4,7 +4,7 @@
 		"activities": [
 			{
 				"name": "CopyPlanificacionToSnowflake",
-				"description": "TRUNCATE TABLE \"MC2_DEV\".\"PUBLIC\".\"MC2_PLANIFICACION\";",
+				"description": "TRUNCATE TABLE \"MC2_PROD\".\"PUBLIC\".\"MC2_PLANIFICACION\";",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -490,6 +490,8 @@
 		"folder": {
 			"name": "Main/Sources/CopyToSnowfake/CopyPrincipalesSnowflake/Principales"
 		},
-		"annotations": []
-	}
+		"annotations": [],
+		"lastPublishTime": "2021-12-15T12:13:57Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
 }

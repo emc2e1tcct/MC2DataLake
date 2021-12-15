@@ -214,5 +214,6 @@
 			"schema": "PUBLIC",
 			"table": "MC2_MAESTRO_COSTE"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

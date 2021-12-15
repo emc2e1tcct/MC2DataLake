@@ -34,7 +34,7 @@
 					},
 					"sink": {
 						"type": "SnowflakeSink",
-						"preCopyScript": "TRUNCATE TABLE \"MC2_DEV\".\"PUBLIC\".\"MC2_MAESTRO_TIPO_FACTURACION\";",
+						"preCopyScript": "TRUNCATE TABLE \"MC2_PROD\".\"PUBLIC\".\"MC2_MAESTRO_TIPO_FACTURACION\";",
 						"importSettings": {
 							"type": "SnowflakeImportCopyCommand"
 						}
@@ -390,6 +390,8 @@
 		"folder": {
 			"name": "Main/Sources/CopyToSnowfake/CopyMaestrasToSnowflake/Maestras"
 		},
-		"annotations": []
-	}
+		"annotations": [],
+		"lastPublishTime": "2021-12-15T12:13:55Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
 }

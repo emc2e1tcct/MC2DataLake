@@ -226,5 +226,6 @@
 			"schema": "PUBLIC",
 			"table": "MC2_MAESTRO_PRODUCTO"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

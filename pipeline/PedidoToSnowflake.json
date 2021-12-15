@@ -34,7 +34,7 @@
 					},
 					"sink": {
 						"type": "SnowflakeSink",
-						"preCopyScript": "TRUNCATE TABLE \"MC2_DEV\".\"PUBLIC\".\"MC2_PEDIDO\";",
+						"preCopyScript": "TRUNCATE TABLE \"MC2_PROD\".\"PUBLIC\".\"MC2_PEDIDO\";",
 						"importSettings": {
 							"type": "SnowflakeImportCopyCommand"
 						}
@@ -930,6 +930,8 @@
 		"folder": {
 			"name": "Main/Sources/CopyToSnowfake/CopyPrincipalesSnowflake/Principales"
 		},
-		"annotations": []
-	}
+		"annotations": [],
+		"lastPublishTime": "2021-12-15T12:13:56Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
 }

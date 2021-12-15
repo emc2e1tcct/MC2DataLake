@@ -262,5 +262,6 @@
 			"schema": "PUBLIC",
 			"table": "E3C_MAESTRO_COMPRA_POSICION_CONTRATO"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

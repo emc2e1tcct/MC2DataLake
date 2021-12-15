@@ -1,7 +1,10 @@
 {
 	"name": "AzureDataLakeStorageDataFact",
 	"properties": {
-		"privateLinkResourceId": "/subscriptions/f5c3112c-3ffb-471c-8bb5-79213cb5ec52/resourceGroups/rg-mc2dl-dev/providers/Microsoft.Storage/storageAccounts/mc2datalake",
-		"groupId": "dfs"
+		"privateLinkResourceId": "/subscriptions/c57a9b5b-3248-42c5-89b4-0b1ad199ecbe/resourceGroups/rg-mc2dl-pro/providers/Microsoft.Storage/storageAccounts/storagemc2dlprod",
+		"groupId": "dfs",
+		"fqdns": [
+			"storagemc2dlprod.dfs.core.windows.net"
+		]
 	}
 }

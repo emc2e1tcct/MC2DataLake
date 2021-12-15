@@ -226,5 +226,6 @@
 			"schema": "PUBLIC",
 			"table": "E3C_MAESTRO_COMPRA_USUARIO_SOLICITANTE_ORD"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

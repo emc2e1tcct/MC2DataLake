@@ -34,11 +34,9 @@
 					},
 					"sink": {
 						"type": "SnowflakeSink",
+						"preCopyScript": "TRUNCATE TABLE \"MC2_PROD\".\"PUBLIC\".\"E3C_CESTAS\";",
 						"importSettings": {
-							"type": "SnowflakeImportCopyCommand",
-							"additionalCopyOptions": {
-								"LOAD_UNCERTAIN_FILES": "FALSE"
-							}
+							"type": "SnowflakeImportCopyCommand"
 						}
 					},
 					"enableStaging": true,
@@ -962,6 +960,8 @@
 		"folder": {
 			"name": "Main/Sources/CopyToSnowfake/CopyPrincipalesSnowflake/Principales"
 		},
-		"annotations": []
-	}
+		"annotations": [],
+		"lastPublishTime": "2021-12-15T12:13:53Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
 }

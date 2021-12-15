@@ -388,5 +388,6 @@
 			"schema": "PUBLIC",
 			"table": "MC2_ELEMENTO_PEP"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

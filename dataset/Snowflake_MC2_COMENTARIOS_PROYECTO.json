@@ -220,5 +220,6 @@
 			"schema": "PUBLIC",
 			"table": "MC2_COMENTARIOS_PROYECTO"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }
