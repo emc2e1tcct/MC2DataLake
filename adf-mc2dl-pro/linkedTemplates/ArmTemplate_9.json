@@ -7885,7 +7885,7 @@
 					"recurrence": {
 						"frequency": "Week",
 						"interval": 1,
-						"startTime": "2021-10-29T13:27:00",
+						"startTime": "2021-10-29T03:00:00",
 						"timeZone": "Romance Standard Time",
 						"schedule": {
 							"weekDays": [
