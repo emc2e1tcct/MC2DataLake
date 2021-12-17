@@ -1,0 +1,41 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adf-mc2dl-pro"
+		},
+		"MC2Dataverse_servicePrincipalCredential": {
+			"value": ""
+		},
+		"AzureBlobStorageForSnowflake_sasUri": {
+			"value": ""
+		},
+		"AzureDataLakeStorageGen2_properties_typeProperties_url": {
+			"value": "https://storagemc2dlprod.dfs.core.windows.net/"
+		},
+		"MC2Dataverse_properties_typeProperties_servicePrincipalId": {
+			"value": "b2fba272-7df8-4f7f-b82f-4a9e69f4ef5f"
+		},
+		"Snowflake1_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeStorageDataFact_properties_privateLinkResourceId": {
+			"value": "/subscriptions/c57a9b5b-3248-42c5-89b4-0b1ad199ecbe/resourceGroups/rg-mc2dl-pro/providers/Microsoft.Storage/storageAccounts/storagemc2dlprod"
+		},
+		"AzureDataLakeStorageDataFact_properties_groupId": {
+			"value": "dfs"
+		},
+		"AzureDataLakeStorageDataFact_properties_fqdns": {
+			"value": [
+				"storagemc2dlprod.dfs.core.windows.net"
+			]
+		},
+		"dataFactory_location": {
+			"value": "northeurope"
+		},
+		"dataFactory_identity_type": {
+			"value": "SystemAssigned"
+		}
+	}
+}
