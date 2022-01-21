@@ -601,22 +601,6 @@
 						"source": {
 							"entityName": "e3c_maestro_compra_dest_mercancias"
 						}
-					},
-					{
-						"destination": {
-							"fileName": "e3c_maestro_compra_grupo_compras.parquet"
-						},
-						"source": {
-							"entityName": "e3c_maestro_compra_grupo_compras"
-						}
-					},
-					{
-						"destination": {
-							"fileName": "e3c_maestro_compra_org_compras.parquet"
-						},
-						"source": {
-							"entityName": "e3c_maestro_compra_org_compras"
-						}
 					}
 				]
 			},
