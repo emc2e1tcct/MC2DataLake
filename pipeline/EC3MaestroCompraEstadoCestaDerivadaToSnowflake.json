@@ -34,7 +34,7 @@
 					},
 					"sink": {
 						"type": "SnowflakeSink",
-						"preCopyScript": "TRUNCATE TABLE \"MC2_PROD\".\"PUBLIC\".\"E3C_MAESTRO_COMPRA_ESTADO_CESTA_DERIVADA\";",
+						"preCopyScript": "TRUNCATE TABLE \"MC2_DEV\".\"PUBLIC\".\"E3C_MAESTRO_COMPRA_ESTADO_CESTA_DERIVADA\";",
 						"importSettings": {
 							"type": "SnowflakeImportCopyCommand"
 						}
