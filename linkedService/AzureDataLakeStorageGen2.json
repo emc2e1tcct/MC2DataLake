@@ -1,0 +1,14 @@
+{
+	"name": "AzureDataLakeStorageGen2",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://mc2datalake.dfs.core.windows.net/"
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntimeDataFact",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
