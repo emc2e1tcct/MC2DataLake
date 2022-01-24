@@ -1,10 +1,6 @@
 {
 	"name": "SourceEc3_LineasCesta",
 	"properties": {
-		"linkedServiceName": {
-			"referenceName": "AzureDataLakeStorageGen2",
-			"type": "LinkedServiceReference"
-		},
 		"folder": {
 			"name": "Sources"
 		},

@@ -1,10 +1,6 @@
 {
 	"name": "DestinationMaestrasBronce",
 	"properties": {
-		"linkedServiceName": {
-			"referenceName": "AzureDataLakeStorageGen2",
-			"type": "LinkedServiceReference"
-		},
 		"parameters": {
 			"cw_fileName_Maestras": {
 				"type": "String"

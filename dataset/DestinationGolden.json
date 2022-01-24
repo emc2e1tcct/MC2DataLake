@@ -1,10 +1,6 @@
 {
 	"name": "DestinationGolden",
 	"properties": {
-		"linkedServiceName": {
-			"referenceName": "AzureDataLakeStorageGen2",
-			"type": "LinkedServiceReference"
-		},
 		"folder": {
 			"name": "Destination"
 		},

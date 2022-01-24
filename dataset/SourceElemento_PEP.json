@@ -1,10 +1,6 @@
 {
 	"name": "SourceElemento_PEP",
 	"properties": {
-		"linkedServiceName": {
-			"referenceName": "AzureDataLakeStorageGen2",
-			"type": "LinkedServiceReference"
-		},
 		"folder": {
 			"name": "Sources"
 		},

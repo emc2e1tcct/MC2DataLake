@@ -1,10 +1,6 @@
 {
 	"name": "SourceEC3MaestroCompraEstadoCestaDerivada",
 	"properties": {
-		"linkedServiceName": {
-			"referenceName": "AzureDataLakeStorageGen2",
-			"type": "LinkedServiceReference"
-		},
 		"folder": {
 			"name": "Sources"
 		},
