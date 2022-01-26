@@ -5,8 +5,8 @@
 		"annotations": [],
 		"type": "Snowflake",
 		"typeProperties": {
-			"connectionString": "jdbc:snowflake://rq45248.north-europe.azure.snowflakecomputing.com/?user=EVERIS&db=MC2_DEV&warehouse=MC2_DW&role=MC2DBA",
-			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDZGQzNCNEMzLTIyQTktNEFFRS05MTRELThDNDNDNTQ0QUEyQ19hNDVkM2IyZi0wMDAzLTQ5OWItYTExOC00OWY4NWFiNWE0MjQiDQp9"
+			"connectionString": "jdbc:snowflake://rq45248.north-europe.azure.snowflakecomputing.com/?user=EVERIS&db=MC2_PROD&warehouse=MC2_DW&role=MC2DBA",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDJBQzU2RTg4LTM2RkUtNDU3Mi04NzQzLUNDODI1NzY5QjMyRl85ZWI5ZmEwYy1hYzEwLTQ3M2YtOGY0ZS01Yzg3ODcxNzE0NWYiDQp9"
 		}
 	}
 }
