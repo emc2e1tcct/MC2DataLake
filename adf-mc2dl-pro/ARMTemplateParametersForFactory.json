@@ -482,11 +482,6 @@
 		"AzureDataLakeStorageDataFact_properties_groupId": {
 			"value": "dfs"
 		},
-		"AzureDataLakeStorageDataFact_properties_fqdns": {
-			"value": [
-				"storagemc2dlprod.dfs.core.windows.net"
-			]
-		},
 		"dataFactory_location": {
 			"value": "northeurope"
 		},

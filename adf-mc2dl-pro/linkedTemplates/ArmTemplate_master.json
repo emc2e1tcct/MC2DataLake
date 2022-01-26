@@ -495,12 +495,6 @@
 			"type": "string",
 			"defaultValue": "dfs"
 		},
-		"AzureDataLakeStorageDataFact_properties_fqdns": {
-			"type": "array",
-			"defaultValue": [
-				"storagemc2dlprod.dfs.core.windows.net"
-			]
-		},
 		"dataFactory_location": {
 			"type": "string",
 			"defaultValue": "northeurope"
@@ -617,9 +611,6 @@
 					},
 					"AzureDataLakeStorageDataFact_properties_groupId": {
 						"value": "[parameters('AzureDataLakeStorageDataFact_properties_groupId')]"
-					},
-					"AzureDataLakeStorageDataFact_properties_fqdns": {
-						"value": "[parameters('AzureDataLakeStorageDataFact_properties_fqdns')]"
 					},
 					"AzureDataLakeStorageGen2_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorageGen2_properties_typeProperties_url')]"
