@@ -35,7 +35,7 @@
 					},
 					"sink": {
 						"type": "SnowflakeSink",
-						"preCopyScript": "TRUNCATE TABLE \"MC2_DEV\".\"PUBLIC\".\"MC2_MAESTRO_TIPIFICACION\";",
+						"preCopyScript": "TRUNCATE TABLE \"MC2_PROD\".\"PUBLIC\".\"MC2_MAESTRO_TIPIFICACION\";",
 						"importSettings": {
 							"type": "SnowflakeImportCopyCommand"
 						}
