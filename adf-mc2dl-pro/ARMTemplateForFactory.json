@@ -17,7 +17,7 @@
 		},
 		"AzureDataLakeStorageGen2_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://mc2datalake.dfs.core.windows.net/"
+			"defaultValue": "https://storagemc2dlprod.dfs.core.windows.net/"
 		},
 		"MC2Dataverse_properties_typeProperties_servicePrincipalId": {
 			"type": "string",
@@ -22040,7 +22040,7 @@
 							},
 							"sink": {
 								"type": "SnowflakeSink",
-								"preCopyScript": "TRUNCATE TABLE \"MC2_PROD\".\"PUBLIC\".\"MC2_MAESTRO_PLANIFICACION\";",
+								"preCopyScript": "TRUNCATE TABLE \"MC2_DEV\".\"PUBLIC\".\"MC2_MAESTRO_PLANIFICACION\";",
 								"importSettings": {
 									"type": "SnowflakeImportCopyCommand"
 								}

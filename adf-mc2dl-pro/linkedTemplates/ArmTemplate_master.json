@@ -17,7 +17,7 @@
 		},
 		"AzureDataLakeStorageGen2_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://mc2datalake.dfs.core.windows.net/"
+			"defaultValue": "https://storagemc2dlprod.dfs.core.windows.net/"
 		},
 		"MC2Dataverse_properties_typeProperties_servicePrincipalId": {
 			"type": "string",
@@ -606,14 +606,14 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"AzureDataLakeStorageGen2_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorageGen2_properties_typeProperties_url')]"
+					},
 					"AzureDataLakeStorageDataFact_properties_privateLinkResourceId": {
 						"value": "[parameters('AzureDataLakeStorageDataFact_properties_privateLinkResourceId')]"
 					},
 					"AzureDataLakeStorageDataFact_properties_groupId": {
 						"value": "[parameters('AzureDataLakeStorageDataFact_properties_groupId')]"
-					},
-					"AzureDataLakeStorageGen2_properties_typeProperties_url": {
-						"value": "[parameters('AzureDataLakeStorageGen2_properties_typeProperties_url')]"
 					}
 				}
 			},
