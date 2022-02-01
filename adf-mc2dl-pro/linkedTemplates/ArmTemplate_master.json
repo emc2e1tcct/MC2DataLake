@@ -17,7 +17,7 @@
 		},
 		"AzureDataLakeStorageGen2_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://storagemc2dlprod.dfs.core.windows.net/"
+			"defaultValue": "https://mc2datalake.dfs.core.windows.net/"
 		},
 		"MC2Dataverse_properties_typeProperties_servicePrincipalId": {
 			"type": "string",

@@ -12,7 +12,7 @@
 			"value": ""
 		},
 		"AzureDataLakeStorageGen2_properties_typeProperties_url": {
-			"value": "https://storagemc2dlprod.dfs.core.windows.net/"
+			"value": "https://mc2datalake.dfs.core.windows.net/"
 		},
 		"MC2Dataverse_properties_typeProperties_servicePrincipalId": {
 			"value": "b2fba272-7df8-4f7f-b82f-4a9e69f4ef5f"

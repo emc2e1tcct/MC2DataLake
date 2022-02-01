@@ -50,7 +50,7 @@
 							},
 							"sink": {
 								"type": "SnowflakeSink",
-								"preCopyScript": "TRUNCATE TABLE \"MC2_DEV\".\"PUBLIC\".\"MC2_MAESTRO_BLOQUE\"",
+								"preCopyScript": "TRUNCATE TABLE \"MC2_PROD\".\"PUBLIC\".\"MC2_MAESTRO_BLOQUE\"",
 								"importSettings": {
 									"type": "SnowflakeImportCopyCommand"
 								}
@@ -446,7 +446,7 @@
 							},
 							"sink": {
 								"type": "SnowflakeSink",
-								"preCopyScript": "TRUNCATE TABLE \"MC2_DEV\".\"PUBLIC\".\"MC2_MAESTRO_CEBE\";",
+								"preCopyScript": "TRUNCATE TABLE \"MC2_PROD\".\"PUBLIC\".\"MC2_MAESTRO_CEBE\";",
 								"importSettings": {
 									"type": "SnowflakeImportCopyCommand"
 								}
@@ -882,7 +882,7 @@
 							},
 							"sink": {
 								"type": "SnowflakeSink",
-								"preCopyScript": "TRUNCATE TABLE \"MC2_DEV\".\"PUBLIC\".\"MC2_MAESTRO_CECO\";",
+								"preCopyScript": "TRUNCATE TABLE \"MC2_PROD\".\"PUBLIC\".\"MC2_MAESTRO_CECO\";",
 								"importSettings": {
 									"type": "SnowflakeImportCopyCommand"
 								}
@@ -1288,7 +1288,7 @@
 							},
 							"sink": {
 								"type": "SnowflakeSink",
-								"preCopyScript": "TRUNCATE TABLE \"MC2_DEV\".\"PUBLIC\".\"MC2_MAESTRO_CLIENTE_FACTURACION\";",
+								"preCopyScript": "TRUNCATE TABLE \"MC2_PROD\".\"PUBLIC\".\"MC2_MAESTRO_CLIENTE_FACTURACION\";",
 								"importSettings": {
 									"type": "SnowflakeImportCopyCommand"
 								}
@@ -1704,7 +1704,7 @@
 							},
 							"sink": {
 								"type": "SnowflakeSink",
-								"preCopyScript": "TRUNCATE TABLE \"MC2_DEV\".\"PUBLIC\".\"MC2_MAESTRO_CLIENTE_GESTION\";",
+								"preCopyScript": "TRUNCATE TABLE \"MC2_PROD\".\"PUBLIC\".\"MC2_MAESTRO_CLIENTE_GESTION\";",
 								"importSettings": {
 									"type": "SnowflakeImportCopyCommand"
 								}
@@ -2110,7 +2110,7 @@
 							},
 							"sink": {
 								"type": "SnowflakeSink",
-								"preCopyScript": "TRUNCATE TABLE \"MC2_DEV\".\"PUBLIC\".\"MC2_MAESTROCODIGOPROYECTO\";",
+								"preCopyScript": "TRUNCATE TABLE \"MC2_PROD\".\"PUBLIC\".\"MC2_MAESTROCODIGOPROYECTO\";",
 								"importSettings": {
 									"type": "SnowflakeImportCopyCommand"
 								}
@@ -2566,7 +2566,7 @@
 							},
 							"sink": {
 								"type": "SnowflakeSink",
-								"preCopyScript": "TRUNCATE TABLE \"MC2_DEV\".\"PUBLIC\".\"MC2_MAESTRO_COSTE\";",
+								"preCopyScript": "TRUNCATE TABLE \"MC2_PROD\".\"PUBLIC\".\"MC2_MAESTRO_COSTE\";",
 								"importSettings": {
 									"type": "SnowflakeImportCopyCommand"
 								}
@@ -2982,7 +2982,7 @@
 							},
 							"sink": {
 								"type": "SnowflakeSink",
-								"preCopyScript": "TRUNCATE TABLE \"MC2_DEV\".\"PUBLIC\".\"MC2_MAESTRO_COSTES_FORMULA\";",
+								"preCopyScript": "TRUNCATE TABLE \"MC2_PROD\".\"PUBLIC\".\"MC2_MAESTRO_COSTES_FORMULA\";",
 								"importSettings": {
 									"type": "SnowflakeImportCopyCommand"
 								}
@@ -3428,7 +3428,7 @@
 							},
 							"sink": {
 								"type": "SnowflakeSink",
-								"preCopyScript": "TRUNCATE TABLE \"MC2_DEV\".\"PUBLIC\".\"MC2_MAESTRO_ESTADO_COMPRAS\";",
+								"preCopyScript": "TRUNCATE TABLE \"MC2_PROD\".\"PUBLIC\".\"MC2_MAESTRO_ESTADO_COMPRAS\";",
 								"importSettings": {
 									"type": "SnowflakeImportCopyCommand"
 								}
@@ -3824,7 +3824,7 @@
 							},
 							"sink": {
 								"type": "SnowflakeSink",
-								"preCopyScript": "TRUNCATE TABLE \"MC2_DEV\".\"PUBLIC\".\"MC2_MAESTRO_ESTADO_PEDIDO\";",
+								"preCopyScript": "TRUNCATE TABLE \"MC2_PROD\".\"PUBLIC\".\"MC2_MAESTRO_ESTADO_PEDIDO\";",
 								"importSettings": {
 									"type": "SnowflakeImportCopyCommand"
 								}
@@ -4219,7 +4219,7 @@
 							},
 							"sink": {
 								"type": "SnowflakeSink",
-								"preCopyScript": "TRUNCATE TABLE \"MC2_DEV\".\"PUBLIC\".\"MC2_MAESTRO_ESTADO_VENTA\";",
+								"preCopyScript": "TRUNCATE TABLE \"MC2_PROD\".\"PUBLIC\".\"MC2_MAESTRO_ESTADO_VENTA\";",
 								"importSettings": {
 									"type": "SnowflakeImportCopyCommand"
 								}
@@ -4615,7 +4615,7 @@
 							},
 							"sink": {
 								"type": "SnowflakeSink",
-								"preCopyScript": "TRUNCATE TABLE \"MC2_DEV\".\"PUBLIC\".\"MC2_MAESTRO_FAMILIA\";",
+								"preCopyScript": "TRUNCATE TABLE \"MC2_PROD\".\"PUBLIC\".\"MC2_MAESTRO_FAMILIA\";",
 								"importSettings": {
 									"type": "SnowflakeImportCopyCommand"
 								}
@@ -5050,7 +5050,7 @@
 							},
 							"sink": {
 								"type": "SnowflakeSink",
-								"preCopyScript": "TRUNCATE TABLE \"MC2_DEV\".\"PUBLIC\".\"MC2_MAESTRO_FASE\";",
+								"preCopyScript": "TRUNCATE TABLE \"MC2_PROD\".\"PUBLIC\".\"MC2_MAESTRO_FASE\";",
 								"importSettings": {
 									"type": "SnowflakeImportCopyCommand"
 								}
@@ -5446,7 +5446,7 @@
 							},
 							"sink": {
 								"type": "SnowflakeSink",
-								"preCopyScript": "TRUNCATE TABLE \"MC2_DEV\".\"PUBLIC\".\"MC2_MAESTRO_JEFE_DE_PROYECTO\";",
+								"preCopyScript": "TRUNCATE TABLE \"MC2_PROD\".\"PUBLIC\".\"MC2_MAESTRO_JEFE_DE_PROYECTO\";",
 								"importSettings": {
 									"type": "SnowflakeImportCopyCommand"
 								}
@@ -5872,7 +5872,7 @@
 							},
 							"sink": {
 								"type": "SnowflakeSink",
-								"preCopyScript": "TRUNCATE TABLE \"MC2_DEV\".\"PUBLIC\".\"MC2_MAESTRO_LINEAPEP\";",
+								"preCopyScript": "TRUNCATE TABLE \"MC2_PROD\".\"PUBLIC\".\"MC2_MAESTRO_LINEAPEP\";",
 								"importSettings": {
 									"type": "SnowflakeImportCopyCommand"
 								}
@@ -6298,7 +6298,7 @@
 							},
 							"sink": {
 								"type": "SnowflakeSink",
-								"preCopyScript": "TRUNCATE TABLE \"MC2_DEV\".\"PUBLIC\".\"MC2_MAESTRO_MONEDAS\";",
+								"preCopyScript": "TRUNCATE TABLE \"MC2_PROD\".\"PUBLIC\".\"MC2_MAESTRO_MONEDAS\";",
 								"importSettings": {
 									"type": "SnowflakeImportCopyCommand"
 								}
@@ -6704,7 +6704,7 @@
 							},
 							"sink": {
 								"type": "SnowflakeSink",
-								"preCopyScript": "TRUNCATE TABLE \"MC2_DEV\".\"PUBLIC\".\"MC2_MAESTRO_NATURALEZA_UTM\";",
+								"preCopyScript": "TRUNCATE TABLE \"MC2_PROD\".\"PUBLIC\".\"MC2_MAESTRO_NATURALEZA_UTM\";",
 								"importSettings": {
 									"type": "SnowflakeImportCopyCommand"
 								}
@@ -7110,7 +7110,7 @@
 							},
 							"sink": {
 								"type": "SnowflakeSink",
-								"preCopyScript": "TRUNCATE TABLE \"MC2_DEV\".\"PUBLIC\".\"MC2_MAESTRO_PERFIL_PRESUPUESTO\";",
+								"preCopyScript": "TRUNCATE TABLE \"MC2_PROD\".\"PUBLIC\".\"MC2_MAESTRO_PERFIL_PRESUPUESTO\";",
 								"importSettings": {
 									"type": "SnowflakeImportCopyCommand"
 								}
@@ -7536,7 +7536,7 @@
 							},
 							"sink": {
 								"type": "SnowflakeSink",
-								"preCopyScript": "TRUNCATE TABLE \"MC2_DEV\".\"PUBLIC\".\"MC2_MAESTRO_PERFIL\";",
+								"preCopyScript": "TRUNCATE TABLE \"MC2_PROD\".\"PUBLIC\".\"MC2_MAESTRO_PERFIL\";",
 								"importSettings": {
 									"type": "SnowflakeImportCopyCommand"
 								}
@@ -7982,7 +7982,7 @@
 							},
 							"sink": {
 								"type": "SnowflakeSink",
-								"preCopyScript": "TRUNCATE TABLE \"MC2_DEV\".\"PUBLIC\".\"MC2_MAESTRO_PLANIFICACION\";",
+								"preCopyScript": "TRUNCATE TABLE \"MC2_PROD\".\"PUBLIC\".\"MC2_MAESTRO_PLANIFICACION\";",
 								"importSettings": {
 									"type": "SnowflakeImportCopyCommand"
 								}
