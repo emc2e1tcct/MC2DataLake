@@ -13,180 +13,6 @@
 	},
 	"resources": [
 		{
-			"name": "[concat(parameters('factoryName'), '/SourceMaestroProducto')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureDataLakeStorageGen2",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "Sources"
-				},
-				"annotations": [],
-				"type": "Parquet",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobFSLocation",
-						"fileName": {
-							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_maestro_producto.parquet')",
-							"type": "Expression"
-						},
-						"folderPath": {
-							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
-							"type": "Expression"
-						},
-						"fileSystem": "mc2-bs-golden"
-					},
-					"compressionCodec": "snappy"
-				},
-				"schema": [
-					{
-						"name": "createdby",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdbyname",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdbyyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdon",
-						"type": "INT96"
-					},
-					{
-						"name": "createdonbehalfby",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdonbehalfbyname",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdonbehalfbyyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "importsequencenumber",
-						"type": "INT32"
-					},
-					{
-						"name": "mc2_cebe",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_familia",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_familianame",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_id_producto",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_maestro_productoid",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_producto_descripcion",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedby",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedbyname",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedbyyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedon",
-						"type": "INT96"
-					},
-					{
-						"name": "modifiedonbehalfby",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedonbehalfbyname",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedonbehalfbyyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "overriddencreatedon",
-						"type": "INT96"
-					},
-					{
-						"name": "ownerid",
-						"type": "UTF8"
-					},
-					{
-						"name": "owneridname",
-						"type": "UTF8"
-					},
-					{
-						"name": "owneridtype",
-						"type": "UTF8"
-					},
-					{
-						"name": "owneridyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "owningbusinessunit",
-						"type": "UTF8"
-					},
-					{
-						"name": "owningbusinessunitname",
-						"type": "UTF8"
-					},
-					{
-						"name": "owningteam",
-						"type": "UTF8"
-					},
-					{
-						"name": "owninguser",
-						"type": "UTF8"
-					},
-					{
-						"name": "statecode",
-						"type": "INT32"
-					},
-					{
-						"name": "statuscode",
-						"type": "INT32"
-					},
-					{
-						"name": "timezoneruleversionnumber",
-						"type": "INT32"
-					},
-					{
-						"name": "utcconversiontimezonecode",
-						"type": "INT32"
-					},
-					{
-						"name": "versionnumber",
-						"type": "INT64"
-					}
-				]
-			},
-			"dependsOn": []
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/SourceMaestroSociedad')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -5207,6 +5033,441 @@
 				},
 				"folder": {
 					"name": "Main/Sources/CopyToSnowfake/CopyPrincipalesSnowflake/Principales"
+				},
+				"annotations": [],
+				"lastPublishTime": "2021-12-15T12:13:53Z"
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/EC3MaestroCompraCategoriaToSnowflake')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "CopyEC3MaestroCompraCategoriaToSnowflake",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [
+							{
+								"name": "Source",
+								"value": "mc2-bs-golden/[object Object]/[object Object]"
+							},
+							{
+								"name": "Destination",
+								"value": "PUBLIC.E3C_MAESTRO_COMPRA_CATEGORIA"
+							}
+						],
+						"typeProperties": {
+							"source": {
+								"type": "ParquetSource",
+								"storeSettings": {
+									"type": "AzureBlobFSReadSettings",
+									"recursive": true,
+									"enablePartitionDiscovery": false
+								}
+							},
+							"sink": {
+								"type": "SnowflakeSink",
+								"preCopyScript": "TRUNCATE TABLE \"MC2_PROD\".\"PUBLIC\".\"E3C_MAESTRO_COMPRA_CATEGORIA\";",
+								"importSettings": {
+									"type": "SnowflakeImportCopyCommand"
+								}
+							},
+							"enableStaging": true,
+							"stagingSettings": {
+								"linkedServiceName": {
+									"referenceName": "AzureBlobStorageForSnowflake",
+									"type": "LinkedServiceReference"
+								},
+								"path": "mc2-bs-golden/StoragePath"
+							},
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "owningbusinessunit",
+											"type": "String"
+										},
+										"sink": {
+											"name": "owningbusinessunit",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "owninguser",
+											"type": "String"
+										},
+										"sink": {
+											"name": "owninguser",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "statecode",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "statecode",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "createdby",
+											"type": "String"
+										},
+										"sink": {
+											"name": "createdby",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "createdonbehalfby",
+											"type": "String"
+										},
+										"sink": {
+											"name": "createdonbehalfby",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "e3c_denominacion_articulos",
+											"type": "String"
+										},
+										"sink": {
+											"name": "e3c_denominacion_articulos",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "importsequencenumber",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "importsequencenumber",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "utcconversiontimezonecode",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "utcconversiontimezonecode",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "e3c_denominacion2_articulos",
+											"type": "String"
+										},
+										"sink": {
+											"name": "e3c_denominacion2_articulos",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedonbehalfby",
+											"type": "String"
+										},
+										"sink": {
+											"name": "modifiedonbehalfby",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "owneridname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "owneridname",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "e3c_maestro_compra_categoriaid",
+											"type": "String"
+										},
+										"sink": {
+											"name": "e3c_maestro_compra_categoriaid",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedbyname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "modifiedbyname",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "owningbusinessunitname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "owningbusinessunitname",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "statuscode",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "statuscode",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "e3c_grupo_articulos",
+											"type": "String"
+										},
+										"sink": {
+											"name": "e3c_grupo_articulos",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ownerid",
+											"type": "String"
+										},
+										"sink": {
+											"name": "ownerid",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "owneridtype",
+											"type": "String"
+										},
+										"sink": {
+											"name": "owneridtype",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedonbehalfbyname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "modifiedonbehalfbyname",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "createdbyname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "createdbyname",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "e3c_grupo_autorizaciones",
+											"type": "String"
+										},
+										"sink": {
+											"name": "e3c_grupo_autorizaciones",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedbyyominame",
+											"type": "String"
+										},
+										"sink": {
+											"name": "modifiedbyyominame",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedonbehalfbyyominame",
+											"type": "String"
+										},
+										"sink": {
+											"name": "modifiedonbehalfbyyominame",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "owneridyominame",
+											"type": "String"
+										},
+										"sink": {
+											"name": "owneridyominame",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "owningteam",
+											"type": "String"
+										},
+										"sink": {
+											"name": "owningteam",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "timezoneruleversionnumber",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "timezoneruleversionnumber",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "createdonbehalfbyname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "createdonbehalfbyname",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedby",
+											"type": "String"
+										},
+										"sink": {
+											"name": "modifiedby",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "createdbyyominame",
+											"type": "String"
+										},
+										"sink": {
+											"name": "createdbyyominame",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "createdon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "createdon",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "createdonbehalfbyyominame",
+											"type": "String"
+										},
+										"sink": {
+											"name": "createdonbehalfbyyominame",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "e3c_categoria_valoracion",
+											"type": "String"
+										},
+										"sink": {
+											"name": "e3c_categoria_valoracion",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "modifiedon",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "overriddencreatedon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "overriddencreatedon",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "versionnumber",
+											"type": "Int64"
+										},
+										"sink": {
+											"name": "versionnumber",
+											"type": "String"
+										}
+									}
+								]
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "SourceEC3MaestroCompraCategia",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "Snowflake_E3C_MAESTRO_COMPRA_CATEGORIA",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
+				"folder": {
+					"name": "Main/Sources/CopyToSnowfake/CopyMaestrasToSnowflake/Maestras/EC3"
 				},
 				"annotations": [],
 				"lastPublishTime": "2021-12-15T12:13:53Z"

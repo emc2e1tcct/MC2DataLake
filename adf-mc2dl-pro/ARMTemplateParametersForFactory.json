@@ -481,12 +481,6 @@
 		},
 		"AzureDataLakeStorageDataFact_properties_groupId": {
 			"value": "dfs"
-		},
-		"dataFactory_location": {
-			"value": "northeurope"
-		},
-		"dataFactory_identity_type": {
-			"value": "SystemAssigned"
 		}
 	}
 }

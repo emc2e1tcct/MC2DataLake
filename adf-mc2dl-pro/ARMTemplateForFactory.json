@@ -494,14 +494,6 @@
 		"AzureDataLakeStorageDataFact_properties_groupId": {
 			"type": "string",
 			"defaultValue": "dfs"
-		},
-		"dataFactory_location": {
-			"type": "string",
-			"defaultValue": "northeurope"
-		},
-		"dataFactory_identity_type": {
-			"type": "string",
-			"defaultValue": "SystemAssigned"
 		}
 	},
 	"variables": {
@@ -932,7 +924,6 @@
 				"lastPublishTime": "2021-12-15T12:13:55Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceComentariosProyecto')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_MC2_COMENTARIOS_PROYECTO')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -1014,7 +1005,6 @@
 				"lastPublishTime": "2021-12-15T12:13:54Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceBronce')]",
 				"[concat(variables('factoryId'), '/datasets/DestinationSilver')]"
 			]
@@ -1266,7 +1256,6 @@
 				"lastPublishTime": "2021-12-15T12:13:55Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceMaestrasE3')]",
 				"[concat(variables('factoryId'), '/datasets/DestinationMaestrasE3')]"
 			]
@@ -1555,7 +1544,6 @@
 				"lastPublishTime": "2021-12-15T12:14:21Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/pipelines/E3CMaestroCompraAreaFuncionalToSnowflake')]",
 				"[concat(variables('factoryId'), '/pipelines/E3CMaestroCompraAribaToSnowflake')]",
 				"[concat(variables('factoryId'), '/pipelines/EC3MaestroCompraCategoriaToSnowflake')]",
@@ -1896,7 +1884,6 @@
 				"lastPublishTime": "2021-12-15T12:13:55Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceMaestras')]",
 				"[concat(variables('factoryId'), '/datasets/DestinationMaestrasBronce')]"
 			]
@@ -2311,7 +2298,6 @@
 				"lastPublishTime": "2021-12-15T12:14:22Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/pipelines/ManestroAmbitoToSnowflake')]",
 				"[concat(variables('factoryId'), '/pipelines/MaestroBloqueToSnowflake')]",
 				"[concat(variables('factoryId'), '/pipelines/MaestroCebeToSnowflake')]",
@@ -2453,7 +2439,6 @@
 				"lastPublishTime": "2021-12-15T12:13:54Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourcePrincipalesE3')]",
 				"[concat(variables('factoryId'), '/datasets/DestinationPrincipalesE3')]"
 			]
@@ -2504,7 +2489,6 @@
 				"lastPublishTime": "2021-12-15T12:13:56Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/pipelines/E3c_CestasToSnowflake')]",
 				"[concat(variables('factoryId'), '/pipelines/Ec3LineasCestaToSnowflake')]"
 			]
@@ -2652,7 +2636,6 @@
 				"lastPublishTime": "2021-12-15T12:13:54Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourcePrincipales')]",
 				"[concat(variables('factoryId'), '/datasets/DestinationPrincipalesBronce')]"
 			]
@@ -2745,7 +2728,6 @@
 				"lastPublishTime": "2021-12-15T12:13:58Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/pipelines/ComentariosProyectoToSnowflake')]",
 				"[concat(variables('factoryId'), '/pipelines/ElementoPEPToSnowflake')]",
 				"[concat(variables('factoryId'), '/pipelines/PedidoToSnowflake')]",
@@ -2829,7 +2811,6 @@
 				"lastPublishTime": "2021-12-15T12:13:54Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceSilver')]",
 				"[concat(variables('factoryId'), '/datasets/DestinationGolden')]"
 			]
@@ -3239,7 +3220,6 @@
 				"lastPublishTime": "2021-12-15T12:14:20Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceE3CMaestroCompraAreaFuncional')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_E3C_MAESTRO_COMPRA_AREA_FUNCIONAL')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -3649,7 +3629,6 @@
 				"lastPublishTime": "2021-12-15T12:13:55Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceE3CMaestroCompraAriba')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_E3C_MAESTRO_COMPRA_ARIBA')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -4629,7 +4608,6 @@
 				"lastPublishTime": "2021-12-15T12:13:53Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceE3c_cestas')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_E3C_CESTAS')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -5069,7 +5047,6 @@
 				"lastPublishTime": "2021-12-15T12:13:53Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceEC3MaestroCompraCategia')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_E3C_MAESTRO_COMPRA_CATEGORIA')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -5539,7 +5516,6 @@
 				"lastPublishTime": "2021-12-15T12:13:54Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceEC3MaestroCompraCeco')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_E3C_MAESTRO_COMPRA_CECO')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -5999,7 +5975,6 @@
 				"lastPublishTime": "2021-12-15T12:13:55Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceEC3MaestroCompraCentroGestor')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_E3C_MAESTRO_CENTRO_GESTOR')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -6539,7 +6514,6 @@
 				"lastPublishTime": "2021-12-15T12:13:53Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceEC3MaestroCompraContrato')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_E3C_MAESTRO_COMPRA_CONTRATO')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -6979,7 +6953,6 @@
 				"lastPublishTime": "2021-12-15T12:13:53Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/EC3MaestroCompraDestMercancias')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_E3C_MAESTRO_COMPRA_DEST_MERCANCIAS')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -7379,7 +7352,6 @@
 				"lastPublishTime": "2021-12-15T12:13:53Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceEC3MaestroCompraEstadoCestaDerivada')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_E3C_MAESTRO_COMPRA_ESTADO_CESTA_DERIVADA')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -7779,7 +7751,6 @@
 				"lastPublishTime": "2021-12-15T12:13:54Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceEC3MaestroCompraEstadoCestaOrdinaria')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_E3C_MAESTRO_COMPRA_ESTADO_CESTA_ORDINARIA')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -8189,7 +8160,6 @@
 				"lastPublishTime": "2021-12-15T12:13:54Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceEC3MaestroCompraGastoInversion')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_E3C_MAESTRO_COMPRA_GASTO_INVERSION')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -8639,7 +8609,6 @@
 				"lastPublishTime": "2021-12-15T12:13:54Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceEC3MaestroCompraGrupoCompras')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_E3C_MAESTRO_COMPRA_GRUPO_COMPRAS')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -9049,7 +9018,6 @@
 				"lastPublishTime": "2021-12-15T12:13:56Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/EC3MaestroCompraMoneda')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_E3C_MAESTRO_COMPRA_MONEDA')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -9499,7 +9467,6 @@
 				"lastPublishTime": "2021-12-15T12:13:53Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceEC3MaestroCompraOrgCompras')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_E3C_MAESTRO_COMPRA_ORG_COMPRAS')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -9999,7 +9966,6 @@
 				"lastPublishTime": "2021-12-15T12:13:58Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceEC3MaestroCompraPosicionContrato')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_E3C_MAESTRO_COMPRA_POSICION_CONTRATO')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -10439,7 +10405,6 @@
 				"lastPublishTime": "2021-12-15T12:13:54Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceEC3MaestroCompraRevisorExp')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_E3C_MAESTRO_COMPRA_REVISOR_EXP')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -10889,7 +10854,6 @@
 				"lastPublishTime": "2021-12-15T12:13:54Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceEC3MaestroCompraSociedad')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_E3C_MAESTRO_COMPRA_SOCIEDAD')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -11299,7 +11263,6 @@
 				"lastPublishTime": "2021-12-15T12:13:55Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceEC3MaestroCompraTipoFacturacion')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_E3C_MAESTRO_COMPRA_TIPO_FACTURACION')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -11709,7 +11672,6 @@
 				"lastPublishTime": "2021-12-15T12:13:55Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceEC3MaestroCompraTipoImputacion')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_E3C_MAESTRO_COMPRA_TIPO_IMPUTACION')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -12149,7 +12111,6 @@
 				"lastPublishTime": "2021-12-15T12:13:58Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceEC3MaestroCompraUsuarioSolicitanteOrd')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_E3C_MAESTRO_COMPRA_USUARIO_SOLICITANTE_ORD')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -12629,7 +12590,6 @@
 				"lastPublishTime": "2021-12-15T12:13:54Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceEc3_LineasCesta')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_E3C_LINEAS_CESTA')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -13339,7 +13299,6 @@
 				"lastPublishTime": "2021-12-15T12:13:54Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceElemento_PEP')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_MC2_ELEMENTO_PEP')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -13969,7 +13928,6 @@
 				"lastPublishTime": "2021-12-15T12:13:53Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceLineasAdquira')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_MC2_LINEAS_ADQUIRA')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -14369,7 +14327,6 @@
 				"lastPublishTime": "2021-12-15T12:13:54Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceMaestroBloque')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_MC2_MAESTRO_BLOQUE')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -14810,7 +14767,6 @@
 				"lastPublishTime": "2021-12-15T12:13:54Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceMaestroCebe')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_MC2_MAESTRO_CEBE')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -15221,7 +15177,6 @@
 				"lastPublishTime": "2021-12-15T12:13:55Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceMaestroCeco')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_MC2_MAESTRO_CECO')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -15642,7 +15597,6 @@
 				"lastPublishTime": "2021-12-15T12:13:53Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceMaestroClienteFacturacion')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_MC2_MAESTRO_CLIENTE_FACTURACION')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -16053,7 +16007,6 @@
 				"lastPublishTime": "2021-12-15T12:13:53Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceMaestroClienteGestion')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_MC2_MAESTRO_CLIENTE_GESTION')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -16514,7 +16467,6 @@
 				"lastPublishTime": "2021-12-15T12:13:53Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceMaestroCodigoProyecto')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_MC2_CODIGOPROYECTO')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -16935,7 +16887,6 @@
 				"lastPublishTime": "2021-12-15T12:13:55Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceMaestroCoste')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_MC2_MAESTRO_COSTE')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -17386,7 +17337,6 @@
 				"lastPublishTime": "2021-12-15T12:13:55Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceMaestroCostesFormula')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_MC2_MAESTRO_COSTES_FORMULA')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -17787,7 +17737,6 @@
 				"lastPublishTime": "2021-12-15T12:13:54Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceMaestroEstadoCompras')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_MC2_MAESTRO_ESTADO_COMPRAS')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -18188,7 +18137,6 @@
 				"lastPublishTime": "2021-12-15T12:13:55Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceMestroEstadoPedido')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_MC2_Maestro_Estado_Pedido')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -18588,7 +18536,6 @@
 				"lastPublishTime": "2021-12-15T12:13:56Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceMaestroEstadoVenta')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_MC2_MAESTRO_ESTADO_VENTA')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -19029,7 +18976,6 @@
 				"lastPublishTime": "2021-12-15T12:13:54Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceMaestroFamilia')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_MC2_MAESTRO_FAMILIA')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -19429,7 +19375,6 @@
 				"lastPublishTime": "2021-12-15T12:14:20Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceMaestroFase')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_MC2_MAESTRO_FASE')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -19860,7 +19805,6 @@
 				"lastPublishTime": "2021-12-15T12:13:58Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceMaestroJefeDeProyecto')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_MC2_MAESTRO_JEFE_DE_PROYECTO')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -20291,7 +20235,6 @@
 				"lastPublishTime": "2021-12-15T12:13:55Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceMaestroLineaPep')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_MC2_MAESTRO_LINEAPEP')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -20702,7 +20645,6 @@
 				"lastPublishTime": "2021-12-15T12:13:53Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceMaestroMonedas')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_MC2_MAESTRO_MONEDAS')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -21113,7 +21055,6 @@
 				"lastPublishTime": "2021-12-15T12:13:55Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceMaestroNaturalezaUtm')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_MC2_MAESTRO_NATURALEZA_UTM')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -21544,7 +21485,6 @@
 				"lastPublishTime": "2021-12-15T12:13:53Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceMaestroPerfilPresupuesto')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_MC2_MAESTRO_PERFIL_PRESUPUESTO')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -21995,7 +21935,6 @@
 				"lastPublishTime": "2021-12-15T12:13:53Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceMaestroPerfil')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_MC2_MAESTRO_PERFIL')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -22406,7 +22345,6 @@
 				"lastPublishTime": "2021-12-15T12:13:55Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceMaestroPlanificacion')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_MC2_MAESTRO_PLANIFICANION')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -22817,7 +22755,6 @@
 				"lastPublishTime": "2021-12-15T12:13:56Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceMaestroPlazoUtm')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_MC2_MAESTRO_PLAZO_UTM')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -23228,7 +23165,6 @@
 				"lastPublishTime": "2021-12-15T12:13:53Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceMaestroPrioridad')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_MC2_MAESTRO_PRIORIDAD')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -23669,7 +23605,6 @@
 				"lastPublishTime": "2021-12-15T12:13:53Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceMaestroProducto')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_MC2_MAESTRO_PRODUCTO')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -24120,7 +24055,6 @@
 				"lastPublishTime": "2021-12-15T12:14:13Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceMaestroSociedad')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_MC2_MAESTRO_SOCIEDAD')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -24531,7 +24465,6 @@
 				"lastPublishTime": "2021-12-15T12:13:54Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceMaestroTipificacion')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_MC2_MAESTRO_TIPIFICACION')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -24941,7 +24874,6 @@
 				"lastPublishTime": "2021-12-15T12:13:55Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceMaestroTipoFacturacion')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_MC2_MAESTRO_TIPO_FACTURACION')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -25362,7 +25294,6 @@
 				"lastPublishTime": "2021-12-15T12:13:54Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceMaestroTramitador')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_MC2_MAESTRO_TRAMITADOR')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -25763,7 +25694,6 @@
 				"lastPublishTime": "2021-12-15T12:13:55Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceMaestroAmbito')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_MC2_MAESTRO_AMBITO')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -26713,7 +26643,6 @@
 				"lastPublishTime": "2021-12-15T12:13:56Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourcePedido')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_MC2_PEDIDO')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -27224,7 +27153,6 @@
 				"lastPublishTime": "2021-12-15T12:13:57Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourcePlanificacion')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_MC2_PLANIFICACION')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -27884,7 +27812,6 @@
 				"lastPublishTime": "2021-12-15T12:13:55Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/datasets/SourceProyectoToSnoflake')]",
 				"[concat(variables('factoryId'), '/datasets/Snowflake_MC2_PROYECTO')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
@@ -28590,7 +28517,6 @@
 				"lastPublishTime": "2021-12-15T12:14:23Z"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/pipelines/CopyMaestrasToBronce')]",
 				"[concat(variables('factoryId'), '/pipelines/CopyPrincipalesToBronce')]",
 				"[concat(variables('factoryId'), '/pipelines/CopyBronceToSilver')]",
@@ -28627,7 +28553,6 @@
 				"schema": []
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -28668,7 +28593,6 @@
 				"schema": []
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -28709,7 +28633,6 @@
 				"schema": []
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -28750,7 +28673,6 @@
 				"schema": []
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -28791,7 +28713,6 @@
 				"schema": []
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -28819,7 +28740,6 @@
 				"schema": []
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -28996,7 +28916,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -29161,7 +29080,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -29769,7 +29687,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -30029,7 +29946,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -30277,7 +30193,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -30495,7 +30410,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -30713,7 +30627,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -30949,7 +30862,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -31203,7 +31115,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -31499,7 +31410,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -31735,7 +31645,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -31947,7 +31856,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -32159,7 +32067,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -32377,7 +32284,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -32619,7 +32525,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -32837,7 +32742,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -33079,7 +32983,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -33351,7 +33254,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -33587,7 +33489,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -33829,7 +33730,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -34047,7 +33947,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -34265,7 +34164,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -34501,7 +34399,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -34749,7 +34646,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -34979,7 +34875,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -35377,7 +35272,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -35727,7 +35621,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -35939,7 +35832,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -36151,7 +36043,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -36387,7 +36278,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -36605,7 +36495,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -36829,7 +36718,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -37047,7 +36935,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -37271,7 +37158,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -37513,7 +37399,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -37725,7 +37610,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -37937,7 +37821,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -38173,7 +38056,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -38385,7 +38267,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -38615,7 +38496,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -38845,7 +38725,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -39063,7 +38942,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -39281,7 +39159,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -39523,7 +39400,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -39753,7 +39629,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -39971,7 +39846,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -40189,7 +40063,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -40407,7 +40280,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -40643,7 +40515,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -40885,7 +40756,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -41103,7 +40973,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -41321,7 +41190,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -41545,7 +41413,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -41757,7 +41624,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -42299,7 +42165,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -42577,7 +42442,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -42945,7 +42809,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/Snowflake1')]"
 			]
 		},
@@ -43110,7 +42973,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -43283,7 +43145,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -43448,7 +43309,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -43613,7 +43473,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -44038,7 +43897,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -44215,7 +44073,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -44404,7 +44261,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -44589,7 +44445,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -44806,7 +44661,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -44967,7 +44821,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -45128,7 +44981,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -45293,7 +45145,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -45474,7 +45325,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -45655,7 +45505,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -45856,7 +45705,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -46033,7 +45881,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -46214,7 +46061,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -46379,7 +46225,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -46544,7 +46389,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -46721,7 +46565,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -46914,7 +46757,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -47199,7 +47041,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -47458,7 +47299,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -47490,7 +47330,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/MC2Dataverse')]"
 			]
 		},
@@ -47522,7 +47361,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/MC2Dataverse')]"
 			]
 		},
@@ -47683,7 +47521,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -47844,7 +47681,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -48021,7 +47857,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -48186,7 +48021,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -48355,7 +48189,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -48520,7 +48353,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -48705,7 +48537,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -48874,7 +48705,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -49055,7 +48885,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -49216,7 +49045,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -49377,7 +49205,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -49554,7 +49381,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -49715,7 +49541,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -49888,7 +49713,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -50061,7 +49885,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -50226,7 +50049,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -50391,7 +50213,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -50572,7 +50393,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -50745,7 +50565,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -50910,7 +50729,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -51075,7 +50893,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -51240,7 +51057,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -51417,7 +51233,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -51598,7 +51413,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -51763,7 +51577,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -51928,7 +51741,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -52097,7 +51909,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -52258,7 +52069,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -52643,7 +52453,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -52848,7 +52657,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -52880,7 +52688,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/MC2Dataverse')]"
 			]
 		},
@@ -52912,7 +52719,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/MC2Dataverse')]"
 			]
 		},
@@ -53179,7 +52985,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -53344,7 +53149,6 @@
 				]
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
 			]
 		},
@@ -53359,9 +53163,7 @@
 					"sasUri": "[parameters('AzureBlobStorageForSnowflake_sasUri')]"
 				}
 			},
-			"dependsOn": [
-				"[variables('factoryId')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/AzureDataLakeStorageGen2')]",
@@ -53379,7 +53181,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/integrationRuntimes/integrationRuntimeDataFact')]"
 			]
 		},
@@ -53402,9 +53203,7 @@
 					}
 				}
 			},
-			"dependsOn": [
-				"[variables('factoryId')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Snowflake1')]",
@@ -53417,9 +53216,7 @@
 					"connectionString": "[parameters('Snowflake1_connectionString')]"
 				}
 			},
-			"dependsOn": [
-				"[variables('factoryId')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/TablasTrigger')]",
@@ -53427,7 +53224,7 @@
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"annotations": [],
-				"runtimeState": "Started",
+				"runtimeState": "Stopped",
 				"pipelines": [
 					{
 						"pipelineReference": {
@@ -53476,7 +53273,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/pipelines/CopyMaestrasToBronce')]",
 				"[concat(variables('factoryId'), '/pipelines/main')]",
 				"[concat(variables('factoryId'), '/pipelines/ComentariosProyectoToSnowflake')]"
@@ -53505,7 +53301,6 @@
 				}
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/managedVirtualNetworks/default')]"
 			]
 		},
@@ -53514,9 +53309,7 @@
 			"type": "Microsoft.DataFactory/factories/managedVirtualNetworks",
 			"apiVersion": "2018-06-01",
 			"properties": {},
-			"dependsOn": [
-				"[variables('factoryId')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/default/AzureDataLakeStorageDataFact')]",
@@ -53527,20 +53320,8 @@
 				"groupId": "[parameters('AzureDataLakeStorageDataFact_properties_groupId')]"
 			},
 			"dependsOn": [
-				"[variables('factoryId')]",
 				"[concat(variables('factoryId'), '/managedVirtualNetworks/default')]"
 			]
-		},
-		{
-			"name": "[parameters('factoryName')]",
-			"type": "Microsoft.DataFactory/factories",
-			"apiVersion": "2018-06-01",
-			"properties": {},
-			"dependsOn": [],
-			"location": "[parameters('dataFactory_location')]",
-			"identity": {
-				"type": "[parameters('dataFactory_identity_type')]"
-			}
 		}
 	]
 }
