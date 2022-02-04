@@ -51,21 +51,11 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "mc2_cliente_facturacion_nombre_pe",
+									"name": "mc2_estado_solpe",
 									"type": "String"
 								},
 								"sink": {
-									"name": "mc2_cliente_facturacion_nombre_pe",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "mc2_estado_compraname",
-									"type": "String"
-								},
-								"sink": {
-									"name": "mc2_estado_compraname",
+									"name": "mc2_estado_solpe",
 									"type": "String"
 								}
 							},
@@ -91,6 +81,36 @@
 							},
 							{
 								"source": {
+									"name": "mc2_cliente_facturacion_nombre_pe",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mc2_cliente_facturacion_nombre_pe",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mc2_estado_compraname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mc2_estado_compraname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mc2_sa_oferta",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mc2_sa_oferta",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
 									"name": "mc2_secuencia_producto",
 									"type": "String"
 								},
@@ -101,11 +121,51 @@
 							},
 							{
 								"source": {
+									"name": "mc2_subfamilia",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mc2_subfamilia",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
 									"name": "mc2_tramitadorname",
 									"type": "String"
 								},
 								"sink": {
 									"name": "mc2_tramitadorname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mc2_receptor",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mc2_receptor",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mc2_solpes",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mc2_solpes",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "owninguser",
+									"type": "String"
+								},
+								"sink": {
+									"name": "owninguser",
 									"type": "String"
 								}
 							},
@@ -116,27 +176,7 @@
 								},
 								"sink": {
 									"name": "statecode",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "mc2_solpes",
-									"type": "String"
-								},
-								"sink": {
-									"name": "mc2_solpes",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "owninguser",
-									"type": "String"
-								},
-								"sink": {
-									"name": "owninguser",
-									"type": "String"
+									"type": "Int64"
 								}
 							},
 							{
@@ -156,6 +196,16 @@
 								},
 								"sink": {
 									"name": "createdonbehalfby",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mc2_ap_oferta",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mc2_ap_oferta",
 									"type": "String"
 								}
 							},
@@ -211,6 +261,16 @@
 							},
 							{
 								"source": {
+									"name": "importsequencenumber",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "importsequencenumber",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
 									"name": "mc2_importe_compra_pe",
 									"type": "String"
 								},
@@ -221,11 +281,11 @@
 							},
 							{
 								"source": {
-									"name": "importsequencenumber",
-									"type": "Int32"
+									"name": "mc2_moneda_compra_pe",
+									"type": "String"
 								},
 								"sink": {
-									"name": "importsequencenumber",
+									"name": "mc2_moneda_compra_pe",
 									"type": "String"
 								}
 							},
@@ -236,16 +296,16 @@
 								},
 								"sink": {
 									"name": "utcconversiontimezonecode",
-									"type": "String"
+									"type": "Int64"
 								}
 							},
 							{
 								"source": {
-									"name": "mc2_moneda_compra_pe",
+									"name": "mc2_ap_jefe_proyecto",
 									"type": "String"
 								},
 								"sink": {
-									"name": "mc2_moneda_compra_pe",
+									"name": "mc2_ap_jefe_proyecto",
 									"type": "String"
 								}
 							},
@@ -291,6 +351,56 @@
 							},
 							{
 								"source": {
+									"name": "mc2_sa_fecha_inicio_prevista",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "mc2_sa_fecha_inicio_prevista",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "mc2_familia",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mc2_familia",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mc2_sa_fecha_rfs",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "mc2_sa_fecha_rfs",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "owneridname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "owneridname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mc2_tipo_facturacionname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mc2_tipo_facturacionname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
 									"name": "modifiedonbehalfby",
 									"type": "String"
 								},
@@ -301,11 +411,31 @@
 							},
 							{
 								"source": {
-									"name": "owneridname",
+									"name": "mc2_codigo_venta",
 									"type": "String"
 								},
 								"sink": {
-									"name": "owneridname",
+									"name": "mc2_codigo_venta",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mc2_enviado_sap",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "mc2_enviado_sap",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "owningbusinessunitname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "owningbusinessunitname",
 									"type": "String"
 								}
 							},
@@ -331,11 +461,91 @@
 							},
 							{
 								"source": {
-									"name": "owningbusinessunitname",
+									"name": "mc2_numero_pedido",
 									"type": "String"
 								},
 								"sink": {
-									"name": "owningbusinessunitname",
+									"name": "mc2_numero_pedido",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mc2_padre",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mc2_padre",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mc2_peticionario",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mc2_peticionario",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mc2_peticionario_email",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mc2_peticionario_email",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mc2_proveedor_pe",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mc2_proveedor_pe",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mc2_servicio_comercial_tsol",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mc2_servicio_comercial_tsol",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mc2_sociedad",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mc2_sociedad",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mc2_territorio",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mc2_territorio",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mc2_productoname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mc2_productoname",
 									"type": "String"
 								}
 							},
@@ -346,47 +556,7 @@
 								},
 								"sink": {
 									"name": "statuscode",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "mc2_numero_pedido",
-									"type": "String"
-								},
-								"sink": {
-									"name": "mc2_numero_pedido",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "mc2_padre",
-									"type": "String"
-								},
-								"sink": {
-									"name": "mc2_padre",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "mc2_peticionario",
-									"type": "String"
-								},
-								"sink": {
-									"name": "mc2_peticionario",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "mc2_proveedor_pe",
-									"type": "String"
-								},
-								"sink": {
-									"name": "mc2_proveedor_pe",
-									"type": "String"
+									"type": "Int64"
 								}
 							},
 							{
@@ -396,16 +566,6 @@
 								},
 								"sink": {
 									"name": "mc2_producto",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "mc2_productoname",
-									"type": "String"
-								},
-								"sink": {
-									"name": "mc2_productoname",
 									"type": "String"
 								}
 							},
@@ -421,11 +581,21 @@
 							},
 							{
 								"source": {
-									"name": "mc2_servicio_comercial_tsol",
+									"name": "mc2_ap_fecha_inicio_prevista",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "mc2_ap_fecha_inicio_prevista",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "mc2_ap_tipo",
 									"type": "String"
 								},
 								"sink": {
-									"name": "mc2_servicio_comercial_tsol",
+									"name": "mc2_ap_tipo",
 									"type": "String"
 								}
 							},
@@ -447,16 +617,6 @@
 								"sink": {
 									"name": "mc2_fecha",
 									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
-									"name": "ownerid",
-									"type": "String"
-								},
-								"sink": {
-									"name": "ownerid",
-									"type": "String"
 								}
 							},
 							{
@@ -486,6 +646,36 @@
 								},
 								"sink": {
 									"name": "modifiedonbehalfbyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ownerid",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ownerid",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mc2_sa_tipo",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mc2_sa_tipo",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mc2_tipo_facturacion",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mc2_tipo_facturacion",
 									"type": "String"
 								}
 							},
@@ -531,6 +721,16 @@
 							},
 							{
 								"source": {
+									"name": "mc2_ap_jefe_proyecto_email",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mc2_ap_jefe_proyecto_email",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
 									"name": "mc2_codigo_proyecto",
 									"type": "String"
 								},
@@ -561,6 +761,16 @@
 							},
 							{
 								"source": {
+									"name": "mc2_fast_track",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "mc2_fast_track",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
 									"name": "mc2_fecha_inicio_sa_pedido",
 									"type": "DateTime"
 								},
@@ -571,21 +781,41 @@
 							},
 							{
 								"source": {
-									"name": "mc2_tipo",
+									"name": "mc2_id_servicio",
 									"type": "String"
 								},
 								"sink": {
-									"name": "mc2_tipo",
+									"name": "mc2_id_servicio",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "owneridyominame",
+									"name": "mc2_sa_fecha_fin_upa",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "mc2_sa_fecha_fin_upa",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "mc2_sector_comercial",
 									"type": "String"
 								},
 								"sink": {
-									"name": "owneridyominame",
+									"name": "mc2_sector_comercial",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mc2_tipo",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mc2_tipo",
 									"type": "String"
 								}
 							},
@@ -596,7 +826,17 @@
 								},
 								"sink": {
 									"name": "timezoneruleversionnumber",
-									"type": "String"
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "mc2_creacion_ampliacion",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "mc2_creacion_ampliacion",
+									"type": "Boolean"
 								}
 							},
 							{
@@ -621,11 +861,11 @@
 							},
 							{
 								"source": {
-									"name": "modifiedbyyominame",
+									"name": "mc2_sa_jefe_proyecto_email",
 									"type": "String"
 								},
 								"sink": {
-									"name": "modifiedbyyominame",
+									"name": "mc2_sa_jefe_proyecto_email",
 									"type": "String"
 								}
 							},
@@ -641,6 +881,16 @@
 							},
 							{
 								"source": {
+									"name": "owneridyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "owneridyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
 									"name": "owningteam",
 									"type": "String"
 								},
@@ -651,11 +901,61 @@
 							},
 							{
 								"source": {
+									"name": "mc2_tipo_solicitud",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mc2_tipo_solicitud",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mc2_urgente",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "mc2_urgente",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "mc2_tipificacion",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mc2_tipificacion",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedbyyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "modifiedbyyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
 									"name": "createdonbehalfbyname",
 									"type": "String"
 								},
 								"sink": {
 									"name": "createdonbehalfbyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mc2_estado_venta",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mc2_estado_venta",
 									"type": "String"
 								}
 							},
@@ -721,12 +1021,12 @@
 							},
 							{
 								"source": {
-									"name": "mc2_fecha_fin_ap_ultimodia",
-									"type": "DateTime"
+									"name": "mc2_importe_modificado",
+									"type": "String"
 								},
 								"sink": {
-									"name": "mc2_fecha_fin_ap_ultimodia",
-									"type": "DateTime"
+									"name": "mc2_importe_modificado",
+									"type": "String"
 								}
 							},
 							{
@@ -741,11 +1041,31 @@
 							},
 							{
 								"source": {
+									"name": "mc2_fecha_fin_ap_ultimodia",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "mc2_fecha_fin_ap_ultimodia",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
 									"name": "mc2_pedidoid",
 									"type": "String"
 								},
 								"sink": {
 									"name": "mc2_pedidoid",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mc2_sa_jefe_proyecto",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mc2_sa_jefe_proyecto",
 									"type": "String"
 								}
 							},
@@ -781,6 +1101,16 @@
 							},
 							{
 								"source": {
+									"name": "mc2_ap_fecha_fin_upa",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "mc2_ap_fecha_fin_upa",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
 									"name": "mc2_cebe",
 									"type": "String"
 								},
@@ -801,11 +1131,11 @@
 							},
 							{
 								"source": {
-									"name": "mc2_responsable_tsol",
+									"name": "mc2_sa_fase",
 									"type": "String"
 								},
 								"sink": {
-									"name": "mc2_responsable_tsol",
+									"name": "mc2_sa_fase",
 									"type": "String"
 								}
 							},
@@ -817,16 +1147,6 @@
 								"sink": {
 									"name": "mc2_solicitar_compra",
 									"type": "Boolean"
-								}
-							},
-							{
-								"source": {
-									"name": "modifiedon",
-									"type": "DateTime"
-								},
-								"sink": {
-									"name": "modifiedon",
-									"type": "DateTime"
 								}
 							},
 							{
@@ -861,12 +1181,42 @@
 							},
 							{
 								"source": {
+									"name": "mc2_motivo_urgencia",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mc2_motivo_urgencia",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "mc2_responsable_tsol",
+									"type": "String"
+								},
+								"sink": {
+									"name": "mc2_responsable_tsol",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
 									"name": "mc2_url_carpeta_sharepoint",
 									"type": "String"
 								},
 								"sink": {
 									"name": "mc2_url_carpeta_sharepoint",
 									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedon",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "modifiedon",
+									"type": "DateTime"
 								}
 							},
 							{
@@ -896,7 +1246,7 @@
 								},
 								"sink": {
 									"name": "versionnumber",
-									"type": "String"
+									"type": "Int64"
 								}
 							},
 							{
