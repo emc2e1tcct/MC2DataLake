@@ -36,7 +36,10 @@
 						"type": "SnowflakeSink",
 						"preCopyScript": "TRUNCATE TABLE \"MC2_PROD\".\"PUBLIC\".\"MC2_PEDIDO\";",
 						"importSettings": {
-							"type": "SnowflakeImportCopyCommand"
+							"type": "SnowflakeImportCopyCommand",
+							"additionalCopyOptions": {
+								"ON_ERROR": "CONTINUE"
+							}
 						}
 					},
 					"enableStaging": true,
@@ -46,6 +49,21 @@
 							"type": "LinkedServiceReference"
 						},
 						"path": "mc2-bs-golden/StoragePath"
+					},
+					"enableSkipIncompatibleRow": true,
+					"logSettings": {
+						"enableCopyActivityLog": true,
+						"copyActivityLogSettings": {
+							"logLevel": "Info",
+							"enableReliableLogging": false
+						},
+						"logLocationSettings": {
+							"linkedServiceName": {
+								"referenceName": "AzureBlobStorageForSnowflake",
+								"type": "LinkedServiceReference"
+							},
+							"path": "mc2-bs-golden/StoragePath"
+						}
 					},
 					"translator": {
 						"type": "TabularTranslator",
