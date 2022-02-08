@@ -787,7 +787,7 @@
 			}
 		],
 		"parameters": {
-			"cw_items": {
+			"cw_items_Principales": {
 				"type": "string",
 				"defaultValue": [
 					{
