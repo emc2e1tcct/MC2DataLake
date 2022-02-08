@@ -28,12 +28,14 @@
 						"type": "CommonDataServiceForAppsSource"
 					},
 					"sink": {
-						"type": "ParquetSink",
+						"type": "DelimitedTextSink",
 						"storeSettings": {
 							"type": "AzureBlobFSWriteSettings"
 						},
 						"formatSettings": {
-							"type": "ParquetWriteSettings"
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
 						}
 					},
 					"enableStaging": false,
@@ -1261,11 +1263,8 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationPrincipalesBronce",
-						"type": "DatasetReference",
-						"parameters": {
-							"cw_fileName_Principales": "@item().destination.fileName"
-						}
+						"referenceName": "DestinationPedidoToBronce",
+						"type": "DatasetReference"
 					}
 				]
 			}
