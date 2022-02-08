@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "CopyProyectoToSnoflake",
+				"name": "CopyPedidoToSnoflakeCSV",
 				"type": "Copy",
 				"dependsOn": [
 					{
@@ -32,11 +32,14 @@
 				],
 				"typeProperties": {
 					"source": {
-						"type": "ParquetSource",
+						"type": "DelimitedTextSource",
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
 							"recursive": true,
 							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
 						}
 					},
 					"sink": {
@@ -632,7 +635,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceProyectoToSnoflake",
+						"referenceName": "SourcePedidoToSnowflakeCSV",
 						"type": "DatasetReference"
 					}
 				],
