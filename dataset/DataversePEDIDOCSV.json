@@ -7,9 +7,6 @@
 		},
 		"annotations": [],
 		"type": "CommonDataServiceForAppsEntity",
-		"schema": [],
-		"typeProperties": {
-			"entityName": "mc2_pedido"
-		}
+		"schema": []
 	}
 }
