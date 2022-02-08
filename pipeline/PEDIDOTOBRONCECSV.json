@@ -1271,7 +1271,7 @@
 		],
 		"parameters": {
 			"cw_items_Principales": {
-				"type": "string"
+				"type": "array"
 			}
 		},
 		"annotations": []
