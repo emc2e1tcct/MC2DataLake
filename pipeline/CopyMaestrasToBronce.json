@@ -53,10 +53,7 @@
 							"inputs": [
 								{
 									"referenceName": "SourceMaestras",
-									"type": "DatasetReference",
-									"parameters": {
-										"cw_entityName": "@item().source.entityName"
-									}
+									"type": "DatasetReference"
 								}
 							],
 							"outputs": [
