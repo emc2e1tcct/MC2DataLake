@@ -649,7 +649,14 @@
 			{
 				"name": "CopyBronceToSilver",
 				"type": "Copy",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Execute Pipeline1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
@@ -777,7 +784,10 @@
 					},
 					"waitOnCompletion": true,
 					"parameters": {
-						"cw_items_Maestras": "@pipeline().parameters.cw_items_Maestras"
+						"cw_items_Maestras": {
+							"value": "@pipeline().parameters.cw_items",
+							"type": "Expression"
+						}
 					}
 				}
 			},
