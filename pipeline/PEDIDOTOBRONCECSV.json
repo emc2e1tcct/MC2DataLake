@@ -18,11 +18,26 @@
 					"source": {
 						"type": "CommonDataServiceForAppsSource"
 					},
+					"sink": {
+						"type": "ParquetSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "ParquetWriteSettings"
+						}
+					},
 					"enableStaging": false
 				},
 				"inputs": [
 					{
 						"referenceName": "DataversePEDIDOCSV",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationPrincipalesBronce",
 						"type": "DatasetReference"
 					}
 				]
