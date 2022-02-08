@@ -16,11 +16,11 @@
 				"userProperties": [
 					{
 						"name": "Source",
-						"value": "mc2_pedido"
+						"value": "@{item().source.entityName}"
 					},
 					{
 						"name": "Destination",
-						"value": "mc2-bs-bronze/@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}/@{concat(formatDatetime(utcnow(),'yyyMMdd'),'-',item().destination.fileName)}"
+						"value": "mc2-bs-bronze/@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}/@{item().destination.fileName}"
 					}
 				],
 				"typeProperties": {
