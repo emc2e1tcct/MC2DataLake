@@ -13,7 +13,16 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [],
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "mc2_pedido"
+					},
+					{
+						"name": "Destination",
+						"value": "mc2-bs-bronze/@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}/@{concat(formatDatetime(utcnow(),'yyyMMdd'),'-',item().destination.fileName)}"
+					}
+				],
 				"typeProperties": {
 					"source": {
 						"type": "CommonDataServiceForAppsSource"
@@ -46,11 +55,6 @@
 				]
 			}
 		],
-		"parameters": {
-			"cw_items": {
-				"type": "array"
-			}
-		},
 		"annotations": []
 	}
 }
