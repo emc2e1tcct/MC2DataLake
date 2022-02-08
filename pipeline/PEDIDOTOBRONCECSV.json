@@ -16,7 +16,7 @@
 				"userProperties": [
 					{
 						"name": "Source",
-						"value": "@pipeline().parameters.cw_items_Maestras"
+						"value": "@pipeline().parameters.cw_items_Principales"
 					},
 					{
 						"name": "Destination",
@@ -1269,6 +1269,11 @@
 				]
 			}
 		],
+		"parameters": {
+			"cw_items_Principales": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }
