@@ -13,7 +13,7 @@
 		"schema": [],
 		"typeProperties": {
 			"entityName": {
-				"value": "@dataset().cw_entityName",
+				"value": "@dataset().mc2_pedido",
 				"type": "Expression"
 			}
 		}
