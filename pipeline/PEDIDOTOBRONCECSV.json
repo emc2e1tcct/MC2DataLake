@@ -40,12 +40,17 @@
 						"referenceName": "DestinationPrincipalesBronce",
 						"type": "DatasetReference",
 						"parameters": {
-							"cw_fileName_Principales": "@item().MC2_PEDIDO.CSV"
+							"cw_fileName_Principales": "@item().destination.fileName"
 						}
 					}
 				]
 			}
 		],
+		"parameters": {
+			"cw_items": {
+				"type": "array"
+			}
+		},
 		"annotations": []
 	}
 }
