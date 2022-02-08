@@ -16,7 +16,7 @@
 				"userProperties": [
 					{
 						"name": "Source",
-						"value": "@{item().source.entityName}"
+						"value": "@pipeline().parameters.cw_items_Maestras"
 					},
 					{
 						"name": "Destination",
