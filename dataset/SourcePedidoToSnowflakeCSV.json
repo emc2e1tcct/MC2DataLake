@@ -10,8 +10,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_pedido.csv')",
-				"folderPath": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+				"folderPath": {
+					"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+					"type": "Expression"
+				},
 				"fileSystem": "mc2-bs-golden"
 			},
 			"columnDelimiter": ",",
