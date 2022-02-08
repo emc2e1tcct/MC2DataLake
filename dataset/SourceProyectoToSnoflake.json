@@ -14,7 +14,7 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": {
-					"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_proyecto.parquet')",
+					"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_pedido.csv')",
 					"type": "Expression"
 				},
 				"folderPath": {
