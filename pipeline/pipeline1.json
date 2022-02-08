@@ -828,7 +828,7 @@
 		],
 		"parameters": {
 			"cw_items": {
-				"type": "array",
+				"type": "string",
 				"defaultValue": [
 					{
 						"destination": {
