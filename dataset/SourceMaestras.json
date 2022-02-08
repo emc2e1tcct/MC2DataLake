@@ -5,11 +5,6 @@
 			"referenceName": "MC2Dataverse",
 			"type": "LinkedServiceReference"
 		},
-		"parameters": {
-			"cw_entityName": {
-				"type": "String"
-			}
-		},
 		"folder": {
 			"name": "Sources"
 		},
