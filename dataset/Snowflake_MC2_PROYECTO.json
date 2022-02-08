@@ -740,7 +740,7 @@
 		],
 		"typeProperties": {
 			"schema": "PUBLIC",
-			"table": "MC2_PEDIDO"
+			"table": "MC2_PROYECTO"
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
