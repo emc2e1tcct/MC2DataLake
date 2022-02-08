@@ -10,13 +10,7 @@
 		},
 		"annotations": [],
 		"type": "CommonDataServiceForAppsEntity",
-		"schema": [],
-		"typeProperties": {
-			"entityName": {
-				"value": "@dataset().mc2_pedido",
-				"type": "Expression"
-			}
-		}
+		"schema": []
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
 }
