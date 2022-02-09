@@ -39,7 +39,7 @@
 							"type": "SnowflakeImportCopyCommand"
 						}
 					},
-					"enableStaging": true,
+					"enableStaging": false,
 					"enableSkipIncompatibleRow": false,
 					"translator": {
 						"type": "TabularTranslator",
