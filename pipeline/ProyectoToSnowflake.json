@@ -1,5 +1,5 @@
 {
-	"name": "ProyectoToSnoflake",
+	"name": "ProyectoToSnowflake",
 	"properties": {
 		"activities": [
 			{
@@ -46,7 +46,7 @@
 			}
 		],
 		"folder": {
-			"name": "Main/Sources/CopyToSnowflake/CopyPrincipalesSnowflake/Principales"
+			"name": "Main/Sources/CopyToSnowfake/CopyPrincipalesSnowflake/Principales"
 		},
 		"annotations": [],
 		"lastPublishTime": "2021-12-15T12:13:55Z"
