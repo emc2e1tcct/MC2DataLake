@@ -10,7 +10,9 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileSystem": "mc2-bs-silver"
+				"fileName": "mc2_pedido.csv",
+				"folderPath": "2022/02",
+				"fileSystem": "mc2-bs-golden"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
