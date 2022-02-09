@@ -5,12 +5,20 @@
 			"referenceName": "MC2Dataverse",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"cw_entityName": {
+				"type": "array"
+			}
+		},
 		"folder": {
 			"name": "Sources"
 		},
 		"annotations": [],
 		"type": "CommonDataServiceForAppsEntity",
-		"schema": []
+		"schema": [],
+		"typeProperties": {
+			"entityName": "@dataset().cw_entityName"
+		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
 }
