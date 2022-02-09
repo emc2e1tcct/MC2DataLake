@@ -1,0 +1,1368 @@
+{
+	"name": "CopyBronceToSilverCSV",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_SilverToGolden",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "mc2-bs-silver/@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}/@concat(formatDatetime(utcnow(),'yyyMMdd'),'-',dataset().cw_fileName)"
+					},
+					{
+						"name": "Destination",
+						"value": "mc2-bs-golden/@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}/@concat(formatDatetime(utcnow(),'yyyMMdd'),'-',dataset().cw_fileName)"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "ParquetSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"wildcardFileName": "*",
+							"enablePartitionDiscovery": false
+						}
+					},
+					"sink": {
+						"type": "ParquetSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "ParquetWriteSettings"
+						}
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceSilver",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationGolden",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "Execute Pipeline1",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "PEDIDOTOBRONCECSV",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "CopyToSnowflakeDirect",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "Copy_SilverToGolden",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "SnowflakeSink",
+						"importSettings": {
+							"type": "SnowflakeImportCopyCommand"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 1
+								},
+								"sink": {
+									"name": "mc2_estado_solpe",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 2
+								},
+								"sink": {
+									"name": "mc2_imputacion_pe",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 3
+								},
+								"sink": {
+									"name": "owningbusinessunit",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 4
+								},
+								"sink": {
+									"name": "mc2_cliente_facturacion_nombre_pe",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 5
+								},
+								"sink": {
+									"name": "mc2_estado_compraname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 6
+								},
+								"sink": {
+									"name": "mc2_sa_oferta",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 7
+								},
+								"sink": {
+									"name": "mc2_secuencia_producto",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 8
+								},
+								"sink": {
+									"name": "mc2_subfamilia",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 9
+								},
+								"sink": {
+									"name": "mc2_tramitadorname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 10
+								},
+								"sink": {
+									"name": "mc2_receptor",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 11
+								},
+								"sink": {
+									"name": "mc2_solpes",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 12
+								},
+								"sink": {
+									"name": "owninguser",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 13
+								},
+								"sink": {
+									"name": "statecode",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 14
+								},
+								"sink": {
+									"name": "createdby",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 15
+								},
+								"sink": {
+									"name": "createdonbehalfby",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 16
+								},
+								"sink": {
+									"name": "mc2_ap_oferta",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 17
+								},
+								"sink": {
+									"name": "mc2_cliente_gestion_cif_pe",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 18
+								},
+								"sink": {
+									"name": "mc2_comentario_adquira",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 19
+								},
+								"sink": {
+									"name": "mc2_estado_pedidoname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 20
+								},
+								"sink": {
+									"name": "mc2_fecha_sap",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 21
+								},
+								"sink": {
+									"name": "mc2_id_proyecto",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 22
+								},
+								"sink": {
+									"name": "importsequencenumber",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 23
+								},
+								"sink": {
+									"name": "mc2_importe_compra_pe",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 24
+								},
+								"sink": {
+									"name": "mc2_moneda_compra_pe",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 25
+								},
+								"sink": {
+									"name": "utcconversiontimezonecode",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 26
+								},
+								"sink": {
+									"name": "mc2_ap_jefe_proyecto",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 27
+								},
+								"sink": {
+									"name": "mc2_ap_pedido",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 28
+								},
+								"sink": {
+									"name": "mc2_escalado",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 29
+								},
+								"sink": {
+									"name": "mc2_moneda_pedidoname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 30
+								},
+								"sink": {
+									"name": "mc2_sa_descripcion",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 31
+								},
+								"sink": {
+									"name": "mc2_sa_fecha_inicio_prevista",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 32
+								},
+								"sink": {
+									"name": "mc2_familia",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 33
+								},
+								"sink": {
+									"name": "mc2_sa_fecha_rfs",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 34
+								},
+								"sink": {
+									"name": "owneridname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 35
+								},
+								"sink": {
+									"name": "mc2_tipo_facturacionname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 36
+								},
+								"sink": {
+									"name": "modifiedonbehalfby",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 37
+								},
+								"sink": {
+									"name": "mc2_codigo_venta",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 38
+								},
+								"sink": {
+									"name": "mc2_enviado_sap",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 39
+								},
+								"sink": {
+									"name": "owningbusinessunitname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 40
+								},
+								"sink": {
+									"name": "mc2_cliente_facturacion_nif_pe",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 41
+								},
+								"sink": {
+									"name": "mc2_cliente_gestion_nombre_pe",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 42
+								},
+								"sink": {
+									"name": "mc2_numero_pedido",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 43
+								},
+								"sink": {
+									"name": "mc2_padre",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 44
+								},
+								"sink": {
+									"name": "mc2_peticionario",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 45
+								},
+								"sink": {
+									"name": "mc2_peticionario_email",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 46
+								},
+								"sink": {
+									"name": "mc2_proveedor_pe",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 47
+								},
+								"sink": {
+									"name": "mc2_servicio_comercial_tsol",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 48
+								},
+								"sink": {
+									"name": "mc2_sociedad",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 49
+								},
+								"sink": {
+									"name": "mc2_territorio",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 50
+								},
+								"sink": {
+									"name": "mc2_productoname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 51
+								},
+								"sink": {
+									"name": "statuscode",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 52
+								},
+								"sink": {
+									"name": "mc2_producto",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 53
+								},
+								"sink": {
+									"name": "modifiedbyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 54
+								},
+								"sink": {
+									"name": "mc2_ap_fecha_inicio_prevista",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 55
+								},
+								"sink": {
+									"name": "mc2_ap_tipo",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 56
+								},
+								"sink": {
+									"name": "mc2_comentarios",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 57
+								},
+								"sink": {
+									"name": "mc2_fecha",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 58
+								},
+								"sink": {
+									"name": "mc2_id_proyectoname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 59
+								},
+								"sink": {
+									"name": "mc2_jdp_pedido",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 60
+								},
+								"sink": {
+									"name": "modifiedonbehalfbyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 61
+								},
+								"sink": {
+									"name": "ownerid",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 62
+								},
+								"sink": {
+									"name": "mc2_sa_tipo",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 63
+								},
+								"sink": {
+									"name": "mc2_tipo_facturacion",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 64
+								},
+								"sink": {
+									"name": "owneridtype",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 65
+								},
+								"sink": {
+									"name": "mc2_tramitador",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 66
+								},
+								"sink": {
+									"name": "createdbyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 67
+								},
+								"sink": {
+									"name": "mc2_ap_descripcion",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 68
+								},
+								"sink": {
+									"name": "mc2_ap_jefe_proyecto_email",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 69
+								},
+								"sink": {
+									"name": "mc2_codigo_proyecto",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 70
+								},
+								"sink": {
+									"name": "mc2_comentario_tsol",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 71
+								},
+								"sink": {
+									"name": "mc2_contrato_pe",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 72
+								},
+								"sink": {
+									"name": "mc2_fast_track",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 73
+								},
+								"sink": {
+									"name": "mc2_fecha_inicio_sa_pedido",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 74
+								},
+								"sink": {
+									"name": "mc2_id_servicio",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 75
+								},
+								"sink": {
+									"name": "mc2_sa_fecha_fin_upa",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 76
+								},
+								"sink": {
+									"name": "mc2_sector_comercial",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 77
+								},
+								"sink": {
+									"name": "mc2_tipo",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 78
+								},
+								"sink": {
+									"name": "timezoneruleversionnumber",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 79
+								},
+								"sink": {
+									"name": "mc2_creacion_ampliacion",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 80
+								},
+								"sink": {
+									"name": "mc2_importe",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 81
+								},
+								"sink": {
+									"name": "mc2_moneda_pedido",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 82
+								},
+								"sink": {
+									"name": "mc2_sa_jefe_proyecto_email",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 83
+								},
+								"sink": {
+									"name": "modifiedonbehalfbyyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 84
+								},
+								"sink": {
+									"name": "owneridyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 85
+								},
+								"sink": {
+									"name": "owningteam",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 86
+								},
+								"sink": {
+									"name": "mc2_tipo_solicitud",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 87
+								},
+								"sink": {
+									"name": "mc2_urgente",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 88
+								},
+								"sink": {
+									"name": "mc2_tipificacion",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 89
+								},
+								"sink": {
+									"name": "modifiedbyyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 90
+								},
+								"sink": {
+									"name": "createdonbehalfbyname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 91
+								},
+								"sink": {
+									"name": "mc2_estado_venta",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 92
+								},
+								"sink": {
+									"name": "mc2_fecha_fin_sa_pedido",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 93
+								},
+								"sink": {
+									"name": "mc2_fecha_inicio_ap_pedido",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 94
+								},
+								"sink": {
+									"name": "mc2_margen",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 95
+								},
+								"sink": {
+									"name": "createdbyyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 96
+								},
+								"sink": {
+									"name": "mc2_coste_pedido",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 97
+								},
+								"sink": {
+									"name": "mc2_estado_pedido",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 98
+								},
+								"sink": {
+									"name": "mc2_importe_modificado",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 99
+								},
+								"sink": {
+									"name": "mc2_informacion_proveedor_pe",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 100
+								},
+								"sink": {
+									"name": "mc2_fecha_fin_ap_ultimodia",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 101
+								},
+								"sink": {
+									"name": "mc2_pedidoid",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 102
+								},
+								"sink": {
+									"name": "mc2_sa_jefe_proyecto",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 103
+								},
+								"sink": {
+									"name": "modifiedby",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 104
+								},
+								"sink": {
+									"name": "createdon",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 105
+								},
+								"sink": {
+									"name": "createdonbehalfbyyominame",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 106
+								},
+								"sink": {
+									"name": "mc2_ap_fecha_fin_upa",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 107
+								},
+								"sink": {
+									"name": "mc2_cebe",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 108
+								},
+								"sink": {
+									"name": "mc2_fecha_fin_ap_pedido",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 109
+								},
+								"sink": {
+									"name": "mc2_sa_fase",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 110
+								},
+								"sink": {
+									"name": "mc2_solicitar_compra",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 111
+								},
+								"sink": {
+									"name": "mc2_estado_compra",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 112
+								},
+								"sink": {
+									"name": "mc2_jdp_pedidoname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 113
+								},
+								"sink": {
+									"name": "mc2_moneda_compra_pename",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 114
+								},
+								"sink": {
+									"name": "mc2_motivo_urgencia",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 115
+								},
+								"sink": {
+									"name": "mc2_responsable_tsol",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 116
+								},
+								"sink": {
+									"name": "mc2_url_carpeta_sharepoint",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 117
+								},
+								"sink": {
+									"name": "modifiedon",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 118
+								},
+								"sink": {
+									"name": "overriddencreatedon",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 119
+								},
+								"sink": {
+									"name": "mc2_sa",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 120
+								},
+								"sink": {
+									"name": "versionnumber",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 121
+								},
+								"sink": {
+									"name": "mc2_fecha_inicio_ap_primerdia",
+									"type": "DateTime"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourcePedidoToSnowflakeCSV",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "SnowflakeTablePEDIDOSCV",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "Execute Pipeline2",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"parameters": {
+			"cw_items_Principales": {
+				"type": "array",
+				"defaultValue": [
+					{
+						"destination": {
+							"fileName": "mc2_pedido.csv"
+						},
+						"source": {
+							"entityName": "mc2_pedido"
+						}
+					}
+				]
+			}
+		},
+		"annotations": []
+	}
+}
