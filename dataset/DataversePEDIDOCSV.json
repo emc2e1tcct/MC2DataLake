@@ -5,6 +5,9 @@
 			"referenceName": "MC2Dataverse",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "Pruebas"
+		},
 		"annotations": [],
 		"type": "CommonDataServiceForAppsEntity",
 		"schema": [],

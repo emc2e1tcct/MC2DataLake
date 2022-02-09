@@ -91,6 +91,9 @@
 				]
 			}
 		},
+		"folder": {
+			"name": "Pruebas"
+		},
 		"annotations": []
 	}
 }
