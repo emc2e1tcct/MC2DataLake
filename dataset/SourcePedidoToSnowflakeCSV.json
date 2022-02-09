@@ -15,6 +15,7 @@
 				"container": "mc2-bs-golden"
 			},
 			"columnDelimiter": ",",
+			"rowDelimiter": "\n",
 			"escapeChar": "",
 			"firstRowAsHeader": true,
 			"quoteChar": ""
