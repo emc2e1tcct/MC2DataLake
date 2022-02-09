@@ -8,6 +8,9 @@
 		"MC2Dataverse_servicePrincipalCredential": {
 			"value": ""
 		},
+		"AzureBlobStorage2_sasUri": {
+			"value": ""
+		},
 		"AzureBlobStorageForSnowflake_sasUri": {
 			"value": ""
 		},

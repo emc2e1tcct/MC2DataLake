@@ -13,6 +13,1096 @@
 	},
 	"resources": [
 		{
+			"name": "[concat(parameters('factoryName'), '/SourceComentariosProyecto')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureDataLakeStorageGen2",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Sources"
+				},
+				"annotations": [],
+				"type": "Parquet",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": {
+							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_comentarios_proyecto.parquet')",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+							"type": "Expression"
+						},
+						"fileSystem": "mc2-bs-golden"
+					},
+					"compressionCodec": "snappy"
+				},
+				"schema": [
+					{
+						"name": "createdby",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdbyname",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdbyyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdon",
+						"type": "INT96"
+					},
+					{
+						"name": "createdonbehalfby",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdonbehalfbyname",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdonbehalfbyyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "importsequencenumber",
+						"type": "INT32"
+					},
+					{
+						"name": "mc2_actividad_principal",
+						"type": "UTF8"
+					},
+					{
+						"name": "mc2_aprobacion",
+						"type": "UTF8"
+					},
+					{
+						"name": "mc2_comentario",
+						"type": "UTF8"
+					},
+					{
+						"name": "mc2_comentarios_proyectoid",
+						"type": "UTF8"
+					},
+					{
+						"name": "mc2_fecha",
+						"type": "INT96"
+					},
+					{
+						"name": "modifiedby",
+						"type": "UTF8"
+					},
+					{
+						"name": "modifiedbyname",
+						"type": "UTF8"
+					},
+					{
+						"name": "modifiedbyyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "modifiedon",
+						"type": "INT96"
+					},
+					{
+						"name": "modifiedonbehalfby",
+						"type": "UTF8"
+					},
+					{
+						"name": "modifiedonbehalfbyname",
+						"type": "UTF8"
+					},
+					{
+						"name": "modifiedonbehalfbyyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "overriddencreatedon",
+						"type": "INT96"
+					},
+					{
+						"name": "ownerid",
+						"type": "UTF8"
+					},
+					{
+						"name": "owneridname",
+						"type": "UTF8"
+					},
+					{
+						"name": "owneridtype",
+						"type": "UTF8"
+					},
+					{
+						"name": "owneridyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "owningbusinessunit",
+						"type": "UTF8"
+					},
+					{
+						"name": "owningbusinessunitname",
+						"type": "UTF8"
+					},
+					{
+						"name": "owningteam",
+						"type": "UTF8"
+					},
+					{
+						"name": "owninguser",
+						"type": "UTF8"
+					},
+					{
+						"name": "statecode",
+						"type": "INT32"
+					},
+					{
+						"name": "statuscode",
+						"type": "INT32"
+					},
+					{
+						"name": "timezoneruleversionnumber",
+						"type": "INT32"
+					},
+					{
+						"name": "utcconversiontimezonecode",
+						"type": "INT32"
+					},
+					{
+						"name": "versionnumber",
+						"type": "INT64"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SourceE3CMaestroCompraAreaFuncional')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureDataLakeStorageGen2",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Sources"
+				},
+				"annotations": [],
+				"type": "Parquet",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": {
+							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-e3c_maestro_compra_area_funcional.parquet')",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+							"type": "Expression"
+						},
+						"fileSystem": "mc2-bs-golden"
+					},
+					"compressionCodec": "snappy"
+				},
+				"schema": [
+					{
+						"name": "createdby",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdbyname",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdbyyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdon",
+						"type": "INT96"
+					},
+					{
+						"name": "createdonbehalfby",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdonbehalfbyname",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdonbehalfbyyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_area_funcional",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_denominacion",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_maestro_compra_area_funcionalid",
+						"type": "UTF8"
+					},
+					{
+						"name": "importsequencenumber",
+						"type": "INT32"
+					},
+					{
+						"name": "modifiedby",
+						"type": "UTF8"
+					},
+					{
+						"name": "modifiedbyname",
+						"type": "UTF8"
+					},
+					{
+						"name": "modifiedbyyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "modifiedon",
+						"type": "INT96"
+					},
+					{
+						"name": "modifiedonbehalfby",
+						"type": "UTF8"
+					},
+					{
+						"name": "modifiedonbehalfbyname",
+						"type": "UTF8"
+					},
+					{
+						"name": "modifiedonbehalfbyyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "overriddencreatedon",
+						"type": "INT96"
+					},
+					{
+						"name": "ownerid",
+						"type": "UTF8"
+					},
+					{
+						"name": "owneridname",
+						"type": "UTF8"
+					},
+					{
+						"name": "owneridtype",
+						"type": "UTF8"
+					},
+					{
+						"name": "owneridyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "owningbusinessunit",
+						"type": "UTF8"
+					},
+					{
+						"name": "owningbusinessunitname",
+						"type": "UTF8"
+					},
+					{
+						"name": "owningteam",
+						"type": "UTF8"
+					},
+					{
+						"name": "owninguser",
+						"type": "UTF8"
+					},
+					{
+						"name": "statecode",
+						"type": "INT32"
+					},
+					{
+						"name": "statuscode",
+						"type": "INT32"
+					},
+					{
+						"name": "timezoneruleversionnumber",
+						"type": "INT32"
+					},
+					{
+						"name": "utcconversiontimezonecode",
+						"type": "INT32"
+					},
+					{
+						"name": "versionnumber",
+						"type": "INT64"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SourceE3CMaestroCompraAriba')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureDataLakeStorageGen2",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Sources"
+				},
+				"annotations": [],
+				"type": "Parquet",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": {
+							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-e3c_maestro_compra_ariba.parquet')",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+							"type": "Expression"
+						},
+						"fileSystem": "mc2-bs-golden"
+					},
+					"compressionCodec": "snappy"
+				},
+				"schema": [
+					{
+						"name": "createdby",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdbyname",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdbyyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdon",
+						"type": "INT96"
+					},
+					{
+						"name": "createdonbehalfby",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdonbehalfbyname",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdonbehalfbyyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_descripcion",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_id",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_maestro_compra_aribaid",
+						"type": "UTF8"
+					},
+					{
+						"name": "importsequencenumber",
+						"type": "INT32"
+					},
+					{
+						"name": "modifiedby",
+						"type": "UTF8"
+					},
+					{
+						"name": "modifiedbyname",
+						"type": "UTF8"
+					},
+					{
+						"name": "modifiedbyyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "modifiedon",
+						"type": "INT96"
+					},
+					{
+						"name": "modifiedonbehalfby",
+						"type": "UTF8"
+					},
+					{
+						"name": "modifiedonbehalfbyname",
+						"type": "UTF8"
+					},
+					{
+						"name": "modifiedonbehalfbyyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "overriddencreatedon",
+						"type": "INT96"
+					},
+					{
+						"name": "ownerid",
+						"type": "UTF8"
+					},
+					{
+						"name": "owneridname",
+						"type": "UTF8"
+					},
+					{
+						"name": "owneridtype",
+						"type": "UTF8"
+					},
+					{
+						"name": "owneridyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "owningbusinessunit",
+						"type": "UTF8"
+					},
+					{
+						"name": "owningbusinessunitname",
+						"type": "UTF8"
+					},
+					{
+						"name": "owningteam",
+						"type": "UTF8"
+					},
+					{
+						"name": "owninguser",
+						"type": "UTF8"
+					},
+					{
+						"name": "statecode",
+						"type": "INT32"
+					},
+					{
+						"name": "statuscode",
+						"type": "INT32"
+					},
+					{
+						"name": "timezoneruleversionnumber",
+						"type": "INT32"
+					},
+					{
+						"name": "utcconversiontimezonecode",
+						"type": "INT32"
+					},
+					{
+						"name": "versionnumber",
+						"type": "INT64"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SourceE3c_cestas')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureDataLakeStorageGen2",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Sources"
+				},
+				"annotations": [],
+				"type": "Parquet",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": {
+							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-e3c_cestas.parquet')",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+							"type": "Expression"
+						},
+						"fileSystem": "mc2-bs-golden"
+					},
+					"compressionCodec": "snappy"
+				},
+				"schema": [
+					{
+						"name": "createdby",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdbyname",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdbyyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdon",
+						"type": "INT96"
+					},
+					{
+						"name": "createdonbehalfby",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdonbehalfbyname",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdonbehalfbyyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_ap_tr",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_aprobacion_compra",
+						"type": "BOOLEAN"
+					},
+					{
+						"name": "e3c_area_funcional",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_area_funcionalname",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_cantidad_base_ordinaria",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_categoria_producto",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_categoria_productoname",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_centro",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_centro_gestor",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_centro_gestorname",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_centroname",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_cestasid",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_cliente_tr",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_codigosap",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_contrato",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_contrato_tr",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_contratoname",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_descripcion_proyecto_tr",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_dest_mercancias",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_dest_mercanciasname",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_elemento_pep_tr",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_enviado_sap",
+						"type": "BOOLEAN"
+					},
+					{
+						"name": "e3c_envio_urgente_ordinaria",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_estado_cesta_derivada",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_estado_cesta_derivadaname",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_estado_cesta_ordinaria",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_estado_cesta_ordinarianame",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_fecha_contabilizacion",
+						"type": "INT96"
+					},
+					{
+						"name": "e3c_fecha_entrega_tr",
+						"type": "INT96"
+					},
+					{
+						"name": "e3c_fecha_fin_tr",
+						"type": "INT96"
+					},
+					{
+						"name": "e3c_fecha_inicio_tr",
+						"type": "INT96"
+					},
+					{
+						"name": "e3c_fecha_sap",
+						"type": "INT96"
+					},
+					{
+						"name": "e3c_gasto_inversion",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_gasto_inversionname",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_grupo_compras",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_grupo_comprasname",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_importe_total_tr",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_moneda_tr",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_nombre_cesta",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_nota_aprobacion",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_nota_proveedores",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_nota_tramitacion",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_num_pedido_cliente",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_org_compras",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_org_comprasname",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_pedido",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_pedidotcct",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_precio_bruto",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_proveedor_tr",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_proyecto_tr",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_revisor_exp",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_revisor_expname",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_sa_tr",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_sociedad",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_sociedadname",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_solicitante_derivada",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_solicitante_derivadaname",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_solicitante_ordinaria",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_solicitante_ordinarianame",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_status_ariba",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_status_aribaname",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_tipo_cesta_ordinaria",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_tipo_compra",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_tipo_facturacion_tr",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_tipo_imputacion",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_tipo_imputacionname",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_unidad",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_url_carpeta_sharepoint_tr",
+						"type": "UTF8"
+					},
+					{
+						"name": "importsequencenumber",
+						"type": "INT32"
+					},
+					{
+						"name": "modifiedby",
+						"type": "UTF8"
+					},
+					{
+						"name": "modifiedbyname",
+						"type": "UTF8"
+					},
+					{
+						"name": "modifiedbyyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "modifiedon",
+						"type": "INT96"
+					},
+					{
+						"name": "modifiedonbehalfby",
+						"type": "UTF8"
+					},
+					{
+						"name": "modifiedonbehalfbyname",
+						"type": "UTF8"
+					},
+					{
+						"name": "modifiedonbehalfbyyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "overriddencreatedon",
+						"type": "INT96"
+					},
+					{
+						"name": "ownerid",
+						"type": "UTF8"
+					},
+					{
+						"name": "owneridname",
+						"type": "UTF8"
+					},
+					{
+						"name": "owneridtype",
+						"type": "UTF8"
+					},
+					{
+						"name": "owneridyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "owningbusinessunit",
+						"type": "UTF8"
+					},
+					{
+						"name": "owningbusinessunitname",
+						"type": "UTF8"
+					},
+					{
+						"name": "owningteam",
+						"type": "UTF8"
+					},
+					{
+						"name": "owninguser",
+						"type": "UTF8"
+					},
+					{
+						"name": "statecode",
+						"type": "INT32"
+					},
+					{
+						"name": "statuscode",
+						"type": "INT32"
+					},
+					{
+						"name": "timezoneruleversionnumber",
+						"type": "INT32"
+					},
+					{
+						"name": "utcconversiontimezonecode",
+						"type": "INT32"
+					},
+					{
+						"name": "versionnumber",
+						"type": "INT64"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SourceEC3MaestroCompraCategia')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureDataLakeStorageGen2",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Sources"
+				},
+				"annotations": [],
+				"type": "Parquet",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": {
+							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-e3c_maestro_compra_categoria.parquet')",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+							"type": "Expression"
+						},
+						"fileSystem": "mc2-bs-golden"
+					},
+					"compressionCodec": "snappy"
+				},
+				"schema": [
+					{
+						"name": "createdby",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdbyname",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdbyyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdon",
+						"type": "INT96"
+					},
+					{
+						"name": "createdonbehalfby",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdonbehalfbyname",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdonbehalfbyyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_categoria_valoracion",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_denominacion2_articulos",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_denominacion_articulos",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_grupo_articulos",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_grupo_autorizaciones",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_maestro_compra_categoriaid",
+						"type": "UTF8"
+					},
+					{
+						"name": "importsequencenumber",
+						"type": "INT32"
+					},
+					{
+						"name": "modifiedby",
+						"type": "UTF8"
+					},
+					{
+						"name": "modifiedbyname",
+						"type": "UTF8"
+					},
+					{
+						"name": "modifiedbyyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "modifiedon",
+						"type": "INT96"
+					},
+					{
+						"name": "modifiedonbehalfby",
+						"type": "UTF8"
+					},
+					{
+						"name": "modifiedonbehalfbyname",
+						"type": "UTF8"
+					},
+					{
+						"name": "modifiedonbehalfbyyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "overriddencreatedon",
+						"type": "INT96"
+					},
+					{
+						"name": "ownerid",
+						"type": "UTF8"
+					},
+					{
+						"name": "owneridname",
+						"type": "UTF8"
+					},
+					{
+						"name": "owneridtype",
+						"type": "UTF8"
+					},
+					{
+						"name": "owneridyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "owningbusinessunit",
+						"type": "UTF8"
+					},
+					{
+						"name": "owningbusinessunitname",
+						"type": "UTF8"
+					},
+					{
+						"name": "owningteam",
+						"type": "UTF8"
+					},
+					{
+						"name": "owninguser",
+						"type": "UTF8"
+					},
+					{
+						"name": "statecode",
+						"type": "INT32"
+					},
+					{
+						"name": "statuscode",
+						"type": "INT32"
+					},
+					{
+						"name": "timezoneruleversionnumber",
+						"type": "INT32"
+					},
+					{
+						"name": "utcconversiontimezonecode",
+						"type": "INT32"
+					},
+					{
+						"name": "versionnumber",
+						"type": "INT64"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/SourceEC3MaestroCompraCeco')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -2577,1034 +3667,6 @@
 					{
 						"name": "importsequencenumber",
 						"type": "INT32"
-					},
-					{
-						"name": "modifiedby",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedbyname",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedbyyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedon",
-						"type": "INT96"
-					},
-					{
-						"name": "modifiedonbehalfby",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedonbehalfbyname",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedonbehalfbyyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "overriddencreatedon",
-						"type": "INT96"
-					},
-					{
-						"name": "ownerid",
-						"type": "UTF8"
-					},
-					{
-						"name": "owneridname",
-						"type": "UTF8"
-					},
-					{
-						"name": "owneridtype",
-						"type": "UTF8"
-					},
-					{
-						"name": "owneridyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "owningbusinessunit",
-						"type": "UTF8"
-					},
-					{
-						"name": "owningbusinessunitname",
-						"type": "UTF8"
-					},
-					{
-						"name": "owningteam",
-						"type": "UTF8"
-					},
-					{
-						"name": "owninguser",
-						"type": "UTF8"
-					},
-					{
-						"name": "statecode",
-						"type": "INT32"
-					},
-					{
-						"name": "statuscode",
-						"type": "INT32"
-					},
-					{
-						"name": "timezoneruleversionnumber",
-						"type": "INT32"
-					},
-					{
-						"name": "utcconversiontimezonecode",
-						"type": "INT32"
-					},
-					{
-						"name": "versionnumber",
-						"type": "INT64"
-					}
-				]
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/SourceElemento_PEP')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureDataLakeStorageGen2",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "Sources"
-				},
-				"annotations": [],
-				"type": "Parquet",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobFSLocation",
-						"fileName": {
-							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_elemento_pep.parquet')",
-							"type": "Expression"
-						},
-						"folderPath": {
-							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
-							"type": "Expression"
-						},
-						"fileSystem": "mc2-bs-golden"
-					},
-					"compressionCodec": "snappy"
-				},
-				"schema": [
-					{
-						"name": "createdby",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdbyname",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdbyyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdon",
-						"type": "INT96"
-					},
-					{
-						"name": "createdonbehalfby",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdonbehalfbyname",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdonbehalfbyyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "importsequencenumber",
-						"type": "INT32"
-					},
-					{
-						"name": "mc2_bloque",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_bloquename",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_ceco",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_ceconame",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_coste_oferta",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_descripcion",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_elemento_pep",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_elemento_pepid",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_elementofacturacion",
-						"type": "BOOLEAN"
-					},
-					{
-						"name": "mc2_elementoimputacion",
-						"type": "BOOLEAN"
-					},
-					{
-						"name": "mc2_elementopep_superior",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_elementoplanificacion",
-						"type": "BOOLEAN"
-					},
-					{
-						"name": "mc2_fase",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_fasename",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_id_familia",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_id_pedido",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_id_pedidoname",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_id_producto",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_importe_expl",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_importe_impl",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_linea_de_negocio",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_linea_de_negocioname",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_naturaleza_utm",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_naturaleza_utmname",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_nivelpep",
-						"type": "INT32"
-					},
-					{
-						"name": "mc2_plancostes",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_planingresos",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_plazo_utm",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_plazo_utmname",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_prioridad",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_prioridadname",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_recurso",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_recursoname",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedby",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedbyname",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedbyyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedon",
-						"type": "INT96"
-					},
-					{
-						"name": "modifiedonbehalfby",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedonbehalfbyname",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedonbehalfbyyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "overriddencreatedon",
-						"type": "INT96"
-					},
-					{
-						"name": "ownerid",
-						"type": "UTF8"
-					},
-					{
-						"name": "owneridname",
-						"type": "UTF8"
-					},
-					{
-						"name": "owneridtype",
-						"type": "UTF8"
-					},
-					{
-						"name": "owneridyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "owningbusinessunit",
-						"type": "UTF8"
-					},
-					{
-						"name": "owningbusinessunitname",
-						"type": "UTF8"
-					},
-					{
-						"name": "owningteam",
-						"type": "UTF8"
-					},
-					{
-						"name": "owninguser",
-						"type": "UTF8"
-					},
-					{
-						"name": "statecode",
-						"type": "INT32"
-					},
-					{
-						"name": "statuscode",
-						"type": "INT32"
-					},
-					{
-						"name": "timezoneruleversionnumber",
-						"type": "INT32"
-					},
-					{
-						"name": "utcconversiontimezonecode",
-						"type": "INT32"
-					},
-					{
-						"name": "versionnumber",
-						"type": "INT64"
-					}
-				]
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/SourceLineasAdquira')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureDataLakeStorageGen2",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "Sources"
-				},
-				"annotations": [],
-				"type": "Parquet",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobFSLocation",
-						"fileName": {
-							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_lineas_adquira.parquet')",
-							"type": "Expression"
-						},
-						"folderPath": {
-							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
-							"type": "Expression"
-						},
-						"fileSystem": "mc2-bs-golden"
-					},
-					"compressionCodec": "snappy"
-				},
-				"schema": [
-					{
-						"name": "createdby",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdbyname",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdbyyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdon",
-						"type": "INT96"
-					},
-					{
-						"name": "createdonbehalfby",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdonbehalfbyname",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdonbehalfbyyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "importsequencenumber",
-						"type": "INT32"
-					},
-					{
-						"name": "mc2_articulo",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_base_imponible",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_cantidad",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_cantidad_precio_unitario",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_comentarios",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_direccion_de_expedicion",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_estado",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_fecha_estimada_de_entrega",
-						"type": "INT96"
-					},
-					{
-						"name": "mc2_id_de_proyecto",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_id_pedido_comprador",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_importe",
-						"type": "DECIMAL",
-						"precision": 38,
-						"scale": 18
-					},
-					{
-						"name": "mc2_importe_neto",
-						"type": "DECIMAL",
-						"precision": 38,
-						"scale": 18
-					},
-					{
-						"name": "mc2_impuesto",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_linea_cerrada",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_linea_cerrada_a_facturacion",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_lineas_adquiraid",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_n_linea",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_name",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_porcentaje",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_porcentaje_linea",
-						"type": "DECIMAL",
-						"precision": 38,
-						"scale": 18
-					},
-					{
-						"name": "mc2_precio_unitario",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_referencia_comprador",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_referencia_fabricante",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_referencia_proveedor",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_unidad_de_medida",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedby",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedbyname",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedbyyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedon",
-						"type": "INT96"
-					},
-					{
-						"name": "modifiedonbehalfby",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedonbehalfbyname",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedonbehalfbyyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "overriddencreatedon",
-						"type": "INT96"
-					},
-					{
-						"name": "ownerid",
-						"type": "UTF8"
-					},
-					{
-						"name": "owneridname",
-						"type": "UTF8"
-					},
-					{
-						"name": "owneridtype",
-						"type": "UTF8"
-					},
-					{
-						"name": "owneridyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "owningbusinessunit",
-						"type": "UTF8"
-					},
-					{
-						"name": "owningbusinessunitname",
-						"type": "UTF8"
-					},
-					{
-						"name": "owningteam",
-						"type": "UTF8"
-					},
-					{
-						"name": "owninguser",
-						"type": "UTF8"
-					},
-					{
-						"name": "statecode",
-						"type": "INT32"
-					},
-					{
-						"name": "statuscode",
-						"type": "INT32"
-					},
-					{
-						"name": "timezoneruleversionnumber",
-						"type": "INT32"
-					},
-					{
-						"name": "utcconversiontimezonecode",
-						"type": "INT32"
-					},
-					{
-						"name": "versionnumber",
-						"type": "INT64"
-					}
-				]
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/SourceMaestroAmbito')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureDataLakeStorageGen2",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "Sources"
-				},
-				"annotations": [],
-				"type": "Parquet",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobFSLocation",
-						"fileName": {
-							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_maestro_ambito.parquet')",
-							"type": "Expression"
-						},
-						"folderPath": {
-							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
-							"type": "Expression"
-						},
-						"fileSystem": "mc2-bs-golden"
-					},
-					"compressionCodec": "snappy"
-				},
-				"schema": [
-					{
-						"name": "createdby",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdbyname",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdbyyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdon",
-						"type": "INT96"
-					},
-					{
-						"name": "createdonbehalfby",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdonbehalfbyname",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdonbehalfbyyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "importsequencenumber",
-						"type": "INT32"
-					},
-					{
-						"name": "mc2_ambito",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_maestro_ambitoid",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedby",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedbyname",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedbyyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedon",
-						"type": "INT96"
-					},
-					{
-						"name": "modifiedonbehalfby",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedonbehalfbyname",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedonbehalfbyyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "overriddencreatedon",
-						"type": "INT96"
-					},
-					{
-						"name": "ownerid",
-						"type": "UTF8"
-					},
-					{
-						"name": "owneridname",
-						"type": "UTF8"
-					},
-					{
-						"name": "owneridtype",
-						"type": "UTF8"
-					},
-					{
-						"name": "owneridyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "owningbusinessunit",
-						"type": "UTF8"
-					},
-					{
-						"name": "owningbusinessunitname",
-						"type": "UTF8"
-					},
-					{
-						"name": "owningteam",
-						"type": "UTF8"
-					},
-					{
-						"name": "owninguser",
-						"type": "UTF8"
-					},
-					{
-						"name": "statecode",
-						"type": "INT32"
-					},
-					{
-						"name": "statuscode",
-						"type": "INT32"
-					},
-					{
-						"name": "timezoneruleversionnumber",
-						"type": "INT32"
-					},
-					{
-						"name": "utcconversiontimezonecode",
-						"type": "INT32"
-					},
-					{
-						"name": "versionnumber",
-						"type": "INT64"
-					}
-				]
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/SourceMaestroBloque')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureDataLakeStorageGen2",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "Sources"
-				},
-				"annotations": [],
-				"type": "Parquet",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobFSLocation",
-						"fileName": {
-							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_maestro_bloque.parquet')",
-							"type": "Expression"
-						},
-						"folderPath": {
-							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
-							"type": "Expression"
-						},
-						"fileSystem": "mc2-bs-golden"
-					},
-					"compressionCodec": "snappy"
-				},
-				"schema": [
-					{
-						"name": "createdby",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdbyname",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdbyyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdon",
-						"type": "INT96"
-					},
-					{
-						"name": "createdonbehalfby",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdonbehalfbyname",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdonbehalfbyyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "importsequencenumber",
-						"type": "INT32"
-					},
-					{
-						"name": "mc2_bloque",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_maestro_bloqueid",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedby",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedbyname",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedbyyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedon",
-						"type": "INT96"
-					},
-					{
-						"name": "modifiedonbehalfby",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedonbehalfbyname",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedonbehalfbyyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "overriddencreatedon",
-						"type": "INT96"
-					},
-					{
-						"name": "ownerid",
-						"type": "UTF8"
-					},
-					{
-						"name": "owneridname",
-						"type": "UTF8"
-					},
-					{
-						"name": "owneridtype",
-						"type": "UTF8"
-					},
-					{
-						"name": "owneridyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "owningbusinessunit",
-						"type": "UTF8"
-					},
-					{
-						"name": "owningbusinessunitname",
-						"type": "UTF8"
-					},
-					{
-						"name": "owningteam",
-						"type": "UTF8"
-					},
-					{
-						"name": "owninguser",
-						"type": "UTF8"
-					},
-					{
-						"name": "statecode",
-						"type": "INT32"
-					},
-					{
-						"name": "statuscode",
-						"type": "INT32"
-					},
-					{
-						"name": "timezoneruleversionnumber",
-						"type": "INT32"
-					},
-					{
-						"name": "utcconversiontimezonecode",
-						"type": "INT32"
-					},
-					{
-						"name": "versionnumber",
-						"type": "INT64"
-					}
-				]
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/SourceMaestroCebe')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureDataLakeStorageGen2",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "Sources"
-				},
-				"annotations": [],
-				"type": "Parquet",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobFSLocation",
-						"fileName": {
-							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_maestro_cebe.parquet')",
-							"type": "Expression"
-						},
-						"folderPath": {
-							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
-							"type": "Expression"
-						},
-						"fileSystem": "mc2-bs-golden"
-					},
-					"compressionCodec": "snappy"
-				},
-				"schema": [
-					{
-						"name": "createdby",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdbyname",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdbyyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdon",
-						"type": "INT96"
-					},
-					{
-						"name": "createdonbehalfby",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdonbehalfbyname",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdonbehalfbyyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "importsequencenumber",
-						"type": "INT32"
-					},
-					{
-						"name": "mc2_cebe",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_idioma",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_maestro_cebeid",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_responsable_cebe",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_spco",
-						"type": "UTF8"
-					},
-					{
-						"name": "mc2_texto_cebe",
-						"type": "UTF8"
 					},
 					{
 						"name": "modifiedby",
