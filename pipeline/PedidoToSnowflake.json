@@ -40,28 +40,7 @@
 						}
 					},
 					"enableStaging": true,
-					"stagingSettings": {
-						"linkedServiceName": {
-							"referenceName": "AzureBlobStorageForSnowflake",
-							"type": "LinkedServiceReference"
-						},
-						"path": "mc2-bs-golden/StoragePath"
-					},
-					"enableSkipIncompatibleRow": true,
-					"logSettings": {
-						"enableCopyActivityLog": true,
-						"copyActivityLogSettings": {
-							"logLevel": "Info",
-							"enableReliableLogging": false
-						},
-						"logLocationSettings": {
-							"linkedServiceName": {
-								"referenceName": "AzureBlobStorageForSnowflake",
-								"type": "LinkedServiceReference"
-							},
-							"path": "mc2-bs-golden/StoragePath"
-						}
-					},
+					"enableSkipIncompatibleRow": false,
 					"translator": {
 						"type": "TabularTranslator",
 						"mappings": [
