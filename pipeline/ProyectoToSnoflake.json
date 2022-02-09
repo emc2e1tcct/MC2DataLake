@@ -1,8 +1,52 @@
 {
 	"name": "ProyectoToSnoflake",
 	"properties": {
+		"activities": [
+			{
+				"name": "CopyProyectoToSnowflek",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "ParquetSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						}
+					},
+					"sink": {
+						"type": "SnowflakeSink",
+						"importSettings": {
+							"type": "SnowflakeImportCopyCommand"
+						}
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceProyectoToSnoflake",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Snowflake_MC2_PROYECTO",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
 		"folder": {
-			"name": "Main/Sources/CopyToSnowfake/CopyPrincipalesSnowflake/Principales"
+			"name": "Main/Sources/CopyToSnowflake/CopyPrincipalesSnowflake/Principales"
 		},
 		"annotations": [],
 		"lastPublishTime": "2021-12-15T12:13:55Z"
