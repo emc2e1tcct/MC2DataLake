@@ -61,7 +61,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"pipeline": {
-						"referenceName": "ProyectoToSnoflake",
+						"referenceName": "ProyectoToSnowflake",
 						"type": "PipelineReference"
 					},
 					"waitOnCompletion": true
