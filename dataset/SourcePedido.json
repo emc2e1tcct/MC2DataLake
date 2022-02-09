@@ -13,14 +13,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": {
-					"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_pedido.parquet')",
-					"type": "Expression"
-				},
-				"folderPath": {
-					"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
-					"type": "Expression"
-				},
+				"fileName": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_pedido.parquet')",
+				"folderPath": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 				"container": "mc2-bs-golden"
 			},
 			"compressionCodec": "snappy"
