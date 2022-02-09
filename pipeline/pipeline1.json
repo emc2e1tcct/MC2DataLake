@@ -48,6 +48,10 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
+					"pipeline": {
+						"referenceName": "CopySilverToGoldenCSV",
+						"type": "PipelineReference"
+					},
 					"waitOnCompletion": true
 				}
 			},
