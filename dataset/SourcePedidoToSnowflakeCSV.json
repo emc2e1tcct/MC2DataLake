@@ -22,487 +22,369 @@
 		},
 		"schema": [
 			{
-				"name": "createdby",
 				"type": "String"
 			},
 			{
-				"name": "createdbyname",
 				"type": "String"
 			},
 			{
-				"name": "createdbyyominame",
 				"type": "String"
 			},
 			{
-				"name": "createdon",
 				"type": "String"
 			},
 			{
-				"name": "createdonbehalfby",
 				"type": "String"
 			},
 			{
-				"name": "createdonbehalfbyname",
 				"type": "String"
 			},
 			{
-				"name": "createdonbehalfbyyominame",
 				"type": "String"
 			},
 			{
-				"name": "importsequencenumber",
 				"type": "String"
 			},
 			{
-				"name": "mc2_ap_descripcion",
 				"type": "String"
 			},
 			{
-				"name": "mc2_ap_fecha_fin_upa",
 				"type": "String"
 			},
 			{
-				"name": "mc2_ap_fecha_inicio_prevista",
 				"type": "String"
 			},
 			{
-				"name": "mc2_ap_jefe_proyecto",
 				"type": "String"
 			},
 			{
-				"name": "mc2_ap_jefe_proyecto_email",
 				"type": "String"
 			},
 			{
-				"name": "mc2_ap_oferta",
 				"type": "String"
 			},
 			{
-				"name": "mc2_ap_pedido",
 				"type": "String"
 			},
 			{
-				"name": "mc2_ap_tipo",
 				"type": "String"
 			},
 			{
-				"name": "mc2_cebe",
 				"type": "String"
 			},
 			{
-				"name": "mc2_cliente_facturacion_nif_pe",
 				"type": "String"
 			},
 			{
-				"name": "mc2_cliente_facturacion_nombre_pe",
 				"type": "String"
 			},
 			{
-				"name": "mc2_cliente_gestion_cif_pe",
 				"type": "String"
 			},
 			{
-				"name": "mc2_cliente_gestion_nombre_pe",
 				"type": "String"
 			},
 			{
-				"name": "mc2_codigo_proyecto",
 				"type": "String"
 			},
 			{
-				"name": "mc2_codigo_venta",
 				"type": "String"
 			},
 			{
-				"name": "mc2_comentario_adquira",
 				"type": "String"
 			},
 			{
-				"name": "mc2_comentario_tsol",
 				"type": "String"
 			},
 			{
-				"name": "mc2_comentarios",
 				"type": "String"
 			},
 			{
-				"name": "mc2_contrato_pe",
 				"type": "String"
 			},
 			{
-				"name": "mc2_coste_pedido",
 				"type": "String"
 			},
 			{
-				"name": "mc2_creacion_ampliacion",
 				"type": "String"
 			},
 			{
-				"name": "mc2_enviado_sap",
 				"type": "String"
 			},
 			{
-				"name": "mc2_escalado",
 				"type": "String"
 			},
 			{
-				"name": "mc2_estado_compra",
 				"type": "String"
 			},
 			{
-				"name": "mc2_estado_compraname",
 				"type": "String"
 			},
 			{
-				"name": "mc2_estado_pedido",
 				"type": "String"
 			},
 			{
-				"name": "mc2_estado_pedidoname",
 				"type": "String"
 			},
 			{
-				"name": "mc2_estado_solpe",
 				"type": "String"
 			},
 			{
-				"name": "mc2_estado_venta",
 				"type": "String"
 			},
 			{
-				"name": "mc2_familia",
 				"type": "String"
 			},
 			{
-				"name": "mc2_fast_track",
 				"type": "String"
 			},
 			{
-				"name": "mc2_fecha",
 				"type": "String"
 			},
 			{
-				"name": "mc2_fecha_fin_ap_pedido",
 				"type": "String"
 			},
 			{
-				"name": "mc2_fecha_fin_ap_ultimodia",
 				"type": "String"
 			},
 			{
-				"name": "mc2_fecha_fin_sa_pedido",
 				"type": "String"
 			},
 			{
-				"name": "mc2_fecha_inicio_ap_pedido",
 				"type": "String"
 			},
 			{
-				"name": "mc2_fecha_inicio_ap_primerdia",
 				"type": "String"
 			},
 			{
-				"name": "mc2_fecha_inicio_sa_pedido",
 				"type": "String"
 			},
 			{
-				"name": "mc2_fecha_sap",
 				"type": "String"
 			},
 			{
-				"name": "mc2_id_proyecto",
 				"type": "String"
 			},
 			{
-				"name": "mc2_id_proyectoname",
 				"type": "String"
 			},
 			{
-				"name": "mc2_id_servicio",
 				"type": "String"
 			},
 			{
-				"name": "mc2_importe",
 				"type": "String"
 			},
 			{
-				"name": "mc2_importe_compra_pe",
 				"type": "String"
 			},
 			{
-				"name": "mc2_importe_modificado",
 				"type": "String"
 			},
 			{
-				"name": "mc2_imputacion_pe",
 				"type": "String"
 			},
 			{
-				"name": "mc2_informacion_proveedor_pe",
 				"type": "String"
 			},
 			{
-				"name": "mc2_jdp_pedido",
 				"type": "String"
 			},
 			{
-				"name": "mc2_jdp_pedidoname",
 				"type": "String"
 			},
 			{
-				"name": "mc2_margen",
 				"type": "String"
 			},
 			{
-				"name": "mc2_moneda_compra_pe",
 				"type": "String"
 			},
 			{
-				"name": "mc2_moneda_compra_pename",
 				"type": "String"
 			},
 			{
-				"name": "mc2_moneda_pedido",
 				"type": "String"
 			},
 			{
-				"name": "mc2_moneda_pedidoname",
 				"type": "String"
 			},
 			{
-				"name": "mc2_motivo_urgencia",
 				"type": "String"
 			},
 			{
-				"name": "mc2_numero_pedido",
 				"type": "String"
 			},
 			{
-				"name": "mc2_padre",
 				"type": "String"
 			},
 			{
-				"name": "mc2_pedidoid",
 				"type": "String"
 			},
 			{
-				"name": "mc2_peticionario",
 				"type": "String"
 			},
 			{
-				"name": "mc2_peticionario_email",
 				"type": "String"
 			},
 			{
-				"name": "mc2_producto",
 				"type": "String"
 			},
 			{
-				"name": "mc2_productoname",
 				"type": "String"
 			},
 			{
-				"name": "mc2_proveedor_pe",
 				"type": "String"
 			},
 			{
-				"name": "mc2_receptor",
 				"type": "String"
 			},
 			{
-				"name": "mc2_responsable_tsol",
 				"type": "String"
 			},
 			{
-				"name": "mc2_sa",
 				"type": "String"
 			},
 			{
-				"name": "mc2_sa_descripcion",
 				"type": "String"
 			},
 			{
-				"name": "mc2_sa_fase",
 				"type": "String"
 			},
 			{
-				"name": "mc2_sa_fecha_fin_upa",
 				"type": "String"
 			},
 			{
-				"name": "mc2_sa_fecha_inicio_prevista",
 				"type": "String"
 			},
 			{
-				"name": "mc2_sa_fecha_rfs",
 				"type": "String"
 			},
 			{
-				"name": "mc2_sa_jefe_proyecto",
 				"type": "String"
 			},
 			{
-				"name": "mc2_sa_jefe_proyecto_email",
 				"type": "String"
 			},
 			{
-				"name": "mc2_sa_oferta",
 				"type": "String"
 			},
 			{
-				"name": "mc2_sa_tipo",
 				"type": "String"
 			},
 			{
-				"name": "mc2_sector_comercial",
 				"type": "String"
 			},
 			{
-				"name": "mc2_secuencia_producto",
 				"type": "String"
 			},
 			{
-				"name": "mc2_servicio_comercial_tsol",
 				"type": "String"
 			},
 			{
-				"name": "mc2_sociedad",
 				"type": "String"
 			},
 			{
-				"name": "mc2_solicitar_compra",
 				"type": "String"
 			},
 			{
-				"name": "mc2_solpes",
 				"type": "String"
 			},
 			{
-				"name": "mc2_subfamilia",
 				"type": "String"
 			},
 			{
-				"name": "mc2_territorio",
 				"type": "String"
 			},
 			{
-				"name": "mc2_tipificacion",
 				"type": "String"
 			},
 			{
-				"name": "mc2_tipo",
 				"type": "String"
 			},
 			{
-				"name": "mc2_tipo_facturacion",
 				"type": "String"
 			},
 			{
-				"name": "mc2_tipo_facturacionname",
 				"type": "String"
 			},
 			{
-				"name": "mc2_tipo_solicitud",
 				"type": "String"
 			},
 			{
-				"name": "mc2_tramitador",
 				"type": "String"
 			},
 			{
-				"name": "mc2_tramitadorname",
 				"type": "String"
 			},
 			{
-				"name": "mc2_urgente",
 				"type": "String"
 			},
 			{
-				"name": "mc2_url_carpeta_sharepoint",
 				"type": "String"
 			},
 			{
-				"name": "modifiedby",
 				"type": "String"
 			},
 			{
-				"name": "modifiedbyname",
 				"type": "String"
 			},
 			{
-				"name": "modifiedbyyominame",
 				"type": "String"
 			},
 			{
-				"name": "modifiedon",
 				"type": "String"
 			},
 			{
-				"name": "modifiedonbehalfby",
 				"type": "String"
 			},
 			{
-				"name": "modifiedonbehalfbyname",
 				"type": "String"
 			},
 			{
-				"name": "modifiedonbehalfbyyominame",
 				"type": "String"
 			},
 			{
-				"name": "overriddencreatedon",
 				"type": "String"
 			},
 			{
-				"name": "ownerid",
 				"type": "String"
 			},
 			{
-				"name": "owneridname",
 				"type": "String"
 			},
 			{
-				"name": "owneridtype",
 				"type": "String"
 			},
 			{
-				"name": "owneridyominame",
 				"type": "String"
 			},
 			{
-				"name": "owningbusinessunit",
 				"type": "String"
 			},
 			{
-				"name": "owningbusinessunitname",
 				"type": "String"
 			},
 			{
-				"name": "owningteam",
 				"type": "String"
 			},
 			{
-				"name": "owninguser",
 				"type": "String"
 			},
 			{
-				"name": "statecode",
 				"type": "String"
 			},
 			{
-				"name": "statuscode",
 				"type": "String"
 			},
 			{
-				"name": "timezoneruleversionnumber",
 				"type": "String"
 			},
 			{
-				"name": "utcconversiontimezonecode",
 				"type": "String"
 			},
 			{
-				"name": "versionnumber",
+				"type": "String"
+			},
+			{
 				"type": "String"
 			}
 		]
