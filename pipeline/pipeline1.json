@@ -142,16 +142,9 @@
 				}
 			},
 			{
-				"name": "Copy data1",
+				"name": "CopyToSnowflakeDirect",
 				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "Copy_SilverToGolden",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
@@ -1407,6 +1400,22 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "Execute Pipeline2",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Copy_SilverToGolden",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"waitOnCompletion": true
+				}
 			}
 		],
 		"parameters": {
