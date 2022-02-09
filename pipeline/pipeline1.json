@@ -184,8 +184,8 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "mc2_estado_solpe",
-									"type": "String"
+									"type": "String",
+									"ordinal": 1
 								},
 								"sink": {
 									"name": "mc2_estado_solpe",
@@ -194,8 +194,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_imputacion_pe",
-									"type": "String"
+									"type": "String",
+									"ordinal": 2
 								},
 								"sink": {
 									"name": "mc2_imputacion_pe",
@@ -204,8 +204,8 @@
 							},
 							{
 								"source": {
-									"name": "owningbusinessunit",
-									"type": "String"
+									"type": "String",
+									"ordinal": 3
 								},
 								"sink": {
 									"name": "owningbusinessunit",
@@ -214,8 +214,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_cliente_facturacion_nombre_pe",
-									"type": "String"
+									"type": "String",
+									"ordinal": 4
 								},
 								"sink": {
 									"name": "mc2_cliente_facturacion_nombre_pe",
@@ -224,8 +224,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_estado_compraname",
-									"type": "String"
+									"type": "String",
+									"ordinal": 5
 								},
 								"sink": {
 									"name": "mc2_estado_compraname",
@@ -234,8 +234,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_sa_oferta",
-									"type": "String"
+									"type": "String",
+									"ordinal": 6
 								},
 								"sink": {
 									"name": "mc2_sa_oferta",
@@ -244,8 +244,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_secuencia_producto",
-									"type": "String"
+									"type": "String",
+									"ordinal": 7
 								},
 								"sink": {
 									"name": "mc2_secuencia_producto",
@@ -254,8 +254,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_subfamilia",
-									"type": "String"
+									"type": "String",
+									"ordinal": 8
 								},
 								"sink": {
 									"name": "mc2_subfamilia",
@@ -264,8 +264,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_tramitadorname",
-									"type": "String"
+									"type": "String",
+									"ordinal": 9
 								},
 								"sink": {
 									"name": "mc2_tramitadorname",
@@ -274,8 +274,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_receptor",
-									"type": "String"
+									"type": "String",
+									"ordinal": 10
 								},
 								"sink": {
 									"name": "mc2_receptor",
@@ -284,8 +284,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_solpes",
-									"type": "String"
+									"type": "String",
+									"ordinal": 11
 								},
 								"sink": {
 									"name": "mc2_solpes",
@@ -294,8 +294,8 @@
 							},
 							{
 								"source": {
-									"name": "owninguser",
-									"type": "String"
+									"type": "String",
+									"ordinal": 12
 								},
 								"sink": {
 									"name": "owninguser",
@@ -304,8 +304,8 @@
 							},
 							{
 								"source": {
-									"name": "statecode",
-									"type": "String"
+									"type": "String",
+									"ordinal": 13
 								},
 								"sink": {
 									"name": "statecode",
@@ -314,8 +314,8 @@
 							},
 							{
 								"source": {
-									"name": "createdby",
-									"type": "String"
+									"type": "String",
+									"ordinal": 14
 								},
 								"sink": {
 									"name": "createdby",
@@ -324,8 +324,8 @@
 							},
 							{
 								"source": {
-									"name": "createdonbehalfby",
-									"type": "String"
+									"type": "String",
+									"ordinal": 15
 								},
 								"sink": {
 									"name": "createdonbehalfby",
@@ -334,8 +334,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_ap_oferta",
-									"type": "String"
+									"type": "String",
+									"ordinal": 16
 								},
 								"sink": {
 									"name": "mc2_ap_oferta",
@@ -344,8 +344,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_cliente_gestion_cif_pe",
-									"type": "String"
+									"type": "String",
+									"ordinal": 17
 								},
 								"sink": {
 									"name": "mc2_cliente_gestion_cif_pe",
@@ -354,8 +354,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_comentario_adquira",
-									"type": "String"
+									"type": "String",
+									"ordinal": 18
 								},
 								"sink": {
 									"name": "mc2_comentario_adquira",
@@ -364,8 +364,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_estado_pedidoname",
-									"type": "String"
+									"type": "String",
+									"ordinal": 19
 								},
 								"sink": {
 									"name": "mc2_estado_pedidoname",
@@ -374,8 +374,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_fecha_sap",
-									"type": "String"
+									"type": "String",
+									"ordinal": 20
 								},
 								"sink": {
 									"name": "mc2_fecha_sap",
@@ -384,8 +384,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_id_proyecto",
-									"type": "String"
+									"type": "String",
+									"ordinal": 21
 								},
 								"sink": {
 									"name": "mc2_id_proyecto",
@@ -394,8 +394,8 @@
 							},
 							{
 								"source": {
-									"name": "importsequencenumber",
-									"type": "String"
+									"type": "String",
+									"ordinal": 22
 								},
 								"sink": {
 									"name": "importsequencenumber",
@@ -404,8 +404,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_importe_compra_pe",
-									"type": "String"
+									"type": "String",
+									"ordinal": 23
 								},
 								"sink": {
 									"name": "mc2_importe_compra_pe",
@@ -414,8 +414,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_moneda_compra_pe",
-									"type": "String"
+									"type": "String",
+									"ordinal": 24
 								},
 								"sink": {
 									"name": "mc2_moneda_compra_pe",
@@ -424,8 +424,8 @@
 							},
 							{
 								"source": {
-									"name": "utcconversiontimezonecode",
-									"type": "String"
+									"type": "String",
+									"ordinal": 25
 								},
 								"sink": {
 									"name": "utcconversiontimezonecode",
@@ -434,8 +434,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_ap_jefe_proyecto",
-									"type": "String"
+									"type": "String",
+									"ordinal": 26
 								},
 								"sink": {
 									"name": "mc2_ap_jefe_proyecto",
@@ -444,8 +444,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_ap_pedido",
-									"type": "String"
+									"type": "String",
+									"ordinal": 27
 								},
 								"sink": {
 									"name": "mc2_ap_pedido",
@@ -454,8 +454,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_escalado",
-									"type": "String"
+									"type": "String",
+									"ordinal": 28
 								},
 								"sink": {
 									"name": "mc2_escalado",
@@ -464,8 +464,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_moneda_pedidoname",
-									"type": "String"
+									"type": "String",
+									"ordinal": 29
 								},
 								"sink": {
 									"name": "mc2_moneda_pedidoname",
@@ -474,8 +474,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_sa_descripcion",
-									"type": "String"
+									"type": "String",
+									"ordinal": 30
 								},
 								"sink": {
 									"name": "mc2_sa_descripcion",
@@ -484,8 +484,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_sa_fecha_inicio_prevista",
-									"type": "String"
+									"type": "String",
+									"ordinal": 31
 								},
 								"sink": {
 									"name": "mc2_sa_fecha_inicio_prevista",
@@ -494,8 +494,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_familia",
-									"type": "String"
+									"type": "String",
+									"ordinal": 32
 								},
 								"sink": {
 									"name": "mc2_familia",
@@ -504,8 +504,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_sa_fecha_rfs",
-									"type": "String"
+									"type": "String",
+									"ordinal": 33
 								},
 								"sink": {
 									"name": "mc2_sa_fecha_rfs",
@@ -514,8 +514,8 @@
 							},
 							{
 								"source": {
-									"name": "owneridname",
-									"type": "String"
+									"type": "String",
+									"ordinal": 34
 								},
 								"sink": {
 									"name": "owneridname",
@@ -524,8 +524,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_tipo_facturacionname",
-									"type": "String"
+									"type": "String",
+									"ordinal": 35
 								},
 								"sink": {
 									"name": "mc2_tipo_facturacionname",
@@ -534,8 +534,8 @@
 							},
 							{
 								"source": {
-									"name": "modifiedonbehalfby",
-									"type": "String"
+									"type": "String",
+									"ordinal": 36
 								},
 								"sink": {
 									"name": "modifiedonbehalfby",
@@ -544,8 +544,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_codigo_venta",
-									"type": "String"
+									"type": "String",
+									"ordinal": 37
 								},
 								"sink": {
 									"name": "mc2_codigo_venta",
@@ -554,8 +554,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_enviado_sap",
-									"type": "String"
+									"type": "String",
+									"ordinal": 38
 								},
 								"sink": {
 									"name": "mc2_enviado_sap",
@@ -564,8 +564,8 @@
 							},
 							{
 								"source": {
-									"name": "owningbusinessunitname",
-									"type": "String"
+									"type": "String",
+									"ordinal": 39
 								},
 								"sink": {
 									"name": "owningbusinessunitname",
@@ -574,8 +574,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_cliente_facturacion_nif_pe",
-									"type": "String"
+									"type": "String",
+									"ordinal": 40
 								},
 								"sink": {
 									"name": "mc2_cliente_facturacion_nif_pe",
@@ -584,8 +584,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_cliente_gestion_nombre_pe",
-									"type": "String"
+									"type": "String",
+									"ordinal": 41
 								},
 								"sink": {
 									"name": "mc2_cliente_gestion_nombre_pe",
@@ -594,8 +594,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_numero_pedido",
-									"type": "String"
+									"type": "String",
+									"ordinal": 42
 								},
 								"sink": {
 									"name": "mc2_numero_pedido",
@@ -604,8 +604,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_padre",
-									"type": "String"
+									"type": "String",
+									"ordinal": 43
 								},
 								"sink": {
 									"name": "mc2_padre",
@@ -614,8 +614,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_peticionario",
-									"type": "String"
+									"type": "String",
+									"ordinal": 44
 								},
 								"sink": {
 									"name": "mc2_peticionario",
@@ -624,8 +624,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_peticionario_email",
-									"type": "String"
+									"type": "String",
+									"ordinal": 45
 								},
 								"sink": {
 									"name": "mc2_peticionario_email",
@@ -634,8 +634,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_proveedor_pe",
-									"type": "String"
+									"type": "String",
+									"ordinal": 46
 								},
 								"sink": {
 									"name": "mc2_proveedor_pe",
@@ -644,8 +644,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_servicio_comercial_tsol",
-									"type": "String"
+									"type": "String",
+									"ordinal": 47
 								},
 								"sink": {
 									"name": "mc2_servicio_comercial_tsol",
@@ -654,8 +654,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_sociedad",
-									"type": "String"
+									"type": "String",
+									"ordinal": 48
 								},
 								"sink": {
 									"name": "mc2_sociedad",
@@ -664,8 +664,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_territorio",
-									"type": "String"
+									"type": "String",
+									"ordinal": 49
 								},
 								"sink": {
 									"name": "mc2_territorio",
@@ -674,8 +674,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_productoname",
-									"type": "String"
+									"type": "String",
+									"ordinal": 50
 								},
 								"sink": {
 									"name": "mc2_productoname",
@@ -684,8 +684,8 @@
 							},
 							{
 								"source": {
-									"name": "statuscode",
-									"type": "String"
+									"type": "String",
+									"ordinal": 51
 								},
 								"sink": {
 									"name": "statuscode",
@@ -694,8 +694,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_producto",
-									"type": "String"
+									"type": "String",
+									"ordinal": 52
 								},
 								"sink": {
 									"name": "mc2_producto",
@@ -704,8 +704,8 @@
 							},
 							{
 								"source": {
-									"name": "modifiedbyname",
-									"type": "String"
+									"type": "String",
+									"ordinal": 53
 								},
 								"sink": {
 									"name": "modifiedbyname",
@@ -714,8 +714,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_ap_fecha_inicio_prevista",
-									"type": "String"
+									"type": "String",
+									"ordinal": 54
 								},
 								"sink": {
 									"name": "mc2_ap_fecha_inicio_prevista",
@@ -724,8 +724,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_ap_tipo",
-									"type": "String"
+									"type": "String",
+									"ordinal": 55
 								},
 								"sink": {
 									"name": "mc2_ap_tipo",
@@ -734,8 +734,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_comentarios",
-									"type": "String"
+									"type": "String",
+									"ordinal": 56
 								},
 								"sink": {
 									"name": "mc2_comentarios",
@@ -744,8 +744,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_fecha",
-									"type": "String"
+									"type": "String",
+									"ordinal": 57
 								},
 								"sink": {
 									"name": "mc2_fecha",
@@ -754,8 +754,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_id_proyectoname",
-									"type": "String"
+									"type": "String",
+									"ordinal": 58
 								},
 								"sink": {
 									"name": "mc2_id_proyectoname",
@@ -764,8 +764,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_jdp_pedido",
-									"type": "String"
+									"type": "String",
+									"ordinal": 59
 								},
 								"sink": {
 									"name": "mc2_jdp_pedido",
@@ -774,8 +774,8 @@
 							},
 							{
 								"source": {
-									"name": "modifiedonbehalfbyname",
-									"type": "String"
+									"type": "String",
+									"ordinal": 60
 								},
 								"sink": {
 									"name": "modifiedonbehalfbyname",
@@ -784,8 +784,8 @@
 							},
 							{
 								"source": {
-									"name": "ownerid",
-									"type": "String"
+									"type": "String",
+									"ordinal": 61
 								},
 								"sink": {
 									"name": "ownerid",
@@ -794,8 +794,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_sa_tipo",
-									"type": "String"
+									"type": "String",
+									"ordinal": 62
 								},
 								"sink": {
 									"name": "mc2_sa_tipo",
@@ -804,8 +804,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_tipo_facturacion",
-									"type": "String"
+									"type": "String",
+									"ordinal": 63
 								},
 								"sink": {
 									"name": "mc2_tipo_facturacion",
@@ -814,8 +814,8 @@
 							},
 							{
 								"source": {
-									"name": "owneridtype",
-									"type": "String"
+									"type": "String",
+									"ordinal": 64
 								},
 								"sink": {
 									"name": "owneridtype",
@@ -824,8 +824,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_tramitador",
-									"type": "String"
+									"type": "String",
+									"ordinal": 65
 								},
 								"sink": {
 									"name": "mc2_tramitador",
@@ -834,8 +834,8 @@
 							},
 							{
 								"source": {
-									"name": "createdbyname",
-									"type": "String"
+									"type": "String",
+									"ordinal": 66
 								},
 								"sink": {
 									"name": "createdbyname",
@@ -844,8 +844,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_ap_descripcion",
-									"type": "String"
+									"type": "String",
+									"ordinal": 67
 								},
 								"sink": {
 									"name": "mc2_ap_descripcion",
@@ -854,8 +854,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_ap_jefe_proyecto_email",
-									"type": "String"
+									"type": "String",
+									"ordinal": 68
 								},
 								"sink": {
 									"name": "mc2_ap_jefe_proyecto_email",
@@ -864,8 +864,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_codigo_proyecto",
-									"type": "String"
+									"type": "String",
+									"ordinal": 69
 								},
 								"sink": {
 									"name": "mc2_codigo_proyecto",
@@ -874,8 +874,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_comentario_tsol",
-									"type": "String"
+									"type": "String",
+									"ordinal": 70
 								},
 								"sink": {
 									"name": "mc2_comentario_tsol",
@@ -884,8 +884,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_contrato_pe",
-									"type": "String"
+									"type": "String",
+									"ordinal": 71
 								},
 								"sink": {
 									"name": "mc2_contrato_pe",
@@ -894,8 +894,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_fast_track",
-									"type": "String"
+									"type": "String",
+									"ordinal": 72
 								},
 								"sink": {
 									"name": "mc2_fast_track",
@@ -904,8 +904,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_fecha_inicio_sa_pedido",
-									"type": "String"
+									"type": "String",
+									"ordinal": 73
 								},
 								"sink": {
 									"name": "mc2_fecha_inicio_sa_pedido",
@@ -914,8 +914,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_id_servicio",
-									"type": "String"
+									"type": "String",
+									"ordinal": 74
 								},
 								"sink": {
 									"name": "mc2_id_servicio",
@@ -924,8 +924,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_sa_fecha_fin_upa",
-									"type": "String"
+									"type": "String",
+									"ordinal": 75
 								},
 								"sink": {
 									"name": "mc2_sa_fecha_fin_upa",
@@ -934,8 +934,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_sector_comercial",
-									"type": "String"
+									"type": "String",
+									"ordinal": 76
 								},
 								"sink": {
 									"name": "mc2_sector_comercial",
@@ -944,8 +944,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_tipo",
-									"type": "String"
+									"type": "String",
+									"ordinal": 77
 								},
 								"sink": {
 									"name": "mc2_tipo",
@@ -954,8 +954,8 @@
 							},
 							{
 								"source": {
-									"name": "timezoneruleversionnumber",
-									"type": "String"
+									"type": "String",
+									"ordinal": 78
 								},
 								"sink": {
 									"name": "timezoneruleversionnumber",
@@ -964,8 +964,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_creacion_ampliacion",
-									"type": "String"
+									"type": "String",
+									"ordinal": 79
 								},
 								"sink": {
 									"name": "mc2_creacion_ampliacion",
@@ -974,8 +974,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_importe",
-									"type": "String"
+									"type": "String",
+									"ordinal": 80
 								},
 								"sink": {
 									"name": "mc2_importe",
@@ -984,8 +984,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_moneda_pedido",
-									"type": "String"
+									"type": "String",
+									"ordinal": 81
 								},
 								"sink": {
 									"name": "mc2_moneda_pedido",
@@ -994,8 +994,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_sa_jefe_proyecto_email",
-									"type": "String"
+									"type": "String",
+									"ordinal": 82
 								},
 								"sink": {
 									"name": "mc2_sa_jefe_proyecto_email",
@@ -1004,8 +1004,8 @@
 							},
 							{
 								"source": {
-									"name": "modifiedonbehalfbyyominame",
-									"type": "String"
+									"type": "String",
+									"ordinal": 83
 								},
 								"sink": {
 									"name": "modifiedonbehalfbyyominame",
@@ -1014,8 +1014,8 @@
 							},
 							{
 								"source": {
-									"name": "owneridyominame",
-									"type": "String"
+									"type": "String",
+									"ordinal": 84
 								},
 								"sink": {
 									"name": "owneridyominame",
@@ -1024,8 +1024,8 @@
 							},
 							{
 								"source": {
-									"name": "owningteam",
-									"type": "String"
+									"type": "String",
+									"ordinal": 85
 								},
 								"sink": {
 									"name": "owningteam",
@@ -1034,8 +1034,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_tipo_solicitud",
-									"type": "String"
+									"type": "String",
+									"ordinal": 86
 								},
 								"sink": {
 									"name": "mc2_tipo_solicitud",
@@ -1044,8 +1044,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_urgente",
-									"type": "String"
+									"type": "String",
+									"ordinal": 87
 								},
 								"sink": {
 									"name": "mc2_urgente",
@@ -1054,8 +1054,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_tipificacion",
-									"type": "String"
+									"type": "String",
+									"ordinal": 88
 								},
 								"sink": {
 									"name": "mc2_tipificacion",
@@ -1064,8 +1064,8 @@
 							},
 							{
 								"source": {
-									"name": "modifiedbyyominame",
-									"type": "String"
+									"type": "String",
+									"ordinal": 89
 								},
 								"sink": {
 									"name": "modifiedbyyominame",
@@ -1074,8 +1074,8 @@
 							},
 							{
 								"source": {
-									"name": "createdonbehalfbyname",
-									"type": "String"
+									"type": "String",
+									"ordinal": 90
 								},
 								"sink": {
 									"name": "createdonbehalfbyname",
@@ -1084,8 +1084,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_estado_venta",
-									"type": "String"
+									"type": "String",
+									"ordinal": 91
 								},
 								"sink": {
 									"name": "mc2_estado_venta",
@@ -1094,8 +1094,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_fecha_fin_sa_pedido",
-									"type": "String"
+									"type": "String",
+									"ordinal": 92
 								},
 								"sink": {
 									"name": "mc2_fecha_fin_sa_pedido",
@@ -1104,8 +1104,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_fecha_inicio_ap_pedido",
-									"type": "String"
+									"type": "String",
+									"ordinal": 93
 								},
 								"sink": {
 									"name": "mc2_fecha_inicio_ap_pedido",
@@ -1114,8 +1114,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_margen",
-									"type": "String"
+									"type": "String",
+									"ordinal": 94
 								},
 								"sink": {
 									"name": "mc2_margen",
@@ -1124,8 +1124,8 @@
 							},
 							{
 								"source": {
-									"name": "createdbyyominame",
-									"type": "String"
+									"type": "String",
+									"ordinal": 95
 								},
 								"sink": {
 									"name": "createdbyyominame",
@@ -1134,8 +1134,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_coste_pedido",
-									"type": "String"
+									"type": "String",
+									"ordinal": 96
 								},
 								"sink": {
 									"name": "mc2_coste_pedido",
@@ -1144,8 +1144,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_estado_pedido",
-									"type": "String"
+									"type": "String",
+									"ordinal": 97
 								},
 								"sink": {
 									"name": "mc2_estado_pedido",
@@ -1154,8 +1154,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_importe_modificado",
-									"type": "String"
+									"type": "String",
+									"ordinal": 98
 								},
 								"sink": {
 									"name": "mc2_importe_modificado",
@@ -1164,8 +1164,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_informacion_proveedor_pe",
-									"type": "String"
+									"type": "String",
+									"ordinal": 99
 								},
 								"sink": {
 									"name": "mc2_informacion_proveedor_pe",
@@ -1174,8 +1174,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_fecha_fin_ap_ultimodia",
-									"type": "String"
+									"type": "String",
+									"ordinal": 100
 								},
 								"sink": {
 									"name": "mc2_fecha_fin_ap_ultimodia",
@@ -1184,8 +1184,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_pedidoid",
-									"type": "String"
+									"type": "String",
+									"ordinal": 101
 								},
 								"sink": {
 									"name": "mc2_pedidoid",
@@ -1194,8 +1194,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_sa_jefe_proyecto",
-									"type": "String"
+									"type": "String",
+									"ordinal": 102
 								},
 								"sink": {
 									"name": "mc2_sa_jefe_proyecto",
@@ -1204,8 +1204,8 @@
 							},
 							{
 								"source": {
-									"name": "modifiedby",
-									"type": "String"
+									"type": "String",
+									"ordinal": 103
 								},
 								"sink": {
 									"name": "modifiedby",
@@ -1214,8 +1214,8 @@
 							},
 							{
 								"source": {
-									"name": "createdon",
-									"type": "String"
+									"type": "String",
+									"ordinal": 104
 								},
 								"sink": {
 									"name": "createdon",
@@ -1224,8 +1224,8 @@
 							},
 							{
 								"source": {
-									"name": "createdonbehalfbyyominame",
-									"type": "String"
+									"type": "String",
+									"ordinal": 105
 								},
 								"sink": {
 									"name": "createdonbehalfbyyominame",
@@ -1234,8 +1234,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_ap_fecha_fin_upa",
-									"type": "String"
+									"type": "String",
+									"ordinal": 106
 								},
 								"sink": {
 									"name": "mc2_ap_fecha_fin_upa",
@@ -1244,8 +1244,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_cebe",
-									"type": "String"
+									"type": "String",
+									"ordinal": 107
 								},
 								"sink": {
 									"name": "mc2_cebe",
@@ -1254,8 +1254,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_fecha_fin_ap_pedido",
-									"type": "String"
+									"type": "String",
+									"ordinal": 108
 								},
 								"sink": {
 									"name": "mc2_fecha_fin_ap_pedido",
@@ -1264,8 +1264,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_sa_fase",
-									"type": "String"
+									"type": "String",
+									"ordinal": 109
 								},
 								"sink": {
 									"name": "mc2_sa_fase",
@@ -1274,8 +1274,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_solicitar_compra",
-									"type": "String"
+									"type": "String",
+									"ordinal": 110
 								},
 								"sink": {
 									"name": "mc2_solicitar_compra",
@@ -1284,8 +1284,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_estado_compra",
-									"type": "String"
+									"type": "String",
+									"ordinal": 111
 								},
 								"sink": {
 									"name": "mc2_estado_compra",
@@ -1294,8 +1294,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_jdp_pedidoname",
-									"type": "String"
+									"type": "String",
+									"ordinal": 112
 								},
 								"sink": {
 									"name": "mc2_jdp_pedidoname",
@@ -1304,8 +1304,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_moneda_compra_pename",
-									"type": "String"
+									"type": "String",
+									"ordinal": 113
 								},
 								"sink": {
 									"name": "mc2_moneda_compra_pename",
@@ -1314,8 +1314,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_motivo_urgencia",
-									"type": "String"
+									"type": "String",
+									"ordinal": 114
 								},
 								"sink": {
 									"name": "mc2_motivo_urgencia",
@@ -1324,8 +1324,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_responsable_tsol",
-									"type": "String"
+									"type": "String",
+									"ordinal": 115
 								},
 								"sink": {
 									"name": "mc2_responsable_tsol",
@@ -1334,8 +1334,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_url_carpeta_sharepoint",
-									"type": "String"
+									"type": "String",
+									"ordinal": 116
 								},
 								"sink": {
 									"name": "mc2_url_carpeta_sharepoint",
@@ -1344,8 +1344,8 @@
 							},
 							{
 								"source": {
-									"name": "modifiedon",
-									"type": "String"
+									"type": "String",
+									"ordinal": 117
 								},
 								"sink": {
 									"name": "modifiedon",
@@ -1354,8 +1354,8 @@
 							},
 							{
 								"source": {
-									"name": "overriddencreatedon",
-									"type": "String"
+									"type": "String",
+									"ordinal": 118
 								},
 								"sink": {
 									"name": "overriddencreatedon",
@@ -1364,8 +1364,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_sa",
-									"type": "String"
+									"type": "String",
+									"ordinal": 119
 								},
 								"sink": {
 									"name": "mc2_sa",
@@ -1374,8 +1374,8 @@
 							},
 							{
 								"source": {
-									"name": "versionnumber",
-									"type": "String"
+									"type": "String",
+									"ordinal": 120
 								},
 								"sink": {
 									"name": "versionnumber",
@@ -1384,8 +1384,8 @@
 							},
 							{
 								"source": {
-									"name": "mc2_fecha_inicio_ap_primerdia",
-									"type": "String"
+									"type": "String",
+									"ordinal": 121
 								},
 								"sink": {
 									"name": "mc2_fecha_inicio_ap_primerdia",
