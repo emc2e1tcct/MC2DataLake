@@ -36,10 +36,7 @@
 						"type": "SnowflakeSink",
 						"preCopyScript": "TRUNCATE TABLE \"MC2_PROD\".\"PUBLIC\".\"MC2_PEDIDO\";",
 						"importSettings": {
-							"type": "SnowflakeImportCopyCommand",
-							"additionalCopyOptions": {
-								"ON_ERROR": "CONTINUE"
-							}
+							"type": "SnowflakeImportCopyCommand"
 						}
 					},
 					"enableStaging": true,
