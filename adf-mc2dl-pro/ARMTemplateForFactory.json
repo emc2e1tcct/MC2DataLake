@@ -52832,7 +52832,7 @@
 			"properties": {
 				"activities": [
 					{
-						"name": "CopyAuditoriaToSnowflake",
+						"name": "AuditoriaToSnowflake",
 						"type": "Copy",
 						"dependsOn": [],
 						"policy": {
@@ -52880,6 +52880,9 @@
 				"policy": {
 					"elapsedTimeMetric": {},
 					"cancelAfter": {}
+				},
+				"folder": {
+					"name": "Main/Sources/CopyToSnowfake/CopyPrincipalesSnowflake/Principales"
 				},
 				"annotations": []
 			},
