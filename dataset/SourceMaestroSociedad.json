@@ -2,7 +2,7 @@
 	"name": "SourceMaestroSociedad",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureDataLakeStorageGen2",
+			"referenceName": "AzureBlobStorageForSnowflake",
 			"type": "LinkedServiceReference"
 		},
 		"folder": {
@@ -12,16 +12,10 @@
 		"type": "Parquet",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobFSLocation",
-				"fileName": {
-					"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_maestro_sociedad.parquet')",
-					"type": "Expression"
-				},
-				"folderPath": {
-					"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
-					"type": "Expression"
-				},
-				"fileSystem": "mc2-bs-golden"
+				"type": "AzureBlobStorageLocation",
+				"fileName": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_maestro_sociedad.parquet')",
+				"folderPath": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+				"container": "mc2-bs-golden"
 			},
 			"compressionCodec": "snappy"
 		},
