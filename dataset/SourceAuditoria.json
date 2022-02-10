@@ -5,6 +5,9 @@
 			"referenceName": "AzureBlobStorageForSnowflake",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "Sources"
+		},
 		"annotations": [],
 		"type": "Parquet",
 		"typeProperties": {
