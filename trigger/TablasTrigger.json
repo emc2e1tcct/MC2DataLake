@@ -465,12 +465,6 @@
 						}
 					]
 				}
-			},
-			{
-				"pipelineReference": {
-					"referenceName": "ComentariosProyectoToSnowflake",
-					"type": "PipelineReference"
-				}
 			}
 		],
 		"type": "ScheduleTrigger",
