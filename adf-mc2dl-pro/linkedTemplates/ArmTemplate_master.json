@@ -613,12 +613,6 @@
 					},
 					"AzureDataLakeStorageGen2_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorageGen2_properties_typeProperties_url')]"
-					},
-					"AzureDataLakeStorageDataFact_properties_privateLinkResourceId": {
-						"value": "[parameters('AzureDataLakeStorageDataFact_properties_privateLinkResourceId')]"
-					},
-					"AzureDataLakeStorageDataFact_properties_groupId": {
-						"value": "[parameters('AzureDataLakeStorageDataFact_properties_groupId')]"
 					}
 				}
 			},
@@ -639,6 +633,12 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"AzureDataLakeStorageDataFact_properties_privateLinkResourceId": {
+						"value": "[parameters('AzureDataLakeStorageDataFact_properties_privateLinkResourceId')]"
+					},
+					"AzureDataLakeStorageDataFact_properties_groupId": {
+						"value": "[parameters('AzureDataLakeStorageDataFact_properties_groupId')]"
 					}
 				}
 			},
