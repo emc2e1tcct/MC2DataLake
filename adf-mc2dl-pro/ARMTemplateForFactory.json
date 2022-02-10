@@ -53605,13 +53605,6 @@
 							"cw_items_Principales": "[parameters('TablasTrigger_properties_main_parameters_cw_items_Principales')]",
 							"cw_items_PrincipalesE3": "[parameters('TablasTrigger_properties_main_parameters_cw_items_PrincipalesE3')]"
 						}
-					},
-					{
-						"pipelineReference": {
-							"referenceName": "ComentariosProyectoToSnowflake",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -53635,8 +53628,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/pipelines/CopyMaestrasToBronce')]",
-				"[concat(variables('factoryId'), '/pipelines/main')]",
-				"[concat(variables('factoryId'), '/pipelines/ComentariosProyectoToSnowflake')]"
+				"[concat(variables('factoryId'), '/pipelines/main')]"
 			]
 		},
 		{
