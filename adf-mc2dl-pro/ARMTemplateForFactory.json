@@ -53589,13 +53589,6 @@
 				"pipelines": [
 					{
 						"pipelineReference": {
-							"referenceName": "CopyMaestrasToBronce",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
-					},
-					{
-						"pipelineReference": {
 							"referenceName": "main",
 							"type": "PipelineReference"
 						},
@@ -53627,7 +53620,6 @@
 				}
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/CopyMaestrasToBronce')]",
 				"[concat(variables('factoryId'), '/pipelines/main')]"
 			]
 		},
