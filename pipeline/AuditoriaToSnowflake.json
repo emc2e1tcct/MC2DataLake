@@ -1,5 +1,5 @@
 {
-	"name": "CopyAuditoriaToSnowflake",
+	"name": "AuditoriaToSnowflake",
 	"properties": {
 		"activities": [
 			{

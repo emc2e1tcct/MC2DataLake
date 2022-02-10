@@ -87,7 +87,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"pipeline": {
-						"referenceName": "CopyAuditoriaToSnowflake",
+						"referenceName": "AuditoriaToSnowflake",
 						"type": "PipelineReference"
 					},
 					"waitOnCompletion": true
