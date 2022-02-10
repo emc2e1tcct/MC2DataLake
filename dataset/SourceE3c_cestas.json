@@ -13,7 +13,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+				"fileName": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'e3c_cestas.parquet')",
 				"folderPath": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 				"container": "mc2-bs-golden"
 			},
