@@ -41,8 +41,14 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_comentarios_proyecto.parquet')",
-						"folderPath": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+						"fileName": {
+							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_comentarios_proyecto.parquet')",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+							"type": "Expression"
+						},
 						"container": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
@@ -479,8 +485,14 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_lineas_adquira.parquet')",
-						"folderPath": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+						"fileName": {
+							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_lineas_adquira.parquet')",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+							"type": "Expression"
+						},
 						"container": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
@@ -1169,7 +1181,10 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_planificacion.parquet')",
+						"fileName": {
+							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_planificacion.parquet')",
+							"type": "Expression"
+						},
 						"folderPath": {
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
@@ -2160,8 +2175,14 @@
 								"storeSettings": {
 									"type": "AzureBlobStorageReadSettings",
 									"recursive": true,
-									"wildcardFolderPath": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
-									"wildcardFileName": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_elemento_pep.parquet')",
+									"wildcardFolderPath": {
+										"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+										"type": "Expression"
+									},
+									"wildcardFileName": {
+										"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_elemento_pep.parquet')",
+										"type": "Expression"
+									},
 									"enablePartitionDiscovery": false
 								}
 							},

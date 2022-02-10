@@ -922,8 +922,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/SourceComentariosProyecto')]",
-				"[concat(variables('factoryId'), '/datasets/Snowflake_MC2_COMENTARIOS_PROYECTO')]",
-				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
+				"[concat(variables('factoryId'), '/datasets/Snowflake_MC2_COMENTARIOS_PROYECTO')]"
 			]
 		},
 		{
@@ -2621,6 +2620,14 @@
 								},
 								"source": {
 									"entityName": "mc2_proyecto"
+								}
+							},
+							{
+								"destination": {
+									"fileName": "mc2_auditoria.parquet"
+								},
+								"source": {
+									"entityName": "mc2_auditoria"
 								}
 							}
 						]
@@ -12640,8 +12647,14 @@
 								"storeSettings": {
 									"type": "AzureBlobStorageReadSettings",
 									"recursive": true,
-									"wildcardFolderPath": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
-									"wildcardFileName": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_elemento_pep.parquet')",
+									"wildcardFolderPath": {
+										"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+										"type": "Expression"
+									},
+									"wildcardFileName": {
+										"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_elemento_pep.parquet')",
+										"type": "Expression"
+									},
 									"enablePartitionDiscovery": false
 								}
 							},
@@ -13307,8 +13320,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/SourceElemento_PEP')]",
-				"[concat(variables('factoryId'), '/datasets/Snowflake_MC2_ELEMENTO_PEP')]",
-				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
+				"[concat(variables('factoryId'), '/datasets/Snowflake_MC2_ELEMENTO_PEP')]"
 			]
 		},
 		{
@@ -13929,8 +13941,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/SourceLineasAdquira')]",
-				"[concat(variables('factoryId'), '/datasets/Snowflake_MC2_LINEAS_ADQUIRA')]",
-				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
+				"[concat(variables('factoryId'), '/datasets/Snowflake_MC2_LINEAS_ADQUIRA')]"
 			]
 		},
 		{
@@ -27490,8 +27501,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/SourcePlanificacion')]",
-				"[concat(variables('factoryId'), '/datasets/Snowflake_MC2_PLANIFICACION')]",
-				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
+				"[concat(variables('factoryId'), '/datasets/Snowflake_MC2_PLANIFICACION')]"
 			]
 		},
 		{
@@ -43330,8 +43340,14 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_comentarios_proyecto.parquet')",
-						"folderPath": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+						"fileName": {
+							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_comentarios_proyecto.parquet')",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+							"type": "Expression"
+						},
 						"container": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
@@ -47384,8 +47400,14 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_lineas_adquira.parquet')",
-						"folderPath": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+						"fileName": {
+							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_lineas_adquira.parquet')",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+							"type": "Expression"
+						},
 						"container": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
@@ -52790,7 +52812,10 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_planificacion.parquet')",
+						"fileName": {
+							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_planificacion.parquet')",
+							"type": "Expression"
+						},
 						"folderPath": {
 							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 							"type": "Expression"
