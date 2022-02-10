@@ -13,6 +13,11 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
+				"fileName": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_planificacion.parquet')",
+				"folderPath": {
+					"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+					"type": "Expression"
+				},
 				"container": "mc2-bs-golden"
 			},
 			"compressionCodec": "snappy"
