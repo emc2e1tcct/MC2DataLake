@@ -2712,6 +2712,20 @@
 							"waitOnCompletion": true,
 							"parameters": {}
 						}
+					},
+					{
+						"name": "LineasAdquiraToSnowflake",
+						"type": "ExecutePipeline",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "LineasAdquiraToSnowflake",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {}
+						}
 					}
 				],
 				"policy": {
@@ -2729,7 +2743,8 @@
 				"[concat(variables('factoryId'), '/pipelines/ElementoPEPToSnowflake')]",
 				"[concat(variables('factoryId'), '/pipelines/PedidoToSnowflake')]",
 				"[concat(variables('factoryId'), '/pipelines/PlanificacionToSnowflake')]",
-				"[concat(variables('factoryId'), '/pipelines/ProyectoToSnowflake')]"
+				"[concat(variables('factoryId'), '/pipelines/ProyectoToSnowflake')]",
+				"[concat(variables('factoryId'), '/pipelines/LineasAdquiraToSnowflake')]"
 			]
 		},
 		{
@@ -13327,7 +13342,7 @@
 							"source": {
 								"type": "ParquetSource",
 								"storeSettings": {
-									"type": "AzureBlobFSReadSettings",
+									"type": "AzureBlobStorageReadSettings",
 									"recursive": true,
 									"enablePartitionDiscovery": false
 								}
@@ -13339,14 +13354,7 @@
 									"type": "SnowflakeImportCopyCommand"
 								}
 							},
-							"enableStaging": true,
-							"stagingSettings": {
-								"linkedServiceName": {
-									"referenceName": "AzureBlobStorageForSnowflake",
-									"type": "LinkedServiceReference"
-								},
-								"path": "mc2-bs-golden/StoragePath"
-							},
+							"enableStaging": false,
 							"translator": {
 								"type": "TabularTranslator",
 								"mappings": [
@@ -47365,7 +47373,7 @@
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "AzureDataLakeStorageGen2",
+					"referenceName": "AzureBlobStorageForSnowflake",
 					"type": "LinkedServiceReference"
 				},
 				"folder": {
@@ -47375,16 +47383,10 @@
 				"type": "Parquet",
 				"typeProperties": {
 					"location": {
-						"type": "AzureBlobFSLocation",
-						"fileName": {
-							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_lineas_adquira.parquet')",
-							"type": "Expression"
-						},
-						"folderPath": {
-							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
-							"type": "Expression"
-						},
-						"fileSystem": "mc2-bs-golden"
+						"type": "AzureBlobStorageLocation",
+						"fileName": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_lineas_adquira.parquet')",
+						"folderPath": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+						"container": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
 				},
@@ -47614,7 +47616,7 @@
 				]
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
+				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorageForSnowflake')]"
 			]
 		},
 		{
