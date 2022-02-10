@@ -540,6 +540,18 @@
 					},
 					"Snowflake1_connectionString": {
 						"value": "[parameters('Snowflake1_connectionString')]"
+					},
+					"TablasTrigger_properties_main_parameters_cw_items_Maestras": {
+						"value": "[parameters('TablasTrigger_properties_main_parameters_cw_items_Maestras')]"
+					},
+					"TablasTrigger_properties_main_parameters_cw_items_MaestrasE3": {
+						"value": "[parameters('TablasTrigger_properties_main_parameters_cw_items_MaestrasE3')]"
+					},
+					"TablasTrigger_properties_main_parameters_cw_items_Principales": {
+						"value": "[parameters('TablasTrigger_properties_main_parameters_cw_items_Principales')]"
+					},
+					"TablasTrigger_properties_main_parameters_cw_items_PrincipalesE3": {
+						"value": "[parameters('TablasTrigger_properties_main_parameters_cw_items_PrincipalesE3')]"
 					}
 				}
 			},
@@ -599,14 +611,14 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"AzureDataLakeStorageGen2_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorageGen2_properties_typeProperties_url')]"
+					},
 					"AzureDataLakeStorageDataFact_properties_privateLinkResourceId": {
 						"value": "[parameters('AzureDataLakeStorageDataFact_properties_privateLinkResourceId')]"
 					},
 					"AzureDataLakeStorageDataFact_properties_groupId": {
 						"value": "[parameters('AzureDataLakeStorageDataFact_properties_groupId')]"
-					},
-					"AzureDataLakeStorageGen2_properties_typeProperties_url": {
-						"value": "[parameters('AzureDataLakeStorageGen2_properties_typeProperties_url')]"
 					}
 				}
 			},
@@ -727,18 +739,6 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
-					},
-					"TablasTrigger_properties_main_parameters_cw_items_Maestras": {
-						"value": "[parameters('TablasTrigger_properties_main_parameters_cw_items_Maestras')]"
-					},
-					"TablasTrigger_properties_main_parameters_cw_items_MaestrasE3": {
-						"value": "[parameters('TablasTrigger_properties_main_parameters_cw_items_MaestrasE3')]"
-					},
-					"TablasTrigger_properties_main_parameters_cw_items_Principales": {
-						"value": "[parameters('TablasTrigger_properties_main_parameters_cw_items_Principales')]"
-					},
-					"TablasTrigger_properties_main_parameters_cw_items_PrincipalesE3": {
-						"value": "[parameters('TablasTrigger_properties_main_parameters_cw_items_PrincipalesE3')]"
 					}
 				}
 			},
