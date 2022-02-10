@@ -29,8 +29,14 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_maestro_jefe_de_proyecto.parquet')",
-						"folderPath": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+						"fileName": {
+							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_maestro_jefe_de_proyecto.parquet')",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+							"type": "Expression"
+						},
 						"container": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
@@ -193,8 +199,14 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_maestro_lineapep.parquet')",
-						"folderPath": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+						"fileName": {
+							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_maestro_lineapep.parquet')",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+							"type": "Expression"
+						},
 						"container": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
@@ -357,8 +369,14 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_maestro_monedas.parquet')",
-						"folderPath": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+						"fileName": {
+							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_maestro_monedas.parquet')",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+							"type": "Expression"
+						},
 						"container": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
@@ -513,8 +531,14 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_maestro_naturaleza_utm.parquet')",
-						"folderPath": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+						"fileName": {
+							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_maestro_naturaleza_utm.parquet')",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+							"type": "Expression"
+						},
 						"container": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
@@ -669,8 +693,14 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_maestro_perfil.parquet')",
-						"folderPath": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+						"fileName": {
+							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_maestro_perfil.parquet')",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+							"type": "Expression"
+						},
 						"container": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
@@ -841,8 +871,14 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_maestro_perfil_presupuesto.parquet')",
-						"folderPath": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+						"fileName": {
+							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_maestro_perfil_presupuesto.parquet')",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+							"type": "Expression"
+						},
 						"container": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
@@ -1005,8 +1041,14 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_maestro_planificacion.parquet')",
-						"folderPath": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+						"fileName": {
+							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_maestro_planificacion.parquet')",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+							"type": "Expression"
+						},
 						"container": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
@@ -1161,8 +1203,14 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_maestro_plazo_utm.parquet')",
-						"folderPath": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+						"fileName": {
+							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_maestro_plazo_utm.parquet')",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+							"type": "Expression"
+						},
 						"container": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
@@ -1317,8 +1365,14 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_maestro_prioridad.parquet')",
-						"folderPath": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+						"fileName": {
+							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_maestro_prioridad.parquet')",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+							"type": "Expression"
+						},
 						"container": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
@@ -1473,8 +1527,14 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_maestro_producto.parquet')",
-						"folderPath": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+						"fileName": {
+							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_maestro_producto.parquet')",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+							"type": "Expression"
+						},
 						"container": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
@@ -1641,8 +1701,14 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_maestro_sociedad.parquet')",
-						"folderPath": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+						"fileName": {
+							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_maestro_sociedad.parquet')",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+							"type": "Expression"
+						},
 						"container": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
@@ -1813,8 +1879,14 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_maestro_tipificacion.parquet')",
-						"folderPath": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+						"fileName": {
+							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_maestro_tipificacion.parquet')",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+							"type": "Expression"
+						},
 						"container": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
@@ -1969,8 +2041,14 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_maestro_tipo_facturacion.parquet')",
-						"folderPath": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+						"fileName": {
+							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_maestro_tipo_facturacion.parquet')",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+							"type": "Expression"
+						},
 						"container": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
@@ -2125,8 +2203,14 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_maestro_tramitador.parquet')",
-						"folderPath": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+						"fileName": {
+							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_maestro_tramitador.parquet')",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+							"type": "Expression"
+						},
 						"container": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
@@ -2285,8 +2369,14 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_maestro_estado_pedido.parquet')",
-						"folderPath": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+						"fileName": {
+							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_maestro_estado_pedido.parquet')",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+							"type": "Expression"
+						},
 						"container": "mc2-bs-golden"
 					},
 					"compressionCodec": "snappy"
