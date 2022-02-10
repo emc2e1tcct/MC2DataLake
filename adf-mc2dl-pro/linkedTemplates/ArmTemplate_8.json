@@ -13,6 +13,556 @@
 	},
 	"resources": [
 		{
+			"name": "[concat(parameters('factoryName'), '/SourceEC3MaestroCompraOrgCompras')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureDataLakeStorageGen2",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Sources"
+				},
+				"annotations": [],
+				"type": "Parquet",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": {
+							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-e3c_maestro_compra_org_compras.parquet')",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+							"type": "Expression"
+						},
+						"fileSystem": "mc2-bs-golden"
+					},
+					"compressionCodec": "snappy"
+				},
+				"schema": [
+					{
+						"name": "createdby",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdbyname",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdbyyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdon",
+						"type": "INT96"
+					},
+					{
+						"name": "createdonbehalfby",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdonbehalfbyname",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdonbehalfbyyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_denominacion_org_compras",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_denominacion_sociedad",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_id_org_compras_preproductivo",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_id_org_compras_productivo",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_maestro_compra_org_comprasid",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_organizacion",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_sociedad",
+						"type": "UTF8"
+					},
+					{
+						"name": "importsequencenumber",
+						"type": "INT32"
+					},
+					{
+						"name": "modifiedby",
+						"type": "UTF8"
+					},
+					{
+						"name": "modifiedbyname",
+						"type": "UTF8"
+					},
+					{
+						"name": "modifiedbyyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "modifiedon",
+						"type": "INT96"
+					},
+					{
+						"name": "modifiedonbehalfby",
+						"type": "UTF8"
+					},
+					{
+						"name": "modifiedonbehalfbyname",
+						"type": "UTF8"
+					},
+					{
+						"name": "modifiedonbehalfbyyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "overriddencreatedon",
+						"type": "INT96"
+					},
+					{
+						"name": "ownerid",
+						"type": "UTF8"
+					},
+					{
+						"name": "owneridname",
+						"type": "UTF8"
+					},
+					{
+						"name": "owneridtype",
+						"type": "UTF8"
+					},
+					{
+						"name": "owneridyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "owningbusinessunit",
+						"type": "UTF8"
+					},
+					{
+						"name": "owningbusinessunitname",
+						"type": "UTF8"
+					},
+					{
+						"name": "owningteam",
+						"type": "UTF8"
+					},
+					{
+						"name": "owninguser",
+						"type": "UTF8"
+					},
+					{
+						"name": "statecode",
+						"type": "INT32"
+					},
+					{
+						"name": "statuscode",
+						"type": "INT32"
+					},
+					{
+						"name": "timezoneruleversionnumber",
+						"type": "INT32"
+					},
+					{
+						"name": "utcconversiontimezonecode",
+						"type": "INT32"
+					},
+					{
+						"name": "versionnumber",
+						"type": "INT64"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SourceEC3MaestroCompraPosicionContrato')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureDataLakeStorageGen2",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Sources"
+				},
+				"annotations": [],
+				"type": "Parquet",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": {
+							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-e3c_maestro_compra_posicion_contrato.parquet')",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+							"type": "Expression"
+						},
+						"fileSystem": "mc2-bs-golden"
+					},
+					"compressionCodec": "snappy"
+				},
+				"schema": [
+					{
+						"name": "createdby",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdbyname",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdbyyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdon",
+						"type": "INT96"
+					},
+					{
+						"name": "createdonbehalfby",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdonbehalfbyname",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdonbehalfbyyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_clase_operacion_contrato",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_contrato",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_contratoname",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_estado",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_fecha_fin_validez",
+						"type": "INT96"
+					},
+					{
+						"name": "e3c_maestro_compra_posicion_contratoid",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_nombre_contrato",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_num_contrato",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_num_posicion",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_texto_breve_prod",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_valor_orden_entrega",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_valor_previsto",
+						"type": "UTF8"
+					},
+					{
+						"name": "importsequencenumber",
+						"type": "INT32"
+					},
+					{
+						"name": "modifiedby",
+						"type": "UTF8"
+					},
+					{
+						"name": "modifiedbyname",
+						"type": "UTF8"
+					},
+					{
+						"name": "modifiedbyyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "modifiedon",
+						"type": "INT96"
+					},
+					{
+						"name": "modifiedonbehalfby",
+						"type": "UTF8"
+					},
+					{
+						"name": "modifiedonbehalfbyname",
+						"type": "UTF8"
+					},
+					{
+						"name": "modifiedonbehalfbyyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "overriddencreatedon",
+						"type": "INT96"
+					},
+					{
+						"name": "ownerid",
+						"type": "UTF8"
+					},
+					{
+						"name": "owneridname",
+						"type": "UTF8"
+					},
+					{
+						"name": "owneridtype",
+						"type": "UTF8"
+					},
+					{
+						"name": "owneridyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "owningbusinessunit",
+						"type": "UTF8"
+					},
+					{
+						"name": "owningbusinessunitname",
+						"type": "UTF8"
+					},
+					{
+						"name": "owningteam",
+						"type": "UTF8"
+					},
+					{
+						"name": "owninguser",
+						"type": "UTF8"
+					},
+					{
+						"name": "statecode",
+						"type": "INT32"
+					},
+					{
+						"name": "statuscode",
+						"type": "INT32"
+					},
+					{
+						"name": "timezoneruleversionnumber",
+						"type": "INT32"
+					},
+					{
+						"name": "utcconversiontimezonecode",
+						"type": "INT32"
+					},
+					{
+						"name": "versionnumber",
+						"type": "INT64"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SourceEC3MaestroCompraRevisorExp')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureDataLakeStorageGen2",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "Sources"
+				},
+				"annotations": [],
+				"type": "Parquet",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": {
+							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-e3c_maestro_compra_revisor_exp.parquet')",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+							"type": "Expression"
+						},
+						"fileSystem": "mc2-bs-golden"
+					},
+					"compressionCodec": "snappy"
+				},
+				"schema": [
+					{
+						"name": "createdby",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdbyname",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdbyyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdon",
+						"type": "INT96"
+					},
+					{
+						"name": "createdonbehalfby",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdonbehalfbyname",
+						"type": "UTF8"
+					},
+					{
+						"name": "createdonbehalfbyyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_maestro_compra_revisor_expid",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_nombre_completo",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_tipo_usuario",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_usuario",
+						"type": "UTF8"
+					},
+					{
+						"name": "e3c_validez_desde",
+						"type": "INT96"
+					},
+					{
+						"name": "e3c_validez_hasta",
+						"type": "INT96"
+					},
+					{
+						"name": "importsequencenumber",
+						"type": "INT32"
+					},
+					{
+						"name": "modifiedby",
+						"type": "UTF8"
+					},
+					{
+						"name": "modifiedbyname",
+						"type": "UTF8"
+					},
+					{
+						"name": "modifiedbyyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "modifiedon",
+						"type": "INT96"
+					},
+					{
+						"name": "modifiedonbehalfby",
+						"type": "UTF8"
+					},
+					{
+						"name": "modifiedonbehalfbyname",
+						"type": "UTF8"
+					},
+					{
+						"name": "modifiedonbehalfbyyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "overriddencreatedon",
+						"type": "INT96"
+					},
+					{
+						"name": "ownerid",
+						"type": "UTF8"
+					},
+					{
+						"name": "owneridname",
+						"type": "UTF8"
+					},
+					{
+						"name": "owneridtype",
+						"type": "UTF8"
+					},
+					{
+						"name": "owneridyominame",
+						"type": "UTF8"
+					},
+					{
+						"name": "owningbusinessunit",
+						"type": "UTF8"
+					},
+					{
+						"name": "owningbusinessunitname",
+						"type": "UTF8"
+					},
+					{
+						"name": "owningteam",
+						"type": "UTF8"
+					},
+					{
+						"name": "owninguser",
+						"type": "UTF8"
+					},
+					{
+						"name": "statecode",
+						"type": "INT32"
+					},
+					{
+						"name": "statuscode",
+						"type": "INT32"
+					},
+					{
+						"name": "timezoneruleversionnumber",
+						"type": "INT32"
+					},
+					{
+						"name": "utcconversiontimezonecode",
+						"type": "INT32"
+					},
+					{
+						"name": "versionnumber",
+						"type": "INT64"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/SourceEC3MaestroCompraSociedad')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -595,196 +1145,6 @@
 					{
 						"name": "e3c_valido_hasta",
 						"type": "INT96"
-					},
-					{
-						"name": "importsequencenumber",
-						"type": "INT32"
-					},
-					{
-						"name": "modifiedby",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedbyname",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedbyyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedon",
-						"type": "INT96"
-					},
-					{
-						"name": "modifiedonbehalfby",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedonbehalfbyname",
-						"type": "UTF8"
-					},
-					{
-						"name": "modifiedonbehalfbyyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "overriddencreatedon",
-						"type": "INT96"
-					},
-					{
-						"name": "ownerid",
-						"type": "UTF8"
-					},
-					{
-						"name": "owneridname",
-						"type": "UTF8"
-					},
-					{
-						"name": "owneridtype",
-						"type": "UTF8"
-					},
-					{
-						"name": "owneridyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "owningbusinessunit",
-						"type": "UTF8"
-					},
-					{
-						"name": "owningbusinessunitname",
-						"type": "UTF8"
-					},
-					{
-						"name": "owningteam",
-						"type": "UTF8"
-					},
-					{
-						"name": "owninguser",
-						"type": "UTF8"
-					},
-					{
-						"name": "statecode",
-						"type": "INT32"
-					},
-					{
-						"name": "statuscode",
-						"type": "INT32"
-					},
-					{
-						"name": "timezoneruleversionnumber",
-						"type": "INT32"
-					},
-					{
-						"name": "utcconversiontimezonecode",
-						"type": "INT32"
-					},
-					{
-						"name": "versionnumber",
-						"type": "INT64"
-					}
-				]
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/SourceEc3_LineasCesta')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureDataLakeStorageGen2",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "Sources"
-				},
-				"annotations": [],
-				"type": "Parquet",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobFSLocation",
-						"fileName": {
-							"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-e3c_lineas_cesta.parquet')",
-							"type": "Expression"
-						},
-						"folderPath": {
-							"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
-							"type": "Expression"
-						},
-						"fileSystem": "mc2-bs-golden"
-					},
-					"compressionCodec": "snappy"
-				},
-				"schema": [
-					{
-						"name": "createdby",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdbyname",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdbyyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdon",
-						"type": "INT96"
-					},
-					{
-						"name": "createdonbehalfby",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdonbehalfbyname",
-						"type": "UTF8"
-					},
-					{
-						"name": "createdonbehalfbyyominame",
-						"type": "UTF8"
-					},
-					{
-						"name": "e3c_fecha",
-						"type": "INT96"
-					},
-					{
-						"name": "e3c_importe",
-						"type": "UTF8"
-					},
-					{
-						"name": "e3c_lineas_cestaid",
-						"type": "UTF8"
-					},
-					{
-						"name": "e3c_num_pedido",
-						"type": "UTF8"
-					},
-					{
-						"name": "e3c_num_pedidoname",
-						"type": "UTF8"
-					},
-					{
-						"name": "e3c_pedido_id",
-						"type": "UTF8"
-					},
-					{
-						"name": "e3c_porcentaje",
-						"type": "UTF8"
-					},
-					{
-						"name": "e3c_posicion",
-						"type": "UTF8"
-					},
-					{
-						"name": "e3c_posicion_contrato",
-						"type": "UTF8"
-					},
-					{
-						"name": "e3c_posicion_contratoname",
-						"type": "UTF8"
 					},
 					{
 						"name": "importsequencenumber",
@@ -2272,6 +2632,53 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/CopyPrincipalesE3ToSnowflake')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "e3c_cestasToSnowflake",
+						"type": "ExecutePipeline",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "E3c_CestasToSnowflake",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {}
+						}
+					},
+					{
+						"name": "e3c_lineasCestaToSnowflake",
+						"type": "ExecutePipeline",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "Ec3LineasCestaToSnowflake",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {}
+						}
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
+				"folder": {
+					"name": "Main/Sources/CopyToSnowfake/CopyPrincipalesSnowflake"
+				},
+				"annotations": [],
+				"lastPublishTime": "2021-12-15T12:13:56Z"
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/CopyPrincipalesToBronce')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
@@ -3429,1881 +3836,6 @@
 				},
 				"annotations": [],
 				"lastPublishTime": "2021-12-15T12:13:55Z"
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/E3c_CestasToSnowflake')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "CopyE3c_cestasToSnowflake",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [
-							{
-								"name": "Source",
-								"value": "mc2-bs-golden//"
-							},
-							{
-								"name": "Destination",
-								"value": "PUBLIC.MC2_COMENTARIOS_PROYECTO"
-							}
-						],
-						"typeProperties": {
-							"source": {
-								"type": "ParquetSource",
-								"storeSettings": {
-									"type": "AzureBlobFSReadSettings",
-									"recursive": true,
-									"enablePartitionDiscovery": false
-								}
-							},
-							"sink": {
-								"type": "SnowflakeSink",
-								"preCopyScript": "TRUNCATE TABLE \"MC2_PROD\".\"PUBLIC\".\"E3C_CESTAS\";",
-								"importSettings": {
-									"type": "SnowflakeImportCopyCommand"
-								}
-							},
-							"enableStaging": true,
-							"stagingSettings": {
-								"linkedServiceName": {
-									"referenceName": "AzureBlobStorageForSnowflake",
-									"type": "LinkedServiceReference"
-								},
-								"path": "mc2-bs-golden/StoragePath"
-							},
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"name": "e3c_categoria_producto",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_categoria_producto",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_categoria_productoname",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_categoria_productoname",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_centro_gestorname",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_centro_gestorname",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_enviado_sap",
-											"type": "Boolean"
-										},
-										"sink": {
-											"name": "e3c_enviado_sap",
-											"type": "Boolean"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_revisor_exp",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_revisor_exp",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_sa_tr",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_sa_tr",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_unidad",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_unidad",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_envio_urgente_ordinaria",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_envio_urgente_ordinaria",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_solicitante_ordinarianame",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_solicitante_ordinarianame",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_tipo_imputacion",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_tipo_imputacion",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_url_carpeta_sharepoint_tr",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_url_carpeta_sharepoint_tr",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "owningbusinessunit",
-											"type": "String"
-										},
-										"sink": {
-											"name": "owningbusinessunit",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "owninguser",
-											"type": "String"
-										},
-										"sink": {
-											"name": "owninguser",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "statecode",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "statecode",
-											"type": "Int64"
-										}
-									},
-									{
-										"source": {
-											"name": "createdby",
-											"type": "String"
-										},
-										"sink": {
-											"name": "createdby",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "createdonbehalfby",
-											"type": "String"
-										},
-										"sink": {
-											"name": "createdonbehalfby",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_aprobacion_compra",
-											"type": "Boolean"
-										},
-										"sink": {
-											"name": "e3c_aprobacion_compra",
-											"type": "Boolean"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_centro_gestor",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_centro_gestor",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_contrato",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_contrato",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_fecha_inicio_tr",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "e3c_fecha_inicio_tr",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_grupo_compras",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_grupo_compras",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_area_funcional",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_area_funcional",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "importsequencenumber",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "importsequencenumber",
-											"type": "Int64"
-										}
-									},
-									{
-										"source": {
-											"name": "utcconversiontimezonecode",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "utcconversiontimezonecode",
-											"type": "Int64"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_num_pedido_cliente",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_num_pedido_cliente",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_fecha_fin_tr",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "e3c_fecha_fin_tr",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_grupo_comprasname",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_grupo_comprasname",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_moneda_tr",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_moneda_tr",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_nota_tramitacion",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_nota_tramitacion",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "modifiedonbehalfby",
-											"type": "String"
-										},
-										"sink": {
-											"name": "modifiedonbehalfby",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "owneridname",
-											"type": "String"
-										},
-										"sink": {
-											"name": "owneridname",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_estado_cesta_ordinaria",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_estado_cesta_ordinaria",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_gasto_inversionname",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_gasto_inversionname",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_precio_bruto",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_precio_bruto",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_proveedor_tr",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_proveedor_tr",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_proyecto_tr",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_proyecto_tr",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_cliente_tr",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_cliente_tr",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_fecha_contabilizacion",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "e3c_fecha_contabilizacion",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_org_compras",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_org_compras",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_solicitante_derivadaname",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_solicitante_derivadaname",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "modifiedbyname",
-											"type": "String"
-										},
-										"sink": {
-											"name": "modifiedbyname",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_nombre_cesta",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_nombre_cesta",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "owningbusinessunitname",
-											"type": "String"
-										},
-										"sink": {
-											"name": "owningbusinessunitname",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "statuscode",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "statuscode",
-											"type": "Int64"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_ap_tr",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_ap_tr",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_contratoname",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_contratoname",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_descripcion_proyecto_tr",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_descripcion_proyecto_tr",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_importe_total_tr",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_importe_total_tr",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_status_ariba",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_status_ariba",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_tipo_facturacion_tr",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_tipo_facturacion_tr",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "owneridtype",
-											"type": "String"
-										},
-										"sink": {
-											"name": "owneridtype",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_fecha_entrega_tr",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "e3c_fecha_entrega_tr",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_nota_aprobacion",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_nota_aprobacion",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "modifiedonbehalfbyname",
-											"type": "String"
-										},
-										"sink": {
-											"name": "modifiedonbehalfbyname",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "ownerid",
-											"type": "String"
-										},
-										"sink": {
-											"name": "ownerid",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_gasto_inversion",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_gasto_inversion",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "createdbyname",
-											"type": "String"
-										},
-										"sink": {
-											"name": "createdbyname",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_cestasid",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_cestasid",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_contrato_tr",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_contrato_tr",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_centro",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_centro",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "modifiedbyyominame",
-											"type": "String"
-										},
-										"sink": {
-											"name": "modifiedbyyominame",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "modifiedonbehalfbyyominame",
-											"type": "String"
-										},
-										"sink": {
-											"name": "modifiedonbehalfbyyominame",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "owneridyominame",
-											"type": "String"
-										},
-										"sink": {
-											"name": "owneridyominame",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "owningteam",
-											"type": "String"
-										},
-										"sink": {
-											"name": "owningteam",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "timezoneruleversionnumber",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "timezoneruleversionnumber",
-											"type": "Int64"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_nota_proveedores",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_nota_proveedores",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_tipo_compra",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_tipo_compra",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "createdonbehalfbyname",
-											"type": "String"
-										},
-										"sink": {
-											"name": "createdonbehalfbyname",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_codigosap",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_codigosap",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_dest_mercancias",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_dest_mercancias",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_elemento_pep_tr",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_elemento_pep_tr",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_pedidotcct",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_pedidotcct",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_sociedad",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_sociedad",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "createdbyyominame",
-											"type": "String"
-										},
-										"sink": {
-											"name": "createdbyyominame",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_solicitante_derivada",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_solicitante_derivada",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "modifiedby",
-											"type": "String"
-										},
-										"sink": {
-											"name": "modifiedby",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_status_aribaname",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_status_aribaname",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_pedido",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_pedido",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "createdon",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "createdon",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "createdonbehalfbyyominame",
-											"type": "String"
-										},
-										"sink": {
-											"name": "createdonbehalfbyyominame",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_cantidad_base_ordinaria",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_cantidad_base_ordinaria",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_estado_cesta_derivada",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_estado_cesta_derivada",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_tipo_imputacionname",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_tipo_imputacionname",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "modifiedon",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "modifiedon",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_fecha_sap",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "e3c_fecha_sap",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_solicitante_ordinaria",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_solicitante_ordinaria",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "overriddencreatedon",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "overriddencreatedon",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "versionnumber",
-											"type": "Int64"
-										},
-										"sink": {
-											"name": "versionnumber",
-											"type": "Int64"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_tipo_cesta_ordinaria",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_tipo_cesta_ordinaria",
-											"type": "String"
-										}
-									}
-								]
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "SourceE3c_cestas",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "Snowflake_E3C_CESTAS",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
-				},
-				"folder": {
-					"name": "Main/Sources/CopyToSnowfake/CopyPrincipalesSnowflake/Principales"
-				},
-				"annotations": [],
-				"lastPublishTime": "2021-12-15T12:13:53Z"
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/EC3MaestroCompraCategoriaToSnowflake')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "CopyEC3MaestroCompraCategoriaToSnowflake",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [
-							{
-								"name": "Source",
-								"value": "mc2-bs-golden/[object Object]/[object Object]"
-							},
-							{
-								"name": "Destination",
-								"value": "PUBLIC.E3C_MAESTRO_COMPRA_CATEGORIA"
-							}
-						],
-						"typeProperties": {
-							"source": {
-								"type": "ParquetSource",
-								"storeSettings": {
-									"type": "AzureBlobFSReadSettings",
-									"recursive": true,
-									"enablePartitionDiscovery": false
-								}
-							},
-							"sink": {
-								"type": "SnowflakeSink",
-								"preCopyScript": "TRUNCATE TABLE \"MC2_PROD\".\"PUBLIC\".\"E3C_MAESTRO_COMPRA_CATEGORIA\";",
-								"importSettings": {
-									"type": "SnowflakeImportCopyCommand"
-								}
-							},
-							"enableStaging": true,
-							"stagingSettings": {
-								"linkedServiceName": {
-									"referenceName": "AzureBlobStorageForSnowflake",
-									"type": "LinkedServiceReference"
-								},
-								"path": "mc2-bs-golden/StoragePath"
-							},
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"name": "owningbusinessunit",
-											"type": "String"
-										},
-										"sink": {
-											"name": "owningbusinessunit",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "owninguser",
-											"type": "String"
-										},
-										"sink": {
-											"name": "owninguser",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "statecode",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "statecode",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "createdby",
-											"type": "String"
-										},
-										"sink": {
-											"name": "createdby",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "createdonbehalfby",
-											"type": "String"
-										},
-										"sink": {
-											"name": "createdonbehalfby",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_denominacion_articulos",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_denominacion_articulos",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "importsequencenumber",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "importsequencenumber",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "utcconversiontimezonecode",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "utcconversiontimezonecode",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_denominacion2_articulos",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_denominacion2_articulos",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "modifiedonbehalfby",
-											"type": "String"
-										},
-										"sink": {
-											"name": "modifiedonbehalfby",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "owneridname",
-											"type": "String"
-										},
-										"sink": {
-											"name": "owneridname",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_maestro_compra_categoriaid",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_maestro_compra_categoriaid",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "modifiedbyname",
-											"type": "String"
-										},
-										"sink": {
-											"name": "modifiedbyname",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "owningbusinessunitname",
-											"type": "String"
-										},
-										"sink": {
-											"name": "owningbusinessunitname",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "statuscode",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "statuscode",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_grupo_articulos",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_grupo_articulos",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "ownerid",
-											"type": "String"
-										},
-										"sink": {
-											"name": "ownerid",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "owneridtype",
-											"type": "String"
-										},
-										"sink": {
-											"name": "owneridtype",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "modifiedonbehalfbyname",
-											"type": "String"
-										},
-										"sink": {
-											"name": "modifiedonbehalfbyname",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "createdbyname",
-											"type": "String"
-										},
-										"sink": {
-											"name": "createdbyname",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_grupo_autorizaciones",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_grupo_autorizaciones",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "modifiedbyyominame",
-											"type": "String"
-										},
-										"sink": {
-											"name": "modifiedbyyominame",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "modifiedonbehalfbyyominame",
-											"type": "String"
-										},
-										"sink": {
-											"name": "modifiedonbehalfbyyominame",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "owneridyominame",
-											"type": "String"
-										},
-										"sink": {
-											"name": "owneridyominame",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "owningteam",
-											"type": "String"
-										},
-										"sink": {
-											"name": "owningteam",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "timezoneruleversionnumber",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "timezoneruleversionnumber",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "createdonbehalfbyname",
-											"type": "String"
-										},
-										"sink": {
-											"name": "createdonbehalfbyname",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "modifiedby",
-											"type": "String"
-										},
-										"sink": {
-											"name": "modifiedby",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "createdbyyominame",
-											"type": "String"
-										},
-										"sink": {
-											"name": "createdbyyominame",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "createdon",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "createdon",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "createdonbehalfbyyominame",
-											"type": "String"
-										},
-										"sink": {
-											"name": "createdonbehalfbyyominame",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_categoria_valoracion",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_categoria_valoracion",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "modifiedon",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "modifiedon",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "overriddencreatedon",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "overriddencreatedon",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "versionnumber",
-											"type": "Int64"
-										},
-										"sink": {
-											"name": "versionnumber",
-											"type": "String"
-										}
-									}
-								]
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "SourceEC3MaestroCompraCategia",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "Snowflake_E3C_MAESTRO_COMPRA_CATEGORIA",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
-				},
-				"folder": {
-					"name": "Main/Sources/CopyToSnowfake/CopyMaestrasToSnowflake/Maestras/EC3"
-				},
-				"annotations": [],
-				"lastPublishTime": "2021-12-15T12:13:53Z"
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/EC3MaestroCompraCecoToSnowflake')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "CopyEC3MaestroCompraCecoToSnowflake",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [
-							{
-								"name": "Source",
-								"value": "mc2-bs-golden/[object Object]/[object Object]"
-							},
-							{
-								"name": "Destination",
-								"value": "PUBLIC.E3C_MAESTRO_COMPRA_CECO"
-							}
-						],
-						"typeProperties": {
-							"source": {
-								"type": "ParquetSource",
-								"storeSettings": {
-									"type": "AzureBlobFSReadSettings",
-									"recursive": true,
-									"enablePartitionDiscovery": false
-								}
-							},
-							"sink": {
-								"type": "SnowflakeSink",
-								"preCopyScript": "TRUNCATE TABLE \"MC2_PROD\".\"PUBLIC\".\"E3C_MAESTRO_COMPRA_CECO\";",
-								"importSettings": {
-									"type": "SnowflakeImportCopyCommand"
-								}
-							},
-							"enableStaging": true,
-							"stagingSettings": {
-								"linkedServiceName": {
-									"referenceName": "AzureBlobStorageForSnowflake",
-									"type": "LinkedServiceReference"
-								},
-								"path": "mc2-bs-golden/StoragePath"
-							},
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"name": "e3c_responsable",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_responsable",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "owningbusinessunit",
-											"type": "String"
-										},
-										"sink": {
-											"name": "owningbusinessunit",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "owninguser",
-											"type": "String"
-										},
-										"sink": {
-											"name": "owninguser",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "statecode",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "statecode",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "createdby",
-											"type": "String"
-										},
-										"sink": {
-											"name": "createdby",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "createdonbehalfby",
-											"type": "String"
-										},
-										"sink": {
-											"name": "createdonbehalfby",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_soc_fi",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_soc_fi",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "utcconversiontimezonecode",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "utcconversiontimezonecode",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "importsequencenumber",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "importsequencenumber",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "modifiedonbehalfby",
-											"type": "String"
-										},
-										"sink": {
-											"name": "modifiedonbehalfby",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "owneridname",
-											"type": "String"
-										},
-										"sink": {
-											"name": "owneridname",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_texto_breve",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_texto_breve",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "modifiedbyname",
-											"type": "String"
-										},
-										"sink": {
-											"name": "modifiedbyname",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "statuscode",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "statuscode",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_valido_hasta",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "e3c_valido_hasta",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "owningbusinessunitname",
-											"type": "String"
-										},
-										"sink": {
-											"name": "owningbusinessunitname",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "owneridtype",
-											"type": "String"
-										},
-										"sink": {
-											"name": "owneridtype",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "modifiedonbehalfbyname",
-											"type": "String"
-										},
-										"sink": {
-											"name": "modifiedonbehalfbyname",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "ownerid",
-											"type": "String"
-										},
-										"sink": {
-											"name": "ownerid",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "createdbyname",
-											"type": "String"
-										},
-										"sink": {
-											"name": "createdbyname",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_soc_co",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_soc_co",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "modifiedbyyominame",
-											"type": "String"
-										},
-										"sink": {
-											"name": "modifiedbyyominame",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "owneridyominame",
-											"type": "String"
-										},
-										"sink": {
-											"name": "owneridyominame",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "owningteam",
-											"type": "String"
-										},
-										"sink": {
-											"name": "owningteam",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "timezoneruleversionnumber",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "timezoneruleversionnumber",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "modifiedonbehalfbyyominame",
-											"type": "String"
-										},
-										"sink": {
-											"name": "modifiedonbehalfbyyominame",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "createdonbehalfbyname",
-											"type": "String"
-										},
-										"sink": {
-											"name": "createdonbehalfbyname",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_valido_desde",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "e3c_valido_desde",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "modifiedby",
-											"type": "String"
-										},
-										"sink": {
-											"name": "modifiedby",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "createdbyyominame",
-											"type": "String"
-										},
-										"sink": {
-											"name": "createdbyyominame",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "createdon",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "createdon",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "createdonbehalfbyyominame",
-											"type": "String"
-										},
-										"sink": {
-											"name": "createdonbehalfbyyominame",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_clase_ceco",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_clase_ceco",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_maestro_compra_cecoid",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_maestro_compra_cecoid",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "modifiedon",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "modifiedon",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "e3c_ceco",
-											"type": "String"
-										},
-										"sink": {
-											"name": "e3c_ceco",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "overriddencreatedon",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "overriddencreatedon",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "versionnumber",
-											"type": "Int64"
-										},
-										"sink": {
-											"name": "versionnumber",
-											"type": "String"
-										}
-									}
-								]
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "SourceEC3MaestroCompraCeco",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "Snowflake_E3C_MAESTRO_COMPRA_CECO",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
-				},
-				"folder": {
-					"name": "Main/Sources/CopyToSnowfake/CopyMaestrasToSnowflake/Maestras/EC3"
-				},
-				"annotations": [],
-				"lastPublishTime": "2021-12-15T12:13:54Z"
 			},
 			"dependsOn": []
 		}
