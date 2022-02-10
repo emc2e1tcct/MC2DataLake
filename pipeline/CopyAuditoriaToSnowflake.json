@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "CopyAuditoriaToSnowflake",
+				"name": "AuditoriaToSnowflake",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -46,6 +46,9 @@
 				]
 			}
 		],
+		"folder": {
+			"name": "Main/Sources/CopyToSnowfake/CopyPrincipalesSnowflake/Principales"
+		},
 		"annotations": []
 	}
 }
