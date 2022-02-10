@@ -79,6 +79,19 @@
 					},
 					"waitOnCompletion": true
 				}
+			},
+			{
+				"name": "AuditoriaToSnowflake",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "CopyAuditoriaToSnowflake",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
 			}
 		],
 		"folder": {
