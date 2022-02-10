@@ -2741,7 +2741,7 @@
 						"userProperties": [],
 						"typeProperties": {
 							"pipeline": {
-								"referenceName": "CopyAuditoriaToSnowflake",
+								"referenceName": "AuditoriaToSnowflake",
 								"type": "PipelineReference"
 							},
 							"waitOnCompletion": true,
@@ -2766,7 +2766,7 @@
 				"[concat(variables('factoryId'), '/pipelines/PlanificacionToSnowflake')]",
 				"[concat(variables('factoryId'), '/pipelines/ProyectoToSnowflake')]",
 				"[concat(variables('factoryId'), '/pipelines/LineasAdquiraToSnowflake')]",
-				"[concat(variables('factoryId'), '/pipelines/CopyAuditoriaToSnowflake')]"
+				"[concat(variables('factoryId'), '/pipelines/AuditoriaToSnowflake')]"
 			]
 		},
 		{
@@ -52826,7 +52826,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/CopyAuditoriaToSnowflake')]",
+			"name": "[concat(parameters('factoryName'), '/AuditoriaToSnowflake')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
