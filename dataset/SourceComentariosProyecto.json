@@ -2,7 +2,7 @@
 	"name": "SourceComentariosProyecto",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureDataLakeStorageGen2",
+			"referenceName": "AzureBlobStorageForSnowflake",
 			"type": "LinkedServiceReference"
 		},
 		"folder": {
@@ -12,16 +12,8 @@
 		"type": "Parquet",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobFSLocation",
-				"fileName": {
-					"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_comentarios_proyecto.parquet')",
-					"type": "Expression"
-				},
-				"folderPath": {
-					"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
-					"type": "Expression"
-				},
-				"fileSystem": "mc2-bs-golden"
+				"type": "AzureBlobStorageLocation",
+				"container": "mc2-bs-golden"
 			},
 			"compressionCodec": "snappy"
 		},
