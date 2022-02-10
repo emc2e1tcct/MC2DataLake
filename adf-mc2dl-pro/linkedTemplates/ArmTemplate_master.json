@@ -11,10 +11,6 @@
 			"type": "secureString",
 			"metadata": "Cadena protegida para \"servicePrincipalCredential\"de \"MC2Dataverse\""
 		},
-		"AzureBlobStorage2_sasUri": {
-			"type": "secureString",
-			"metadata": "Cadena protegida para \"sasUri\"de \"AzureBlobStorage2\""
-		},
 		"AzureBlobStorageForSnowflake_sasUri": {
 			"type": "secureString",
 			"metadata": "Cadena protegida para \"sasUri\"de \"AzureBlobStorageForSnowflake\""
@@ -529,9 +525,6 @@
 					"MC2Dataverse_servicePrincipalCredential": {
 						"value": "[parameters('MC2Dataverse_servicePrincipalCredential')]"
 					},
-					"AzureBlobStorage2_sasUri": {
-						"value": "[parameters('AzureBlobStorage2_sasUri')]"
-					},
 					"AzureBlobStorageForSnowflake_sasUri": {
 						"value": "[parameters('AzureBlobStorageForSnowflake_sasUri')]"
 					},
@@ -630,6 +623,9 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"AzureDataLakeStorageGen2_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorageGen2_properties_typeProperties_url')]"
 					}
 				}
 			},
@@ -650,9 +646,6 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
-					},
-					"AzureDataLakeStorageGen2_properties_typeProperties_url": {
-						"value": "[parameters('AzureDataLakeStorageGen2_properties_typeProperties_url')]"
 					},
 					"AzureDataLakeStorageDataFact_properties_privateLinkResourceId": {
 						"value": "[parameters('AzureDataLakeStorageDataFact_properties_privateLinkResourceId')]"
