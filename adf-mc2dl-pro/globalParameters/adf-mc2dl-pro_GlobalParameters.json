@@ -1,1 +1,6 @@
-{}
+{
+	"BDsnowflake": {
+		"type": "string",
+		"value": "\"MC2_PROD\""
+	}
+}
