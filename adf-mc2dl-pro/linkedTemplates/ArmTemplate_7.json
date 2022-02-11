@@ -4781,7 +4781,7 @@
 							"sink": {
 								"type": "SnowflakeSink",
 								"preCopyScript": {
-									"value": "TRUNCATE TABLE @{pipeline().globalParameters.BDsnowflake}.\"MC2_MAESTRO_CECO\";",
+									"value": "TRUNCATE TABLE @{pipeline().globalParameters.BDsnowflake}.\"PUBLIC\".\"MC2_MAESTRO_CECO\";",
 									"type": "Expression"
 								},
 								"importSettings": {
