@@ -35,7 +35,7 @@
 					},
 					"sink": {
 						"type": "SnowflakeSink",
-						"preCopyScript": "TRUNCATE TABLE \"MC2_PROD\".\"PUBLIC\".\"E3C_MAESTRO_COMPRA_AREA_FUNCIONAL\";",
+						"preCopyScript": "TRUNCATE TABLE @{pipeline().globalParameters.BDsnowflake}.\"PUBLIC\".\"E3C_MAESTRO_COMPRA_AREA_FUNCIONAL\";",
 						"importSettings": {
 							"type": "SnowflakeImportCopyCommand"
 						}

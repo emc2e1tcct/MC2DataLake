@@ -29,14 +29,20 @@
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
 							"recursive": true,
-							"wildcardFolderPath": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
-							"wildcardFileName": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_elemento_pep.parquet')",
+							"wildcardFolderPath": {
+								"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+								"type": "Expression"
+							},
+							"wildcardFileName": {
+								"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_elemento_pep.parquet')",
+								"type": "Expression"
+							},
 							"enablePartitionDiscovery": false
 						}
 					},
 					"sink": {
 						"type": "SnowflakeSink",
-						"preCopyScript": "TRUNCATE TABLE \"MC2_PROD\".\"PUBLIC\".\"MC2_ELEMENTO_PEP\";",
+						"preCopyScript": "TRUNCATE TABLE @{pipeline().globalParameters.BDsnowflake}.\"PUBLIC\".\"MC2_ELEMENTO_PEP\";",
 						"importSettings": {
 							"type": "SnowflakeImportCopyCommand"
 						}

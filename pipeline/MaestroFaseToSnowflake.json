@@ -34,7 +34,7 @@
 					},
 					"sink": {
 						"type": "SnowflakeSink",
-						"preCopyScript": "TRUNCATE TABLE \"MC2_PROD\".\"PUBLIC\".\"MC2_MAESTRO_FASE\";",
+						"preCopyScript": "TRUNCATE TABLE @{pipeline().globalParameters.BDsnowflake}.\"PUBLIC\".\"MC2_MAESTRO_FASE\";",
 						"importSettings": {
 							"type": "SnowflakeImportCopyCommand"
 						}

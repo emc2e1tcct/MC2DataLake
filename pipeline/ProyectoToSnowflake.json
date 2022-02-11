@@ -25,6 +25,7 @@
 					},
 					"sink": {
 						"type": "SnowflakeSink",
+						"preCopyScript": "TRUNCATE TABLE @{pipeline().globalParameters.BDsnowflake}.\"PUBLIC\".\"MC2_PROYECTO\";",
 						"importSettings": {
 							"type": "SnowflakeImportCopyCommand"
 						}
