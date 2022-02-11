@@ -1,5 +1,13 @@
 {
 	"name": "adf-mc2dl-pro",
+	"properties": {
+		"globalParameters": {
+			"BDsnowflake": {
+				"type": "string",
+				"value": "MC2_PROD"
+			}
+		}
+	},
 	"location": "northeurope",
 	"identity": {
 		"type": "SystemAssigned",
