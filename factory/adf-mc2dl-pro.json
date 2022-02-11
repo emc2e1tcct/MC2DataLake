@@ -4,7 +4,7 @@
 		"globalParameters": {
 			"BDsnowflake": {
 				"type": "string",
-				"value": "MC2_PROD"
+				"value": "\"MC2_PROD\""
 			}
 		}
 	},
