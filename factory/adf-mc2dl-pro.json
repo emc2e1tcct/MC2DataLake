@@ -5,6 +5,10 @@
 			"BDsnowflake": {
 				"type": "string",
 				"value": "\"MC2_PROD\""
+			},
+			"ConnectionStringSnowflake.name": {
+				"type": "string",
+				"value": "jdbc:snowflake://rq45248.north-europe.azure.snowflakecomputing.com/"
 			}
 		}
 	},
