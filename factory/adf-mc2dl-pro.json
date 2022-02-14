@@ -6,7 +6,7 @@
 				"type": "string",
 				"value": "\"MC2_PROD\""
 			},
-			"ConnectionStringSnowflake.name": {
+			"ConnectionStringSnowflake": {
 				"type": "string",
 				"value": "jdbc:snowflake://rq45248.north-europe.azure.snowflakecomputing.com/?user=EVERIS&db=MC2_PROD&warehouse=MC2_DW&role=MC2DBA"
 			},
