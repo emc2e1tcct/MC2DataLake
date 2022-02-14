@@ -8,7 +8,7 @@
 			},
 			"ConnectionStringSnowflake.name": {
 				"type": "string",
-				"value": "jdbc:snowflake://rq45248.north-europe.azure.snowflakecomputing.com/"
+				"value": "jdbc:snowflake://rq45248.north-europe.azure.snowflakecomputing.com/?user=EVERIS&db=MC2_PROD&warehouse=MC2_DW&role=MC2DBA"
 			},
 			"encryptedCredentialSnowflake": {
 				"type": "string",
