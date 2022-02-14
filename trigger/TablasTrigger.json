@@ -438,6 +438,14 @@
 							"source": {
 								"entityName": "mc2_proyecto"
 							}
+						},
+						{
+							"destination": {
+								"fileName": "mc2_auditoria.parquet"
+							},
+							"source": {
+								"entityName": "mc2_auditoria"
+							}
 						}
 					],
 					"cw_items_PrincipalesE3": [
