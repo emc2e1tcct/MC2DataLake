@@ -35,7 +35,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"pipeline": {
-						"referenceName": "ComentariosProyectoToSnowflake",
+						"referenceName": "Ec3ComentariosPedidosToSnowflake",
 						"type": "PipelineReference"
 					},
 					"waitOnCompletion": true
