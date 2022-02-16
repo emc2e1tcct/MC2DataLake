@@ -492,6 +492,14 @@
 					"source": {
 						"entityName": "e3c_lineas_cesta"
 					}
+				},
+				{
+					"destination": {
+						"fileName": "e3c_comentarios_pediddos.parquet"
+					},
+					"source": {
+						"entityName": "e3c_comentarios_pediddos"
+					}
 				}
 			]
 		},
@@ -502,18 +510,6 @@
 		"AzureDataLakeStorageDataFact_properties_groupId": {
 			"type": "string",
 			"defaultValue": "dfs"
-		},
-		"dataFactory_properties_globalParameters_BDsnowflake_value": {
-			"type": "string",
-			"defaultValue": "\"MC2_PROD\""
-		},
-		"dataFactory_location": {
-			"type": "string",
-			"defaultValue": "northeurope"
-		},
-		"dataFactory_identity_type": {
-			"type": "string",
-			"defaultValue": "SystemAssigned"
 		},
 		"containerUri": {
 			"type": "string",
@@ -544,15 +540,6 @@
 					},
 					"MC2Dataverse_servicePrincipalCredential": {
 						"value": "[parameters('MC2Dataverse_servicePrincipalCredential')]"
-					},
-					"dataFactory_properties_globalParameters_BDsnowflake_value": {
-						"value": "[parameters('dataFactory_properties_globalParameters_BDsnowflake_value')]"
-					},
-					"dataFactory_location": {
-						"value": "[parameters('dataFactory_location')]"
-					},
-					"dataFactory_identity_type": {
-						"value": "[parameters('dataFactory_identity_type')]"
 					},
 					"AzureBlobStorageForSnowflake_sasUri": {
 						"value": "[parameters('AzureBlobStorageForSnowflake_sasUri')]"

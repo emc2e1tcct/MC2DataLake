@@ -472,6 +472,14 @@
 					"source": {
 						"entityName": "e3c_lineas_cesta"
 					}
+				},
+				{
+					"destination": {
+						"fileName": "e3c_comentarios_pediddos.parquet"
+					},
+					"source": {
+						"entityName": "e3c_comentarios_pediddos"
+					}
 				}
 			]
 		}
@@ -480,291 +488,6 @@
 		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
 	},
 	"resources": [
-		{
-			"name": "[concat(parameters('factoryName'), '/CopyMaestrasE3ToSnowflake')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "E3CMaestroCompraAreaFuncionalToSnowflake",
-						"type": "ExecutePipeline",
-						"dependsOn": [],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "E3CMaestroCompraAreaFuncionalToSnowflake",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {}
-						}
-					},
-					{
-						"name": "E3CMaestroCompraAribaToSnowflake",
-						"type": "ExecutePipeline",
-						"dependsOn": [],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "E3CMaestroCompraAribaToSnowflake",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {}
-						}
-					},
-					{
-						"name": "EC3MaestroCompraCategoriaToSnowflake",
-						"type": "ExecutePipeline",
-						"dependsOn": [],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "EC3MaestroCompraCategoriaToSnowflake",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {}
-						}
-					},
-					{
-						"name": "EC3MaestroCompraCecoToSnowflake",
-						"type": "ExecutePipeline",
-						"dependsOn": [],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "EC3MaestroCompraCecoToSnowflake",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {}
-						}
-					},
-					{
-						"name": "EC3MaestroCompraCentroGestorToSnowflake",
-						"type": "ExecutePipeline",
-						"dependsOn": [],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "EC3MaestroCompraCentroGestorToSnowflake",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {}
-						}
-					},
-					{
-						"name": "EC3MaestroCompraContratoToSnowflake",
-						"type": "ExecutePipeline",
-						"dependsOn": [],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "EC3MaestroCompraContratoToSnowflake",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {}
-						}
-					},
-					{
-						"name": "EC3MaestroCompraEstadoCestaOrdinariaToSnowflake",
-						"type": "ExecutePipeline",
-						"dependsOn": [],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "EC3MaestroCompraEstadoCestaOrdinariaToSnowflake",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {}
-						}
-					},
-					{
-						"name": "EC3MaestroCompraGastoInversion",
-						"type": "ExecutePipeline",
-						"dependsOn": [],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "EC3MaestroCompraGastoInversion",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {}
-						}
-					},
-					{
-						"name": "EC3MaestroCompraGrupoCompras",
-						"type": "ExecutePipeline",
-						"dependsOn": [],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "EC3MaestroCompraGrupoCompras",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {}
-						}
-					},
-					{
-						"name": "EC3MaestroCompraMonedaToSnowflake",
-						"type": "ExecutePipeline",
-						"dependsOn": [],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "EC3MaestroCompraMonedaToSnowflake",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {}
-						}
-					},
-					{
-						"name": "EC3MaestroCompraSociedadToSnowflake",
-						"type": "ExecutePipeline",
-						"dependsOn": [],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "EC3MaestroCompraSociedadToSnowflake",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {}
-						}
-					},
-					{
-						"name": "EC3MaestroCompraTipoFacturacionToSnowflake",
-						"type": "ExecutePipeline",
-						"dependsOn": [],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "EC3MaestroCompraTipoFacturacionToSnowflake",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {}
-						}
-					},
-					{
-						"name": "EC3MaestroCompraPosicionContratoToSnowflake",
-						"type": "ExecutePipeline",
-						"dependsOn": [],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "EC3MaestroCompraPosicionContratoToSnowflake",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {}
-						}
-					},
-					{
-						"name": "EC3MaestroCompraRevisorExpToSnowflake",
-						"type": "ExecutePipeline",
-						"dependsOn": [],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "EC3MaestroCompraRevisorExpToSnowflake",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {}
-						}
-					},
-					{
-						"name": "EC3MaestroCompraUsuarioSolicitanteOrdToSnowflake",
-						"type": "ExecutePipeline",
-						"dependsOn": [],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "EC3MaestroCompraUsuarioSolicitanteOrdToSnowflake",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {}
-						}
-					},
-					{
-						"name": "EC3MaestroCompraDestMercanciasToSnowflake",
-						"type": "ExecutePipeline",
-						"dependsOn": [],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "EC3MaestroCompraDestMercanciasToSnowflake",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {}
-						}
-					},
-					{
-						"name": "EC3MaestroCompraOrgComprasToSnowflake",
-						"type": "ExecutePipeline",
-						"dependsOn": [],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "EC3MaestroCompraOrgComprasToSnowflake",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {}
-						}
-					},
-					{
-						"name": "EC3MaestroCompraEstadoCestaDerivadaToSnowflake",
-						"type": "ExecutePipeline",
-						"dependsOn": [],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "EC3MaestroCompraEstadoCestaDerivadaToSnowflake",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {}
-						}
-					},
-					{
-						"name": "EC3MaestroCompraTipoImputacionToSnowflake",
-						"type": "ExecutePipeline",
-						"dependsOn": [],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "EC3MaestroCompraTipoImputacionToSnowflake",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {}
-						}
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
-				},
-				"folder": {
-					"name": "Main/Sources/CopyToSnowfake/CopyMaestrasToSnowflake"
-				},
-				"annotations": [],
-				"lastPublishTime": "2021-12-15T12:14:21Z"
-			},
-			"dependsOn": []
-		},
 		{
 			"name": "[concat(parameters('factoryName'), '/CopyMaestrasToSnowflake')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
@@ -3426,6 +3149,14 @@
 								"source": {
 									"entityName": "e3c_lineas_cesta"
 								}
+							},
+							{
+								"destination": {
+									"fileName": "e3c_comentarios_pediddos.parquet"
+								},
+								"source": {
+									"entityName": "e3c_comentarios_pediddos"
+								}
 							}
 						]
 					}
@@ -3445,8 +3176,7 @@
 				"[concat(variables('factoryId'), '/pipelines/CopyMaestrasToSnowflake')]",
 				"[concat(variables('factoryId'), '/pipelines/CopyMaestrasE3ToBronce')]",
 				"[concat(variables('factoryId'), '/pipelines/CopyPrincipalesE3ToBronze')]",
-				"[concat(variables('factoryId'), '/pipelines/CopyPrincipalesE3ToSnowflake')]",
-				"[concat(variables('factoryId'), '/pipelines/CopyMaestrasE3ToSnowflake')]"
+				"[concat(variables('factoryId'), '/pipelines/CopyPrincipalesE3ToSnowflake')]"
 			]
 		},
 		{
