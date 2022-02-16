@@ -495,10 +495,10 @@
 				},
 				{
 					"destination": {
-						"fileName": "e3c_comentarios_pediddos.parquet"
+						"fileName": "e3c_comentarios_pedidos.parquet"
 					},
 					"source": {
-						"entityName": "e3c_comentarios_pediddos"
+						"entityName": "e3c_comentarios_pedidos"
 					}
 				}
 			]
@@ -2406,121 +2406,6 @@
 				"[concat(variables('factoryId'), '/pipelines/MaestroEstadoVentaToSnowflake')]",
 				"[concat(variables('factoryId'), '/pipelines/MaestroFaseToSnowflake')]",
 				"[concat(variables('factoryId'), '/pipelines/MaestroTipoFacturacionToSnowflake')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/CopyPrincipalesE3ToBronze')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "ForEach_PrincipalesE3",
-						"type": "ForEach",
-						"dependsOn": [],
-						"userProperties": [],
-						"typeProperties": {
-							"items": {
-								"value": "@pipeline().parameters.cw_items_PrincipalesE3",
-								"type": "Expression"
-							},
-							"activities": [
-								{
-									"name": "CopyPrincipalesE3ToBronze",
-									"type": "Copy",
-									"dependsOn": [],
-									"policy": {
-										"timeout": "7.00:00:00",
-										"retry": 0,
-										"retryIntervalInSeconds": 30,
-										"secureOutput": false,
-										"secureInput": false
-									},
-									"userProperties": [
-										{
-											"name": "Source",
-											"value": "@{item().source.entityName}"
-										},
-										{
-											"name": "Destination",
-											"value": "mc2-bs-bronze/[object Object]/@{item().destination.fileName}"
-										}
-									],
-									"typeProperties": {
-										"source": {
-											"type": "CommonDataServiceForAppsSource"
-										},
-										"sink": {
-											"type": "ParquetSink",
-											"storeSettings": {
-												"type": "AzureBlobFSWriteSettings"
-											},
-											"formatSettings": {
-												"type": "ParquetWriteSettings"
-											}
-										},
-										"enableStaging": false,
-										"validateDataConsistency": false
-									},
-									"inputs": [
-										{
-											"referenceName": "SourcePrincipalesE3",
-											"type": "DatasetReference",
-											"parameters": {
-												"cw_entityName": "@item().source.entityName"
-											}
-										}
-									],
-									"outputs": [
-										{
-											"referenceName": "DestinationPrincipalesE3",
-											"type": "DatasetReference",
-											"parameters": {
-												"cw_fileName_PrincipalesE3": "@item().destination.fileName"
-											}
-										}
-									]
-								}
-							]
-						}
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
-				},
-				"parameters": {
-					"cw_items_PrincipalesE3": {
-						"type": "Array",
-						"defaultValue": [
-							{
-								"destination": {
-									"fileName": "e3c_cestas.parquet"
-								},
-								"source": {
-									"entityName": "e3c_cestas"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "e3c_lineas_cesta.parquet"
-								},
-								"source": {
-									"entityName": "e3c_lineas_cesta"
-								}
-							}
-						]
-					}
-				},
-				"folder": {
-					"name": "Main/Sources/CopyMC2ToBronce"
-				},
-				"annotations": [],
-				"lastPublishTime": "2021-12-15T12:13:54Z"
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/SourcePrincipalesE3')]",
-				"[concat(variables('factoryId'), '/datasets/DestinationPrincipalesE3')]"
 			]
 		},
 		{
@@ -28140,10 +28025,10 @@
 							},
 							{
 								"destination": {
-									"fileName": "e3c_comentarios_pediddos.parquet"
+									"fileName": "e3c_comentarios_pedidos.parquet"
 								},
 								"source": {
-									"entityName": "e3c_comentarios_pediddos"
+									"entityName": "e3c_comentarios_pedidos"
 								}
 							}
 						]
@@ -53834,6 +53719,129 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/managedVirtualNetworks/default')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/CopyPrincipalesE3ToBronze')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "ForEach_PrincipalesE3",
+						"type": "ForEach",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"items": {
+								"value": "@pipeline().parameters.cw_items_PrincipalesE3",
+								"type": "Expression"
+							},
+							"activities": [
+								{
+									"name": "CopyPrincipalesE3ToBronze",
+									"type": "Copy",
+									"dependsOn": [],
+									"policy": {
+										"timeout": "7.00:00:00",
+										"retry": 0,
+										"retryIntervalInSeconds": 30,
+										"secureOutput": false,
+										"secureInput": false
+									},
+									"userProperties": [
+										{
+											"name": "Source",
+											"value": "@{item().source.entityName}"
+										},
+										{
+											"name": "Destination",
+											"value": "mc2-bs-bronze/[object Object]/@{item().destination.fileName}"
+										}
+									],
+									"typeProperties": {
+										"source": {
+											"type": "CommonDataServiceForAppsSource"
+										},
+										"sink": {
+											"type": "ParquetSink",
+											"storeSettings": {
+												"type": "AzureBlobFSWriteSettings"
+											},
+											"formatSettings": {
+												"type": "ParquetWriteSettings"
+											}
+										},
+										"enableStaging": false,
+										"validateDataConsistency": false
+									},
+									"inputs": [
+										{
+											"referenceName": "SourcePrincipalesE3",
+											"type": "DatasetReference",
+											"parameters": {
+												"cw_entityName": "@item().source.entityName"
+											}
+										}
+									],
+									"outputs": [
+										{
+											"referenceName": "DestinationPrincipalesE3",
+											"type": "DatasetReference",
+											"parameters": {
+												"cw_fileName_PrincipalesE3": "@item().destination.fileName"
+											}
+										}
+									]
+								}
+							]
+						}
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
+				"parameters": {
+					"cw_items_PrincipalesE3": {
+						"type": "Array",
+						"defaultValue": [
+							{
+								"destination": {
+									"fileName": "e3c_cestas.parquet"
+								},
+								"source": {
+									"entityName": "e3c_cestas"
+								}
+							},
+							{
+								"destination": {
+									"fileName": "e3c_lineas_cesta.parquet"
+								},
+								"source": {
+									"entityName": "e3c_lineas_cesta"
+								}
+							},
+							{
+								"destination": {
+									"fileName": "e3c_comentarios_pedidos.parquet"
+								},
+								"source": {
+									"entityName": "e3c_comentarios_pedidos"
+								}
+							}
+						]
+					}
+				},
+				"folder": {
+					"name": "Main/Sources/CopyMC2ToBronce"
+				},
+				"annotations": [],
+				"lastPublishTime": "2021-12-15T12:13:54Z"
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/SourcePrincipalesE3')]",
+				"[concat(variables('factoryId'), '/datasets/DestinationPrincipalesE3')]"
 			]
 		}
 	]
