@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "CopyComentariosProyectoToSnowflake",
+				"name": "CopyE3CComentariosProyectoToSnowflake",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
