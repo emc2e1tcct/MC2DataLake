@@ -1201,7 +1201,7 @@
 						"userProperties": [],
 						"typeProperties": {
 							"pipeline": {
-								"referenceName": "ComentariosProyectoToSnowflake",
+								"referenceName": "Ec3ComentariosPedidosToSnowflake",
 								"type": "PipelineReference"
 							},
 							"waitOnCompletion": true,
@@ -1219,7 +1219,9 @@
 				"annotations": [],
 				"lastPublishTime": "2021-12-15T12:13:56Z"
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/Ec3ComentariosPedidosToSnowflake')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/CopyPrincipalesToSnowflake')]",

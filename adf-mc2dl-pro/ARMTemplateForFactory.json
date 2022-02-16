@@ -2449,7 +2449,7 @@
 						"userProperties": [],
 						"typeProperties": {
 							"pipeline": {
-								"referenceName": "ComentariosProyectoToSnowflake",
+								"referenceName": "Ec3ComentariosPedidosToSnowflake",
 								"type": "PipelineReference"
 							},
 							"waitOnCompletion": true,
@@ -2470,7 +2470,7 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/pipelines/E3c_CestasToSnowflake')]",
 				"[concat(variables('factoryId'), '/pipelines/Ec3LineasCestaToSnowflake')]",
-				"[concat(variables('factoryId'), '/pipelines/ComentariosProyectoToSnowflake')]"
+				"[concat(variables('factoryId'), '/pipelines/Ec3ComentariosPedidosToSnowflake')]"
 			]
 		},
 		{
