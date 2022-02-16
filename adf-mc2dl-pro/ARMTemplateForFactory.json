@@ -592,7 +592,7 @@
 			"properties": {
 				"activities": [
 					{
-						"name": "CopyComentariosProyectoToSnowflake",
+						"name": "CopyE3CComentariosProyectoToSnowflake",
 						"type": "Copy",
 						"dependsOn": [],
 						"policy": {
@@ -2449,7 +2449,7 @@
 						"userProperties": [],
 						"typeProperties": {
 							"pipeline": {
-								"referenceName": "Ec3LineasCestaToSnowflake",
+								"referenceName": "ComentariosProyectoToSnowflake",
 								"type": "PipelineReference"
 							},
 							"waitOnCompletion": true,
@@ -2469,7 +2469,8 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/pipelines/E3c_CestasToSnowflake')]",
-				"[concat(variables('factoryId'), '/pipelines/Ec3LineasCestaToSnowflake')]"
+				"[concat(variables('factoryId'), '/pipelines/Ec3LineasCestaToSnowflake')]",
+				"[concat(variables('factoryId'), '/pipelines/ComentariosProyectoToSnowflake')]"
 			]
 		},
 		{
