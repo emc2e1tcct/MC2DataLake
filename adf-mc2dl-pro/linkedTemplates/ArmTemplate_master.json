@@ -713,9 +713,6 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
-					},
-					"AzureDataLakeStorageGen2_properties_typeProperties_url": {
-						"value": "[parameters('AzureDataLakeStorageGen2_properties_typeProperties_url')]"
 					}
 				}
 			},
@@ -737,6 +734,29 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"AzureDataLakeStorageGen2_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorageGen2_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adf-mc2dl-pro_ArmTemplate_8')]"
+			]
+		},
+		{
+			"name": "adf-mc2dl-pro_ArmTemplate_10",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_10.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
 					"TablasTrigger_properties_main_parameters_cw_items_Maestras": {
 						"value": "[parameters('TablasTrigger_properties_main_parameters_cw_items_Maestras')]"
 					},
@@ -752,7 +772,7 @@
 				}
 			},
 			"dependsOn": [
-				"[resourceId('Microsoft.Resources/deployments', 'adf-mc2dl-pro_ArmTemplate_8')]"
+				"[resourceId('Microsoft.Resources/deployments', 'adf-mc2dl-pro_ArmTemplate_9')]"
 			]
 		}
 	]

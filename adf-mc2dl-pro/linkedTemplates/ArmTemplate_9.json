@@ -7,487 +7,748 @@
 			"metadata": "Nombre de instancia de Data Factory",
 			"defaultValue": "adf-mc2dl-pro"
 		},
-		"TablasTrigger_properties_main_parameters_cw_items_Maestras": {
-			"type": "array",
-			"defaultValue": [
-				{
-					"destination": {
-						"fileName": "mc2_maestro_ceco.parquet"
-					},
-					"source": {
-						"entityName": "mc2_maestro_ceco"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "mc2_maestro_perfil.parquet"
-					},
-					"source": {
-						"entityName": "mc2_maestro_perfil"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "mc2_maestro_sociedad.parquet"
-					},
-					"source": {
-						"entityName": "mc2_maestro_sociedad"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "mc2_maestro_tramitador.parquet"
-					},
-					"source": {
-						"entityName": "mc2_maestro_tramitador"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "mc2_maestro_ambito.parquet"
-					},
-					"source": {
-						"entityName": "mc2_maestro_ambito"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "mc2_maestro_bloque.parquet"
-					},
-					"source": {
-						"entityName": "mc2_maestro_bloque"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "mc2_maestro_cebe.parquet"
-					},
-					"source": {
-						"entityName": "mc2_maestro_cebe"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "mc2_maestro_cliente_facturacion.parquet"
-					},
-					"source": {
-						"entityName": "mc2_maestro_cliente_facturacion"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "mc2_maestro_cliente_gestion.parquet"
-					},
-					"source": {
-						"entityName": "mc2_maestro_cliente_gestion"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "mc2_maestro_coste.parquet"
-					},
-					"source": {
-						"entityName": "mc2_maestro_coste"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "mc2_maestro_costes_formula.parquet"
-					},
-					"source": {
-						"entityName": "mc2_maestro_costes_formula"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "mc2_maestro_estado_compras.parquet"
-					},
-					"source": {
-						"entityName": "mc2_maestro_estado_compras"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "mc2_maestro_estado_pedido.parquet"
-					},
-					"source": {
-						"entityName": "mc2_maestro_estado_pedido"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "mc2_maestro_familia.parquet"
-					},
-					"source": {
-						"entityName": "mc2_maestro_familia"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "mc2_maestro_jefe_de_proyecto.parquet"
-					},
-					"source": {
-						"entityName": "mc2_maestro_jefe_de_proyecto"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "mc2_maestro_lineapep.parquet"
-					},
-					"source": {
-						"entityName": "mc2_maestro_lineapep"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "mc2_maestro_monedas.parquet"
-					},
-					"source": {
-						"entityName": "mc2_maestro_monedas"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "mc2_maestro_naturaleza_utm.parquet"
-					},
-					"source": {
-						"entityName": "mc2_maestro_naturaleza_utm"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "mc2_maestro_perfil_presupuesto.parquet"
-					},
-					"source": {
-						"entityName": "mc2_maestro_perfil_presupuesto"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "mc2_maestro_planificacion.parquet"
-					},
-					"source": {
-						"entityName": "mc2_maestro_planificacion"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "mc2_maestro_plazo_utm.parquet"
-					},
-					"source": {
-						"entityName": "mc2_maestro_plazo_utm"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "mc2_maestro_prioridad.parquet"
-					},
-					"source": {
-						"entityName": "mc2_maestro_prioridad"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "mc2_maestro_producto.parquet"
-					},
-					"source": {
-						"entityName": "mc2_maestro_producto"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "mc2_maestro_tipificacion.parquet"
-					},
-					"source": {
-						"entityName": "mc2_maestro_tipificacion"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "mc2_maestrocodigoproyecto.parquet"
-					},
-					"source": {
-						"entityName": "mc2_maestrocodigoproyecto"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "mc2_maestro_fase.parquet"
-					},
-					"source": {
-						"entityName": "mc2_maestro_fase"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "mc2_maestro_tipo_facturacion.parquet"
-					},
-					"source": {
-						"entityName": "mc2_maestro_tipo_facturacion"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "mc2_maestro_estado_venta.parquet"
-					},
-					"source": {
-						"entityName": "mc2_maestro_estado_venta"
-					}
-				}
-			]
-		},
-		"TablasTrigger_properties_main_parameters_cw_items_MaestrasE3": {
-			"type": "array",
-			"defaultValue": [
-				{
-					"destination": {
-						"fileName": "e3c_maestro_compra_area_funcional.parquet"
-					},
-					"source": {
-						"entityName": "e3c_maestro_compra_area_funcional"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "e3c_maestro_compra_ariba.parquet"
-					},
-					"source": {
-						"entityName": "e3c_maestro_compra_ariba"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "e3c_maestro_compra_categoria.parquet"
-					},
-					"source": {
-						"entityName": "e3c_maestro_compra_categoria"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "e3c_maestro_compra_ceco.parquet"
-					},
-					"source": {
-						"entityName": "e3c_maestro_compra_ceco"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "e3c_maestro_compra_centro_gestor.parquet"
-					},
-					"source": {
-						"entityName": "e3c_maestro_compra_centro_gestor"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "e3c_maestro_compra_contrato.parquet"
-					},
-					"source": {
-						"entityName": "e3c_maestro_compra_contrato"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "e3c_maestro_compra_estado_cesta_derivada.parquet"
-					},
-					"source": {
-						"entityName": "e3c_maestro_compra_estado_cesta_derivada"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "e3c_maestro_compra_estado_cesta_ordinaria.parquet"
-					},
-					"source": {
-						"entityName": "e3c_maestro_compra_estado_cesta_ordinaria"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "e3c_maestro_compra_gasto_inversion.parquet"
-					},
-					"source": {
-						"entityName": "e3c_maestro_compra_gasto_inversion"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "e3c_maestro_compra_grupo_compras.parquet"
-					},
-					"source": {
-						"entityName": "e3c_maestro_compra_grupo_compras"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "e3c_maestro_compra_moneda.parquet"
-					},
-					"source": {
-						"entityName": "e3c_maestro_compra_moneda"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "e3c_maestro_compra_org_compras.parquet"
-					},
-					"source": {
-						"entityName": "e3c_maestro_compra_org_compras"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "e3c_maestro_compra_sociedad.parquet"
-					},
-					"source": {
-						"entityName": "e3c_maestro_compra_sociedad"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "e3c_maestro_compra_tipo_facturacion.parquet"
-					},
-					"source": {
-						"entityName": "e3c_maestro_compra_tipo_facturacion"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "e3c_maestro_compra_tipo_imputacion.parquet"
-					},
-					"source": {
-						"entityName": "e3c_maestro_compra_tipo_imputacion"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "e3c_maestro_compra_posicion_contrato.parquet"
-					},
-					"source": {
-						"entityName": "e3c_maestro_compra_posicion_contrato"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "e3c_maestro_compra_revisor_exp.parquet"
-					},
-					"source": {
-						"entityName": "e3c_maestro_compra_revisor_exp"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "e3c_maestro_compra_usuario_solicitante_ord.parquet"
-					},
-					"source": {
-						"entityName": "e3c_maestro_compra_usuario_solicitante_ord"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "e3c_maestro_compra_dest_mercancias.parquet"
-					},
-					"source": {
-						"entityName": "e3c_maestro_compra_dest_mercancias"
-					}
-				}
-			]
-		},
-		"TablasTrigger_properties_main_parameters_cw_items_Principales": {
-			"type": "array",
-			"defaultValue": [
-				{
-					"destination": {
-						"fileName": "mc2_comentarios_proyecto.parquet"
-					},
-					"source": {
-						"entityName": "mc2_comentarios_proyecto"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "mc2_elemento_pep.parquet"
-					},
-					"source": {
-						"entityName": "mc2_elemento_pep"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "mc2_lineas_adquira.parquet"
-					},
-					"source": {
-						"entityName": "mc2_lineas_adquira"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "mc2_pedido.parquet"
-					},
-					"source": {
-						"entityName": "mc2_pedido"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "mc2_planificacion.parquet"
-					},
-					"source": {
-						"entityName": "mc2_planificacion"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "mc2_proyecto.parquet"
-					},
-					"source": {
-						"entityName": "mc2_proyecto"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "mc2_auditoria.parquet"
-					},
-					"source": {
-						"entityName": "mc2_auditoria"
-					}
-				}
-			]
-		},
-		"TablasTrigger_properties_main_parameters_cw_items_PrincipalesE3": {
-			"type": "array",
-			"defaultValue": [
-				{
-					"destination": {
-						"fileName": "e3c_cestas.parquet"
-					},
-					"source": {
-						"entityName": "e3c_cestas"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "e3c_lineas_cesta.parquet"
-					},
-					"source": {
-						"entityName": "e3c_lineas_cesta"
-					}
-				},
-				{
-					"destination": {
-						"fileName": "e3c_comentarios_pedidos.parquet"
-					},
-					"source": {
-						"entityName": "e3c_comentarios_pedidos"
-					}
-				}
-			]
+		"AzureDataLakeStorageGen2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://storagemc2dlprod.dfs.core.windows.net/"
 		}
 	},
 	"variables": {
 		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
 	},
 	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureDataLakeStorageGen2')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('AzureDataLakeStorageGen2_properties_typeProperties_url')]"
+				},
+				"connectVia": {
+					"referenceName": "integrationRuntimeDataFact",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Ec3ComentariosPedidosToSnowflake')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Ec3_ComentariosPedidosToSnowflake",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [
+							{
+								"name": "Source",
+								"value": "mc2-bs-golden/[object Object]/[object Object]"
+							},
+							{
+								"name": "Destination",
+								"value": "PUBLIC.E3C_COMENTARIOS_PEDIDOS"
+							}
+						],
+						"typeProperties": {
+							"source": {
+								"type": "ParquetSource",
+								"storeSettings": {
+									"type": "AzureBlobStorageReadSettings",
+									"recursive": true,
+									"enablePartitionDiscovery": false
+								}
+							},
+							"sink": {
+								"type": "SnowflakeSink",
+								"preCopyScript": {
+									"value": "TRUNCATE TABLE @{pipeline().globalParameters.BDsnowflake}.\"PUBLIC\".\"E3C_COMENTARIOS_PEDIDOS\";",
+									"type": "Expression"
+								},
+								"importSettings": {
+									"type": "SnowflakeImportCopyCommand"
+								}
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "owningbusinessunit",
+											"type": "String"
+										},
+										"sink": {
+											"name": "owningbusinessunit",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "owninguser",
+											"type": "String"
+										},
+										"sink": {
+											"name": "owninguser",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "statecode",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "statecode",
+											"type": "Int64"
+										}
+									},
+									{
+										"source": {
+											"name": "createdby",
+											"type": "String"
+										},
+										"sink": {
+											"name": "createdby",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "createdonbehalfby",
+											"type": "String"
+										},
+										"sink": {
+											"name": "createdonbehalfby",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "utcconversiontimezonecode",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "utcconversiontimezonecode",
+											"type": "Int64"
+										}
+									},
+									{
+										"source": {
+											"name": "importsequencenumber",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "importsequencenumber",
+											"type": "Int64"
+										}
+									},
+									{
+										"source": {
+											"name": "e3c_comentario",
+											"type": "String"
+										},
+										"sink": {
+											"name": "e3c_comentario",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "e3c_comentarios_pedidosid",
+											"type": "String"
+										},
+										"sink": {
+											"name": "e3c_comentarios_pedidosid",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedonbehalfby",
+											"type": "String"
+										},
+										"sink": {
+											"name": "modifiedonbehalfby",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "owneridname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "owneridname",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "e3c_estado",
+											"type": "String"
+										},
+										"sink": {
+											"name": "e3c_estado",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "e3c_fecha",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "e3c_fecha",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedbyname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "modifiedbyname",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "statuscode",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "statuscode",
+											"type": "Int64"
+										}
+									},
+									{
+										"source": {
+											"name": "owningbusinessunitname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "owningbusinessunitname",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ownerid",
+											"type": "String"
+										},
+										"sink": {
+											"name": "ownerid",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "owneridtype",
+											"type": "String"
+										},
+										"sink": {
+											"name": "owneridtype",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedonbehalfbyname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "modifiedonbehalfbyname",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "createdbyname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "createdbyname",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedbyyominame",
+											"type": "String"
+										},
+										"sink": {
+											"name": "modifiedbyyominame",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedonbehalfbyyominame",
+											"type": "String"
+										},
+										"sink": {
+											"name": "modifiedonbehalfbyyominame",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "owneridyominame",
+											"type": "String"
+										},
+										"sink": {
+											"name": "owneridyominame",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "owningteam",
+											"type": "String"
+										},
+										"sink": {
+											"name": "owningteam",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "timezoneruleversionnumber",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "timezoneruleversionnumber",
+											"type": "Int64"
+										}
+									},
+									{
+										"source": {
+											"name": "createdonbehalfbyname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "createdonbehalfbyname",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "e3c_jdp",
+											"type": "String"
+										},
+										"sink": {
+											"name": "e3c_jdp",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedby",
+											"type": "String"
+										},
+										"sink": {
+											"name": "modifiedby",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "createdbyyominame",
+											"type": "String"
+										},
+										"sink": {
+											"name": "createdbyyominame",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "e3c_pedido",
+											"type": "String"
+										},
+										"sink": {
+											"name": "e3c_pedido",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "createdon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "createdon",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "createdonbehalfbyyominame",
+											"type": "String"
+										},
+										"sink": {
+											"name": "createdonbehalfbyyominame",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "modifiedon",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "overriddencreatedon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "overriddencreatedon",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "versionnumber",
+											"type": "Int64"
+										},
+										"sink": {
+											"name": "versionnumber",
+											"type": "Int64"
+										}
+									}
+								]
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "SourceEc3_ComentariosPedidos",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "Snowflake_E3C_COMENTARIOS_PEDIDOS",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
+				"folder": {
+					"name": "Main/Sources/CopyToSnowfake/CopyPrincipalesSnowflake/Principales"
+				},
+				"annotations": [],
+				"lastPublishTime": "2021-12-15T12:13:54Z"
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/CopyMaestrasE3ToSnowflake')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "E3CMaestroCompraAreaFuncionalToSnowflake",
+						"type": "ExecutePipeline",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "E3CMaestroCompraAreaFuncionalToSnowflake",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {}
+						}
+					},
+					{
+						"name": "E3CMaestroCompraAribaToSnowflake",
+						"type": "ExecutePipeline",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "E3CMaestroCompraAribaToSnowflake",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {}
+						}
+					},
+					{
+						"name": "EC3MaestroCompraCategoriaToSnowflake",
+						"type": "ExecutePipeline",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "EC3MaestroCompraCategoriaToSnowflake",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {}
+						}
+					},
+					{
+						"name": "EC3MaestroCompraCecoToSnowflake",
+						"type": "ExecutePipeline",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "EC3MaestroCompraCecoToSnowflake",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {}
+						}
+					},
+					{
+						"name": "EC3MaestroCompraCentroGestorToSnowflake",
+						"type": "ExecutePipeline",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "EC3MaestroCompraCentroGestorToSnowflake",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {}
+						}
+					},
+					{
+						"name": "EC3MaestroCompraContratoToSnowflake",
+						"type": "ExecutePipeline",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "EC3MaestroCompraContratoToSnowflake",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {}
+						}
+					},
+					{
+						"name": "EC3MaestroCompraEstadoCestaOrdinariaToSnowflake",
+						"type": "ExecutePipeline",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "EC3MaestroCompraEstadoCestaOrdinariaToSnowflake",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {}
+						}
+					},
+					{
+						"name": "EC3MaestroCompraGastoInversion",
+						"type": "ExecutePipeline",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "EC3MaestroCompraGastoInversion",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {}
+						}
+					},
+					{
+						"name": "EC3MaestroCompraGrupoCompras",
+						"type": "ExecutePipeline",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "EC3MaestroCompraGrupoCompras",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {}
+						}
+					},
+					{
+						"name": "EC3MaestroCompraMonedaToSnowflake",
+						"type": "ExecutePipeline",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "EC3MaestroCompraMonedaToSnowflake",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {}
+						}
+					},
+					{
+						"name": "EC3MaestroCompraSociedadToSnowflake",
+						"type": "ExecutePipeline",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "EC3MaestroCompraSociedadToSnowflake",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {}
+						}
+					},
+					{
+						"name": "EC3MaestroCompraTipoFacturacionToSnowflake",
+						"type": "ExecutePipeline",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "EC3MaestroCompraTipoFacturacionToSnowflake",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {}
+						}
+					},
+					{
+						"name": "EC3MaestroCompraPosicionContratoToSnowflake",
+						"type": "ExecutePipeline",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "EC3MaestroCompraPosicionContratoToSnowflake",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {}
+						}
+					},
+					{
+						"name": "EC3MaestroCompraRevisorExpToSnowflake",
+						"type": "ExecutePipeline",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "EC3MaestroCompraRevisorExpToSnowflake",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {}
+						}
+					},
+					{
+						"name": "EC3MaestroCompraUsuarioSolicitanteOrdToSnowflake",
+						"type": "ExecutePipeline",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "EC3MaestroCompraUsuarioSolicitanteOrdToSnowflake",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {}
+						}
+					},
+					{
+						"name": "EC3MaestroCompraDestMercanciasToSnowflake",
+						"type": "ExecutePipeline",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "EC3MaestroCompraDestMercanciasToSnowflake",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {}
+						}
+					},
+					{
+						"name": "EC3MaestroCompraOrgComprasToSnowflake",
+						"type": "ExecutePipeline",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "EC3MaestroCompraOrgComprasToSnowflake",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {}
+						}
+					},
+					{
+						"name": "EC3MaestroCompraEstadoCestaDerivadaToSnowflake",
+						"type": "ExecutePipeline",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "EC3MaestroCompraEstadoCestaDerivadaToSnowflake",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {}
+						}
+					},
+					{
+						"name": "EC3MaestroCompraTipoImputacionToSnowflake",
+						"type": "ExecutePipeline",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "EC3MaestroCompraTipoImputacionToSnowflake",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {}
+						}
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
+				"folder": {
+					"name": "Main/Sources/CopyToSnowfake/CopyMaestrasToSnowflake"
+				},
+				"annotations": [],
+				"lastPublishTime": "2021-12-15T12:14:21Z"
+			},
+			"dependsOn": []
+		},
 		{
 			"name": "[concat(parameters('factoryName'), '/CopyMaestrasToSnowflake')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
@@ -932,6 +1193,20 @@
 							"waitOnCompletion": true,
 							"parameters": {}
 						}
+					},
+					{
+						"name": "e3c_comentarios_pedidosToSnowflake",
+						"type": "ExecutePipeline",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "Ec3LineasCestaToSnowflake",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {}
+						}
 					}
 				],
 				"policy": {
@@ -1086,7 +1361,9 @@
 				},
 				"schema": []
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/DestinationMaestrasBronce')]",
@@ -1124,7 +1401,9 @@
 				},
 				"schema": []
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/DestinationMaestrasE3')]",
@@ -1162,7 +1441,9 @@
 				},
 				"schema": []
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/DestinationPrincipalesBronce')]",
@@ -1200,7 +1481,9 @@
 				},
 				"schema": []
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/DestinationPrincipalesE3')]",
@@ -1238,7 +1521,9 @@
 				},
 				"schema": []
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/DestinationSilver')]",
@@ -1263,7 +1548,9 @@
 				},
 				"schema": []
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/SourceBronce')]",
@@ -1288,7 +1575,9 @@
 				},
 				"schema": []
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/SourceSilver')]",
@@ -1450,7 +1739,9 @@
 					}
 				]
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorageGen2')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/CopyBronceToSilver')]",
@@ -2458,777 +2749,6 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/DestinationPrincipalesE3')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/main')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "CopyMaestrasToBronce",
-						"type": "ExecutePipeline",
-						"dependsOn": [],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "CopyMaestrasToBronce",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {
-								"cw_items_Maestras": {
-									"value": "@pipeline().parameters.cw_items_Maestras",
-									"type": "Expression"
-								}
-							}
-						}
-					},
-					{
-						"name": "CopyPrincipalesToBronce",
-						"type": "ExecutePipeline",
-						"dependsOn": [],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "CopyPrincipalesToBronce",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {
-								"cw_items_Principales": {
-									"value": "@pipeline().parameters.cw_items_Principales",
-									"type": "Expression"
-								}
-							}
-						}
-					},
-					{
-						"name": "CopyBronceToSilver",
-						"type": "ExecutePipeline",
-						"dependsOn": [
-							{
-								"activity": "CopyMaestrasToBronce",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							},
-							{
-								"activity": "CopyPrincipalesToBronce",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							},
-							{
-								"activity": "CopyMaestrasE3ToBronce",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							},
-							{
-								"activity": "CopyPrincipalesE3ToBronze",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "CopyBronceToSilver",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {}
-						}
-					},
-					{
-						"name": "CopySilverToGolden",
-						"type": "ExecutePipeline",
-						"dependsOn": [
-							{
-								"activity": "CopyBronceToSilver",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "CopySilverToGolden",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {}
-						}
-					},
-					{
-						"name": "CopyPrincipalesToSnowflake",
-						"type": "ExecutePipeline",
-						"dependsOn": [
-							{
-								"activity": "CopySilverToGolden",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "CopyPrincipalesToSnowflake",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {}
-						}
-					},
-					{
-						"name": "CopyMaestrasToSnowflake",
-						"type": "ExecutePipeline",
-						"dependsOn": [
-							{
-								"activity": "CopySilverToGolden",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "CopyMaestrasToSnowflake",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {}
-						}
-					},
-					{
-						"name": "CopyMaestrasE3ToBronce",
-						"type": "ExecutePipeline",
-						"dependsOn": [],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "CopyMaestrasE3ToBronce",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {
-								"cw_items_MaestrasE3": {
-									"value": "@pipeline().parameters.cw_items_MaestrasE3",
-									"type": "Expression"
-								}
-							}
-						}
-					},
-					{
-						"name": "CopyPrincipalesE3ToBronze",
-						"type": "ExecutePipeline",
-						"dependsOn": [],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "CopyPrincipalesE3ToBronze",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {
-								"cw_items_PrincipalesE3": {
-									"value": "@pipeline().parameters.cw_items_PrincipalesE3",
-									"type": "Expression"
-								}
-							}
-						}
-					},
-					{
-						"name": "CopyPrincipalesE3ToSnowflake",
-						"type": "ExecutePipeline",
-						"dependsOn": [
-							{
-								"activity": "CopySilverToGolden",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "CopyPrincipalesE3ToSnowflake",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {}
-						}
-					},
-					{
-						"name": "CopyMaestrasE3ToSnowflake",
-						"type": "ExecutePipeline",
-						"dependsOn": [
-							{
-								"activity": "CopySilverToGolden",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "CopyMaestrasE3ToSnowflake",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {}
-						}
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
-				},
-				"parameters": {
-					"cw_items_Maestras": {
-						"type": "array",
-						"defaultValue": [
-							{
-								"destination": {
-									"fileName": "mc2_maestro_ceco.parquet"
-								},
-								"source": {
-									"entityName": "mc2_maestro_ceco"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "mc2_maestro_perfil.parquet"
-								},
-								"source": {
-									"entityName": "mc2_maestro_perfil"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "mc2_maestro_sociedad.parquet"
-								},
-								"source": {
-									"entityName": "mc2_maestro_sociedad"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "mc2_maestro_tramitador.parquet"
-								},
-								"source": {
-									"entityName": "mc2_maestro_tramitador"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "mc2_maestro_ambito.parquet"
-								},
-								"source": {
-									"entityName": "mc2_maestro_ambito"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "mc2_maestro_bloque.parquet"
-								},
-								"source": {
-									"entityName": "mc2_maestro_bloque"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "mc2_maestro_cebe.parquet"
-								},
-								"source": {
-									"entityName": "mc2_maestro_cebe"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "mc2_maestro_cliente_facturacion.parquet"
-								},
-								"source": {
-									"entityName": "mc2_maestro_cliente_facturacion"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "mc2_maestro_cliente_gestion.parquet"
-								},
-								"source": {
-									"entityName": "mc2_maestro_cliente_gestion"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "mc2_maestro_coste.parquet"
-								},
-								"source": {
-									"entityName": "mc2_maestro_coste"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "mc2_maestro_costes_formula.parquet"
-								},
-								"source": {
-									"entityName": "mc2_maestro_costes_formula"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "mc2_maestro_estado_compras.parquet"
-								},
-								"source": {
-									"entityName": "mc2_maestro_estado_compras"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "mc2_maestro_estado_pedido.parquet"
-								},
-								"source": {
-									"entityName": "mc2_maestro_estado_pedido"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "mc2_maestro_familia.parquet"
-								},
-								"source": {
-									"entityName": "mc2_maestro_familia"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "mc2_maestro_jefe_de_proyecto.parquet"
-								},
-								"source": {
-									"entityName": "mc2_maestro_jefe_de_proyecto"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "mc2_maestro_lineapep.parquet"
-								},
-								"source": {
-									"entityName": "mc2_maestro_lineapep"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "mc2_maestro_monedas.parquet"
-								},
-								"source": {
-									"entityName": "mc2_maestro_monedas"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "mc2_maestro_naturaleza_utm.parquet"
-								},
-								"source": {
-									"entityName": "mc2_maestro_naturaleza_utm"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "mc2_maestro_perfil_presupuesto.parquet"
-								},
-								"source": {
-									"entityName": "mc2_maestro_perfil_presupuesto"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "mc2_maestro_planificacion.parquet"
-								},
-								"source": {
-									"entityName": "mc2_maestro_planificacion"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "mc2_maestro_plazo_utm.parquet"
-								},
-								"source": {
-									"entityName": "mc2_maestro_plazo_utm"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "mc2_maestro_prioridad.parquet"
-								},
-								"source": {
-									"entityName": "mc2_maestro_prioridad"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "mc2_maestro_producto.parquet"
-								},
-								"source": {
-									"entityName": "mc2_maestro_producto"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "mc2_maestro_tipificacion.parquet"
-								},
-								"source": {
-									"entityName": "mc2_maestro_tipificacion"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "mc2_maestrocodigoproyecto.parquet"
-								},
-								"source": {
-									"entityName": "mc2_maestrocodigoproyecto"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "mc2_maestro_fase.parquet"
-								},
-								"source": {
-									"entityName": "mc2_maestro_fase"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "mc2_maestro_tipo_facturacion.parquet"
-								},
-								"source": {
-									"entityName": "mc2_maestro_tipo_facturacion"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "mc2_maestro_estado_venta.parquet"
-								},
-								"source": {
-									"entityName": "mc2_maestro_estado_venta"
-								}
-							}
-						]
-					},
-					"cw_items_MaestrasE3": {
-						"type": "array",
-						"defaultValue": [
-							{
-								"destination": {
-									"fileName": "e3c_maestro_compra_area_funcional.parquet"
-								},
-								"source": {
-									"entityName": "e3c_maestro_compra_area_funcional"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "e3c_maestro_compra_ariba.parquet"
-								},
-								"source": {
-									"entityName": "e3c_maestro_compra_ariba"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "e3c_maestro_compra_categoria.parquet"
-								},
-								"source": {
-									"entityName": "e3c_maestro_compra_categoria"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "e3c_maestro_compra_ceco.parquet"
-								},
-								"source": {
-									"entityName": "e3c_maestro_compra_ceco"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "e3c_maestro_compra_centro_gestor.parquet"
-								},
-								"source": {
-									"entityName": "e3c_maestro_compra_centro_gestor"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "e3c_maestro_compra_contrato.parquet"
-								},
-								"source": {
-									"entityName": "e3c_maestro_compra_contrato"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "e3c_maestro_compra_estado_cesta_derivada.parquet"
-								},
-								"source": {
-									"entityName": "e3c_maestro_compra_estado_cesta_derivada"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "e3c_maestro_compra_estado_cesta_ordinaria.parquet"
-								},
-								"source": {
-									"entityName": "e3c_maestro_compra_estado_cesta_ordinaria"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "e3c_maestro_compra_gasto_inversion.parquet"
-								},
-								"source": {
-									"entityName": "e3c_maestro_compra_gasto_inversion"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "e3c_maestro_compra_grupo_compras.parquet"
-								},
-								"source": {
-									"entityName": "e3c_maestro_compra_grupo_compras"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "e3c_maestro_compra_moneda.parquet"
-								},
-								"source": {
-									"entityName": "e3c_maestro_compra_moneda"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "e3c_maestro_compra_org_compras.parquet"
-								},
-								"source": {
-									"entityName": "e3c_maestro_compra_org_compras"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "e3c_maestro_compra_sociedad.parquet"
-								},
-								"source": {
-									"entityName": "e3c_maestro_compra_sociedad"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "e3c_maestro_compra_tipo_facturacion.parquet"
-								},
-								"source": {
-									"entityName": "e3c_maestro_compra_tipo_facturacion"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "e3c_maestro_compra_tipo_imputacion.parquet"
-								},
-								"source": {
-									"entityName": "e3c_maestro_compra_tipo_imputacion"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "e3c_maestro_compra_posicion_contrato.parquet"
-								},
-								"source": {
-									"entityName": "e3c_maestro_compra_posicion_contrato"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "e3c_maestro_compra_revisor_exp.parquet"
-								},
-								"source": {
-									"entityName": "e3c_maestro_compra_revisor_exp"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "e3c_maestro_compra_usuario_solicitante_ord.parquet"
-								},
-								"source": {
-									"entityName": "e3c_maestro_compra_usuario_solicitante_ord"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "e3c_maestro_compra_dest_mercancias.parquet"
-								},
-								"source": {
-									"entityName": "e3c_maestro_compra_dest_mercancias"
-								}
-							}
-						]
-					},
-					"cw_items_Principales": {
-						"type": "array",
-						"defaultValue": [
-							{
-								"destination": {
-									"fileName": "mc2_comentarios_proyecto.parquet"
-								},
-								"source": {
-									"entityName": "mc2_comentarios_proyecto"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "mc2_elemento_pep.parquet"
-								},
-								"source": {
-									"entityName": "mc2_elemento_pep"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "mc2_lineas_adquira.parquet"
-								},
-								"source": {
-									"entityName": "mc2_lineas_adquira"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "mc2_pedido.parquet"
-								},
-								"source": {
-									"entityName": "mc2_pedido"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "mc2_planificacion.parquet"
-								},
-								"source": {
-									"entityName": "mc2_planificacion"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "mc2_proyecto.parquet"
-								},
-								"source": {
-									"entityName": "mc2_proyecto"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "mc2_auditoria.parquet"
-								},
-								"source": {
-									"entityName": "mc2_auditoria"
-								}
-							}
-						]
-					},
-					"cw_items_PrincipalesE3": {
-						"type": "array",
-						"defaultValue": [
-							{
-								"destination": {
-									"fileName": "e3c_cestas.parquet"
-								},
-								"source": {
-									"entityName": "e3c_cestas"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "e3c_lineas_cesta.parquet"
-								},
-								"source": {
-									"entityName": "e3c_lineas_cesta"
-								}
-							},
-							{
-								"destination": {
-									"fileName": "e3c_comentarios_pedidos.parquet"
-								},
-								"source": {
-									"entityName": "e3c_comentarios_pedidos"
-								}
-							}
-						]
-					}
-				},
-				"folder": {
-					"name": "Main"
-				},
-				"annotations": [],
-				"lastPublishTime": "2021-12-15T12:14:23Z"
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/CopyMaestrasToBronce')]",
-				"[concat(variables('factoryId'), '/pipelines/CopyPrincipalesToBronce')]",
-				"[concat(variables('factoryId'), '/pipelines/CopyBronceToSilver')]",
-				"[concat(variables('factoryId'), '/pipelines/CopySilverToGolden')]",
-				"[concat(variables('factoryId'), '/pipelines/CopyPrincipalesToSnowflake')]",
-				"[concat(variables('factoryId'), '/pipelines/CopyMaestrasToSnowflake')]",
-				"[concat(variables('factoryId'), '/pipelines/CopyMaestrasE3ToBronce')]",
-				"[concat(variables('factoryId'), '/pipelines/CopyPrincipalesE3ToBronze')]",
-				"[concat(variables('factoryId'), '/pipelines/CopyPrincipalesE3ToSnowflake')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/TablasTrigger')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"runtimeState": "Started",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "main",
-							"type": "PipelineReference"
-						},
-						"parameters": {
-							"cw_items_Maestras": "[parameters('TablasTrigger_properties_main_parameters_cw_items_Maestras')]",
-							"cw_items_MaestrasE3": "[parameters('TablasTrigger_properties_main_parameters_cw_items_MaestrasE3')]",
-							"cw_items_Principales": "[parameters('TablasTrigger_properties_main_parameters_cw_items_Principales')]",
-							"cw_items_PrincipalesE3": "[parameters('TablasTrigger_properties_main_parameters_cw_items_PrincipalesE3')]"
-						}
-					}
-				],
-				"type": "ScheduleTrigger",
-				"typeProperties": {
-					"recurrence": {
-						"frequency": "Week",
-						"interval": 1,
-						"startTime": "2021-10-29T03:00:00",
-						"timeZone": "Romance Standard Time",
-						"schedule": {
-							"weekDays": [
-								"Monday",
-								"Tuesday",
-								"Wednesday",
-								"Thursday",
-								"Friday"
-							]
-						}
-					}
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/main')]"
 			]
 		}
 	]
