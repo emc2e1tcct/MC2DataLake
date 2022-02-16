@@ -464,6 +464,14 @@
 							"source": {
 								"entityName": "e3c_lineas_cesta"
 							}
+						},
+						{
+							"destination": {
+								"fileName": "e3c_comentarios_pediddos.parquet"
+							},
+							"source": {
+								"entityName": "e3c_comentarios_pediddos"
+							}
 						}
 					]
 				}
