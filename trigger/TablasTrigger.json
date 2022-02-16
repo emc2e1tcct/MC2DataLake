@@ -467,10 +467,10 @@
 						},
 						{
 							"destination": {
-								"fileName": "e3c_comentarios_pediddos.parquet"
+								"fileName": "e3c_comentarios_pedidos.parquet"
 							},
 							"source": {
-								"entityName": "e3c_comentarios_pediddos"
+								"entityName": "e3c_comentarios_pedidos"
 							}
 						}
 					]
