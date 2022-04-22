@@ -417,7 +417,7 @@
 			"name": "Main/Sources/CopyToSnowfake/CopyPrincipalesSnowflake/Principales"
 		},
 		"annotations": [],
-		"lastPublishTime": "2021-12-15T12:13:54Z"
+		"lastPublishTime": "2022-02-17T16:01:03Z"
 	},
 	"type": "Microsoft.DataFactory/factories/pipelines"
 }

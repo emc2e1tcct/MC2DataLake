@@ -35,7 +35,10 @@
 					},
 					"sink": {
 						"type": "SnowflakeSink",
-						"preCopyScript": "TRUNCATE TABLE @{pipeline().globalParameters.BDsnowflake}.\"PUBLIC\".\"MC2_MAESTRO_TRAMITADOR\";",
+						"preCopyScript": {
+							"value": "TRUNCATE TABLE @{pipeline().globalParameters.BDsnowflake}.\"PUBLIC\".\"MC2_MAESTRO_TRAMITADOR\";",
+							"type": "Expression"
+						},
 						"importSettings": {
 							"type": "SnowflakeImportCopyCommand"
 						}
@@ -395,7 +398,7 @@
 			"name": "Main/Sources/CopyToSnowfake/CopyMaestrasToSnowflake/Maestras"
 		},
 		"annotations": [],
-		"lastPublishTime": "2021-12-15T12:13:54Z"
+		"lastPublishTime": "2022-02-17T16:01:04Z"
 	},
 	"type": "Microsoft.DataFactory/factories/pipelines"
 }

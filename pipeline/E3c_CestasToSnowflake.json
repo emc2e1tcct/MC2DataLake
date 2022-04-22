@@ -34,7 +34,10 @@
 					},
 					"sink": {
 						"type": "SnowflakeSink",
-						"preCopyScript": "TRUNCATE TABLE @{pipeline().globalParameters.BDsnowflake}.\"PUBLIC\".\"E3C_CESTAS\";",
+						"preCopyScript": {
+							"value": "TRUNCATE TABLE @{pipeline().globalParameters.BDsnowflake}.\"PUBLIC\".\"E3C_CESTAS\";",
+							"type": "Expression"
+						},
 						"importSettings": {
 							"type": "SnowflakeImportCopyCommand"
 						}
@@ -954,7 +957,7 @@
 			"name": "Main/Sources/CopyToSnowfake/CopyPrincipalesSnowflake/Principales"
 		},
 		"annotations": [],
-		"lastPublishTime": "2021-12-15T12:13:53Z"
+		"lastPublishTime": "2022-02-17T16:01:05Z"
 	},
 	"type": "Microsoft.DataFactory/factories/pipelines"
 }

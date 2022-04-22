@@ -1,9 +1,17 @@
 {
 	"name": "MC2Factory",
+	"properties": {
+		"globalParameters": {
+			"BDsnowflake": {
+				"type": "string",
+				"value": "\"MC2_DEV\""
+			}
+		}
+	},
 	"location": "northeurope",
 	"identity": {
 		"type": "SystemAssigned",
-		"principalId": "890a3c3d-6d48-43d6-9811-3c3c007bdf05",
+		"principalId": "c15d1d78-4e1f-4c57-a07b-4178440f31ff",
 		"tenantId": "9b03d892-fe8c-4e05-80f1-32e928a16ba2"
 	}
 }

@@ -17,7 +17,10 @@
 		"type": "CommonDataServiceForAppsEntity",
 		"schema": [],
 		"typeProperties": {
-			"entityName": "@dataset().cw_entityName"
+			"entityName": {
+				"value": "@dataset().cw_entityName",
+				"type": "Expression"
+			}
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"

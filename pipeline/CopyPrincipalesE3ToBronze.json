@@ -92,6 +92,14 @@
 						"source": {
 							"entityName": "e3c_lineas_cesta"
 						}
+					},
+					{
+						"destination": {
+							"fileName": "e3c_comentarios_pedidos.parquet"
+						},
+						"source": {
+							"entityName": "e3c_comentarios_pedidos"
+						}
 					}
 				]
 			}
@@ -100,7 +108,7 @@
 			"name": "Main/Sources/CopyMC2ToBronce"
 		},
 		"annotations": [],
-		"lastPublishTime": "2021-12-15T12:13:54Z"
+		"lastPublishTime": "2022-02-17T16:01:08Z"
 	},
 	"type": "Microsoft.DataFactory/factories/pipelines"
 }

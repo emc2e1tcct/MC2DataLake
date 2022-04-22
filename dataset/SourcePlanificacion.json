@@ -13,7 +13,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_planificacion.parquet')",
+				"fileName": {
+					"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_planificacion.parquet')",
+					"type": "Expression"
+				},
 				"folderPath": {
 					"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
 					"type": "Expression"

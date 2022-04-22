@@ -1,14 +1,15 @@
 {
 	"name": "AzureDataLakeStorageGen2",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"annotations": [],
-		"type": "AzureBlobFS",
-		"typeProperties": {
-			"url": "https://storagemc2dlprod.dfs.core.windows.net/"
-		},
 		"connectVia": {
 			"referenceName": "integrationRuntimeDataFact",
 			"type": "IntegrationRuntimeReference"
+		},
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://mc2datalake.dfs.core.windows.net/"
 		}
 	}
 }
