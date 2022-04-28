@@ -1,9 +1,0 @@
-{
-	"name": "MC2DataFactory",
-	"location": "northeurope",
-	"identity": {
-		"type": "SystemAssigned",
-		"principalId": "cf412f68-1c10-4c17-94a3-15b8eefaac82",
-		"tenantId": "9b03d892-fe8c-4e05-80f1-32e928a16ba2"
-	}
-}
