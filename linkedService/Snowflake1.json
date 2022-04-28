@@ -1,0 +1,20 @@
+{
+	"name": "Snowflake1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "Snowflake",
+		"typeProperties": {
+			"connectionString": "jdbc:snowflake://rq45248.north-europe.azure.snowflakecomputing.com/?user=EVERIS&db=MC2_DEV&warehouse=MC2_DW&role=MC2DBA",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "ls_kv_adf_main",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "snowflake-sys-user-pass",
+				"secretVersion": "28c0e69f09c84f1a94538d3574839d41"
+			}
+		}
+	}
+}

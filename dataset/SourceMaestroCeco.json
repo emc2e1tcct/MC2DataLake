@@ -1,0 +1,160 @@
+{
+	"name": "SourceMaestroCeco",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorageForSnowflake",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Sources"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@concat(formatDatetime(utcnow(),'yyyMMdd'),'-mc2_maestro_ceco.parquet')",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@{formatDatetime(utcnow(),'yyy')}/@{formatDatetime(utcnow(),'MM')}",
+					"type": "Expression"
+				},
+				"container": "mc2-bs-golden"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "createdby",
+				"type": "UTF8"
+			},
+			{
+				"name": "createdbyname",
+				"type": "UTF8"
+			},
+			{
+				"name": "createdbyyominame",
+				"type": "UTF8"
+			},
+			{
+				"name": "createdon",
+				"type": "INT96"
+			},
+			{
+				"name": "createdonbehalfby",
+				"type": "UTF8"
+			},
+			{
+				"name": "createdonbehalfbyname",
+				"type": "UTF8"
+			},
+			{
+				"name": "createdonbehalfbyyominame",
+				"type": "UTF8"
+			},
+			{
+				"name": "importsequencenumber",
+				"type": "INT32"
+			},
+			{
+				"name": "mc2_ceco",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_maestro_cecoid",
+				"type": "UTF8"
+			},
+			{
+				"name": "mc2_texto",
+				"type": "UTF8"
+			},
+			{
+				"name": "modifiedby",
+				"type": "UTF8"
+			},
+			{
+				"name": "modifiedbyname",
+				"type": "UTF8"
+			},
+			{
+				"name": "modifiedbyyominame",
+				"type": "UTF8"
+			},
+			{
+				"name": "modifiedon",
+				"type": "INT96"
+			},
+			{
+				"name": "modifiedonbehalfby",
+				"type": "UTF8"
+			},
+			{
+				"name": "modifiedonbehalfbyname",
+				"type": "UTF8"
+			},
+			{
+				"name": "modifiedonbehalfbyyominame",
+				"type": "UTF8"
+			},
+			{
+				"name": "overriddencreatedon",
+				"type": "INT96"
+			},
+			{
+				"name": "ownerid",
+				"type": "UTF8"
+			},
+			{
+				"name": "owneridname",
+				"type": "UTF8"
+			},
+			{
+				"name": "owneridtype",
+				"type": "UTF8"
+			},
+			{
+				"name": "owneridyominame",
+				"type": "UTF8"
+			},
+			{
+				"name": "owningbusinessunit",
+				"type": "UTF8"
+			},
+			{
+				"name": "owningbusinessunitname",
+				"type": "UTF8"
+			},
+			{
+				"name": "owningteam",
+				"type": "UTF8"
+			},
+			{
+				"name": "owninguser",
+				"type": "UTF8"
+			},
+			{
+				"name": "statecode",
+				"type": "INT32"
+			},
+			{
+				"name": "statuscode",
+				"type": "INT32"
+			},
+			{
+				"name": "timezoneruleversionnumber",
+				"type": "INT32"
+			},
+			{
+				"name": "utcconversiontimezonecode",
+				"type": "INT32"
+			},
+			{
+				"name": "versionnumber",
+				"type": "INT64"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

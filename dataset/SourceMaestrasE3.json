@@ -1,0 +1,27 @@
+{
+	"name": "SourceMaestrasE3",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "MC2Dataverse",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"cw_entityName": {
+				"type": "array"
+			}
+		},
+		"folder": {
+			"name": "Sources"
+		},
+		"annotations": [],
+		"type": "CommonDataServiceForAppsEntity",
+		"schema": [],
+		"typeProperties": {
+			"entityName": {
+				"value": "@dataset().cw_entityName",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
